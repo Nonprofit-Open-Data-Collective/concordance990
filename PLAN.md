@@ -356,10 +356,17 @@ and the current concordance is recorded line by line.
 - [x] **Phase 1: Evidence.** `build_evidence()` over TY2009–2024 DuckDB
       builds → `evidence/`; first flag report; validation report templates
       and demo reports.
-- [ ] **Phase 2: Package skeleton + baseline.** DESCRIPTION, consumer API;
+- [x] **Phase 2: Package skeleton + baseline.** DESCRIPTION, consumer API;
       `split_v1()` produces `src/` tables and a conflict report; round-trip
       test (the v1 layout reproduces v1 exactly); commit and tag
-      `v2.0.0-baseline` (section 7.5).
+      `v2.0.0-baseline` (section 7.5). Result: v1 frozen from
+      irs-efile-master-concordance-file commit `d8266da`; the v1 layout
+      rebuilt from the component tables is byte-identical (md5
+      `3c58a279bca83e734f17fcb9bcbbe59c`); `R CMD check` clean. The split
+      keeps 1,665 v1 conflicts as xpath overrides (`description` 1,527
+      xpaths / 829 variables; `rdb_table` 67 / 15; `label` 37 / 22;
+      `variable_scope` 16 / 15; `location_code_family` 15 / 14;
+      `data_type_simple` 3 / 2).
 - [ ] **Phase 3: Validation + change log.** Structural rules as testthat
       tests + GitHub Actions; `diff_concordance()` and the change-log check;
       validation columns in the tidy output.
@@ -367,6 +374,11 @@ and the current concordance is recorded line by line.
       flags; add `table_groups.csv`; resolve the 15 multi-table variables;
       map or ignore the unmapped xpaths; location-code grammar and field
       components; `parts.filed_by`; XSD metadata for all schema versions.
+      Value clean-up surfaced by the baseline: cardinality `"ONE "` (trailing
+      space) on three Schedule H tables (501 xpaths); the literal text `"NA"`
+      (23,528 cells) versus empty cells (6,836) for missing values; six
+      Windows-1252 curly quotes to convert to UTF-8; resolving the 1,665
+      xpath overrides.
 - [ ] **Phase 5: 990-PF.** Merge the PF part files; PF evidence scan.
 - [ ] **Phase 6: Release + downstream.** v2.0.0 tag; migrate ef2, panel990,
       fiscal, efile-rdb-tables, nccs-data-core, ef2pf.
@@ -379,3 +391,4 @@ and the current concordance is recorded line by line.
   a release asset.
 - Fixing the duplicate filings: in the ef2 builds (preferred) or only removed
   in evidence.
+- The license for the package code (the data stay ODC-By 1.0).

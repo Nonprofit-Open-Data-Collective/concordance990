@@ -109,8 +109,9 @@ render_reports <- function(variables, concordance, ev, out_dir = "reports",
                       output_dir = normalizePath(out_dir, winslash = "/"),
                       intermediates_dir = tempdir(),
                       params = list(variable = v, report_type = rtype,
-                                    subtitle = sprintf("%s · %s report",
+                                    subtitle = sprintf("%s %s %s report",
                                                        ifelse(is.na(xp$label[1]), "(no label)", gsub("\"", "'", xp$label[1], fixed = TRUE)),
+                                                       intToUtf8(183),  # middle dot
                                                        report_type_labels[[rtype]])),
                       envir = env, quiet = TRUE)
     # self-contained output; drop the (sometimes empty) figure folder
