@@ -11,7 +11,7 @@ numeric_summary <- function(st) {
 }
 
 numeric_by_year <- function(st) {
-  st[!is.na(q50) & return_type %in% c("990", "990EZ"), .(q25 = wmean(q25, n_filings), q50 = wmean(q50, n_filings),
+  st[!is.na(q50) & return_type %in% c("990", "990EZ", "990PF"), .(q25 = wmean(q25, n_filings), q50 = wmean(q50, n_filings),
                     q75 = wmean(q75, n_filings), n = sum(n_filings)),
      by = .(tax_year, series, return_type)]
 }
@@ -41,7 +41,7 @@ numeric_checks <- function(st, by_year) {
 }
 
 numeric_plot <- function(by_year, log_scale, title, ylab) {
-  by_year[, rt := factor(return_type, levels = c("990", "990EZ"), labels = c("Form 990", "Form 990-EZ"))]
+  by_year[, rt := factor(return_type, levels = c("990", "990EZ", "990PF"), labels = c("Form 990", "Form 990-EZ", "Form 990-PF"))]
   p <- ggplot2::ggplot(by_year, ggplot2::aes(tax_year, q50, colour = series, fill = series)) +
     ggplot2::geom_ribbon(ggplot2::aes(ymin = q25, ymax = q75), alpha = 0.15, colour = NA) +
     ggplot2::geom_line(linewidth = 0.9) + ggplot2::geom_point(size = 1.6) +

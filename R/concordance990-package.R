@@ -15,5 +15,9 @@ utils::globalVariables(c(
   "tpre", "xpaths", "years",
   # change log and validation
   "status", "changed_fields", "v1_variable_name", "v1_rdb_table", "pass", "ceiling", "rule",
-  "xml_roots", "description"
+  "xml_roots", "description",
+  # value checks and issues
+  "cases", "cat_sev", "check", "code", "detail", "evidence", "is_pf", "level", "max_len", "med",
+  "name", "p99", "prev", "prev_n", "q99", "r", "report", "result", "series", "shape", "table_990",
+  "table_pf", "where"
 ))

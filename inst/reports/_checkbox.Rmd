@@ -7,21 +7,7 @@ vals[, code := fcase(v %in% c("x", "true", "1"), "checked (X / true / 1)",
 cb_year <- vals[, .(n = sum(n_filings)), by = .(tax_year, series, code)]
 cb_year[, share := n / sum(n), by = .(tax_year, series)]
 
-checks <- list()
-add <- function(check, result, detail) checks[[length(checks) + 1]] <<- data.frame(check = check, result = result, detail = detail)
-pb <- wmean(st$p_bool, st$n_occurrences)
-add("Values are checkbox codes", if (is.na(pb)) "info" else if (pb >= 0.99) "pass" else if (pb >= 0.95) "warn" else "fail",
-    if (is.na(pb)) "no values" else sprintf("%.1f%% of values are X / true / false / 1 / 0", 100 * pb))
-unc <- vals[code == "unchecked (false / 0)", sum(n_filings)] / max(vals[, sum(n_filings)], 1)
-add("Meaning of a blank", "info",
-    if (unc > 0.01) sprintf("%.0f%% of values are explicit false/0, so a missing value is not the same as unchecked", 100 * unc)
-    else "values are almost always X/true when present, so a missing value usually means unchecked")
-leaves <- unique(sub(".*/", "", xp$xpath))
-negated <- grepl("(Not|No)(?=[A-Z])", leaves, perl = TRUE)
-add("Element names agree in polarity", if (any(negated) && !all(negated)) "fail" else "pass",
-    if (any(negated) && !all(negated)) paste("negated:", paste(leaves[negated], collapse = ", "), "| not negated:", paste(leaves[!negated], collapse = ", "))
-    else "all element names have the same polarity")
-check_table(do.call(rbind, checks))
+check_table(value_checks(xp, st, ev$values[xpath %in% xp$xpath], ev$shapes[xpath %in% xp$xpath], rtype, skip_year = partial_year(ev$filings)))
 ```
 
 ```{r checkbox-plot, fig.height = 3.4}

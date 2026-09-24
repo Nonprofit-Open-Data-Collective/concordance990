@@ -12,12 +12,8 @@ rng <- st[, .(min_value = min(min_value, na.rm = TRUE), max_value = max(max_valu
 rng[, `:=`(min_year = suppressWarnings(as.integer(substr(min_value, 1, 4))),
            max_year = suppressWarnings(as.integer(substr(max_value, 1, 4))))]
 
-checks <- list()
-add <- function(check, result, detail) checks[[length(checks) + 1]] <<- data.frame(check = check, result = result, detail = detail)
-main_fmt <- fmt[, .(n = sum(n)), by = format][order(-n)]
-share_main <- if (nrow(main_fmt)) main_fmt$n[1] / sum(main_fmt$n) else NA
-add("One date format", if (is.na(share_main)) "info" else if (share_main >= 0.99) "pass" else "warn",
-    if (is.na(share_main)) "no values" else sprintf("%.1f%% use %s", 100 * share_main, main_fmt$format[1]))
+checks <- as.data.frame(value_checks(xp, st, ev$values[xpath %in% xp$xpath], ev$shapes[xpath %in% xp$xpath], rtype, skip_year = partial_year(ev$filings)))[, c("check", "result", "detail")]
+add <- function(check, result, detail) checks <<- rbind(checks, data.frame(check = check, result = result, detail = detail))
 # Earliest/latest values are single extremes, so these are informational:
 # a mapping problem shows up in the format and parse checks instead.
 future <- rng[!is.na(max_year) & max_year > tax_year + 3]
@@ -29,7 +25,7 @@ old <- rng[!is.na(min_year) & min_year < 1900]
 add("Dates before 1900", if (!nrow(old)) "pass" else "info",
     if (!nrow(old)) "no dates before 1900"
     else sprintf("%d of %d tax years contain a date before 1900 (e.g. %s)", nrow(old), nrow(rng), old$min_value[1]))
-check_table(do.call(rbind, checks))
+check_table(checks)
 ```
 
 ```{r date-plot, fig.height = 3.2}

@@ -27,7 +27,8 @@ flag_xpaths <- function(concordance, evidence_dir = "evidence", min_filings = 30
   yrs <- function(y) {
     y <- sort(unique(y))
     if (!length(y)) return(NA_character_)
-    if (length(y) == max(y) - min(y) + 1) paste0(min(y), "-", max(y)) else paste(y, collapse = ",")
+    if (length(y) == 1) as.character(y)
+    else if (length(y) == max(y) - min(y) + 1) paste0(min(y), "-", max(y)) else paste(y, collapse = ",")
   }
 
   # xpath-level roll-up across years, versions and return types

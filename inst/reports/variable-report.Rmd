@@ -130,18 +130,18 @@ if (nrow(st)) {
   print(p)
   html_table(dcast(by_year, tax_year ~ series, value.var = "n", fill = 0)[, `Tax year` := tax_year][, tax_year := NULL][] |>
                setcolorder("Tax year"), caption = "Table view: filings by tax year and series", collapse = TRUE)
-} else cat("<p>This variable was never observed in TY2009&ndash;2024 filings.</p>")
+} else cat("<p>This variable was never observed in the filing evidence.</p>")
 ```
 
 ```{r fillrate, fig.height = 3.2}
 if (nrow(st)) {
-  fr <- st[return_type %in% c("990", "990EZ"), .(n = sum(n_filings)), by = .(tax_year, return_type)]
+  fr <- st[return_type %in% c("990", "990EZ", "990PF"), .(n = sum(n_filings)), by = .(tax_year, return_type)]
   fr <- merge(fr, den, by = c("tax_year", "return_type"))
   fr[, rate := n / den]
-  fr[, rt := factor(return_type, levels = c("990", "990EZ"), labels = c("Form 990", "Form 990-EZ"))]
+  fr[, rt := factor(return_type, levels = c("990", "990EZ", "990PF"), labels = c("Form 990", "Form 990-EZ", "Form 990-PF"))]
   p <- ggplot(fr, aes(tax_year, rate, colour = rt)) +
     geom_line(linewidth = 0.9) + geom_point(size = 1.8) +
-    scale_colour_manual(values = report_palette[1:2], drop = TRUE) +
+    scale_colour_manual(values = report_palette[1:3], drop = TRUE) +
     scale_x_continuous(breaks = seq(2009, 2024, 3)) +
     scale_y_continuous(labels = scales::label_percent(accuracy = 0.1), limits = c(0, NA)) +
     labs(title = "Share of filings with a value (fill rate), by return type", x = NULL, y = NULL) +
@@ -198,6 +198,7 @@ common <- c(
   "Each open flag is fixed, or accepted with a note in validation_log.csv."
 )
 cat('<ul class="checklist">', paste0("<li>", c(common, checklist), "</li>"), "</ul>", sep = "\n")
-cat(sprintf("<p class='muted'>Record the review as a row in <code>inst/extdata/src/validation_log.csv</code> (variable_name, reviewer, date, status, note). Evidence built %s from the ef2 DuckDB builds, TY2009&ndash;2024.</p>",
-            htmltools::htmlEscape(ev$manifest$built %||% "(unknown)")))
+cat(sprintf("<p class='muted'>Record the review as a row in <code>inst/extdata/src/validation_log.csv</code> (variable_name, reviewer, date, status, note). Evidence built %s from the ef2 DuckDB builds (tax years %s).</p>",
+            htmltools::htmlEscape(ev$manifest$built %||% "(unknown)"),
+            if (nrow(ev$filings)) paste(unique(range(ev$filings$tax_year)), collapse = "&ndash;") else "unknown"))
 ```

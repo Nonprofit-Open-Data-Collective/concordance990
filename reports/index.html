@@ -1,0 +1,240 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Concordance Validation Reports</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap">
+<style>
+/* Validation report styling, adapted from fiscal/dev/health-index/walkthrough.css */
+:root{
+  --ground:#ffffff;
+  --surface:#f3f4f6;
+  --ink:#1f2429;
+  --ink-mid:#4d565f;
+  --ink-soft:#6d7681;
+  --rule:#dcdfe4;
+  --rule-strong:#c3c8cf;
+  --accent:#bd5416;
+  --accent-ink:#8f3f10;
+  --accent-wash:#fbf0e7;
+  --navy:#153243;
+  --pumpkin:#dc965a;
+  /* status: always paired with an icon and a label */
+  --good:#1b6e2b;
+  --serious:#a4430f;
+  --critical:#b12f2f;
+  --info:#1c5cab;
+  --font-display:"Zilla Slab",Georgia,"Times New Roman",serif;
+  --font-body:"Source Sans 3","Segoe UI",Helvetica,Arial,sans-serif;
+  --font-code:"Source Code Pro",Consolas,"Courier New",monospace;
+  --measure:40rem;
+}
+
+*{box-sizing:border-box;}
+html{-webkit-text-size-adjust:100%;}
+body{
+  margin:0 auto;
+  background:var(--ground);
+  color:var(--ink);
+  font-family:var(--font-body);
+  font-size:1.0625rem;
+  line-height:1.62;
+  max-width:60rem;
+  padding:0 1.5rem 5rem;
+}
+.main-container, main{max-width:none;margin:0;padding:0;}
+
+/* ---------- masthead (theme: null renders a bare h1.title + h3.subtitle) ---------- */
+h1.title{
+  font-family:var(--font-display);
+  font-weight:700;
+  font-size:2.5rem;
+  line-height:1.08;
+  letter-spacing:-.01em;
+  margin:0;
+  padding-top:3rem;
+  overflow-wrap:anywhere;
+}
+h1.title::before{
+  content:"IRS 990 Master Concordance \00B7\0020Validation report";
+  display:block;
+  font-family:var(--font-body);
+  font-size:.8125rem;
+  line-height:1.4;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  font-weight:600;
+  color:var(--accent-ink);
+  margin-bottom:.9rem;
+}
+h1.title.index::before{content:"IRS 990 Master Concordance \00B7\0020Validation reports";}
+h3.subtitle{
+  font-family:var(--font-body);
+  font-weight:400;
+  font-size:1.2rem;
+  line-height:1.5;
+  color:var(--ink-mid);
+  margin:.9rem 0 0;
+  padding-bottom:2rem;
+  border-bottom:1px solid var(--rule);
+}
+
+/* ---------- table of contents ---------- */
+#TOC{
+  background:var(--surface);
+  border-radius:10px;
+  padding:1.25rem 1.5rem;
+  margin:2rem 0 1rem;
+}
+#TOC::before{
+  content:"Contents";
+  display:block;
+  font-size:.8125rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--ink-soft);
+  margin-bottom:.5rem;
+}
+#TOC ul{list-style:none;margin:0;padding:0;columns:3 11rem;column-gap:2rem;}
+#TOC li{margin:.2rem 0;break-inside:avoid;}
+#TOC li::marker{content:none;}
+#TOC ul ul{display:none;}
+#TOC a{color:var(--ink);text-decoration:none;font-weight:600;font-size:.95rem;}
+#TOC a:hover{color:var(--accent-ink);}
+
+/* ---------- headings and text ---------- */
+h2{
+  font-family:var(--font-display);
+  font-weight:600;
+  font-size:1.85rem;
+  line-height:1.14;
+  margin:3rem 0 1rem;
+  padding-top:1.5rem;
+  border-top:1px solid var(--rule);
+}
+h3{font-family:var(--font-display);font-weight:600;font-size:1.35rem;line-height:1.24;margin:2rem 0 .75rem;}
+p,ul,ol{max-width:var(--measure);}
+p{margin:0 0 1.05rem;}
+ul,ol{margin:0 0 1.05rem;padding-left:1.35rem;}
+li{margin-bottom:.4rem;}
+li::marker{color:var(--accent);font-weight:600;}
+strong{font-weight:700;}
+a{color:var(--accent-ink);text-underline-offset:2px;}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.lede,.muted{color:var(--ink-mid);}
+.muted{font-size:.9rem;}
+
+/* ---------- code ---------- */
+code{font-family:var(--font-code);font-size:.86em;}
+p code,li code,td code,dd code{background:var(--surface);padding:.08em .32em;border-radius:3px;color:var(--accent-ink);}
+
+/* ---------- key facts panel (navy, as .concepts in the memo) ---------- */
+.concepts{
+  background:var(--navy);
+  color:#fff;
+  border-radius:10px;
+  padding:1.5rem 1.75rem 1.25rem;
+  margin:1.75rem 0 1.5rem;
+}
+.concepts .kv{display:grid;grid-template-columns:max-content 1fr;gap:.35rem 1.25rem;margin:0;font-size:.98rem;}
+.concepts dt{color:var(--pumpkin);font-weight:600;}
+.concepts dd{margin:0;color:rgba(255,255,255,.92);overflow-wrap:anywhere;}
+.concepts code{background:rgba(255,255,255,.12);color:#fff;}
+
+/* ---------- headline numbers ---------- */
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(10.5rem,1fr));gap:.75rem;margin:1rem 0 1.5rem;}
+.tile{background:var(--surface);border-radius:10px;padding:.9rem 1.1rem;}
+.tile .v{font-family:var(--font-display);font-size:1.75rem;font-weight:600;line-height:1.15;}
+.tile .k{font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);margin-top:.25rem;}
+
+/* ---------- callouts ---------- */
+blockquote,.callout{
+  background:var(--accent-wash);
+  border:0;
+  border-radius:3px;
+  padding:1rem 1.25rem;
+  margin:1.25rem 0;
+  max-width:var(--measure);
+  font-size:1rem;
+}
+
+/* ---------- tables ---------- */
+.tbl-wrap{max-width:100%;overflow-x:auto;margin:1rem 0 1.75rem;}
+.tbl{border-collapse:collapse;font-size:.9rem;width:100%;}
+.tbl th,.tbl td{text-align:left;padding:.5rem .75rem;border-bottom:1px solid var(--rule);vertical-align:top;white-space:nowrap;}
+.tbl td.wrap{white-space:normal;overflow-wrap:anywhere;min-width:14em;}
+.tbl thead th{
+  font-size:.72rem;
+  letter-spacing:.09em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--ink-soft);
+  border-bottom:1.5px solid var(--rule-strong);
+}
+.tbl td{font-variant-numeric:tabular-nums;}
+.tbl td.num{text-align:right;}
+.tbl caption{
+  caption-side:top;
+  text-align:left;
+  font-size:.78rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  font-weight:700;
+  color:var(--ink-soft);
+  padding-bottom:.6rem;
+}
+details{margin:.25rem 0 1.25rem;}
+details summary{cursor:pointer;color:var(--accent-ink);font-size:.9rem;font-weight:600;}
+
+/* ---------- status badges: icon + label, never color alone ---------- */
+.sev{display:inline-block;white-space:nowrap;font-size:.78rem;font-weight:700;padding:.05rem .55rem;
+     border-radius:1rem;border:1.5px solid currentColor;margin:.1rem .3rem .1rem 0;background:var(--ground);}
+.sev-error{color:var(--critical);}
+.sev-warn{color:var(--serious);}
+.sev-info{color:var(--info);}
+.sev-ok{color:var(--good);}
+
+/* ---------- reviewer checklist ---------- */
+.checklist{list-style:none;padding-left:0;}
+.checklist li{padding-left:1.6rem;position:relative;}
+.checklist li::before{content:"\2610";position:absolute;left:0;color:var(--accent);font-weight:700;}
+
+/* ---------- figures ---------- */
+img{max-width:100%;height:auto;display:block;margin:1.25rem auto;}
+
+@media (max-width:640px){
+  body{padding:0 1rem 3.5rem;}
+  h1.title{font-size:1.85rem;}
+  h2{font-size:1.55rem;}
+  .concepts{padding:1.25rem 1.1rem;}
+  .concepts .kv{grid-template-columns:1fr;}
+  .concepts dt{margin-top:.4rem;}
+}
+</style></head><body><main>
+<h1 class="title index">Variable validation reports</h1>
+<h3 class="subtitle">21 variables &middot; filing evidence TY2009&ndash;2024 &middot; built 2026-09-23</h3>
+<h2>How to read these reports</h2>
+<p>Each report checks one concordance variable against how its xpaths are actually used in e-filed returns: which xpaths carry values in which years, whether the values look like the variable&rsquo;s data type, and whether pooled xpaths agree. <strong>Errors</strong> are likely mapping mistakes; <strong>warnings</strong> need a reviewer&rsquo;s judgement; <strong>info</strong> lines are context.</p>
+<h2>Reports</h2>
+<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Variable</th><th>Report type</th><th>Label</th><th>Table</th><th>Flags</th></tr></thead><tbody>
+<tr><td><a href="F9_01_REV_TOT_CY.html">F9_01_REV_TOT_CY</a></td><td>amount</td><td class="wrap">Total revenue - current year</td><td>F9-P01-T00-SUMMARY</td><td>  <span class="sev sev-info">&#9432; info 2</span></td></tr>
+<tr><td><a href="F9_10_LIAB_TOT_BOY.html">F9_10_LIAB_TOT_BOY</a></td><td>amount</td><td class="wrap">Total liabilities - beginning of year</td><td>F9-P10-T00-BALANCE-SHEET</td><td>  <span class="sev sev-info">&#9432; info 3</span></td></tr>
+<tr><td><a href="SD_12_RECO_EXP_ADD_L4AB.html">SD_12_RECO_EXP_ADD_L4AB</a></td><td>amount</td><td class="wrap">Investment expenses not included on Form 990 Part 8 line 7b plus other amounts included on Form 990 Part 9 line 25 but not line 1</td><td>SD-P12-T00-RECONCILIATION-EXPENSES</td><td><span class="sev sev-error">&#9888; error 4</span>  <span class="sev sev-info">&#9432; info 1</span></td></tr>
+<tr><td><a href="F9_04_GAMING_X.html">F9_04_GAMING_X</a></td><td>checkbox</td><td class="wrap">Reported more than $15,000 gross income and contributions from gaming activity [x]</td><td>F9-P04-T00-REQUIRED-SCHEDULES</td><td>  <span class="sev sev-info">&#9432; info 2</span></td></tr>
+<tr><td><a href="F9_04_SCHED_B_REQ_X.html">F9_04_SCHED_B_REQ_X</a></td><td>checkbox</td><td class="wrap">Required to complete Schedule B [x]</td><td>F9-P04-T00-REQUIRED-SCHEDULES</td><td><span class="sev sev-error">&#9888; error 3</span> <span class="sev sev-warn">&#9650; warn 1</span> <span class="sev sev-info">&#9432; info 2</span></td></tr>
+<tr><td><a href="F9_05_170C_FUNDS_FOR_PREMIUM_X.html">F9_05_170C_FUNDS_FOR_PREMIUM_X</a></td><td>checkbox</td><td class="wrap">Received funds to pay premiums on a personal benefit contract [x]</td><td>F9-P05-T00-OTHER-IRS-FILING</td><td><span class="sev sev-error">&#9888; error 2</span> <span class="sev sev-warn">&#9650; warn 1</span> <span class="sev sev-info">&#9432; info 1</span></td></tr>
+<tr><td><a href="F9_06_DISCLOSURE_STATES_FILED.html">F9_06_DISCLOSURE_STATES_FILED</a></td><td>code</td><td class="wrap">States where required to file Form 990</td><td>F9-P06-T00-GOVERNANCE</td><td> <span class="sev sev-warn">&#9650; warn 5</span> <span class="sev sev-info">&#9432; info 1</span></td></tr>
+<tr><td><a href="SN_02_DOA_RECIP_ADDR_CNTR.html">SN_02_DOA_RECIP_ADDR_CNTR</a></td><td>code</td><td class="wrap">Recipient country</td><td>SN-P02-T01-DISPOSITION-OF-ASSETS</td><td>  <span class="sev sev-info">&#9432; info 3</span></td></tr>
+<tr><td><a href="SR_02_RLTD_ORG_DMCL_STATE.html">SR_02_RLTD_ORG_DMCL_STATE</a></td><td>code</td><td class="wrap">Legal domicile (state)</td><td>SR-P02-T01-ID-RLTD-TAX-EXEMPED-ORGS</td><td>  <span class="sev sev-info">&#9432; info 2</span></td></tr>
+<tr><td><a href="F9_00_YEAR_FORMATION.html">F9_00_YEAR_FORMATION</a></td><td>date</td><td class="wrap">Year of formation</td><td>F9-P00-T00-HEADER</td><td>  <span class="sev sev-info">&#9432; info 1</span></td></tr>
+<tr><td><a href="F9_02_SIGNING_OFF_SIGNTR_DATE.html">F9_02_SIGNING_OFF_SIGNTR_DATE</a></td><td>date</td><td class="wrap">Signing officer signature date</td><td>F9-P02-T00-SIGNATURE</td><td>  </td></tr>
+<tr><td><a href="SK_01_BOND_ISSUE_DATE.html">SK_01_BOND_ISSUE_DATE</a></td><td>date</td><td class="wrap">Date issued</td><td>SK-P01-T01-BOND-ISSUES</td><td>  <span class="sev sev-info">&#9432; info 2</span></td></tr>
+<tr><td><a href="F9_00_ORG_EIN.html">F9_00_ORG_EIN</a></td><td>identifier</td><td class="wrap">EIN</td><td>F9-P00-T00-HEADER</td><td>  </td></tr>
+<tr><td><a href="F9_00_PRIN_OFF_ADDR_ZIP.html">F9_00_PRIN_OFF_ADDR_ZIP</a></td><td>identifier</td><td class="wrap">Principal officer zip</td><td>F9-P00-T00-HEADER</td><td>  <span class="sev sev-info">&#9432; info 2</span></td></tr>
+<tr><td><a href="F9_02_PREP_PERS_PTIN.html">F9_02_PREP_PERS_PTIN</a></td><td>identifier</td><td class="wrap">Preparer PTIN</td><td>F9-P02-T00-SIGNATURE</td><td> <span class="sev sev-warn">&#9650; warn 4</span> </td></tr>
+<tr><td><a href="F9_01_ACT_GVRN_EMPL_TOT.html">F9_01_ACT_GVRN_EMPL_TOT</a></td><td>number</td><td class="wrap">Total number of employees</td><td>F9-P01-T00-SUMMARY</td><td>  <span class="sev sev-info">&#9432; info 1</span></td></tr>
+<tr><td><a href="SH_05_HOSPITAL_NUM.html">SH_05_HOSPITAL_NUM</a></td><td>number</td><td class="wrap">Number of hospital facilities the organization operated</td><td>SH-P05-T00-FAP-COMMUNITY-BENEFIT-POLICY</td><td><span class="sev sev-error">&#9888; error 1</span> <span class="sev sev-warn">&#9650; warn 2</span> </td></tr>
+<tr><td><a href="SR_04_RLTD_ORG_CORP_PCT_OWN.html">SR_04_RLTD_ORG_CORP_PCT_OWN</a></td><td>number</td><td class="wrap">Percentage ownership</td><td>SR-P04-T01-ID-RLTD-ORGS-TAXABLE-CORPORATION</td><td>  <span class="sev sev-info">&#9432; info 2</span></td></tr>
+<tr><td><a href="F9_03_ORG_MISSION_PURPOSE.html">F9_03_ORG_MISSION_PURPOSE</a></td><td>text</td><td class="wrap">Organization mission</td><td>F9-P03-T00-MISSION</td><td>  <span class="sev sev-info">&#9432; info 4</span></td></tr>
+<tr><td><a href="F9_03_PROG_DESC.html">F9_03_PROG_DESC</a></td><td>text</td><td class="wrap">Program service accomplishment</td><td>F9-P03-T00-PROGRAM-ONE</td><td><span class="sev sev-error">&#9888; error 1</span> <span class="sev sev-warn">&#9650; warn 4</span> <span class="sev sev-info">&#9432; info 12</span></td></tr>
+<tr><td><a href="SK_01_BOND_ISSUE_PURPOSE_DESC.html">SK_01_BOND_ISSUE_PURPOSE_DESC</a></td><td>text</td><td class="wrap">Description of purpose</td><td>SK-P01-T01-BOND-ISSUES</td><td>  <span class="sev sev-info">&#9432; info 2</span></td></tr>
+</tbody></table></div></main></body></html>

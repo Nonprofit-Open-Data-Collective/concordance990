@@ -7,20 +7,14 @@ top <- vals[, .(Filings = sum(n_filings)), by = .(series, value)]
 tot <- st[, .(total = sum(n_filings)), by = series]
 top <- merge(top, tot, by = "series")[, Share := Filings / total][order(series, -Filings)]
 
-checks <- list()
-add <- function(check, result, detail) checks[[length(checks) + 1]] <<- data.frame(check = check, result = result, detail = detail)
-pn <- wmean(st$p_num, st$n_occurrences)
-add("Values are text, not numbers", if (is.na(pn)) "info" else if (pn < 0.5) "pass" else "warn",
-    if (is.na(pn)) "no values" else sprintf("%.0f%% of values are numeric", 100 * pn))
+checks <- as.data.frame(value_checks(xp, st, ev$values[xpath %in% xp$xpath], ev$shapes[xpath %in% xp$xpath], rtype, skip_year = partial_year(ev$filings)))[, c("check", "result", "detail")]
 lead <- top[, .SD[1], by = series]
 worst <- if (nrow(lead)) lead[which.max(Share)] else NULL
-add("No dominant boilerplate value", if (is.null(worst) || worst$Share < 0.25) "pass" else "info",
-    if (is.null(worst)) "no values" else sprintf("most common value covers %.0f%% of filings: \"%s\"", 100 * worst$Share, substr(worst$value, 1, 60)))
-caps <- tl[, .(max_len = max(max_len)), by = series][max_len %in% c(35, 50, 70, 75, 100, 120, 250, 255, 500, 1000, 4000, 9000, 32000)]
-add("No sign of truncation", if (!nrow(caps)) "pass" else "info",
-    if (!nrow(caps)) "longest values do not sit at a common field limit"
-    else paste(sprintf("%s: longest value is exactly %d characters", caps$series, caps$max_len), collapse = "; "))
-check_table(do.call(rbind, checks))
+checks <- rbind(checks, data.frame(
+  check = "No dominant boilerplate value",
+  result = if (is.null(worst) || worst$Share < 0.25) "pass" else "info",
+  detail = if (is.null(worst)) "no values" else sprintf("most common value covers %.0f%% of filings: \"%s\"", 100 * worst$Share, substr(worst$value, 1, 60))))
+check_table(checks)
 ```
 
 ```{r text-plot, fig.height = 3.2}

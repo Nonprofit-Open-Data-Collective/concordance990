@@ -10,21 +10,12 @@ shp <- merge(ev$shapes[xpath %in% xp$xpath], sm, by = "xpath")
 shp[, ok := grepl(expected, shape)]
 conf <- shp[, .(share_ok = sum(n_filings[ok]) / sum(n_filings), n = sum(n_filings)), by = .(tax_year, series)]
 
-checks <- list()
-add <- function(check, result, detail) checks[[length(checks) + 1]] <<- data.frame(check = check, result = result, detail = detail)
-so <- shp[, sum(n_filings[ok]) / max(sum(n_filings), 1)]
-add(sprintf("Values have the %s format", kind), if (so >= 0.98) "pass" else if (so >= 0.9) "warn" else "fail",
-    sprintf("%.1f%% of values match %s", 100 * so, expected))
-dts <- unique(na.omit(xp$data_type_simple))
-add("Stored as text", if (all(dts == "text")) "pass" else "fail",
-    if (all(dts == "text")) "data type is text" else sprintf("data type is %s: leading zeros and letters would be lost", paste(dts, collapse = ", ")))
+checks <- as.data.frame(value_checks(xp, st, ev$values[xpath %in% xp$xpath], ev$shapes[xpath %in% xp$xpath], rtype, skip_year = partial_year(ev$filings)))[, c("check", "result", "detail")]
 lz <- st[!is.na(q01) & q01 < 10^(nchar(gsub("[^9]", "", sub("^\\^", "", expected))) - 1), .N] > 0
-add("Leading zeros present", if (lz) "info" else "pass",
-    if (lz) "at least 1% of values start with 0 in some year, so numeric storage would change them" else "no evidence of leading zeros")
-ph <- ev$values[xpath %in% xp$xpath & grepl("^(0+|9+|1+|123456789)$", value), sum(n_filings)]
-add("No placeholder values", if (ph == 0) "pass" else "warn",
-    if (ph == 0) "no all-zero / all-nine placeholders among the most common values" else sprintf("%s filings use a placeholder such as 000000000", fmt_n(ph)))
-check_table(do.call(rbind, checks))
+checks <- rbind(checks, data.frame(
+  check = "Leading zeros present", result = if (lz) "info" else "pass",
+  detail = if (lz) "at least 1% of values start with 0 in some year, so numeric storage would change them" else "no evidence of leading zeros"))
+check_table(checks)
 ```
 
 ```{r identifier-plot, fig.height = 3.2}

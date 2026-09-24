@@ -1,18 +1,9 @@
 ```{r number-setup}
 source(file.path(template_dir, "_numeric-common.R"), local = TRUE)
 by_year <- numeric_by_year(st)
-checks <- numeric_checks(st, copy(by_year))
-# ratio / percent scale: a fraction (0-1) and a percentage (0-100) must not be pooled
+check_table(value_checks(xp, st, ev$values[xpath %in% xp$xpath], ev$shapes[xpath %in% xp$xpath], rtype, skip_year = partial_year(ev$filings)))
 sc <- st[!is.na(q99), .(p99 = stats::median(q99), n = sum(n_filings)), by = series][n >= 30]
 sc[, scale := fifelse(p99 <= 1, "fraction (0-1)", fifelse(p99 <= 100, "percent or small count", "large count or amount"))]
-checks <- rbind(checks, data.frame(
-  check = "One scale across xpaths",
-  result = if (uniqueN(sc$scale) <= 1) "pass" else "fail",
-  detail = if (nrow(sc)) paste(sprintf("%s: %s", sc$series, sc$scale), collapse = "; ") else "no values"))
-frac <- st[!is.na(q50), sum(n_filings[q50 %% 1 != 0])] / max(sum(st$n_filings), 1)
-checks <- rbind(checks, data.frame(check = "Integer or decimal", result = "info",
-                                   detail = sprintf("%.0f%% of filings are in strata with a fractional median", 100 * frac)))
-check_table(checks)
 ```
 
 ```{r number-plot, fig.height = 3.8}

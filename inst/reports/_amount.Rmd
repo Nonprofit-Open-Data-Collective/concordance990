@@ -1,13 +1,7 @@
 ```{r amount-setup}
 source(file.path(template_dir, "_numeric-common.R"), local = TRUE)
 by_year <- numeric_by_year(st)
-checks <- numeric_checks(st, copy(by_year))
-neg <- wmean(st$p_negative, st$n_occurrences)
-checks <- rbind(checks, data.frame(
-  check = "Sign convention",
-  result = if (is.na(neg)) "info" else if (neg < 0.001) "pass" else "info",
-  detail = if (is.na(neg)) "no values" else sprintf("%.2f%% of values are negative (fine for net amounts, suspicious for gross amounts)", 100 * neg)))
-check_table(checks)
+check_table(value_checks(xp, st, ev$values[xpath %in% xp$xpath], ev$shapes[xpath %in% xp$xpath], rtype, skip_year = partial_year(ev$filings)))
 ```
 
 ```{r amount-plot, fig.height = 3.8}
