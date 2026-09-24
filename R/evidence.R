@@ -32,16 +32,22 @@
 #' @param temp_dir DuckDB spill directory.
 #' @param memory_limit DuckDB memory limit, e.g. `"64GB"`.
 #' @param overwrite Rebuild years whose output already exists.
+#' @param db_paths Optional named vector of database paths or `https://` URLs,
+#'   one per year (names are the years), used instead of `base_path`. A
+#'   remote database is read over HTTP with DuckDB's httpfs extension, and its
+#'   rows are copied into a temporary table once so the file is only scanned
+#'   once.
 #'
 #' @return Invisibly, a data frame of per-year timings.
 #' @export
 build_evidence <- function(years,
-                           base_path,
+                           base_path = NULL,
                            out_dir = "evidence",
                            concordance,
                            temp_dir = tempdir(),
                            memory_limit = "64GB",
-                           overwrite = FALSE) {
+                           overwrite = FALSE,
+                           db_paths = NULL) {
   if (!requireNamespace("DBI", quietly = TRUE) ||
       !requireNamespace("duckdb", quietly = TRUE)) {
     stop("Packages 'DBI' and 'duckdb' are required for build_evidence().")
@@ -55,7 +61,9 @@ build_evidence <- function(years,
       next
     }
     t0 <- Sys.time()
-    evidence_year(yr, base_path, ydir, concordance, temp_dir, memory_limit)
+    db_path <- if (!is.null(db_paths)) db_paths[[as.character(yr)]] else
+      file.path(base_path, yr, paste0("EFILE", yr, ".duckdb"))
+    evidence_year(yr, db_path, ydir, concordance, temp_dir, memory_limit)
     secs <- round(as.numeric(difftime(Sys.time(), t0, units = "secs")))
     message("TY", yr, ": done in ", secs, "s")
     log[[i]] <- data.frame(tax_year = yr, seconds = secs)
@@ -65,9 +73,9 @@ build_evidence <- function(years,
 
 
 #' @keywords internal
-evidence_year <- function(year, base_path, ydir, concordance, temp_dir, memory_limit) {
-  db_path <- file.path(base_path, year, paste0("EFILE", year, ".duckdb"))
-  if (!file.exists(db_path)) stop("Database not found: ", db_path)
+evidence_year <- function(year, db_path, ydir, concordance, temp_dir, memory_limit) {
+  remote <- grepl("^https?://", db_path)
+  if (!remote && !file.exists(db_path)) stop("Database not found: ", db_path)
   dir.create(ydir, recursive = TRUE, showWarnings = FALSE)
   dir.create(temp_dir, recursive = TRUE, showWarnings = FALSE)
 
@@ -82,7 +90,13 @@ evidence_year <- function(year, base_path, ydir, concordance, temp_dir, memory_l
   run(sprintf("SET temp_directory = '%s'", normalizePath(temp_dir, winslash = "/")))
   run(sprintf("SET memory_limit = '%s'", memory_limit))
   run("SET preserve_insertion_order = false")
-  run(sprintf("ATTACH '%s' AS db (READ_ONLY)", normalizePath(db_path, winslash = "/")))
+  if (remote) {
+    run("INSTALL httpfs")
+    run("LOAD httpfs")
+    run(sprintf("ATTACH '%s' AS db (READ_ONLY)", db_path))
+  } else {
+    run(sprintf("ATTACH '%s' AS db (READ_ONLY)", normalizePath(db_path, winslash = "/")))
+  }
 
   map <- unique(data.frame(xpath = concordance$xpath,
                            variable_name = concordance$variable_name))
@@ -100,9 +114,11 @@ evidence_year <- function(year, base_path, ydir, concordance, temp_dir, memory_l
     GROUP BY OBJECTID")
 
   # Cleaned rows. repeat_root = the deepest indexed ([n]) ancestor-or-self,
-  # i.e. the repeating element the value sits in.
-  run("
-    CREATE TEMP VIEW f AS
+  # i.e. the repeating element the value sits in. For a remote database the
+  # rows are materialized once, so the queries below don't each re-read it
+  # over HTTP.
+  run(paste0("
+    CREATE TEMP ", if (remote) "TABLE" else "VIEW", " f AS
     SELECT OBJECTID,
            regexp_replace(XPATH2, '(irs|efile):', '', 'g')          AS xpath,
            TYPE                                                    AS node_type,
@@ -110,7 +126,7 @@ evidence_year <- function(year, base_path, ydir, concordance, temp_dir, memory_l
            regexp_replace(regexp_replace(regexp_extract(XPATH, '^(.*\\])', 1),
                           '\\[[0-9]+\\]', '', 'g'), '(irs|efile):', '', 'g') AS repeat_root,
            VALUE                                                   AS value
-    FROM db.FLATXML")
+    FROM db.FLATXML"))
 
   run("
     CREATE TEMP TABLE pf AS

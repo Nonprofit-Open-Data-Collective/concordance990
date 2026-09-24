@@ -6,12 +6,13 @@
 \usage{
 build_evidence(
   years,
-  base_path,
+  base_path = NULL,
   out_dir = "evidence",
   concordance,
   temp_dir = tempdir(),
   memory_limit = "64GB",
-  overwrite = FALSE
+  overwrite = FALSE,
+  db_paths = NULL
 )
 }
 \arguments{
@@ -29,6 +30,12 @@ collisions.}
 \item{memory_limit}{DuckDB memory limit, e.g. \code{"64GB"}.}
 
 \item{overwrite}{Rebuild years whose output already exists.}
+
+\item{db_paths}{Optional named vector of database paths or \verb{https://} URLs,
+one per year (names are the years), used instead of \code{base_path}. A
+remote database is read over HTTP with DuckDB's httpfs extension, and its
+rows are copied into a temporary table once so the file is only scanned
+once.}
 }
 \value{
 Invisibly, a data frame of per-year timings.

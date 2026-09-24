@@ -136,12 +136,15 @@ flag_xpaths <- function(concordance, evidence_dir = "evidence", min_filings = 30
 
   brk <- vy[!is.na(prev_rate) & n > 0 & prev_n > 0 & pmax(n, prev_n) >= 100 &
               (rate / prev_rate > 3 | prev_rate / rate > 3)]
-  brk <- brk[, .(years = yrs(tax_year), n_filings = max(n),
-                 worst = max(pmax(rate / prev_rate, prev_rate / rate))),
-             by = .(variable_name, rdb_table, return_type)]
-  brk[, xpath := NA_character_]
-  add(brk, "INCIDENCE_BREAK", "warn",
-      quote(sprintf("%s fill rate changes up to %.1fx year-on-year (in %s)", return_type, worst, years)))
+  # needs at least two years of evidence
+  if (nrow(brk)) {
+    brk <- brk[, .(years = yrs(tax_year), n_filings = max(n),
+                   worst = max(pmax(rate / prev_rate, prev_rate / rate))),
+               by = .(variable_name, rdb_table, return_type)]
+    brk[, xpath := NA_character_]
+    add(brk, "INCIDENCE_BREAK", "warn",
+        quote(sprintf("%s fill rate changes up to %.1fx year-on-year (in %s)", return_type, worst, years)))
+  }
 
   # --- scale: medians of a numeric variable's xpaths, within return type -----
   med <- merge(st[!is.na(q50), .(q50 = stats::median(q50), n = sum(n_filings)), by = .(xpath, return_type)],
