@@ -1,0 +1,50 @@
+```{r text-setup}
+tl <- st[, .(avg_len = wmean(avg_len, n_occurrences), max_len = max_na(max_len),
+             n_distinct = max_na(n_distinct), n = sum(n_filings),
+             p_num = wmean(p_num, n_occurrences)), by = .(tax_year, series)]
+vals <- merge(ev$values[xpath %in% xp$xpath], sm, by = "xpath")
+top <- vals[, .(Filings = sum(n_filings)), by = .(series, value)]
+tot <- st[, .(total = sum(n_filings)), by = series]
+top <- merge(top, tot, by = "series")[, Share := Filings / total][order(series, -Filings)]
+
+checks <- list()
+add <- function(check, result, detail) checks[[length(checks) + 1]] <<- data.frame(check = check, result = result, detail = detail)
+pn <- wmean(st$p_num, st$n_occurrences)
+add("Values are text, not numbers", if (is.na(pn)) "info" else if (pn < 0.5) "pass" else "warn",
+    if (is.na(pn)) "no values" else sprintf("%.0f%% of values are numeric", 100 * pn))
+lead <- top[, .SD[1], by = series]
+worst <- if (nrow(lead)) lead[which.max(Share)] else NULL
+add("No dominant boilerplate value", if (is.null(worst) || worst$Share < 0.25) "pass" else "info",
+    if (is.null(worst)) "no values" else sprintf("most common value covers %.0f%% of filings: \"%s\"", 100 * worst$Share, substr(worst$value, 1, 60)))
+caps <- tl[, .(max_len = max(max_len)), by = series][max_len %in% c(35, 50, 70, 75, 100, 120, 250, 255, 500, 1000, 4000, 9000, 32000)]
+add("No sign of truncation", if (!nrow(caps)) "pass" else "info",
+    if (!nrow(caps)) "longest values do not sit at a common field limit"
+    else paste(sprintf("%s: longest value is exactly %d characters", caps$series, caps$max_len), collapse = "; "))
+check_table(do.call(rbind, checks))
+```
+
+```{r text-plot, fig.height = 3.2}
+if (nrow(tl)) {
+  p <- ggplot(tl, aes(tax_year, avg_len, colour = series)) +
+    geom_line(linewidth = 0.9) + geom_point(size = 1.8) +
+    scale_series("colour") +
+    scale_x_continuous(breaks = seq(2009, 2024, 3)) +
+    scale_y_continuous(limits = c(0, NA)) +
+    labs(title = "Average length of the text (characters)", x = NULL, y = NULL) +
+    theme_report()
+  print(p)
+  html_table(tl[order(series, tax_year), .(Series = series, `Tax year` = tax_year, Filings = n, `Avg length` = avg_len,
+                                           `Max length` = max_len, `Distinct values (approx.)` = n_distinct)],
+             caption = "Table view: length and variety by tax year", collapse = TRUE, digits = 0)
+}
+```
+
+```{r text-values}
+html_table(top[, .(Series = series, Value = substr(value, 1, 100), Filings, Share = sprintf("%.1f%%", 100 * Share))],
+           caption = "Most common values by xpath (all years; long values truncated)", max_rows = 30)
+checklist <- c(
+  "Values answer the question on the form line (not another line's explanation).",
+  "Boilerplate such as 'See Schedule O' or 'N/A' is expected here, or should be treated as missing.",
+  "Text that is really a number or a code is flagged for a different data type."
+)
+```

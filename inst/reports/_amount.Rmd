@@ -1,0 +1,30 @@
+```{r amount-setup}
+source(file.path(template_dir, "_numeric-common.R"), local = TRUE)
+by_year <- numeric_by_year(st)
+checks <- numeric_checks(st, copy(by_year))
+neg <- wmean(st$p_negative, st$n_occurrences)
+checks <- rbind(checks, data.frame(
+  check = "Sign convention",
+  result = if (is.na(neg)) "info" else if (neg < 0.001) "pass" else "info",
+  detail = if (is.na(neg)) "no values" else sprintf("%.2f%% of values are negative (fine for net amounts, suspicious for gross amounts)", 100 * neg)))
+check_table(checks)
+```
+
+```{r amount-plot, fig.height = 3.8}
+if (nrow(by_year)) {
+  print(numeric_plot(copy(by_year), log_scale = TRUE, title = "Typical value by tax year", ylab = "Dollars (log scale)"))
+  html_table(by_year[order(series, return_type, tax_year), .(Series = series, Return = return_type, `Tax year` = tax_year,
+                                                             Filings = n, P25 = q25, Median = q50, P75 = q75)],
+             caption = "Table view: quartiles by tax year", collapse = TRUE)
+}
+```
+
+```{r amount-summary}
+html_table(numeric_summary(st), caption = "Summary by xpath and return type (all years)", digits = 1)
+checklist <- c(
+  "Values are whole dollars, not thousands, and not a percentage.",
+  "Current year / prior year and beginning / end of year match the variable name (CY, PY, BOY, EOY).",
+  "Negative values are expected only for net amounts (gains, net income, fund balances).",
+  "The 990 and 990-EZ medians differ only as much as the filer populations do."
+)
+```

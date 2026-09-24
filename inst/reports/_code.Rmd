@@ -1,0 +1,43 @@
+```{r code-setup}
+vals <- merge(ev$values[xpath %in% xp$xpath], sm, by = "xpath")
+freq <- vals[, .(n = sum(n_filings)), by = .(value)][order(-n)]
+top_codes <- head(freq$value, 7)
+cy <- vals[, .(n = sum(n_filings)), by = .(tax_year, code = fifelse(value %in% top_codes, value, "Other"))]
+cy[, share := n / sum(n), by = tax_year]
+cy[, code := factor(code, levels = c(top_codes, "Other"))]
+nd <- st[, .(n_distinct = max_na(n_distinct)), by = series]
+shp <- ev$shapes[xpath %in% xp$xpath, .(n = sum(n_filings)), by = shape][order(-n)]
+
+checks <- list()
+add <- function(check, result, detail) checks[[length(checks) + 1]] <<- data.frame(check = check, result = result, detail = detail)
+add("Small code list", if (max(nd$n_distinct, 0) <= 100) "pass" else "warn",
+    sprintf("up to %s distinct values per xpath and year", max(nd$n_distinct, 0)))
+share_shape <- if (nrow(shp)) shp$n[1] / sum(shp$n) else NA
+add("Codes share one format", if (is.na(share_shape)) "info" else if (share_shape >= 0.95) "pass" else "warn",
+    if (is.na(share_shape)) "no values" else sprintf("%.0f%% have the shape %s", 100 * share_shape, shp$shape[1]))
+lower <- freq[grepl("[a-z]", value) & !grepl("[A-Z]", value), sum(n)] / max(sum(freq$n), 1)
+add("Consistent letter case", if (lower < 0.01) "pass" else "warn", sprintf("%.1f%% of values are lower case", 100 * lower))
+check_table(do.call(rbind, checks))
+```
+
+```{r code-plot, fig.height = 3.4}
+if (nrow(cy)) {
+  cols <- c(report_palette[seq_along(top_codes)], report_ink$other)
+  names(cols) <- c(top_codes, "Other")
+  p <- ggplot(cy, aes(tax_year, share, fill = code)) +
+    geom_col(width = 0.72, colour = report_ink$surface, linewidth = 0.4) +
+    scale_fill_manual(values = cols) +
+    scale_x_continuous(breaks = seq(2009, 2024, 3)) +
+    scale_y_continuous(labels = scales::label_percent()) +
+    labs(title = "Most common codes by tax year", subtitle = "Top 7 codes overall; everything else is 'Other'", x = NULL, y = "Share of filings") +
+    theme_report()
+  print(p)
+  html_table(dcast(cy, tax_year ~ code, value.var = "n", fill = 0), caption = "Table view: filings by code and tax year", collapse = TRUE)
+}
+html_table(freq[, .(Code = value, Filings = n, Share = sprintf("%.1f%%", 100 * n / sum(n)))], caption = "Code frequencies (all xpaths, all years)", max_rows = 30)
+checklist <- c(
+  "Every code is valid for the list the form uses (state, country, valuation method, ...).",
+  "The code list and its meaning did not change across schema versions.",
+  "Codes are stored as text, so values like leading zeros are preserved."
+)
+```

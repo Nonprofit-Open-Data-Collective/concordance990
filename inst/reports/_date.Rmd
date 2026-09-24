@@ -1,0 +1,56 @@
+```{r date-setup}
+shp <- merge(ev$shapes[xpath %in% xp$xpath], sm, by = "xpath")
+fmt <- shp[, .(n = sum(n_filings)), by = .(series, shape)]
+fmt[, share := n / sum(n), by = series]
+fmt[, format := fcase(shape == "9999-99-99", "date (YYYY-MM-DD)",
+                      grepl("^9999-99-99A99:99:99", shape), "timestamp",
+                      shape == "9999", "year (YYYY)",
+                      default = "other")]
+
+rng <- st[, .(min_value = min(min_value, na.rm = TRUE), max_value = max(max_value, na.rm = TRUE),
+              n = sum(n_filings), p_date = wmean(p_date, n_occurrences)), by = .(tax_year, series)]
+rng[, `:=`(min_year = suppressWarnings(as.integer(substr(min_value, 1, 4))),
+           max_year = suppressWarnings(as.integer(substr(max_value, 1, 4))))]
+
+checks <- list()
+add <- function(check, result, detail) checks[[length(checks) + 1]] <<- data.frame(check = check, result = result, detail = detail)
+main_fmt <- fmt[, .(n = sum(n)), by = format][order(-n)]
+share_main <- if (nrow(main_fmt)) main_fmt$n[1] / sum(main_fmt$n) else NA
+add("One date format", if (is.na(share_main)) "info" else if (share_main >= 0.99) "pass" else "warn",
+    if (is.na(share_main)) "no values" else sprintf("%.1f%% use %s", 100 * share_main, main_fmt$format[1]))
+# Earliest/latest values are single extremes, so these are informational:
+# a mapping problem shows up in the format and parse checks instead.
+future <- rng[!is.na(max_year) & max_year > tax_year + 3]
+add("Dates after the tax year", if (!nrow(future)) "pass" else "info",
+    if (!nrow(future)) "latest date is within 3 years of the tax year in every year"
+    else sprintf("%d of %d tax years contain a date more than 3 years later (e.g. TY%d: %s)",
+                 nrow(future), nrow(rng), future$tax_year[1], future$max_value[1]))
+old <- rng[!is.na(min_year) & min_year < 1900]
+add("Dates before 1900", if (!nrow(old)) "pass" else "info",
+    if (!nrow(old)) "no dates before 1900"
+    else sprintf("%d of %d tax years contain a date before 1900 (e.g. %s)", nrow(old), nrow(rng), old$min_value[1]))
+check_table(do.call(rbind, checks))
+```
+
+```{r date-plot, fig.height = 3.2}
+if (nrow(rng)) {
+  p <- ggplot(rng, aes(tax_year, p_date, colour = series)) +
+    geom_line(linewidth = 0.9) + geom_point(size = 1.8) +
+    scale_series("colour") +
+    scale_x_continuous(breaks = seq(2009, 2024, 3)) +
+    scale_y_continuous(labels = scales::label_percent(), limits = c(0, 1)) +
+    labs(title = "Share of values that parse as a calendar date", subtitle = "Years (YYYY) and timestamps do not parse as dates; see the format table",
+         x = NULL, y = NULL) +
+    theme_report()
+  print(p)
+}
+html_table(fmt[order(series, -n), .(Series = series, Shape = shape, Format = format, Filings = n, Share = sprintf("%.1f%%", 100 * share))],
+           caption = "Formats (value shapes: 9 = digit, A = letter)")
+html_table(rng[order(series, tax_year), .(Series = series, `Tax year` = tax_year, Filings = n, Earliest = min_value, Latest = max_value)],
+           caption = "Earliest and latest value by tax year", collapse = TRUE)
+checklist <- c(
+  "The format is consistent (date, year or timestamp) and matches the data type.",
+  "The date is on the expected side of the tax period (e.g. signature date after the period ends, formation year before it).",
+  "Extreme earliest/latest values are data-entry errors, not a mapping problem."
+)
+```

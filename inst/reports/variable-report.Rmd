@@ -1,0 +1,203 @@
+---
+title: "`r params$variable`"
+subtitle: "`r params$subtitle`"
+params:
+  variable: "F9_01_REV_TOT_CY"
+  report_type: "amount"
+  subtitle: "Total revenue - current year · Amount report"
+output:
+  html_document:
+    theme: null
+    highlight: null
+    toc: true
+    toc_depth: 2
+    css: report.css
+    self_contained: true
+    mathjax: null
+    md_extensions: "-tex_math_dollars-native_divs"
+---
+
+<!-- Web fonts load at view time; data-external keeps them out of the self-contained file -->
+<link rel="stylesheet" data-external="1" href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap">
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE, results = "asis",
+                      fig.width = 9.5, fig.height = 3.6, dpi = 110, dev = "png")
+library(data.table)
+library(ggplot2)
+
+v     <- params$variable
+rtype <- params$report_type
+xp    <- cc[variable_name == v]
+xp[, form := xpath_form(xpath)]
+
+st <- ev$stats[xpath %in% xp$xpath]
+den <- ev$filings[, .(den = sum(n_filings)), by = .(tax_year, return_type)]
+
+xs <- st[, .(n_filings = sum(n_filings), first_year = min(tax_year), last_year = max(tax_year),
+             n_versions = uniqueN(schema_version), n_repeat = sum(n_filings_repeat),
+             max_per_filing = max(max_per_filing)), by = xpath]
+xp <- merge(xp, xs, by = "xpath", all.x = TRUE)
+xp[is.na(n_filings), n_filings := 0]
+sm <- series_map(xp$xpath, xp$n_filings, fifelse(is.na(xp$first_year), 9999L, as.integer(xp$first_year)))
+xp <- merge(xp, sm, by = "xpath")
+st <- merge(st, sm, by = "xpath")
+pal <- setNames(unique(sm[, .(series, color)])$color, unique(sm[, .(series, color)])$series)
+scale_series <- function(aes = c("colour", "fill")) {
+  scale_discrete_manual(aes, values = pal, drop = TRUE, guide = guide_legend(ncol = 1))
+}
+
+flags <- if (nrow(ev$flags)) ev$flags[variable_name == v | xpath %in% xp$xpath] else data.table()
+fmt_n <- function(x) formatC(x, format = "d", big.mark = ",")
+years_observed <- if (nrow(st)) paste0(min(st$tax_year), "&ndash;", max(st$tax_year)) else "never observed"
+type_label <- c(amount = "Amount (dollars)", number = "Number (count, ratio or percent)",
+                checkbox = "Checkbox", date = "Date or year", text = "Free text",
+                code = "Code (categorical)", identifier = "Identifier")[[rtype]]
+```
+
+## Overview
+
+```{r overview}
+fam <- cc[location_code_family == xp$location_code_family[1], unique(variable_name)]
+fam <- setdiff(fam, v)
+kv <- c(
+  "Description"   = htmltools::htmlEscape(unique(na.omit(xp$description))[1]),
+  "Table"         = sprintf("<code>%s</code> (%s)", xp$rdb_table[1], tolower(xp$rdb_relationship[1])),
+  "Location code" = sprintf("<code>%s</code>", paste(unique(xp$location_code), collapse = "</code>, <code>")),
+  "Family"        = sprintf("<code>%s</code>%s", xp$location_code_family[1],
+                            if (length(fam)) paste0(" &middot; siblings: ", paste(head(fam, 6), collapse = ", ")) else ""),
+  "Data type"     = sprintf("%s (xsd: %s)", xp$data_type_simple[1],
+                            paste(unique(na.omit(xp$data_type_xsd)), collapse = ", ")),
+  "Scope"         = paste(unique(xp$variable_scope), collapse = ", "),
+  "Status"        = "unreviewed"
+)
+cat('<div class="concepts"><dl class="kv">',
+    paste0("<dt>", names(kv), "</dt><dd>", kv, "</dd>", collapse = "\n"), "</dl></div>")
+
+n_fil <- sum(xp$n_filings)
+cat('<div class="tiles">',
+    sprintf('<div class="tile"><div class="v">%s</div><div class="k">xpaths mapped (%d observed)</div></div>',
+            nrow(xp), sum(xp$n_filings > 0)),
+    sprintf('<div class="tile"><div class="v">%s</div><div class="k">filings with a value</div></div>', fmt_n(n_fil)),
+    sprintf('<div class="tile"><div class="v">%s</div><div class="k">tax years observed</div></div>', years_observed),
+    sprintf('<div class="tile"><div class="v">%d</div><div class="k">open flags (%d errors)</div></div>',
+            nrow(flags), sum(flags$severity == "error")),
+    '</div>')
+```
+
+## Flags
+
+```{r flags}
+if (!nrow(flags)) {
+  cat("<p>No open flags.</p>")
+} else {
+  sev_lab <- c(error = "&#9888; error", warn = "&#9650; warn", info = "&#9432; info")
+  rows <- sprintf('<tr><td><span class="sev sev-%s">%s</span></td><td><code>%s</code></td><td class="wrap">%s</td><td class="wrap">%s</td></tr>',
+                  flags$severity, sev_lab[flags$severity], flags$flag_code,
+                  htmltools::htmlEscape(ifelse(is.na(flags$xpath), "(variable)", short_xpath(flags$xpath))),
+                  htmltools::htmlEscape(one_line(flags$detail)))
+  cat('<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Severity</th><th>Flag</th><th>Xpath</th><th>Detail</th></tr></thead><tbody>',
+      rows, "</tbody></table></div>", sep = "\n")
+}
+```
+
+## Xpaths
+
+```{r xpaths}
+tab <- xp[order(series), .(Xpath = short_xpath(xpath), Form = form,
+                           `Chart label` = fifelse(as.character(series) == short_xpath(xpath), "same", as.character(series)),
+                           `First year` = first_year, `Last year` = last_year, Versions = n_versions,
+                           Filings = n_filings,
+                           `Repeats in` = fifelse(n_filings > 0, sprintf("%.1f%%", 100 * n_repeat / pmax(n_filings, 1)), ""))]
+if (all(tab$`Chart label` == "same")) tab[, `Chart label` := NULL]
+html_table(tab, caption = "All mapped xpaths (under /Return/ReturnData or /Return/ReturnHeader), oldest first. Charts label each series by its xpath.")
+```
+
+## Coverage
+
+```{r coverage, fig.height = 3.4}
+if (nrow(st)) {
+  by_year <- st[, .(n = sum(n_filings)), by = .(tax_year, series)]
+  p <- ggplot(by_year, aes(tax_year, n, fill = series)) +
+    geom_col(width = 0.72, colour = report_ink$surface, linewidth = 0.4) +
+    scale_series("fill") +
+    scale_x_continuous(breaks = seq(2009, 2024, 3)) +
+    scale_y_continuous(labels = scales::label_comma()) +
+    labs(title = "Filings with a value, by tax year and xpath",
+         subtitle = "The switch between xpaths shows where the schema renamed the element",
+         x = NULL, y = "Filings") +
+    theme_report()
+  print(p)
+  html_table(dcast(by_year, tax_year ~ series, value.var = "n", fill = 0)[, `Tax year` := tax_year][, tax_year := NULL][] |>
+               setcolorder("Tax year"), caption = "Table view: filings by tax year and series", collapse = TRUE)
+} else cat("<p>This variable was never observed in TY2009&ndash;2024 filings.</p>")
+```
+
+```{r fillrate, fig.height = 3.2}
+if (nrow(st)) {
+  fr <- st[return_type %in% c("990", "990EZ"), .(n = sum(n_filings)), by = .(tax_year, return_type)]
+  fr <- merge(fr, den, by = c("tax_year", "return_type"))
+  fr[, rate := n / den]
+  fr[, rt := factor(return_type, levels = c("990", "990EZ"), labels = c("Form 990", "Form 990-EZ"))]
+  p <- ggplot(fr, aes(tax_year, rate, colour = rt)) +
+    geom_line(linewidth = 0.9) + geom_point(size = 1.8) +
+    scale_colour_manual(values = report_palette[1:2], drop = TRUE) +
+    scale_x_continuous(breaks = seq(2009, 2024, 3)) +
+    scale_y_continuous(labels = scales::label_percent(accuracy = 0.1), limits = c(0, NA)) +
+    labs(title = "Share of filings with a value (fill rate), by return type", x = NULL, y = NULL) +
+    theme_report()
+  print(p)
+  html_table(fr[order(tax_year, rt), .(`Tax year` = tax_year, `Return type` = rt, Filings = n,
+                                        `All filings` = den, `Fill rate` = sprintf("%.2f%%", 100 * rate))],
+             caption = "Table view: fill rate", collapse = TRUE)
+}
+```
+
+```{r repeats}
+rep_x <- xp[n_repeat > 0]
+if (nrow(rep_x) || identical(xp$rdb_relationship[1], "MANY")) {
+  cat("## Repeating groups\n\n")
+  g <- ev$groups[xpath %in% xp$xpath, .(filings = sum(n_filings)), by = .(xpath, repeat_root)]
+  g <- g[, .(Xpath = short_xpath(xpath), `Repeating element` = fifelse(repeat_root == "", "(none)", short_xpath(repeat_root)),
+             `Filings (summed over years)` = filings)]
+  cat(sprintf("<p>Table cardinality in the concordance: <b>%s</b>. %d of %d observed xpaths repeat within a filing.</p>",
+              tolower(xp$rdb_relationship[1]), nrow(rep_x), sum(xp$n_filings > 0)))
+  html_table(g, caption = "Repeating element each xpath was observed in (from the raw indexed xpath)")
+}
+```
+
+## Values
+
+```{r values}
+child <- file.path(template_dir, sprintf("_%s.Rmd", rtype))
+cat(knitr::knit_child(child, envir = environment(), quiet = TRUE))
+```
+
+## Examples
+
+```{r examples}
+ex <- ev$examples[xpath %in% xp$xpath]
+if (nrow(ex)) {
+  ex <- ex[order(-tax_year)][, .SD[1], by = .(xpath, tax_year)]
+  ex <- ex[order(-tax_year)][seq_len(min(.N, 12))]
+  rows <- sprintf("<tr><td class='num'>%s</td><td>%s</td><td class='wrap'>%s</td><td class='wrap'>%s</td><td class='wrap'>%s</td><td><a href='%s'>XML</a></td></tr>",
+                  ex$tax_year, ex$return_type, htmltools::htmlEscape(short_xpath(ex$xpath)),
+                  htmltools::htmlEscape(one_line(ex$org_name)), htmltools::htmlEscape(one_line(ex$value)), xml_url(ex$objectid))
+  cat('<div class="tbl-wrap"><table class="tbl"><thead><tr><th>Tax year</th><th>Return</th><th>Xpath</th><th>Organization</th><th>Value</th><th>Source</th></tr></thead><tbody>',
+      rows, "</tbody></table></div>", sep = "\n")
+} else cat("<p class='muted'>No examples.</p>")
+```
+
+## Reviewer checklist
+
+```{r checklist}
+common <- c(
+  "The definition matches the form line and instructions for every xpath's schema years.",
+  "Every xpath pooled here measures the same thing on the 990 and 990-EZ (close enough for analysis).",
+  "The coverage chart has no unexplained gaps or jumps between tax years.",
+  "Each open flag is fixed, or accepted with a note in validation_log.csv."
+)
+cat('<ul class="checklist">', paste0("<li>", c(common, checklist), "</li>"), "</ul>", sep = "\n")
+cat(sprintf("<p class='muted'>Record the review as a row in <code>inst/extdata/src/validation_log.csv</code> (variable_name, reviewer, date, status, note). Evidence built %s from the ef2 DuckDB builds, TY2009&ndash;2024.</p>",
+            htmltools::htmlEscape(ev$manifest$built %||% "(unknown)")))
+```

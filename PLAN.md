@@ -28,6 +28,9 @@ for version 2.0, delivered as the R package **concordance990**.
 | D3 | **Source of truth = component CSVs in GitHub.** The build always also generates a single tidy spreadsheet approximating v1 `concordance.csv` (component tables joined into one row per xpath), as both CSV and XLSX. |
 | D4 | **Delivered as an R package** (`concordance990`). It contains the maintenance/build tooling *and* the latest built concordance, so partner packages can `Imports:` it and read tables directly. |
 | D5 | **Evidence comes from the ef2 DuckDB builds** (`EFILE_BUILD_SEPT_2026/<year>/EFILE<year>.duckdb`, TY2009–2024), joined to the *current* concordance on the cleaned xpath. The `RDB_TABLE`/`VARIABLE_NAME` columns stored in the DuckDB builds are ignored because they were fixed when each build ran. |
+| D6 | **A family is named after its anchor variable.** `family_id` = the name of the family's anchor variable (the 990 version, or the only variable). For the 94% of variables with no alternates, family_id equals the variable name. See section 4.1. |
+| D7 | **Scope for schedules is declared per part, then checked against filings.** Schedule xpaths carry no form indicator, so who is expected to file a part (990 only, or 990 and 990-EZ) is entered once per part in `parts.csv` and compared with the return types observed in filings. See section 4.2. |
+| D8 | **Every change from v1 is logged line by line.** The first v2 build reproduces v1 exactly and is committed as the baseline; every later fix is recorded in a machine-readable change log that, applied to v1, reproduces the current concordance. See section 7.5. |
 
 ## 3. Findings from v1 (summary)
 
@@ -94,29 +97,82 @@ so validation runs against an installed copy too). One fact, one place.
 
 | Table | Key | Contents |
 |---|---|---|
-| `forms.csv` | `form_id` | F990, F990EZ, F990PF, SA…SR; `xml_root` (IRS990, IRS990ScheduleA…); title; `filed_by` (PC, EZ, PF combos); `sort_order` |
-| `parts.csv` | `part_id` | form_id, part number, section, title, sort_order |
+| `forms.csv` | `form_id` | F990, F990EZ, F990PF, SA…SR; `xml_root` (IRS990, IRS990ScheduleA…); title; `sort_order` |
+| `parts.csv` | `part_id` | form_id, part number, section, title, `filed_by` (PC, PC+EZ; PF for the 990-PF), `filer_condition`, sort_order (section 4.2) |
 | `tables.csv` | `table_id` (= `rdb_table`) | part_id, `cardinality` ONE/MANY, `table_role` main/repeating/supplemental, title, sort_order |
 | `table_groups.csv` | (`table_id`, `group_xpath`) | the repeating-group root xpaths per table, with form_type and first/last version (replaces the 4 hand-coded lists) |
-| `families.csv` | `family_id` | `location_code_family` (990-based), label, definition |
-| `variables.csv` | `variable_name` | table_id, family_id, label, description (form-standardized), `data_type` (controlled vocabulary), `is_money`, `is_identifier`, location-code components (form, part, section, line, subline, column, period), status (active/deprecated/renamed_to) |
+| `families.csv` | `family_id` (= anchor `variable_name`) | only families with alternates: anchor variable, label, definition (section 4.1) |
+| `variables.csv` | `variable_name` | table_id, family_id (defaults to the variable's own name), label, description (form-standardized), `data_type` (controlled vocabulary), `is_money`, `is_identifier`, location-code components (form, part, section, line, subline, column, period, field), optional `filed_by` override, status (active/deprecated/renamed_to) |
 | `xpaths.csv` | `xpath` | variable_name, group_xpath, location_code_xsd, description_xsd, data_type_xsd, line_xsd, min/max occurs, notes |
 | `ignore.csv` | `xpath` | xpaths deliberately left unmapped (containers, IRS internals), with a reason |
 | `rules.csv` | — | structured production rules: variable_a, relation (same_as/sum_of/replaces), variable_b |
 | `validation_log.csv` | — | variable_name, xpath (optional), flag_code (optional), reviewer, date, status, note; the latest entry wins, and a flag can be accepted so it doesn't fire again |
 | `vocab/*.csv` | — | data_types, xsd_type_map, form_types, flag_codes, abbreviations |
 
-Derived by the build, **never hand-entered**: `form_type` (from the xpath
-root), `variable_scope` (split into *where the xpaths come from* and *who
-files it*, from `forms.filed_by`), `location_code` string and numeric
-`sort_key` (from the components: zero-padded, roman numerals → integers,
-forms ordered by `forms.sort_order`), version range, fill rates and
-validation roll-ups.
+Derived by the build, **not hand-entered**: `form_type` (from the xpath
+root), `variable_scope` (from the xpath roots for the 990/990-EZ, and from
+the declared `parts.filed_by` for schedules; section 4.2),
+`location_code_family` (the anchor variable's code; section 4.1),
+`location_code` string and numeric `sort_key` (from the components:
+zero-padded, roman numerals → integers, forms ordered by
+`forms.sort_order`), version range, fill rates and validation roll-ups.
 
 **Rules for the variable/family model (D1):** a variable is one concept, and
-may pool 990 and 990-EZ xpaths. A family is one location on the 990 and
-groups variables that sit on the same line but aren't interchangeable.
-`form_type` belongs to the xpath, not the variable.
+may pool 990 and 990-EZ xpaths. A family groups alternate versions of the
+same field that aren't interchangeable (e.g. `F9_01_REV_CONTR_TOT_CY` and
+`F9_01_REV_CONTR_TOT_CY_V2`). `form_type` belongs to the xpath, not the
+variable.
+
+### 4.1 Families and location codes (D6)
+
+In v1, `location_code_family` does two jobs. Of 1,899 v1 families, 1,778
+(94%) hold a single variable. Most of the other 121 are not alternates at
+all: they are different fields that share a form line or a coarse code (the
+city, state and ZIP of one address; the 23 variables coded
+`F990-PC-PART-02`). True alternates such as `_V2` are rare.
+
+v2 separates the two jobs:
+
+- **Location** belongs to the variable. Each variable gets a location code
+  precise enough to be unique and sortable. Fields that share a line get a
+  field component (e.g. `...-LINE-20-ADDR-CITY`) instead of sharing a
+  family.
+- **Family** is only for alternates. `family_id` is the name of the anchor
+  variable (the 990 version, or the variable itself when there are no
+  alternates), so for most variables `family_id == variable_name`.
+  `location_code_family` is then derived as the anchor's location code
+  instead of being stored.
+- Families with more than one member are listed explicitly in
+  `families.csv`; singletons need no row.
+
+### 4.2 Scope (D7)
+
+For the 990 and 990-EZ themselves, the xpath root (`IRS990` or `IRS990EZ`)
+says which form an xpath belongs to. Schedule xpaths do not: the same
+`IRS990ScheduleA/...` xpath is filed with either form, and whether 990-EZ
+filers complete a schedule varies by schedule and often by part. So scope
+has three pieces:
+
+| Field | Level | Source |
+|---|---|---|
+| `filed_by` | part (or section) in `parts.csv`, with rare variable-level overrides | **declared** from the IRS instructions: `PC` or `PC+EZ`; a free-text `filer_condition` for other limits (e.g. 501(c)(3) only) |
+| `xpath_form` | xpath | **derived** from the xpath root for 990/990-EZ body xpaths; schedule xpaths inherit `filed_by` |
+| `observed_filed_by` | part and variable | **evidence**: share of values coming from 990-EZ returns |
+
+A validation rule compares declared with observed. From TY2009–2024
+filings, 990-EZ returns supply these shares of schedule values:
+
+| Schedule | 990-EZ share | | Schedule | 990-EZ share |
+|---|---|---|---|---|
+| A | 36% | | L | 11% (Parts I–II ~20%; Parts III–IV under 1%) |
+| B | 23% | | N | 42% |
+| C | 7% | | O | 34% |
+| E | 12% | | D, F, H, I, J, K, M, R | 0% |
+| G | 26% | | | |
+
+Schedule L shows why scope has to be declared at the part level: 990-EZ
+filers complete Parts I–II, and the handful of Part III–IV values from EZ
+returns are filer errors, not a scope change.
 
 ## 5. Evidence layer (generated, `evidence/`)
 
@@ -256,21 +312,61 @@ concordance.xlsx           generated spreadsheet of the same (D3)
   (reduced to a join); fiscal `.VALID_TABLES`; nccs-data-core
   `CONCORDANCE_DF`; ef2pf `F990-PF-FULL.csv`.
 
+### 7.5 Change log against v1 (D8)
+
+Data built with v1 must stay reconcilable, so every difference between v1
+and the current concordance is recorded line by line.
+
+1. **Baseline.** `split_v1()` decomposes v1 `concordance.csv` into the
+   `src/` tables with no content changes. Where v1 disagrees with itself
+   (e.g. several descriptions for one variable), the split keeps every
+   value at the xpath level so nothing is lost. The baseline build must
+   reproduce v1 exactly in the v1 layout (a round-trip test). It is
+   committed and tagged `v2.0.0-baseline`.
+2. **Fixes.** Every later fix is its own commit (or a PR of related fixes)
+   and adds rows to `inst/extdata/changelog/changes.csv`, one row per
+   changed cell or row:
+
+   | Column | Meaning |
+   |---|---|
+   | `change_id` | stable id (`C0001`, ...) |
+   | `date`, `version`, `commit`, `author` | when, in which release, and by whom |
+   | `level` | xpath, variable, table, family, part |
+   | `key` | the xpath or name the row applies to |
+   | `field` | the column changed (e.g. `variable_name`, `data_type`, `rdb_table`); `*` for whole-row adds and removals |
+   | `old_value`, `new_value` | before and after (empty for adds or removals) |
+   | `change_type` | remap, rename, retype, relabel, add, remove, split, merge, move_table, recode_location |
+   | `reason` | why, in one sentence |
+   | `evidence` | flag code and/or report link (e.g. `POLARITY`, `reports/F9_04_SCHED_B_REQ_X.html`) |
+   | `affects_data` | whether values built with v1 change (true for remaps, splits and retypes; false for labels) |
+
+3. **Checks in CI.** `diff_concordance(v1, current)` lists every changed
+   cell; the build fails unless each one is covered by a change-log row,
+   and applying `changes.csv` to v1 reproduces the current concordance.
+   Rows must have a reason.
+4. **Crosswalk for old data.** From the change log the build generates
+   `v1_to_v2_crosswalk.csv` (one row per v1 xpath → v2 variable and table;
+   renamed, split and merged variables included). Re-mapping a v1-built
+   dataset uses the crosswalk plus the rows with `affects_data = true`.
+5. **Human summary.** `NEWS.md` per release summarises the change log by
+   type.
+
 ## 8. Work plan
 
-- [ ] **Phase 1: Evidence.** `build_evidence()` over TY2009–2024 DuckDB
-      builds → `evidence/`; first flag report.
-- [ ] **Phase 2: Package skeleton + split.** DESCRIPTION, consumer API;
-      `split_v1()` produces `src/` tables and a conflict report for review;
-      round-trip test: `build_concordance(format = "v1")` reproduces v1 except
-      for deliberate fixes.
-- [ ] **Phase 3: Validation.** Structural rules as testthat tests + GitHub
-      Actions; `flag_xpaths()`; `render_reports()` + index; validation
-      columns in the tidy output.
-- [ ] **Phase 4: Content fixes.** Work through conflicts and flags; add
-      `table_groups.csv`; resolve the 15 multi-table variables; map or
-      ignore the 113 unmapped xpaths; location-code grammar; XSD metadata
-      for all schema versions.
+- [x] **Phase 1: Evidence.** `build_evidence()` over TY2009–2024 DuckDB
+      builds → `evidence/`; first flag report; validation report templates
+      and demo reports.
+- [ ] **Phase 2: Package skeleton + baseline.** DESCRIPTION, consumer API;
+      `split_v1()` produces `src/` tables and a conflict report; round-trip
+      test (the v1 layout reproduces v1 exactly); commit and tag
+      `v2.0.0-baseline` (section 7.5).
+- [ ] **Phase 3: Validation + change log.** Structural rules as testthat
+      tests + GitHub Actions; `diff_concordance()` and the change-log check;
+      validation columns in the tidy output.
+- [ ] **Phase 4: Content fixes, each logged.** Work through conflicts and
+      flags; add `table_groups.csv`; resolve the 15 multi-table variables;
+      map or ignore the unmapped xpaths; location-code grammar and field
+      components; `parts.filed_by`; XSD metadata for all schema versions.
 - [ ] **Phase 5: 990-PF.** Merge the PF part files; PF evidence scan.
 - [ ] **Phase 6: Release + downstream.** v2.0.0 tag; migrate ef2, panel990,
       fiscal, efile-rdb-tables, nccs-data-core, ef2pf.

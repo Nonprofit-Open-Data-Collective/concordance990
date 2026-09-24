@@ -1,0 +1,55 @@
+```{r checkbox-setup}
+vals <- merge(ev$values[xpath %in% xp$xpath], sm, by = "xpath")
+vals[, v := tolower(trimws(value))]
+vals[, code := fcase(v %in% c("x", "true", "1"), "checked (X / true / 1)",
+                     v %in% c("false", "0"), "unchecked (false / 0)",
+                     default = "other value")]
+cb_year <- vals[, .(n = sum(n_filings)), by = .(tax_year, series, code)]
+cb_year[, share := n / sum(n), by = .(tax_year, series)]
+
+checks <- list()
+add <- function(check, result, detail) checks[[length(checks) + 1]] <<- data.frame(check = check, result = result, detail = detail)
+pb <- wmean(st$p_bool, st$n_occurrences)
+add("Values are checkbox codes", if (is.na(pb)) "info" else if (pb >= 0.99) "pass" else if (pb >= 0.95) "warn" else "fail",
+    if (is.na(pb)) "no values" else sprintf("%.1f%% of values are X / true / false / 1 / 0", 100 * pb))
+unc <- vals[code == "unchecked (false / 0)", sum(n_filings)] / max(vals[, sum(n_filings)], 1)
+add("Meaning of a blank", "info",
+    if (unc > 0.01) sprintf("%.0f%% of values are explicit false/0, so a missing value is not the same as unchecked", 100 * unc)
+    else "values are almost always X/true when present, so a missing value usually means unchecked")
+leaves <- unique(sub(".*/", "", xp$xpath))
+negated <- grepl("(Not|No)(?=[A-Z])", leaves, perl = TRUE)
+add("Element names agree in polarity", if (any(negated) && !all(negated)) "fail" else "pass",
+    if (any(negated) && !all(negated)) paste("negated:", paste(leaves[negated], collapse = ", "), "| not negated:", paste(leaves[!negated], collapse = ", "))
+    else "all element names have the same polarity")
+check_table(do.call(rbind, checks))
+```
+
+```{r checkbox-plot, fig.height = 3.4}
+if (nrow(cb_year)) {
+  cb_year[, code := factor(code, levels = c("checked (X / true / 1)", "unchecked (false / 0)", "other value"))]
+  p <- ggplot(cb_year, aes(tax_year, share, fill = code)) +
+    geom_col(width = 0.72, colour = report_ink$surface, linewidth = 0.4) +
+    scale_fill_manual(values = c("checked (X / true / 1)" = report_palette[1],
+                                 "unchecked (false / 0)" = report_palette[2],
+                                 "other value" = report_palette[4]), drop = FALSE) +
+    facet_wrap(~ series, ncol = 2) +
+    scale_x_continuous(breaks = seq(2009, 2024, 3)) +
+    scale_y_continuous(labels = scales::label_percent()) +
+    labs(title = "How the box is coded when present, by xpath", x = NULL, y = "Share of values") +
+    theme_report()
+  print(p)
+  html_table(cb_year[order(series, tax_year, code), .(Series = series, `Tax year` = tax_year, Code = code,
+                                                      Filings = n, Share = sprintf("%.1f%%", 100 * share))],
+             caption = "Table view: value coding by tax year", collapse = TRUE)
+}
+```
+
+```{r checkbox-values}
+top <- vals[, .(Filings = sum(n_filings)), by = .(Series = series, Value = value)][order(Series, -Filings)]
+html_table(top, caption = "Raw values by xpath (all years)")
+checklist <- c(
+  "The box means the same thing (and the same polarity) under every xpath: 'required' is never pooled with 'not required'.",
+  "Absent means unchecked for this line, or the question was skipped; the data dictionary says which.",
+  "Yes/No questions coded as two separate boxes are mapped to one variable only when that is intended."
+)
+```
