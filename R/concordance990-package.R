@@ -12,5 +12,8 @@ utils::globalVariables(c(
   "mixed", "n_distinct", "n_filings", "n_filings_repeat", "n_occurrences", "near_table", "negated",
   "node_type", "p_bool", "p_num", "parent", "prev_n", "prev_rate", "q50", "rate", "ratio",
   "repeat_root", "return_type", "root", "sched", "severity", "share_unrepeated", "tax_year",
-  "tpre", "xpaths", "years"
+  "tpre", "xpaths", "years",
+  # change log and validation
+  "status", "changed_fields", "v1_variable_name", "v1_rdb_table", "pass", "ceiling", "rule",
+  "xml_roots", "description"
 ))

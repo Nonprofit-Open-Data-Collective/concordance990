@@ -1,0 +1,290 @@
+# The change log against v1 (PLAN.md section 7.5).
+#
+# The baseline component tables are always reproducible from the frozen v1
+# file with split_v1(). Every difference between the baseline and the
+# current component tables must be recorded in changes.csv, and applying
+# changes.csv to the baseline must reproduce the current tables exactly.
+
+# Primary key(s) of each component table, and its change-log level
+src_keys <- list(forms = "form_id", parts = "part_id", tables = "table_id",
+                 variables = "variable_name", xpaths = "xpath",
+                 xpath_overrides = c("xpath", "field"), families = "family_id")
+src_levels <- c(forms = "form", parts = "part", tables = "table", variables = "variable",
+                xpaths = "xpath", xpath_overrides = "xpath_override", families = "family")
+
+changelog_columns <- c("change_id", "date", "version", "commit", "author", "level", "key", "field",
+                       "old_value", "new_value", "change_type", "reason", "evidence", "affects_data")
+
+#' Change types
+#'
+#' `add` and `remove` with `field = "*"` create or delete a row;
+#' `add_column` / `remove_column` change a table's columns; every other type
+#' is a cell edit, named for what it does.
+#' @export
+change_types <- c("add", "remove", "add_column", "remove_column", "remap", "rename", "retype",
+                  "relabel", "split", "merge", "move_table", "recode_location", "recode_value",
+                  "resolve_conflict", "edit")
+
+key_sep <- " | "
+
+key_string <- function(d, keys) {
+  if (!nrow(d)) return(character())
+  do.call(paste, c(lapply(keys, function(k) d[[k]]), sep = key_sep))
+}
+
+#' Baseline component tables (v1, split without changes)
+#' @return A list of data.tables.
+#' @export
+baseline_src <- function() {
+  if (is.null(.cache[["baseline"]])) .cache[["baseline"]] <- split_v1(v1_path_default())
+  lapply(.cache[["baseline"]], data.table::copy)
+}
+
+#' Changelog path
+#' @keywords internal
+changelog_path <- function() {
+  p <- system.file("extdata", "changelog", "changes.csv", package = "concordance990")
+  if (!nzchar(p)) p <- file.path("inst", "extdata", "changelog", "changes.csv")
+  p
+}
+
+#' Cell-level differences between two sets of component tables
+#'
+#' @param old,new Lists of component tables (as from [read_src()] or
+#'   [baseline_src()]).
+#' @return A data.table with `level`, `key`, `field`, `old_value`,
+#'   `new_value` and `change_type` (`edit`, `add`, `remove`, `add_column`,
+#'   `remove_column`), in the order the changes must be applied.
+#' @export
+diff_src <- function(old, new) {
+  out <- list()
+  for (tb in names(src_keys)) {
+    keys <- src_keys[[tb]]
+    o <- data.table::copy(old[[tb]])[, lapply(.SD, as.character)]
+    n <- data.table::copy(new[[tb]])[, lapply(.SD, as.character)]
+    lvl <- src_levels[[tb]]
+    row <- function(key, field, old_value, new_value, type)
+      data.table::as.data.table(list(level = lvl, key = key, field = field, old_value = old_value,
+                                     new_value = new_value, change_type = type))
+
+    added_cols <- setdiff(names(n), names(o))
+    removed_cols <- setdiff(names(o), names(n))
+    for (cl in added_cols) { out[[length(out) + 1]] <- row("*", cl, "", "", "add_column"); o[, (cl) := ""] }
+
+    ko <- key_string(o, keys); kn <- key_string(n, keys)
+    cols <- setdiff(names(n), keys)
+
+    # removed rows: blank the content, then delete the row
+    for (i in which(!ko %in% kn)) {
+      vals <- unlist(o[i, setdiff(names(o), keys), with = FALSE])
+      vals <- vals[vals != ""]
+      if (length(vals)) out[[length(out) + 1]] <- row(ko[i], names(vals), unname(vals), "", "remove")
+      out[[length(out) + 1]] <- row(ko[i], "*", "", "", "remove")
+    }
+    # added rows: create the row, then fill its content
+    for (i in which(!kn %in% ko)) {
+      out[[length(out) + 1]] <- row(kn[i], "*", "", "", "add")
+      vals <- unlist(n[i, cols, with = FALSE])
+      vals <- vals[vals != ""]
+      if (length(vals)) out[[length(out) + 1]] <- row(kn[i], names(vals), "", unname(vals), "add")
+    }
+    # edited cells in rows present in both
+    common <- intersect(ko, kn)
+    if (length(common)) {
+      oo <- o[match(common, ko)]; nn <- n[match(common, kn)]
+      for (cl in intersect(cols, names(o))) {
+        d <- which(oo[[cl]] != nn[[cl]])
+        if (length(d)) out[[length(out) + 1]] <- row(common[d], cl, oo[[cl]][d], nn[[cl]][d], "edit")
+      }
+    }
+    for (cl in removed_cols) out[[length(out) + 1]] <- row("*", cl, "", "", "remove_column")
+  }
+  res <- data.table::rbindlist(out)
+  if (!nrow(res)) res <- data.table::as.data.table(list(level = character(), key = character(), field = character(),
+                                                old_value = character(), new_value = character(),
+                                                change_type = character()))
+  res
+}
+
+#' Apply change-log rows to component tables
+#'
+#' @param src A list of component tables (usually [baseline_src()]).
+#' @param changes Change-log rows (see [read_changelog()]), applied in order.
+#' @return The modified list. Stops if a row's `old_value` does not match
+#'   the value it replaces, so a stale or out-of-order log is caught.
+#' @export
+apply_changes <- function(src, changes) {
+  src <- lapply(src, function(d) data.table::copy(d)[, lapply(.SD, as.character)])
+  tb_of <- stats::setNames(names(src_levels), src_levels)
+  for (i in seq_len(nrow(changes))) {
+    ch <- changes[i]
+    tb <- tb_of[[ch$level]]
+    if (is.null(tb)) stop(ch$change_id, ": unknown level '", ch$level, "'")
+    d <- src[[tb]]; keys <- src_keys[[tb]]
+    fail <- function(...) stop(ch$change_id, " (", ch$level, " ", ch$key, ", ", ch$field, "): ", ...)
+
+    if (ch$change_type == "add_column") {
+      if (ch$field %in% names(d)) fail("column already exists")
+      d[, (ch$field) := ""]
+    } else if (ch$change_type == "remove_column") {
+      if (!ch$field %in% names(d)) fail("no such column")
+      if (any(d[[ch$field]] != "")) fail("column still has values; blank them first")
+      d[, (ch$field) := NULL]
+    } else if (ch$field == "*") {
+      k <- key_string(d, keys)
+      if (ch$change_type == "add") {
+        if (ch$key %in% k) fail("row already exists")
+        new <- data.table::as.data.table(stats::setNames(as.list(rep("", ncol(d))), names(d)))
+        parts <- strsplit(ch$key, key_sep, fixed = TRUE)[[1]]
+        for (j in seq_along(keys)) new[[keys[j]]] <- parts[j]
+        d <- rbind(d, new)
+      } else if (ch$change_type == "remove") {
+        r <- which(k == ch$key)
+        if (!length(r)) fail("row not found")
+        vals <- unlist(d[r, setdiff(names(d), keys), with = FALSE])
+        if (any(vals != "")) fail("row still has values; blank them first")
+        d <- d[-r]
+      } else fail("field '*' is only used with add or remove")
+    } else {
+      if (!ch$field %in% names(d)) fail("no such column")
+      r <- which(key_string(d, keys) == ch$key)
+      if (!length(r)) fail("row not found")
+      if (!identical(d[[ch$field]][r], ch$old_value))
+        fail("old_value '", ch$old_value, "' does not match current value '", d[[ch$field]][r], "'")
+      data.table::set(d, i = r, j = ch$field, value = ch$new_value)
+    }
+    src[[tb]] <- d
+  }
+  src
+}
+
+#' Read the change log
+#' @param path Path to `changes.csv`.
+#' @export
+read_changelog <- function(path = changelog_path()) {
+  ch <- read_cc_csv(path)
+  if (!identical(names(ch), changelog_columns)) stop("changes.csv must have columns: ", paste(changelog_columns, collapse = ", "))
+  ch
+}
+
+#' Check the change log against the current component tables
+#'
+#' @description
+#' Verifies that every change-log row is complete, that applying the log to
+#' the baseline succeeds, and that the result equals the current component
+#' tables. Any remaining difference is a change that has not been logged.
+#'
+#' @param src Current component tables (default: [read_src()]).
+#' @param changes Change log (default: [read_changelog()]).
+#' @return A list: `ok` (logical), `problems` (character) and `unlogged`
+#'   (differences not covered by the log, as from [diff_src()]).
+#' @export
+check_changelog <- function(src = read_src(), changes = read_changelog()) {
+  problems <- character()
+  req <- c("change_id", "date", "author", "level", "key", "field", "change_type", "reason", "affects_data")
+  for (cl in req) {
+    bad <- changes$change_id[changes[[cl]] == ""]
+    if (length(bad)) problems <- c(problems, sprintf("missing %s in %s", cl, paste(utils::head(bad, 5), collapse = ", ")))
+  }
+  if (anyDuplicated(changes$change_id)) problems <- c(problems, "duplicate change_id")
+  bad <- changes$change_id[!changes$change_type %in% change_types]
+  if (length(bad)) problems <- c(problems, sprintf("unknown change_type in %s", paste(utils::head(bad, 5), collapse = ", ")))
+  bad <- changes$change_id[!changes$affects_data %in% c("TRUE", "FALSE")]
+  if (length(bad)) problems <- c(problems, sprintf("affects_data must be TRUE or FALSE in %s", paste(utils::head(bad, 5), collapse = ", ")))
+  bad <- changes$change_id[!changes$level %in% src_levels]
+  if (length(bad)) problems <- c(problems, sprintf("unknown level in %s", paste(utils::head(bad, 5), collapse = ", ")))
+
+  applied <- tryCatch(apply_changes(baseline_src(), changes), error = function(e) {
+    problems <<- c(problems, conditionMessage(e)); NULL
+  })
+  unlogged <- if (is.null(applied)) diff_src(baseline_src(), src)[0] else diff_src(applied, src)
+  if (nrow(unlogged)) problems <- c(problems, sprintf("%d differences are not in the change log", nrow(unlogged)))
+  list(ok = !length(problems), problems = problems, unlogged = unlogged)
+}
+
+#' Draft change-log rows for unlogged edits
+#'
+#' @description
+#' Compares the current component tables with the baseline plus the existing
+#' log and returns rows for the differences, with ids, date, author, a
+#' guessed `change_type` and `affects_data` filled in. `reason` and
+#' `evidence` are left for the editor. With `write = TRUE` the rows are
+#' appended to `changes.csv`.
+#'
+#' @param author Name to record.
+#' @param reason Optional reason applied to every drafted row.
+#' @param evidence Optional evidence applied to every drafted row.
+#' @param write Append to the change log.
+#' @param path Change-log path.
+#' @return The drafted rows (invisibly when written).
+#' @export
+draft_changes <- function(author, reason = "", evidence = "", write = FALSE, path = changelog_path()) {
+  changes <- read_changelog(path)
+  d <- diff_src(apply_changes(baseline_src(), changes), read_src())
+  if (!nrow(d)) { message("Nothing to log: the current tables match the change log."); return(invisible(d)) }
+
+  type <- data.table::fcase(
+    d$change_type != "edit", d$change_type,
+    d$field == "variable_name", "remap",
+    d$field %in% c("rdb_table", "table_id"), "move_table",
+    d$field %in% c("label", "description", "title"), "relabel",
+    d$field %in% c("data_type_simple", "data_type_xsd", "cardinality"), "retype",
+    grepl("location", d$field), "recode_location",
+    default = "edit")
+  affects <- type %in% c("add", "remove", "remap", "move_table", "retype", "split", "merge", "rename")
+
+  last <- suppressWarnings(max(as.integer(sub("^C", "", changes$change_id)), 0L, na.rm = TRUE))
+  n <- nrow(d)
+  # built from a list: `key` is a reserved argument of data.table()
+  rows <- data.table::as.data.table(list(
+    change_id = sprintf("C%05d", last + seq_len(n)),
+    date = rep(format(Sys.Date()), n),
+    version = rep(as.character(utils::packageVersion("concordance990")), n),
+    commit = rep("", n), author = rep(author, n),
+    level = d$level, key = d$key, field = d$field,
+    old_value = d$old_value, new_value = d$new_value,
+    change_type = type, reason = rep(reason, n), evidence = rep(evidence, n),
+    affects_data = ifelse(affects, "TRUE", "FALSE")))
+  if (write) {
+    write_cc_csv(rbind(changes, rows), path, eol = "\n")
+    message(nrow(rows), " rows appended to ", path)
+    return(invisible(rows))
+  }
+  rows
+}
+
+#' Crosswalk from v1 rows to the current concordance
+#'
+#' @description
+#' One row per xpath in v1 or the current concordance, with the v1 and the
+#' current variable and table, a status, and the v1-layout columns whose
+#' values changed. Use it with the change log to re-map data built with v1.
+#'
+#' @param current Current concordance in the v1 layout (default: built from
+#'   the package's component tables).
+#' @return A data.table.
+#' @export
+v1_crosswalk <- function(current = build_concordance(format = "v1")) {
+  v1 <- read_cc_csv(v1_path_default())
+  cols <- setdiff(v1_columns, "xpath")
+  m <- merge(v1, current, by = "xpath", all = TRUE, suffixes = c(".v1", ".now"), sort = FALSE)
+  differs <- vapply(cols, function(cl) {
+    a <- m[[paste0(cl, ".v1")]]; b <- m[[paste0(cl, ".now")]]
+    ifelse(is.na(a) | is.na(b), !(is.na(a) & is.na(b)), a != b)
+  }, logical(nrow(m)))
+  differs <- matrix(differs, nrow = nrow(m))
+  changed <- apply(differs, 1, function(r) paste(cols[r], collapse = ";"))
+  out <- data.table::data.table(
+    xpath = m$xpath,
+    v1_variable_name = m$variable_name.v1, v1_rdb_table = m$rdb_table.v1,
+    variable_name = m$variable_name.now, rdb_table = m$rdb_table.now)
+  out[, status := data.table::fcase(
+    is.na(v1_variable_name), "added",
+    is.na(variable_name), "removed",
+    v1_variable_name != variable_name, "remapped",
+    v1_rdb_table != rdb_table, "moved_table",
+    changed != "", "metadata_changed",
+    default = "unchanged")]
+  out[, changed_fields := changed]
+  out[, lapply(.SD, function(x) ifelse(is.na(x), "", x))]
+}

@@ -22,13 +22,15 @@ read_src <- function(src_dir = src_path()) {
 #'   reproduces the v1 file byte for byte (see [write_concordance()]).
 #' * `format = "v2"` adds `family_id` and `part_id` after the v1 columns.
 #'
-#' @param src_dir Directory of component tables.
+#' @param src_dir Directory of component tables, or a list of component
+#'   tables as returned by [read_src()].
 #' @param format `"v1"` or `"v2"`.
 #' @return A data.table.
 #' @export
 build_concordance <- function(src_dir = src_path(), format = c("v1", "v2")) {
   format <- match.arg(format)
-  s <- read_src(src_dir)
+  s <- if (is.list(src_dir)) lapply(src_dir, data.table::copy) else read_src(src_dir)
+  s$xpaths[, v1_order := as.integer(v1_order)]
 
   v <- data.table::copy(s$variables)
   data.table::setnames(v, "table_id", "rdb_table")

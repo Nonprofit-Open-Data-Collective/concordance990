@@ -39,12 +39,34 @@ root are generated copies in the v1 layout.
 | `inst/reports/` | Validation report templates ([README](inst/reports/README.md)). |
 | `data-raw/` | Scripts that split v1, build the concordance, build filing evidence and render reports. |
 
-## Maintaining
+## Making a change
 
-```r
-source("data-raw/build-concordance.R")   # component tables -> concordance.csv / .xlsx
-devtools::test()                         # round trip, keys and references, API
-```
+Every difference from v1 is recorded line by line in
+`inst/extdata/changelog/changes.csv`, so data built with v1 can always be
+reconciled (PLAN.md section 7.5).
+
+1. Edit the component tables in `inst/extdata/src/` (not `concordance.csv`).
+2. Draft change-log rows for your edits, then fill in `reason` (and
+   `evidence`, e.g. a flag code or report link) in `changes.csv`:
+   ```r
+   devtools::load_all()
+   draft_changes(author = "Your Name", write = TRUE)
+   ```
+3. Rebuild and check. The build stops if an edit is not logged, the log does
+   not replay exactly, or a validation rule gets worse:
+   ```r
+   source("data-raw/build-concordance.R")   # concordance.csv/.xlsx + v1 crosswalk
+   devtools::test()
+   ```
+4. If a fix lowers a rule's violation count, lower its ceiling in
+   `inst/extdata/validation/rule_ceilings.csv`; at zero, mark the rule
+   `enforced` in `R/validate.R`.
+5. Commit the component tables, `changes.csv` and the generated files
+   together.
+
+`v1_crosswalk()` (written to `inst/extdata/changelog/v1_to_v2_crosswalk.csv`)
+lists every v1 xpath with its v1 and current variable and table and the
+columns that changed.
 
 ## License
 

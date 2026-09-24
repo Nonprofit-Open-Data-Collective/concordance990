@@ -7,7 +7,8 @@
 build_concordance(src_dir = src_path(), format = c("v1", "v2"))
 }
 \arguments{
-\item{src_dir}{Directory of component tables.}
+\item{src_dir}{Directory of component tables, or a list of component
+tables as returned by \code{\link[=read_src]{read_src()}}.}
 
 \item{format}{\code{"v1"} or \code{"v2"}.}
 }

@@ -367,9 +367,21 @@ and the current concordance is recorded line by line.
       xpaths / 829 variables; `rdb_table` 67 / 15; `label` 37 / 22;
       `variable_scope` 16 / 15; `location_code_family` 15 / 14;
       `data_type_simple` 3 / 2).
-- [ ] **Phase 3: Validation + change log.** Structural rules as testthat
+- [x] **Phase 3: Validation + change log.** Structural rules as testthat
       tests + GitHub Actions; `diff_concordance()` and the change-log check;
-      validation columns in the tidy output.
+      validation columns in the tidy output. Result: `diff_src()`,
+      `apply_changes()`, `check_changelog()`, `draft_changes()` and
+      `v1_crosswalk()` (the baseline is regenerated from v1 with
+      `split_v1()`, so the log is checked by replaying it);
+      `validate_concordance()` with 12 rules, 5 enforced and 7 on a
+      ratchet (ceilings in `inst/extdata/validation/rule_ceilings.csv`);
+      R-CMD-check workflow. Baseline violations: R03 cardinality 3 tables;
+      R04 variable-name format 13 (12 have trailing spaces); R06 prefix vs
+      table 5; R07 variables in several tables 15; R09 missing
+      data_type_simple 30 variables; R10 literal "NA" 23,528 cells; R11
+      invalid UTF-8 3 cells; R12 leading/trailing whitespace 160 cells.
+      Validation columns in the tidy output move to Phase 4, with the
+      validation log.
 - [ ] **Phase 4: Content fixes, each logged.** Work through conflicts and
       flags; add `table_groups.csv`; resolve the 15 multi-table variables;
       map or ignore the unmapped xpaths; location-code grammar and field

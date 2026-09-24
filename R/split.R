@@ -51,11 +51,13 @@ form_titles <- c(
 #'   and resolving one means deleting its row (with a change-log entry).
 #' * `families.csv`: empty; families with alternates are defined in Phase 4.
 #'
-#' @param v1_path Path to the v1 concordance.
-#' @param out_dir Directory for the component tables.
-#' @return Invisibly, a list of the tables written.
+#' @param v1_path Path to the v1 concordance (default: the frozen copy in
+#'   the package).
+#' @param out_dir Directory for the component tables, or `NULL` to only
+#'   return them.
+#' @return Invisibly, a list of the tables.
 #' @export
-split_v1 <- function(v1_path, out_dir) {
+split_v1 <- function(v1_path = v1_path_default(), out_dir = NULL) {
   d <- read_cc_csv(v1_path)
   stopifnot(identical(names(d), v1_columns), !anyDuplicated(d$xpath))
   d[, v1_order := seq_len(.N)]
@@ -114,7 +116,27 @@ split_v1 <- function(v1_path, out_dir) {
 
   out <- list(forms = forms, parts = parts, tables = tables, variables = variables,
               xpaths = xpaths, xpath_overrides = overrides, families = families)
-  dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-  for (nm in names(out)) write_cc_csv(out[[nm]], file.path(out_dir, paste0(nm, ".csv")), eol = "\n")
+  # all columns as character, exactly as they are read back from disk
+  out <- lapply(out, function(d) d[, lapply(.SD, as.character)])
+  if (!is.null(out_dir)) write_src(out, out_dir)
   invisible(out)
+}
+
+#' Write component tables
+#'
+#' @param s A list of component tables.
+#' @param out_dir Output directory.
+#' @export
+write_src <- function(s, out_dir = src_path()) {
+  dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
+  for (nm in names(s)) write_cc_csv(s[[nm]], file.path(out_dir, paste0(nm, ".csv")), eol = "\n")
+  invisible(out_dir)
+}
+
+#' Path of the frozen v1 concordance
+#' @keywords internal
+v1_path_default <- function() {
+  p <- system.file("extdata", "v1", "concordance-v1.csv", package = "concordance990")
+  if (!nzchar(p)) p <- file.path("inst", "extdata", "v1", "concordance-v1.csv")
+  p
 }

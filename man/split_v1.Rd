@@ -4,15 +4,17 @@
 \alias{split_v1}
 \title{Split the v1 concordance into component tables}
 \usage{
-split_v1(v1_path, out_dir)
+split_v1(v1_path = v1_path_default(), out_dir = NULL)
 }
 \arguments{
-\item{v1_path}{Path to the v1 concordance.}
+\item{v1_path}{Path to the v1 concordance (default: the frozen copy in
+the package).}
 
-\item{out_dir}{Directory for the component tables.}
+\item{out_dir}{Directory for the component tables, or \code{NULL} to only
+return them.}
 }
 \value{
-Invisibly, a list of the tables written.
+Invisibly, a list of the tables.
 }
 \description{
 Decomposes the v1 \code{concordance.csv} into the component tables described
