@@ -38,22 +38,24 @@ resolve_issues <- function(before, now, changes, log = read_validation_log(), fi
   # an xpath moving to or from it), or its table
   ch <- data.table::copy(changes)
   ch[, file := src_file[level]]
+  ch[, cleanup := evidence %in% c("R10", "R11", "R12", "R03; R12")]
   touch <- rbind(
-    ch[, .(k = key, change_id, reason, file)],
-    ch[level == "xpath" & field == "variable_name", .(k = old_value, change_id, reason, file)],
-    ch[level == "xpath" & field == "variable_name", .(k = new_value, change_id, reason, file)],
-    ch[level == "xpath_override", .(k = sub(" \\| .*", "", key), change_id, reason, file)],
-    ch[level == "variable" & field == "table_id", .(k = old_value, change_id, reason, file)])
+    ch[, .(k = key, change_id, reason, file, cleanup)],
+    ch[level == "xpath" & field == "variable_name", .(k = old_value, change_id, reason, file, cleanup)],
+    ch[level == "xpath" & field == "variable_name", .(k = new_value, change_id, reason, file, cleanup)],
+    ch[level == "xpath_override", .(k = sub(" \\| .*", "", key), change_id, reason, file, cleanup)],
+    ch[level == "variable" & field == "table_id", .(k = old_value, change_id, reason, file, cleanup)])
   if (!is.null(xpath_var)) {
-    ov <- ch[level == "xpath_override" & change_type %in% c("move_table", "resolve_conflict", "remove"),
-             .(xpath = sub(" \\| .*", "", key), change_id, reason, file)]
+    ov <- ch[level == "xpath_override" & change_type %in% c("move_table", "resolve_conflict", "remove") & !cleanup,
+             .(xpath = sub(" \\| .*", "", key), change_id, reason, file, cleanup)]
     ov <- merge(ov, unique(xpath_var), by = "xpath", allow.cartesian = TRUE)
-    touch <- rbind(touch, ov[, .(k = variable_name, change_id, reason, file)])
+    touch <- rbind(touch, ov[, .(k = variable_name, change_id, reason, file, cleanup)])
   }
   touch <- unique(touch[k != ""])
   data.table::setkey(touch, k)
-  lookup <- function(keys) {
+  lookup <- function(keys, cleanup_ok = TRUE) {
     t <- touch[list(keys), nomatch = NULL]
+    if (!cleanup_ok) t <- t[cleanup == FALSE]
     if (!nrow(t)) return(list(ids = "", files = "", reasons = character()))
     ids <- as.integer(sub("^C", "", t$change_id))
     rng <- if (length(ids) == 1) t$change_id[1] else sprintf("C%05d-C%05d (%d rows)", min(ids), max(ids), length(ids))
@@ -77,10 +79,11 @@ resolve_issues <- function(before, now, changes, log = read_validation_log(), fi
   # (or an xpath case with no change of its own) on its variable and table
   res <- lapply(seq_len(nrow(b)), function(i) {
     r <- b[i]
-    l <- lookup(r$key)
+    ck <- r$check %in% c("R03", "R04", "R10", "R11", "R12")
+    l <- lookup(r$key, ck)
     if (!length(l$reasons) && r$check != "R03") {
       keys <- unique(c(r$variable_name, r$rdb_table))
-      l <- lookup(keys[!is.na(keys) & keys != ""])
+      l <- lookup(keys[!is.na(keys) & keys != ""], ck)
     }
     fx <- unique(stats::na.omit(unname(fixes[l$reasons])))
     list(ids = l$ids, files = l$files, fix = paste(fx, collapse = "; "),

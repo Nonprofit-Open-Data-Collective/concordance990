@@ -391,6 +391,19 @@ and the current concordance is recorded line by line.
       (23,528 cells) versus empty cells (6,836) for missing values; six
       Windows-1252 curly quotes to convert to UTF-8; resolving the 1,665
       xpath overrides.
+      Progress (branch `v2-revisions`, 2026-09-26): the issues list
+      (`reports/issues.html`) is worked through in `data-raw/fixes/01-09`,
+      each fix logged in the change log; resolutions and open questions are
+      in `reports/issues-resolved.html`. Done: value clean-up (R03, R04,
+      R09-R12 now enforced), identifier and code types, mapping errors
+      (polarity, pooled columns, swapped xpaths), supplemental and facility
+      tables made MANY (new tables SH-P05-T03, SA-P01-T02, SA-P01-T03,
+      F9-P00-T01, SC-P02-T01), 103 observed xpaths added, and
+      `inst/extdata/validation/validation_log.csv` for reviewed cases.
+      Evidence checks corrected: collisions are counted per repeating-element
+      row (`build_evidence()`), and V_NUMBER_SCALE runs only on shares. Still
+      open: Part III program tables (R07), the Schedule O table name (R06),
+      list-valued fields in one-row tables; the other Phase 4 items above.
 - [ ] **Phase 5: 990-PF.** Merge the PF part files; PF evidence scan.
 - [ ] **Phase 6: Release + downstream.** v2.0.0 tag; migrate ef2, panel990,
       fiscal, efile-rdb-tables, nccs-data-core, ef2pf.
