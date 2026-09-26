@@ -127,6 +127,49 @@ validation_summary <- function(violations = validate_concordance(), ceilings = c
   s[, .(rule, status, violations, ceiling, pass, description)]
 }
 
+#' Read the validation log
+#'
+#' @description
+#' Reviewer decisions on flagged cases (PLAN.md section 4). One row per
+#' decision: `check` (flag or rule code), `variable_name`, `key` (the xpath
+#' or other case key from the issues list; empty = every case of that check
+#' for the variable), `status`, `reviewer`, `date`, `note`. The latest row
+#' for a case wins. Cases with status `accepted` (the flag is a false
+#' positive or the value is correct as it is) are left out of the issues
+#' list; `needs_input` and `deferred` cases stay in it.
+#'
+#' @param path Path to `validation_log.csv`.
+#' @export
+read_validation_log <- function(path = validation_log_path()) {
+  cols <- c("check", "variable_name", "key", "status", "reviewer", "date", "note")
+  if (!file.exists(path)) return(data.table::setnames(data.table::data.table(matrix(character(), 0, 7)), cols))
+  d <- read_cc_csv(path)
+  if (!identical(names(d), cols)) stop("validation_log.csv must have columns: ", paste(cols, collapse = ", "))
+  d
+}
+
+#' Drop issues accepted in the validation log
+#'
+#' @param issues A data.table with `check`, `variable_name` and `key`.
+#' @param log Output of [read_validation_log()].
+#' @return `issues` without the accepted cases.
+#' @export
+drop_accepted <- function(issues, log = read_validation_log()) {
+  if (!nrow(log) || !nrow(issues)) return(issues)
+  log <- log[, .SD[.N], by = .(check, variable_name, key)][status == "accepted"]
+  vn <- data.table::fcoalesce(issues$variable_name, "")
+  hit <- paste(issues$check, vn, issues$key) %in% paste(log$check, log$variable_name, log$key) |
+    paste(issues$check, vn) %in% log[key == "", paste(check, variable_name)]
+  issues[!hit]
+}
+
+#' @keywords internal
+validation_log_path <- function() {
+  p <- system.file("extdata", "validation", "validation_log.csv", package = "concordance990")
+  if (!nzchar(p)) p <- file.path("inst", "extdata", "validation", "validation_log.csv")
+  p
+}
+
 #' @keywords internal
 ceilings_path <- function() {
   p <- system.file("extdata", "validation", "rule_ceilings.csv", package = "concordance990")

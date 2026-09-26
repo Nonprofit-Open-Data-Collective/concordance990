@@ -132,11 +132,13 @@ duplicate_value_checks <- c("V_NUM_PARSE", "V_CHECKBOX_CODES", "V_POLARITY", "V_
 #' @param flags_pf,value_checks_pf The same for the 990-PF (optional).
 #' @param pf_concordance The v1 PF concordance, used to show PF tables.
 #' @param reports_dir Directory of rendered variable reports, used for links.
+#' @param validation_log Reviewer decisions ([read_validation_log()]); cases
+#'   accepted there are left out.
 #' @return A data.table, one row per case.
 #' @export
 collect_issues <- function(src = read_src(), flags = NULL, value_checks_990 = NULL,
                            flags_pf = NULL, value_checks_pf = NULL, pf_concordance = NULL,
-                           reports_dir = "reports") {
+                           reports_dir = "reports", validation_log = read_validation_log()) {
   out <- list()
   cc <- build_concordance(src, format = "v1")
   var_table <- cc[, .(table_990 = rdb_table[1]), by = variable_name]
@@ -233,6 +235,7 @@ collect_issues <- function(src = read_src(), flags = NULL, value_checks_990 = NU
   res[(is.na(rdb_table) | rdb_table == "") & !is_pf, rdb_table := table_990]
   res[, c("table_990", "table_pf", "is_pf") := NULL]
   res[check == "R03", rdb_table := key]
+  res <- drop_accepted(res, validation_log)
   res[, report := data.table::fifelse(
     !is.na(variable_name) & file.exists(file.path(reports_dir, ifelse(grepl("PF", source), "pf", ""), paste0(variable_name, ".html"))),
     file.path(ifelse(grepl("PF", source), "pf", "."), paste0(variable_name, ".html")), NA_character_)]

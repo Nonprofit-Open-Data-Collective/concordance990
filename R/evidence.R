@@ -125,6 +125,7 @@ evidence_year <- function(year, db_path, ydir, concordance, temp_dir, memory_lim
            TABLE_HEADER                                            AS table_header,
            regexp_replace(regexp_replace(regexp_extract(XPATH, '^(.*\\])', 1),
                           '\\[[0-9]+\\]', '', 'g'), '(irs|efile):', '', 'g') AS repeat_root,
+           coalesce(regexp_extract(XPATH, '^(.*\\])', 1), '')            AS repeat_inst,
            VALUE                                                   AS value
     FROM db.FLATXML"))
 
@@ -234,14 +235,20 @@ evidence_year <- function(year, db_path, ydir, concordance, temp_dir, memory_lim
     JOIN db.KEYS kk ON kk.OBJECTID = ex.OBJECTID
     GROUP BY ALL ORDER BY ex.xpath", year), "xpath_examples.csv")
 
+  # A collision is 2+ xpaths of one variable filled in the same row: the same
+  # repeating-element instance (repeat_inst keeps the [n] indexes), or the
+  # filing itself outside repeating elements. Counting per filing instead
+  # flagged every repeating table where one row has a US address and another
+  # a foreign one.
   out(sprintf("
-    SELECT %d AS tax_year, variable_name, xpaths, COUNT(*) AS n_filings FROM (
-      SELECT pf.OBJECTID, m.variable_name,
-             string_agg(DISTINCT pf.xpath, ' ; ' ORDER BY pf.xpath) AS xpaths,
-             COUNT(DISTINCT pf.xpath) AS n_xp
-      FROM pf JOIN cmap m ON pf.xpath = m.xpath
-      WHERE pf.node_type = 'terminal'
-      GROUP BY pf.OBJECTID, m.variable_name)
+    SELECT %d AS tax_year, variable_name, xpaths, COUNT(DISTINCT OBJECTID) AS n_filings,
+           COUNT(*) AS n_rows FROM (
+      SELECT f.OBJECTID, f.repeat_inst, m.variable_name,
+             string_agg(DISTINCT f.xpath, ' ; ' ORDER BY f.xpath) AS xpaths,
+             COUNT(DISTINCT f.xpath) AS n_xp
+      FROM f JOIN cmap m ON f.xpath = m.xpath
+      WHERE f.node_type = 'terminal'
+      GROUP BY f.OBJECTID, f.repeat_inst, m.variable_name)
     WHERE n_xp > 1
     GROUP BY ALL ORDER BY n_filings DESC", year), "variable_collisions.csv")
 
