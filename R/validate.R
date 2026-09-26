@@ -11,8 +11,8 @@
 #' @export
 validation_rules <- data.table::data.table(
   rule = c("R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09", "R10", "R11", "R12"),
-  status = c("enforced", "enforced", "ratchet", "ratchet", "enforced", "ratchet", "ratchet",
-             "enforced", "ratchet", "ratchet", "ratchet", "ratchet"),
+  status = c("enforced", "enforced", "enforced", "enforced", "enforced", "ratchet", "ratchet",
+             "enforced", "ratchet", "enforced", "enforced", "enforced"),
   description = c(
     "Primary keys are unique in every component table",
     "Every reference resolves (form, part, table, variable, override target)",
