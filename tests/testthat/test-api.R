@@ -11,7 +11,7 @@ test_that("lookup_xpath maps known xpaths and leaves unknown ones NA", {
 })
 
 test_that("consumer tables have the expected size", {
-  expect_identical(nrow(concordance()), 6864L)
+  expect_identical(nrow(concordance()), nrow(read_src()$xpaths))
   expect_identical(length(table_names()), data.table::uniqueN(concordance()$rdb_table))
   expect_true(all(c("family_id", "part_id") %in% names(concordance("v2"))))
   expect_setequal(unique(trimws(xpath_map()$rdb_relationship)), c("ONE", "MANY"))
