@@ -65,9 +65,39 @@ add_variable <- function(s, name, like, ...) {
   s
 }
 
-#' Point xpaths at another variable (and drop now-meaningless overrides)
-remap_xpaths <- function(s, xpaths, to) {
+#' Point xpaths at another variable
+#'
+#' Their xpath-level overrides described them in the context of the old
+#' variable, so they are dropped (the new variable's values apply).
+remap_xpaths <- function(s, xpaths, to, drop_overrides = TRUE) {
   stopifnot(all(xpaths %in% s$xpaths$xpath), to %in% s$variables$variable_name)
   s$xpaths[xpath %in% xpaths, variable_name := to]
+  if (drop_overrides) s$xpath_overrides <- s$xpath_overrides[!xpath %in% xpaths]
   s
 }
+
+#' Set variable-level fields
+set_var <- function(s, name, ...) {
+  stopifnot(name %in% s$variables$variable_name)
+  f <- list(...)
+  for (k in names(f)) data.table::set(s$variables, i = which(s$variables$variable_name == name), j = k, value = as.character(f[[k]]))
+  s
+}
+
+#' Remove a variable that no longer has xpaths
+drop_variable <- function(s, name) {
+  stopifnot(!name %in% s$xpaths$variable_name)
+  s$variables <- s$variables[variable_name != name]
+  s
+}
+
+#' Put variables in a family anchored on an existing variable (families.csv row added if needed)
+add_family <- function(s, anchor, members, label, definition) {
+  if (!anchor %in% s$families$family_id)
+    s$families <- rbind(s$families, data.table::data.table(family_id = anchor, anchor_variable = anchor,
+                                                           label = label, definition = definition))
+  s$variables[variable_name %in% c(anchor, members), family_id := anchor]
+  s
+}
+
+xp <- function(...) paste0("/Return/ReturnData/", c(...))

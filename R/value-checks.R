@@ -68,7 +68,10 @@ value_checks <- function(xp, st, vals, shapes, rtype = report_type(xp), skip_yea
       neg <- wmean(st$p_negative, st$n_occurrences)
       add("V_SIGN", "Sign convention", "info",
           if (is.na(neg)) "no values" else sprintf("%s of values are negative (fine for net amounts)", pct(neg)))
-    } else {
+    } else if (any(grepl("(Pct|Percent|Percentage|Rt|Rate|Ratio)$", sub(".*/", "", xp$xpath)))) {
+      # Only shares can be on a 0-1 or a 0-100 scale. For counts the 99th
+      # percentile moves around 100 with the population (e.g. board size),
+      # which is not a scale difference.
       s2 <- st[!is.na(q99), .(p99 = stats::median(q99), n = sum(n_filings)), by = series][n >= 30]
       s2[, scale := data.table::fifelse(p99 <= 1, "fraction (0-1)",
                                         data.table::fifelse(p99 <= 100, "percent or small count", "large count or amount"))]
