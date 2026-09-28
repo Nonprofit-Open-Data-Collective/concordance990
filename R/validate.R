@@ -11,7 +11,7 @@
 #' @export
 validation_rules <- data.table::data.table(
   rule = c("R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09", "R10", "R11", "R12"),
-  status = c("enforced", "enforced", "enforced", "enforced", "enforced", "ratchet", "ratchet",
+  status = c("enforced", "enforced", "enforced", "enforced", "enforced", "enforced", "enforced",
              "enforced", "enforced", "enforced", "enforced", "enforced"),
   description = c(
     "Primary keys are unique in every component table",
@@ -75,6 +75,10 @@ validate_concordance <- function(src = read_src()) {
 
   # R07 one table per variable (after overrides)
   multi <- cc[, .(n = data.table::uniqueN(rdb_table), tabs = paste(unique(rdb_table), collapse = ";")), by = variable_name][n > 1]
+  # documented exceptions: variables accepted for R07 in the validation log
+  # (e.g. the Part III program tables, which share names so they can be stacked)
+  ok07 <- read_validation_log()[check == "R07" & status == "accepted", variable_name]
+  multi <- multi[!variable_name %in% ok07]
   v("R07", "variable", multi$variable_name, "rdb_table", multi$tabs)
 
   # R08 xpath root within the form's xml roots

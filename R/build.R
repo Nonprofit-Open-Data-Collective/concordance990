@@ -49,7 +49,7 @@ build_concordance <- function(src_dir = src_path(), format = c("v1", "v2")) {
   if (anyNA(x$rdb_relationship)) stop("xpaths reference unknown tables.")
 
   data.table::setorder(x, v1_order)
-  cols <- if (format == "v1") v1_columns else c(v1_columns, "family_id", "part_id")
+  cols <- if (format == "v1") v1_columns else c(v1_columns, "family_id", "part_id", intersect("multi_value", names(x)))
   x[, cols, with = FALSE]
 }
 
