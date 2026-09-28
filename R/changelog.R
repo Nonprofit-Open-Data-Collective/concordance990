@@ -8,9 +8,11 @@
 # Primary key(s) of each component table, and its change-log level
 src_keys <- list(forms = "form_id", parts = "part_id", tables = "table_id",
                  variables = "variable_name", xpaths = "xpath",
-                 xpath_overrides = c("xpath", "field"), families = "family_id")
+                 xpath_overrides = c("xpath", "field"), families = "family_id",
+                 xpath_forms = c("xpath", "form_id"))
 src_levels <- c(forms = "form", parts = "part", tables = "table", variables = "variable",
-                xpaths = "xpath", xpath_overrides = "xpath_override", families = "family")
+                xpaths = "xpath", xpath_overrides = "xpath_override", families = "family",
+                xpath_forms = "xpath_form")
 
 changelog_columns <- c("change_id", "date", "version", "commit", "author", "level", "key", "field",
                        "old_value", "new_value", "change_type", "reason", "evidence", "affects_data")

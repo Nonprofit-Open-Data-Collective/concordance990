@@ -4,7 +4,7 @@
 src_file <- c(form = "inst/extdata/src/forms.csv", part = "inst/extdata/src/parts.csv",
               table = "inst/extdata/src/tables.csv", variable = "inst/extdata/src/variables.csv",
               xpath = "inst/extdata/src/xpaths.csv", xpath_override = "inst/extdata/src/xpath_overrides.csv",
-              family = "inst/extdata/src/families.csv")
+              family = "inst/extdata/src/families.csv", xpath_form = "inst/extdata/src/xpath_forms.csv")
 pf_file <- "irs-efile-master-concordance-file/02-concordance-foundations/F990-PF-FULL.CSV (v1; PF is not yet in the v2 component tables)"
 
 #' Catalog of checks

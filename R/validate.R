@@ -57,6 +57,11 @@ validate_concordance <- function(src = read_src()) {
   bad <- s$variables[!table_id %in% s$tables$table_id]; v("R02", "variable", bad$variable_name, "table_id", bad$table_id)
   bad <- s$xpaths[!variable_name %in% s$variables$variable_name]; v("R02", "xpath", bad$xpath, "variable_name", bad$variable_name)
   bad <- s$xpath_overrides[!xpath %in% s$xpaths$xpath]; v("R02", "xpath_override", bad$xpath, "xpath", bad$xpath)
+  if (!is.null(s$xpath_forms) && nrow(s$xpath_forms)) {
+    xf <- s$xpath_forms; k <- paste(xf$xpath, xf$form_id, sep = " | ")
+    bad <- xf$xpath %in% s$xpaths$xpath & xf$form_id %in% s$forms$form_id & xf$variable_name %in% s$variables$variable_name
+    v("R02", "xpath_form", k[!bad], "xpath/form_id/variable_name", k[!bad])
+  }
 
   # R03 cardinality
   bad <- s$tables[!cardinality %in% c("ONE", "MANY")]; v("R03", "table", bad$table_id, "cardinality", bad$cardinality)

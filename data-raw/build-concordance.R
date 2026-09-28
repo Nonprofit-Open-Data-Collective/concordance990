@@ -26,6 +26,10 @@ write_concordance(cc, "concordance.csv")
 if (!file.exists("concordance.xlsx") || unname(tools::md5sum("concordance.csv")) != before) {
   write_concordance(cc, "concordance.csv", xlsx = "concordance.xlsx")
 }
+# 990-PF returns are parsed as a separate database: PF xpaths, the shared
+# header and Schedule B, with the form-specific mappings of xpath_forms.csv
+pf <- build_concordance(format = "v1", form = "F990PF")
+write_concordance(pf, "concordance-990pf.csv")
 cw <- v1_crosswalk(cc)
 write_cc_csv(cw, "inst/extdata/changelog/v1_to_v2_crosswalk.csv")
 
