@@ -1,3 +1,4 @@
+<p>No questions are open: every decision is applied. The follow-up items below are outside this repository.</p>
 <h3>Decided (J. Lecy, 2026-09-27/28) and applied</h3>
 <ul>
 <li><strong>Part III programs (fix 10).</strong> The shared variable names across the program tables are intentional: the tables are parsed separately and stacked later. This is recorded as an R07 exception, and collisions are now checked within each table. Inspection found no within-table collisions, the one-row program tables never repeat within a filing, and coverage runs continuously from 2009 to 2024 across the 2013 schema change.</li>
@@ -22,15 +23,11 @@
   <li>The rest of the PF review, with 2023 schema line numbers, added the 2023 qualifying distributions, the section 4960 tax and the unredacted 990-PF Schedule B, and fixed the table cardinalities.</li>
   </ul></li>
 <li><strong>990-PF Part IX-A, direct charitable activities (fix 16).</strong> The schemas allow at most four activities (Part VIII-A from 2023), each slot its own element, with no repeating "other" group. The four slots are now <code>PF_09_CHARIT_ACT_DESC_1</code>&ndash;<code>_4</code> and <code>PF_09_CHARIT_ACT_EXP_1</code>&ndash;<code>_4</code>, in wide format in the one-row table <code>PF-P09-T01-CHARITABLE-ACTIVITIES</code>. Before, one description and one expense variable in a table marked MANY received up to four values per filing. In TY2023, slot 1 is filled by 32,488 foundations and slots 2&ndash;4 by 7,668, 4,769 and 3,257.</li>
+<li><strong>Schedule B contributor number (fix 17).</strong> <code>SB_01_CONTRIBUTOR_TYPE</code>, which holds the Part I contributor number, is renamed <code>SB_01_CONTRIBUTOR_NUM</code>, matching <code>SB_02_NONCASH_CONTRIBUTOR_NUM</code> and <code>SB_03_CONTRIBUTOR_NUM</code>. The contributor type is the person/payroll/noncash checkboxes.</li>
 </ul>
 
 <div class="memo">
-<h3>1. Rename <code>SB_01_CONTRIBUTOR_TYPE</code>?</h3>
-<p>The variable holds the contributor number (<code>ContributorNum</code>) of Schedule B Part I, not a contributor type. The type is the person/payroll/noncash checkboxes added in fix 14. Renaming it <code>SB_01_CONTRIBUTOR_NUM</code> would match the new <code>SB_02_NONCASH_CONTRIBUTOR_NUM</code> and <code>SB_03_CONTRIBUTOR_NUM</code>, but it changes a column name downstream.</p>
-</div>
-
-<div class="memo">
-<h3>2. Follow-up outside this repository (not blocking)</h3>
+<h3>Follow-up outside this repository (not blocking)</h3>
 <ul>
 <li><strong>ef2 builds both databases.</strong> Once the concordance is reconciled, ef2 builds the 990/990-EZ database and the 990-PF database; ef2pf, a temporary project for the PF tables, is retired. ef2 takes both from this package:
   <ul>
