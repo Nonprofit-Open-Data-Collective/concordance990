@@ -17,7 +17,7 @@ validation_rules <- data.table::data.table(
     "Primary keys are unique in every component table",
     "Every reference resolves (form, part, table, variable, override target)",
     "Table cardinality is ONE or MANY",
-    "Variable names match ^[A-Z0-9]{2}_[0-9]{2}_[A-Z0-9_]+$",
+    "Variable names match ^[A-Z0-9]{2}_[0-9]{2}_[A-Z0-9_]+$ (990-PF auxiliary schedules: ^PF_AX[0-9]{2}_)",
     "Variable names are at most 32 characters",
     "Variable name prefix matches its table (F9_01 <-> F9-P01)",
     "Each variable belongs to exactly one table",
@@ -63,14 +63,17 @@ validate_concordance <- function(src = read_src()) {
 
   # R04-R06 variable names
   vars <- s$variables
-  bad <- vars[!grepl("^[A-Z0-9]{2}_[0-9]{2}_[A-Z0-9_]+$", variable_name)]
+  # 990-PF auxiliary schedules (attachments) use PF_AXnn_, nn = the schedule
+  bad <- vars[!grepl("^[A-Z0-9]{2}_[0-9]{2}_[A-Z0-9_]+$", variable_name) & !grepl("^PF_AX[0-9]{2}_[A-Z0-9_]+$", variable_name)]
   v("R04", "variable", bad$variable_name, "variable_name", bad$variable_name)
   bad <- vars[nchar(variable_name) > 32]; v("R05", "variable", bad$variable_name, "variable_name", bad$variable_name)
 
   if (!is.null(cc)) {
   tb_prefix <- ifelse(grepl("^[A-Z0-9]{2}-P[0-9]{2}-", cc$rdb_table),
                       paste0(substr(cc$rdb_table, 1, 2), "_", substr(cc$rdb_table, 5, 6)), NA)
-  bad <- unique(cc[substr(variable_name, 1, 5) != tb_prefix | is.na(tb_prefix), .(variable_name, rdb_table)])
+  # a PF_AXnn_ variable belongs to a PF-P99 (auxiliary schedule) table
+  var_prefix <- ifelse(grepl("^PF_AX[0-9]{2}_", cc$variable_name), "PF_99", substr(cc$variable_name, 1, 5))
+  bad <- unique(cc[var_prefix != tb_prefix | is.na(tb_prefix), .(variable_name, rdb_table)])
   v("R06", "variable", bad$variable_name, "table_id", bad$rdb_table)
 
   # R07 one table per variable (after overrides)
