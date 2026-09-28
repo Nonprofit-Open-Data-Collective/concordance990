@@ -11,18 +11,21 @@ pf_cc_path <- "../irs-efile-master-concordance-file/02-concordance-foundations/F
 
 # ---- the list being resolved, and the checks re-run now ---------------------------
 before <- fread("reports/issues.csv", colClasses = "character", na.strings = "")
-cc <- build_concordance(format = "v1")
+cc <- build_concordance(format = "v1", form = "F990")          # 990 / 990-EZ returns
 flags <- flag_xpaths(cc, "evidence")
 ev <- load_evidence("evidence")
 vc <- run_value_checks(cc, ev)
-pf_cc <- read_cc_csv(pf_cc_path)
-pf_cc[, `:=`(label = description, location_code_family = location_code)]
-flags_pf <- fread("evidence/pf/xpath_flags.csv")
-vc_pf <- fread("evidence/pf/value_checks.csv")
+pf_cc <- build_concordance(format = "v1", form = "F990PF")     # 990-PF returns (merged in fix 11)
+flags_pf <- flag_xpaths(pf_cc, "evidence/pf")
+vc_pf <- run_value_checks(pf_cc, load_evidence("evidence/pf"))
 now_all <- collect_issues(read_src(), flags = flags, value_checks_990 = vc, flags_pf = flags_pf,
                           value_checks_pf = vc_pf, pf_concordance = pf_cc, reports_dir = "reports",
                           validation_log = read_validation_log()[0])
 now_open <- drop_accepted(now_all)
+# issues.html named PF variables as in the v1 PF file (F990-PF-FULL.CSV); the
+# merge used the PF names of F990-PF-FULL.xlsx: crosswalk them through xpaths
+pf_v1 <- read_cc_csv(pf_cc_path)[, .(xpath, old = variable_name)]
+aliases <- unique(merge(pf_v1, pf_cc[, .(xpath, new = variable_name)], by = "xpath")[, .(old, new)])
 
 # ---- fixes: each change-log reason belongs to one fix script ----------------------------
 fix_files <- sort(list.files("data-raw/fixes", pattern = "^[0-9]{2}-.*\\.R$", full.names = TRUE))
@@ -43,7 +46,7 @@ changes <- read_changelog()
 stopifnot(all(changes$reason %in% names(fixes)))
 
 xpath_var <- unique(rbind(read_src()$xpaths[, .(xpath, variable_name)], baseline_src()$xpaths[, .(xpath, variable_name = trimws(variable_name))]))
-resolved <- resolve_issues(before, now_all, changes, read_validation_log(), fixes, xpath_var = xpath_var)
+resolved <- resolve_issues(before, now_all, changes, read_validation_log(), fixes, xpath_var = xpath_var, aliases = aliases)
 # cases that pass because a check was corrected
 resolved[status == "fixed_check" & check == "V_NUMBER_SCALE",
          `:=`(fix = "check: R/value-checks.R",

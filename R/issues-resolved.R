@@ -26,7 +26,15 @@
 #'   `change_ids`.
 #' @export
 resolve_issues <- function(before, now, changes, log = read_validation_log(), fixes = character(),
-                           xpath_var = NULL) {
+                           xpath_var = NULL, aliases = NULL) {
+  # aliases: data.table(old, new) for variables renamed wholesale (e.g. the
+  # 990-PF names of the v1 PF file -> the merged PF names); a variable-level
+  # case still fails if the same check fails for any of its new names
+  if (!is.null(aliases) && nrow(aliases)) {
+    now <- data.table::copy(now); now[is.na(variable_name), variable_name := ""]
+    al <- merge(now[level == "variable", .(check, new = variable_name)], unique(aliases), by = "new", allow.cartesian = TRUE)
+    if (nrow(al)) now <- rbind(now, al[, .(check, variable_name = old, key = old, level = "variable")], fill = TRUE)
+  }
   b <- data.table::copy(data.table::as.data.table(before))
   b[is.na(variable_name), variable_name := ""]
   now <- data.table::copy(now); now[is.na(variable_name), variable_name := ""]
