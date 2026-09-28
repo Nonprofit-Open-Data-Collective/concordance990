@@ -104,8 +104,8 @@ resolve_issues <- function(before, now, changes, log = read_validation_log(), fi
   b[, status := data.table::fcase(
     !is.na(log_status) & log_status %in% c("needs_input", "deferred"), log_status,
     !still & change_ids != "", "fixed",
+    !is.na(log_status), log_status,   # a reviewed decision (e.g. a design exception) wins over "check corrected"
     !still, "fixed_check",
-    !is.na(log_status), log_status,
     check %in% review_only, "review_only",
     default = "open")]
   b[, resolution := data.table::fcase(
@@ -134,8 +134,9 @@ write_resolved_report <- function(resolved, path = "reports/issues-resolved.html
                                   memo = character(), new_cases = NULL, header = character(), max_rows = 2000) {
   esc <- function(x) htmltools::htmlEscape(one_line(ifelse(is.na(x), "", as.character(x))))
   fmt <- function(x) format(x, big.mark = ",")
-  data.table::fwrite(resolved[, .(status, severity, check, name, source, level, key, variable_name, rdb_table,
-                                  resolution, fix, files, change_ids, detail, evidence)],
+  out_cols <- c("status", "severity", "check", "name", "source", "level", "key", "variable_name", intersect("old_name", names(resolved)), "rdb_table",
+                "resolution", "fix", "files", "change_ids", "detail", "evidence")
+  data.table::fwrite(resolved[, out_cols, with = FALSE],
                      sub("\\.html$", ".csv", path))
   st_lab <- c(fixed = "&#10004; fixed", fixed_check = "&#10004; check corrected", accepted = "&#10003; accepted",
               needs_input = "&#10067; needs input", deferred = "&#8987; deferred (PF)",

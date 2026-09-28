@@ -26,6 +26,17 @@ now_open <- drop_accepted(now_all)
 # merge used the PF names of F990-PF-FULL.xlsx: crosswalk them through xpaths
 pf_v1 <- read_cc_csv(pf_cc_path)[, .(xpath, old = variable_name)]
 aliases <- unique(merge(pf_v1, pf_cc[, .(xpath, new = variable_name)], by = "xpath")[, .(old, new)])
+# PF cases: an xpath case takes its xpath's merged name; a variable case takes
+# the merged name when the old variable maps to exactly one
+before[, old_name := variable_name]
+is_pf <- grepl("PF", before$source)
+xnew <- pf_cc[, .(key = xpath, xname = variable_name)]
+before[xnew, on = "key", xname := i.xname]
+before[is_pf & level == "xpath" & !is.na(xname), variable_name := xname]
+one <- aliases[, .(new = if (uniqueN(new) == 1) new[1] else NA_character_), by = old][!is.na(new)]
+before[one, on = c(variable_name = "old"), vnew := i.new]
+before[is_pf & level == "variable" & !is.na(vnew), `:=`(variable_name = vnew, key = fifelse(key == old_name, vnew, key))]
+before[, c("xname", "vnew") := NULL]
 
 # ---- fixes: each change-log reason belongs to one fix script ----------------------------
 fix_files <- sort(list.files("data-raw/fixes", pattern = "^[0-9]{2}-.*\\.R$", full.names = TRUE))
@@ -47,6 +58,22 @@ stopifnot(all(changes$reason %in% names(fixes)))
 
 xpath_var <- unique(rbind(read_src()$xpaths[, .(xpath, variable_name)], baseline_src()$xpaths[, .(xpath, variable_name = trimws(variable_name))]))
 resolved <- resolve_issues(before, now_all, changes, read_validation_log(), fixes, xpath_var = xpath_var, aliases = aliases)
+# PF cases resolved by the merge itself: shared header, Schedule B and
+# attachment xpaths already mapped in the concordance now apply to 990-PF returns
+resolved[status == "fixed_check" & grepl("PF", source) & check == "UNMAPPED",
+         `:=`(status = "fixed", fix = "11-pf-merge", files = "inst/extdata/src/xpaths.csv",
+              resolution = "Mapped by the 990-PF merge: a shared return-header, Schedule B or attachment xpath already mapped in the concordance, which now applies to 990-PF returns (build_concordance(form = \"F990PF\"), concordance-990pf.csv).")]
+# an old PF variable split into several merged variables: accepted when every
+# merged variable's case is accepted in the validation log
+vl_acc <- read_validation_log()[status == "accepted", paste(check, variable_name)]
+op <- resolved[status == "open" & grepl("PF", source) & level == "variable"]
+for (i in seq_len(nrow(op))) {
+  nn <- aliases[old == op$old_name[i], new]
+  hit <- paste(op$check[i], nn) %in% vl_acc | !paste(op$check[i], nn) %in% paste(now_all$check, now_all$variable_name)
+  if (length(nn) && all(hit))
+    resolved[check == op$check[i] & old_name == op$old_name[i] & status == "open",
+             `:=`(status = "accepted", resolution = sprintf("The old PF variable is split in the merged concordance (%s); the case is accepted for each of them in the validation log (foreign address fields: provinces as free text, postal codes of many formats).", paste(nn, collapse = ", ")))]
+}
 # cases that pass because a check was corrected
 resolved[status == "fixed_check" & check == "V_NUMBER_SCALE",
          `:=`(fix = "check: R/value-checks.R",
@@ -66,7 +93,10 @@ fix_meta <- rbindlist(lapply(fix_files, function(f) {
 titles <- c("01-cleanup" = "01 Clean-up", "02-data-types" = "02 Data types", "03-mapping-errors" = "03 Mapping errors",
             "04-tables-and-names" = "04 Tables and names", "05-cardinality" = "05 Cardinality",
             "06-types-and-scale" = "06 Types and scale", "07-coverage" = "07 Coverage",
-            "08-validation-log" = "08 Validation log", "09-follow-up" = "09 Follow-up")
+            "08-validation-log" = "08 Validation log", "09-follow-up" = "09 Follow-up",
+            "10-decisions" = "10 Decisions", "11-pf-merge" = "11 990-PF merge", "12-pf-forms-and-gaps" = "12 PF per-form mappings",
+            "13-pf-types-and-lists" = "13 PF types and lists", "14-pf-coverage-and-tables" = "14 PF coverage and tables",
+            "15-pf-review" = "15 PF review")
 summaries <- c(
   "01-cleanup" = "Curly quotes to UTF-8 (R11); cardinality <code>\"ONE \"</code> trimmed (R03); whitespace trimmed (R12); 13 variables renamed to the naming convention (R04); literal <code>NA</code> replaced by empty cells (R10).",
   "02-data-types" = "22 identifiers retyped to text (V_ID_TEXT); 30 untyped variables given a type (R09).",
@@ -74,6 +104,12 @@ summaries <- c(
   "04-tables-and-names" = "Schedule G event totals resolved to one table (R07); SH_01_CHNA_DESC_RESOURCES_X renamed SH_05_... (R06).",
   "05-cardinality" = "15 supplemental tables and SH-P99-T00 made MANY; Schedule H Part V Section B moved to new MANY table SH-P05-T03; Schedule A hospital names to new MANY table SA-P01-T02; three fixed-line tables made ONE; 990-EZ 'none' statements moved to F9-P07-T00.",
   "06-types-and-scale" = "Seven code/description variables retyped to text; an unobserved indicator remapped; TY2009 combined special-events revenue split from gaming.",
+  "10-decisions" = "Decisions of 2026-09-27: Schedule O table renamed; Part III R07 exception; 501(c) subsection attribute (F9_00_EXEMPT_STAT_501C_TYPE) with a TY2009 rule; TY2012 OtherExplainInSchO mapped; <code>multi_value</code> column for six list-valued fields.",
+  "11-pf-merge" = "990-PF concordance (F990-PF-FULL.xlsx) merged as form F990PF: 2,202 xpaths with their variables, tables and parts; shared header xpaths kept as the same F9_00_ variables; a 33-character name shortened; a variable split between Parts II and III.",
+  "12-pf-forms-and-gaps" = "New component table <code>xpath_forms.csv</code>: attachments filed with every form map to PF variables in 990-PF returns; <code>concordance-990pf.csv</code> built for the PF database; variables for the 11 PF rows without one.",
+  "13-pf-types-and-lists" = "Seven PF variables retyped; PF list fields marked multi_value.",
+  "14-pf-coverage-and-tables" = "Observed PF xpaths mapped (2023 qualifying distributions, section 4960 tax, balance-sheet net assets, Part XV-A detail, heading items) and the unredacted 990-PF Schedule B (new tables SB-P00-T00, SB-P02-T01, SB-P03-T00/T01); two PF mapping errors corrected; PF table cardinalities fixed.",
+  "15-pf-review" = "Remaining PF cases reviewed on the merged mapping and logged; Schedule B contributor numbers typed numeric.",
   "07-coverage" = "Predecessor/successor xpaths added to existing variables; new variables for observed Schedule A, H and C fields; new MANY tables F9-P00-T01-AFFILIATE-LISTING and SC-P02-T01-AFFILIATED-GROUP.",
   "08-validation-log" = "Reviewed cases recorded in <code>inst/extdata/validation/validation_log.csv</code> (accepted, needs input, deferred). No change to the concordance.",
   "09-follow-up" = "Re-ran the checks on the fixed tables: the Schedule A agricultural-research college group moved to new MANY table SA-P01-T03; the new cases raised by fixes 03-07 reviewed and logged.")
@@ -101,7 +137,7 @@ header <- c(
   "Resolves" = sprintf("<a href=\"issues.html\">issues.html</a>, built from commit <code>5e116ee</code> (%s cases)", format(nrow(before), big.mark = ",")),
   "Change log" = sprintf("<code>inst/extdata/changelog/changes.csv</code>: %s rows, one per changed cell or row, each with a reason and evidence; replaying it on v1 reproduces the current tables (tested).", format(nrow(changes), big.mark = ",")),
   "Validation log" = sprintf("<code>inst/extdata/validation/validation_log.csv</code>: %s reviewed cases with a note each; accepted cases no longer appear in the issues list.", format(nrow(read_validation_log()), big.mark = ",")),
-  "Re-checked" = "Structural rules, evidence flags and value checks re-run on the current tables with the same filing evidence (TY2009-2024; 990-PF TY2023). Collisions for split variables are re-derived from the stored xpath sets; row-level collision counts were spot-checked in the TY2012 and TY2019 DuckDB builds.",
+  "Re-checked" = "Structural rules, evidence flags and value checks re-run on the current tables with the same filing evidence (990/990-EZ TY2009-2024 on the 990 rows; 990-PF TY2023 on the merged PF concordance). Collisions for split variables are re-derived from the stored xpath sets; row-level collision counts were spot-checked in the TY2012 and TY2019 DuckDB builds.",
   "Commits" = paste0("<code>", htmltools::htmlEscape(rev(commits)), "</code>", collapse = "<br>"))
 
 write_resolved_report(resolved, "reports/issues-resolved.html", fixes_tbl = fix_meta, memo = memo,

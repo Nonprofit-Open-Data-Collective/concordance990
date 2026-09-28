@@ -1,79 +1,61 @@
-<p>These cases have a clear diagnosis, but the fix is a modelling or naming decision that changes table or column names downstream, or it needs information that isn't available locally. Each is recorded as <code>needs_input</code> in the validation log. The 990-PF cases are waiting on one decision: when to merge the PF concordance.</p>
-
-<div class="memo">
-<h3>1. Part III programs: one variable in five tables</h3>
-<p><strong>Cases:</strong> R07 &times;5, COLLISION &times;5, V_POOLED_SCALE &times;3 (<code>F9_03_PROG_CODE</code>, <code>_DESC</code>, <code>_EXP</code>, <code>_GRANT</code>, <code>_REV</code>).</p>
-<p>v1 maps lines 4a, 4b, 4c, 4d (other) and the 990-EZ programs to the same five variable names. <code>xpath_overrides.csv</code> then sends each line's xpaths to its own table: <code>F9-P03-T00-PROGRAM-ONE</code>, <code>-TWO</code>, <code>-THREE</code>, <code>F9-P03-T01-PROGRAMS-OTHER</code> and <code>F9-P03-T02-PROGRAMS-EZ</code>. So one column name appears in five tables. The collisions are real in the sense that 4a and 4b hold different programs (TY2019: 96,251 filings fill both descriptions). They only become a problem if a parser pools by variable name.</p>
-<ol>
-<li><strong>One programs table.</strong> Replace the five tables with one MANY table (for example <code>F9-P03-T01-PROGRAMS</code>) with a program column (4a/4b/4c/other/EZ). Each concept is one variable. This renames tables downstream, and the crosswalk carries v1 data across.</li>
-<li><strong>Separate names per table.</strong> Keep the five tables and give each line its own variables (for example <code>F9_03_PROG_4B_DESC</code>). This renames columns downstream.</li>
-<li><strong>Keep and document.</strong> Record an exception to R07 for Part III and evaluate collisions within each table. Nothing is renamed.</li>
-</ol>
-<p><strong>Recommendation:</strong> option 1 for v2.0, since it is a major version and the crosswalk exists for this purpose. Choose option 3 if downstream stability matters more for this release.</p>
-</div>
-
-<div class="memo">
-<h3>2. Schedule O table name</h3>
-<p><strong>Cases:</strong> R06 &times;4 (<code>SO_00_EXPLANATION_TEXT</code>, <code>_FORM_LINE_REFERENCE</code>, <code>_IDENTIFIER</code>, <code>_RETURN_REFERENCE</code>).</p>
-<p><code>SO-T99-SUPPLEMENTAL-INFO</code> is the only table without a part number, so its variable prefix <code>SO_00</code> can't match it. Part <code>SO-P00</code> already exists.</p>
-<p><strong>Recommendation:</strong> rename the table to <code>SO-P00-T99-SUPPLEMENTAL-INFO</code> in v2.0. Code that reads the table by name must follow, and the crosswalk records the move. Say yes and it is a one-step logged fix.</p>
-</div>
-
-<div class="memo">
-<h3>3. Lists of codes inside one-row tables</h3>
-<p><strong>Cases:</strong> ONE_REPEATS &times;15. These are elements that repeat on their own rather than as rows of a group:</p>
+<h3>Decided (J. Lecy, 2026-09-27/28) and applied</h3>
 <ul>
-<li>states where the return is filed (F9-P06)</li>
-<li>foreign financial-account countries (F9-P05)</li>
-<li>990-EZ foreign office countries (F9-P04)</li>
-<li>special conditions (F9-P00)</li>
-<li>Schedule G licensed states and gaming states</li>
+<li><strong>Part III programs (fix 10).</strong> The shared variable names across the program tables are intentional: the tables are parsed separately and stacked later. This is recorded as an R07 exception, and collisions are now checked within each table. Inspection found no within-table collisions, the one-row program tables never repeat within a filing, and coverage runs continuously from 2009 to 2024 across the 2013 schema change.</li>
+<li><strong>Schedule O (fix 10).</strong> <code>SO-T99-SUPPLEMENTAL-INFO</code> is renamed <code>SO-P00-T99-SUPPLEMENTAL-INFO</code>.</li>
+<li><strong>List-valued fields (fixes 10, 13, 14).</strong> A new <code>variables.csv</code> column, <code>multi_value</code>, marks fields whose repeated values are joined into one cell. It is set for:
+  <ul>
+  <li>states licensed for fundraising, and gaming states;</li>
+  <li>states where the return is filed (990 and 990-PF);</li>
+  <li>foreign financial-account countries (990 and 990-PF);</li>
+  <li>990-EZ foreign office countries;</li>
+  <li>special conditions;</li>
+  <li>990-PF contributing and shareholder managers.</li>
+  </ul></li>
+<li><strong>501(c) subsection, TY2009 (fix 10).</strong> From the 2009v1.0 schema: a 501(c)(3) filer checked <code>Organization501c</code> with the attribute <code>typeOf501cOrganization = 3</code>. The new variable <code>F9_00_EXEMPT_STAT_501C_TYPE</code> maps that attribute, and <code>organization501cTypeTxt</code> from 2013. A production rule derives the 2009 501(c)(3) flag.</li>
+<li><strong>TY2012 checkbox (fix 10).</strong> <code>OtherExplainInSchO</code> is the "Other (explain in Schedule O)" box of Part VI line 18. This comes from its position in TY2012 filings and its 2013 successor <code>OtherInd</code>. It now maps to <code>F9_06_DISCLOSURE_AVBL_OTH_X</code>.</li>
+<li><strong>990-PF merge (fixes 11&ndash;15).</strong>
+  <ul>
+  <li>Source: <code>F990-PF-FULL.xlsx</code>, merged as form F990PF. The shared header uses the same <code>F9_00_</code> variables.</li>
+  <li>Attachments filed with every form map per form (<code>xpath_forms.csv</code>), and the build writes <code>concordance-990pf.csv</code> for the separate PF database.</li>
+  <li>The 11 rows without a variable now have variables.</li>
+  <li>With the workbook's names, none of the 34 PF collision errors in issues.html remain.</li>
+  <li>The rest of the PF review, with 2023 schema line numbers, added the 2023 qualifying distributions, the section 4960 tax and the unredacted 990-PF Schedule B, and fixed the table cardinalities.</li>
+  </ul></li>
 </ul>
+
+<div class="memo">
+<h3>1. 990-PF Part IX-A: four activity slots in one variable</h3>
+<p><strong>Cases:</strong> <code>PF_09_CHARIT_ACT_DESC</code>, <code>PF_09_CHARIT_ACT_EXP</code> (table <code>PF-P09-T01-CHARITABLE-ACTIVITIES</code>).</p>
+<p>The summary of direct charitable activities has four fixed slots: <code>Description1Txt</code>&ndash;<code>Description4Txt</code> and <code>Expenses1Amt</code>&ndash;<code>Expenses4Amt</code>. All four are mapped to one variable in one table, so a filing's four values compete for one cell. This is not a repeating element.</p>
 <ol>
-<li><strong>Child tables.</strong> Add a MANY table per list, for example <code>F9-P06-T01-STATES-RETURN-FILED</code>. The <code>F9-P00-T01</code> number is now taken by <code>AFFILIATE-LISTING</code>, so special conditions would need another number.</li>
-<li><strong>List-valued fields.</strong> Keep each field in its one-row table and mark it as holding several values (a new <code>variables.csv</code> column such as <code>multi_value</code>). Parsers then join the values, for example <code>CA;NY</code>.</li>
+<li>Four variables per column (<code>_1</code>&ndash;<code>_4</code>) in a one-row table, like the program-related investments of Part IX-B.</li>
+<li>Keep one variable per column in a MANY table and add a slot column, which parsers fill from the element name.</li>
+<li>Four one-row tables sharing variable names, like the 990 Part III programs, stacked later.</li>
 </ol>
-<p><strong>Recommendation:</strong> option 2. It keeps one row per filing for the tables most people use, and the flag is a small Phase 4 addition.</p>
+<p><strong>Recommendation:</strong> option 3, for consistency with the Part III approach you described. Option 1 is simplest if the tables are never stacked.</p>
 </div>
 
 <div class="memo">
-<h3>4. 501(c) type in TY2009</h3>
-<p><strong>Cases:</strong> INCIDENCE_BREAK &times;1 (<code>F9_00_EXEMPT_STAT_501C_X</code>).</p>
-<p>In the 2009 schemas every filer used <code>Organization501c</code> with a type attribute, and there was no separate 501(c)(3) element. So for TY2009, <code>F9_00_EXEMPT_STAT_501C_X</code> includes 501(c)(3) organizations and <code>F9_00_EXEMPT_STAT_501C3_X</code> is empty. The fix needs attribute xpaths (the 501(c) type attribute) in the concordance and in the evidence, and the evidence builder does not read attributes.</p>
-<p><strong>Recommendation:</strong> document it in the variable description now, and add attribute-level mapping with the XSD metadata work (Phase 4).</p>
+<h3>2. Rename <code>SB_01_CONTRIBUTOR_TYPE</code>?</h3>
+<p>The variable holds the contributor number (<code>ContributorNum</code>) of Schedule B Part I, not a contributor type. The type is the person/payroll/noncash checkboxes added in fix 14. Renaming it <code>SB_01_CONTRIBUTOR_NUM</code> would match the new <code>SB_02_NONCASH_CONTRIBUTOR_NUM</code> and <code>SB_03_CONTRIBUTOR_NUM</code>, but it changes a column name downstream.</p>
 </div>
 
 <div class="memo">
-<h3>5. An unidentified TY2012 checkbox</h3>
-<p><strong>Cases:</strong> UNMAPPED &times;1 (<code>/Return/ReturnData/IRS990/OtherExplainInSchO</code>).</p>
-<p>It appears only in the 2012v2.0&ndash;3.0 schemas, in 1,580 filings, and every value is X. Its form line can't be identified without the 2012 XSD, which isn't available locally.</p>
-<p><strong>Recommendation:</strong> check the 2012 XSD, then map it or add it to the ignore list.</p>
-</div>
-
-<div class="memo">
-<h3>6. 990-PF: when to merge (Phase 5)</h3>
-<p><strong>Cases:</strong> 1,884 deferred, including 34 errors.</p>
-<p>issues.html points PF fixes at the v1 file <code>F990-PF-FULL.CSV</code> and asks for them after the PF merge, so the changes are logged. The fixes for the 34 errors are already worked out:</p>
+<h3>3. Follow-up outside this repository (not blocking)</h3>
 <ul>
-<li><strong>Balance sheet (Part II), 17 variables.</strong> End-of-year book value is pooled with fair market value (for example <code>CashEOYAmt</code> with <code>CashEOYFMVAmt</code>, and <code>TotalAssetsEOYAmt</code> with <code>TotalAssetsEOYFMVAmt</code> in all 114,559 filings). Fix: split the FMV column (c) into its own variables.</li>
-<li><strong><code>F9_02_PF_BSCSBOY</code> / <code>BSCSEOY</code>.</strong> Capital stock (a net-asset line) is pooled with corporate stock (an investment). Fix: split them.</li>
-<li><strong>Part XVI-A analysis of income, 8 variables.</strong> Exclusion <em>codes</em> are pooled with exclusion <em>amounts</em>, and <code>F9_16_PF_AIPANRIRNDFP</code> also pools the related and unrelated columns. Fix: split by column, with codes as text.</li>
-<li><strong>Part IV capital gains.</strong> Adjusted basis is pooled with FMV as of 12/31/69, and gain/loss with gross sales price. Fix: split by column.</li>
-<li><strong>Part VIII / XV foreign addresses.</strong> City, country and postal code are pooled. Fix: split by field.</li>
-<li><strong><code>F9_08_PF_RATAEPRATAEP</code>.</strong> A line number is pooled with its statement text. Fix: split them.</li>
-<li><strong><code>AF_13_PF_ELECTIDESCES</code>.</strong> Two different elections are pooled (applied to prior year, and distribution from corpus). Fix: split them.</li>
-</ul>
-<p><strong>Recommendation:</strong> start Phase 5 next. The PF fixes can then be applied and logged in the same way as fixes 01&ndash;07.</p>
-</div>
-
-<div class="memo">
-<h3>7. Please review (not blocking)</h3>
-<ul>
-<li><strong>New table names.</strong> <code>SH-P05-T03-FACILITY-POLICIES-PRACTICES</code>, <code>SA-P01-T02-HOSPITAL-NAME-ADDRESS</code>, <code>F9-P00-T01-AFFILIATE-LISTING</code> and <code>SC-P02-T01-AFFILIATED-GROUP</code> are proposals. Renaming them is cheap before a release.</li>
-<li><strong>Schedule H 2016 Section B variables (fix 07).</strong> Labels and line numbers are inferred from element names, not the XSD. From 2016, <code>PriorCHNAImpactInd</code> is line 3j and the existing <code>OtherInd</code> may be line 3k.</li>
-<li><strong><code>F9_00_IRS_TRUST_*_X</code>.</strong> These hold assurance-level codes (AAL1, IAL1, 0&ndash;3) and are now typed text. The <code>_X</code> suffix suggests a checkbox, so they could be renamed.</li>
-<li><strong>V_MEDIAN_JUMP (247 cases).</strong> This check is review-only by definition. The cases were not examined one by one and remain in the issues list as context.</li>
-<li><strong>Rebuild the evidence.</strong> <code>build_evidence()</code> now counts collisions per repeating row. Re-run it on the September 2026 DuckDB builds to refresh <code>evidence/</code> and confirm the address collisions are gone in every year. They were checked in TY2012 and TY2019, with 0 rows in both.</li>
-<li><strong>Accepted cases.</strong> Accepted cases carry a note in the validation log. The reviewer field reads "Claude Code, for review by Jesse Lecy".</li>
+<li><strong>Parsers (ef2, ef2pf).</strong> They need to:
+  <ul>
+  <li>join repeated values when <code>multi_value = TRUE</code>;</li>
+  <li>read XML attributes (xpaths with <code>/@</code>, used by <code>F9_00_EXEMPT_STAT_501C_TYPE</code>);</li>
+  <li>use <code>concordance-990pf.csv</code> (or <code>build_concordance(form = "F990PF")</code>) for the PF database in place of <code>F990-PF-FULL.CSV</code>.</li>
+  </ul></li>
+<li><strong>Rebuild the evidence.</strong> <code>build_evidence()</code> now counts collisions per repeating row. Re-run it on the September 2026 builds to confirm in every year what TY2012 and TY2019 showed: the address collisions were false positives. Add more 990-PF years than TY2023 when available; the PF checks cover one year only.</li>
+<li><strong>Please review:</strong>
+  <ul>
+  <li>the new table names (<code>SH-P05-T03</code>, <code>SA-P01-T02</code>, <code>SA-P01-T03</code>, <code>F9-P00-T01</code>, <code>SC-P02-T01</code>, <code>SB-P00-T00</code>, <code>SB-P02-T01</code>, <code>SB-P03-T00/T01</code>);</li>
+  <li>labels inferred from element names (Schedule H 2016 lines, 990-PF heading items);</li>
+  <li>the reviewer notes in <code>inst/extdata/validation/validation_log.csv</code>.</li>
+  </ul></li>
+<li><strong>V_MEDIAN_JUMP (246 cases).</strong> These are review-only by definition and were not examined one by one.</li>
 </ul>
 </div>

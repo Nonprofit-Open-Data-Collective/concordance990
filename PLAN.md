@@ -401,10 +401,16 @@ and the current concordance is recorded line by line.
       F9-P00-T01, SC-P02-T01), 103 observed xpaths added, and
       `inst/extdata/validation/validation_log.csv` for reviewed cases.
       Evidence checks corrected: collisions are counted per repeating-element
-      row (`build_evidence()`), and V_NUMBER_SCALE runs only on shares. Still
-      open: Part III program tables (R07), the Schedule O table name (R06),
-      list-valued fields in one-row tables; the other Phase 4 items above.
-- [ ] **Phase 5: 990-PF.** Merge the PF part files; PF evidence scan.
+      row (`build_evidence()`), and V_NUMBER_SCALE runs only on shares. The questions
+      raised there were decided on 2026-09-27 (fix 10): Part III program tables (R07), the Schedule O table name (R06),
+      list-valued fields (multi_value). Still open: the other Phase 4 items above.
+- [x] **Phase 5: 990-PF.** Done 2026-09-28 (fixes 11-15): `F990-PF-FULL.xlsx`
+      merged as form F990PF (shared header = the same `F9_00_` variables);
+      `xpath_forms.csv` maps attachments filed with every form per form, and
+      the build writes `concordance-990pf.csv` for the separate PF database;
+      PF coverage from the TY2023 evidence and 2023v5.0 XSDs (qualifying
+      distributions, section 4960 tax, unredacted 990-PF Schedule B). Open:
+      Part IX-A activity slots; more than one year of PF evidence.
 - [ ] **Phase 6: Release + downstream.** v2.0.0 tag; migrate ef2, panel990,
       fiscal, efile-rdb-tables, nccs-data-core, ef2pf.
 
