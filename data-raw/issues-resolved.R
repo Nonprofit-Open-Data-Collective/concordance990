@@ -96,7 +96,7 @@ titles <- c("01-cleanup" = "01 Clean-up", "02-data-types" = "02 Data types", "03
             "08-validation-log" = "08 Validation log", "09-follow-up" = "09 Follow-up",
             "10-decisions" = "10 Decisions", "11-pf-merge" = "11 990-PF merge", "12-pf-forms-and-gaps" = "12 PF per-form mappings",
             "13-pf-types-and-lists" = "13 PF types and lists", "14-pf-coverage-and-tables" = "14 PF coverage and tables",
-            "15-pf-review" = "15 PF review")
+            "15-pf-review" = "15 PF review", "16-pf-charitable-activities" = "16 PF direct charitable activities")
 summaries <- c(
   "01-cleanup" = "Curly quotes to UTF-8 (R11); cardinality <code>\"ONE \"</code> trimmed (R03); whitespace trimmed (R12); 13 variables renamed to the naming convention (R04); literal <code>NA</code> replaced by empty cells (R10).",
   "02-data-types" = "22 identifiers retyped to text (V_ID_TEXT); 30 untyped variables given a type (R09).",
@@ -110,6 +110,7 @@ summaries <- c(
   "13-pf-types-and-lists" = "Seven PF variables retyped; PF list fields marked multi_value.",
   "14-pf-coverage-and-tables" = "Observed PF xpaths mapped (2023 qualifying distributions, section 4960 tax, balance-sheet net assets, Part XV-A detail, heading items) and the unredacted 990-PF Schedule B (new tables SB-P00-T00, SB-P02-T01, SB-P03-T00/T01); two PF mapping errors corrected; PF table cardinalities fixed.",
   "15-pf-review" = "Remaining PF cases reviewed on the merged mapping and logged; Schedule B contributor numbers typed numeric.",
+  "16-pf-charitable-activities" = "990-PF Part IX-A (VIII-A from 2023): the four fixed activity slots mapped to PF_09_CHARIT_ACT_DESC_1..4 and PF_09_CHARIT_ACT_EXP_1..4 in the one-row table PF-P09-T01 (wide format).",
   "07-coverage" = "Predecessor/successor xpaths added to existing variables; new variables for observed Schedule A, H and C fields; new MANY tables F9-P00-T01-AFFILIATE-LISTING and SC-P02-T01-AFFILIATED-GROUP.",
   "08-validation-log" = "Reviewed cases recorded in <code>inst/extdata/validation/validation_log.csv</code> (accepted, needs input, deferred). No change to the concordance.",
   "09-follow-up" = "Re-ran the checks on the fixed tables: the Schedule A agricultural-research college group moved to new MANY table SA-P01-T03; the new cases raised by fixes 03-07 reviewed and logged.")

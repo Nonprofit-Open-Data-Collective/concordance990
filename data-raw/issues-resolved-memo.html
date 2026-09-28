@@ -21,31 +21,16 @@
   <li>With the workbook's names, none of the 34 PF collision errors in issues.html remain.</li>
   <li>The rest of the PF review, with 2023 schema line numbers, added the 2023 qualifying distributions, the section 4960 tax and the unredacted 990-PF Schedule B, and fixed the table cardinalities.</li>
   </ul></li>
+<li><strong>990-PF Part IX-A, direct charitable activities (fix 16).</strong> The schemas allow at most four activities (Part VIII-A from 2023), each slot its own element, with no repeating "other" group. The four slots are now <code>PF_09_CHARIT_ACT_DESC_1</code>&ndash;<code>_4</code> and <code>PF_09_CHARIT_ACT_EXP_1</code>&ndash;<code>_4</code>, in wide format in the one-row table <code>PF-P09-T01-CHARITABLE-ACTIVITIES</code>. Before, one description and one expense variable in a table marked MANY received up to four values per filing. In TY2023, slot 1 is filled by 32,488 foundations and slots 2&ndash;4 by 7,668, 4,769 and 3,257.</li>
 </ul>
 
 <div class="memo">
-<h3>1. 990-PF Part IX-A: four activity slots in one variable</h3>
-<p><strong>Cases:</strong> <code>PF_09_CHARIT_ACT_DESC</code>, <code>PF_09_CHARIT_ACT_EXP</code> (table <code>PF-P09-T01-CHARITABLE-ACTIVITIES</code>).</p>
-<p>Form 990-PF Part IX-A, "Summary of Direct Charitable Activities" (Part VIII-A from the 2023 redesign). The schemas show:</p>
-<ul>
-<li>It is a hard limit of four activities, with no catch-all. The group (<code>SummaryOfDirectCharitableActy</code> in 2009&ndash;2012, <code>SummaryOfDirectChrtblActyGrp</code> from 2013) occurs at most once per return. It holds exactly four numbered slot pairs: <code>Description1</code>&ndash;<code>4</code> and <code>Expenses1</code>&ndash;<code>4</code> (2009v1.0), later <code>Description1Txt</code>&ndash;<code>4Txt</code> and <code>Expenses1Amt</code>&ndash;<code>4Amt</code> (2023v5.0). There is no "other activities" element and no many-row case, unlike Form 990 Part III, where line 4d "other program services" repeats without limit.</li>
-<li>Each slot has its own xpath. In TY2023 filings slot 1 is used by 32,488 foundations and slots 2&ndash;4 by 7,668, 4,769 and 3,257. No slot repeats within a filing.</li>
-<li>The v1 PF concordance maps all four slots to one description variable and one expense variable in a table marked MANY. Because the slots are sibling elements, not repeated rows, a parser gets up to four values for one cell in a single row.</li>
-</ul>
-<ol>
-<li>Four variables per column (<code>PF_09_CHARIT_ACT_DESC_1</code>&ndash;<code>_4</code> and <code>PF_09_CHARIT_ACT_EXP_1</code>&ndash;<code>_4</code>) in a one-row table. This is how Part IX-B program-related investments is already mapped (<code>DESC_1</code>, <code>DESC_2</code>, <code>AMT_1</code>&ndash;<code>AMT_3</code>).</li>
-<li>Four one-row tables sharing variable names, stacked later, like the 990 Part III programs.</li>
-</ol>
-<p><strong>Recommendation:</strong> option 1. The Part III approach answers a mix of one-row programs (4a&ndash;4c) and a many-row "other" group, which Part IX-A does not have. A fixed four-slot line is a plain one-row table, and stacking into long form can still be done downstream from the <code>_1</code>&ndash;<code>_4</code> suffixes.</p>
-</div>
-
-<div class="memo">
-<h3>2. Rename <code>SB_01_CONTRIBUTOR_TYPE</code>?</h3>
+<h3>1. Rename <code>SB_01_CONTRIBUTOR_TYPE</code>?</h3>
 <p>The variable holds the contributor number (<code>ContributorNum</code>) of Schedule B Part I, not a contributor type. The type is the person/payroll/noncash checkboxes added in fix 14. Renaming it <code>SB_01_CONTRIBUTOR_NUM</code> would match the new <code>SB_02_NONCASH_CONTRIBUTOR_NUM</code> and <code>SB_03_CONTRIBUTOR_NUM</code>, but it changes a column name downstream.</p>
 </div>
 
 <div class="memo">
-<h3>3. Follow-up outside this repository (not blocking)</h3>
+<h3>2. Follow-up outside this repository (not blocking)</h3>
 <ul>
 <li><strong>ef2 builds both databases.</strong> Once the concordance is reconciled, ef2 builds the 990/990-EZ database and the 990-PF database; ef2pf, a temporary project for the PF tables, is retired. ef2 takes both from this package:
   <ul>
