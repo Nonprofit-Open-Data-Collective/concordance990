@@ -4,13 +4,20 @@
 \alias{build_concordance}
 \title{Build the unified concordance from the component tables}
 \usage{
-build_concordance(src_dir = src_path(), format = c("v1", "v2"))
+build_concordance(src_dir = src_path(), format = c("v1", "v2"), form = NULL)
 }
 \arguments{
 \item{src_dir}{Directory of component tables, or a list of component
 tables as returned by \code{\link[=read_src]{read_src()}}.}
 
 \item{format}{\code{"v1"} or \code{"v2"}.}
+
+\item{form}{\code{NULL} (every xpath, each with its primary mapping) or a form
+whose returns are parsed separately, e.g. \code{"F990PF"}: the xpaths of
+that form plus the shared return header and Schedule B, with the
+form-specific mappings in \code{xpath_forms.csv} applied (an attachment such
+as CompensationExplanation maps to a 990 variable in 990 returns and to
+a PF variable in 990-PF returns).}
 }
 \value{
 A data.table.

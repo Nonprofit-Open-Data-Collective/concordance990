@@ -31,15 +31,10 @@ test_that("controlled values", {
   expect_true(all(grepl("^/Return", s$xpaths$xpath)))
 })
 
-test_that("known v1 issues are still the only exceptions", {
-  # v1 stores "ONE " (trailing space) for three Schedule H tables. The
-  # baseline keeps v1 values exactly; remove tables from this list as the
-  # fix is applied and logged in the change log.
-  known_bad_cardinality <- c("SH-P01-T00-FAP-COMMUNITY-BENEFIT-POLICY",
-                             "SH-P02-T00-FAP-COMMUNITY-BENEFIT-POLICY",
-                             "SH-P03-T00-FAP-COMMUNITY-BENEFIT-POLICY")
-  bad <- s$tables[!cardinality %in% c("ONE", "MANY"), table_id]
-  expect_setequal(bad, known_bad_cardinality)
+test_that("cardinality is exactly ONE or MANY", {
+  # v1 stored "ONE " (trailing space) for three Schedule H tables; fixed in
+  # data-raw/fixes/01-cleanup.R
+  expect_true(all(s$tables$cardinality %in% c("ONE", "MANY")))
 })
 
 test_that("the change log has the documented columns", {

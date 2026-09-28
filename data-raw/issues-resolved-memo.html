@@ -1,0 +1,52 @@
+<p>No questions are open: every decision is applied. The follow-up items below are outside this repository.</p>
+<h3>Decided (J. Lecy, 2026-09-27/28) and applied</h3>
+<ul>
+<li><strong>Part III programs (fix 10).</strong> The shared variable names across the program tables are intentional: the tables are parsed separately and stacked later. This is recorded as an R07 exception, and collisions are now checked within each table. Inspection found no within-table collisions, the one-row program tables never repeat within a filing, and coverage runs continuously from 2009 to 2024 across the 2013 schema change.</li>
+<li><strong>Schedule O (fix 10).</strong> <code>SO-T99-SUPPLEMENTAL-INFO</code> is renamed <code>SO-P00-T99-SUPPLEMENTAL-INFO</code>.</li>
+<li><strong>List-valued fields (fixes 10, 13, 14).</strong> A new <code>variables.csv</code> column, <code>multi_value</code>, marks fields whose repeated values are joined into one cell. It is set for:
+  <ul>
+  <li>states licensed for fundraising, and gaming states;</li>
+  <li>states where the return is filed (990 and 990-PF);</li>
+  <li>foreign financial-account countries (990 and 990-PF);</li>
+  <li>990-EZ foreign office countries;</li>
+  <li>special conditions;</li>
+  <li>990-PF contributing and shareholder managers.</li>
+  </ul></li>
+<li><strong>501(c) subsection, TY2009 (fix 10).</strong> From the 2009v1.0 schema: a 501(c)(3) filer checked <code>Organization501c</code> with the attribute <code>typeOf501cOrganization = 3</code>. The new variable <code>F9_00_EXEMPT_STAT_501C_TYPE</code> maps that attribute, and <code>organization501cTypeTxt</code> from 2013. A production rule derives the 2009 501(c)(3) flag.</li>
+<li><strong>TY2012 checkbox (fix 10).</strong> <code>OtherExplainInSchO</code> is the "Other (explain in Schedule O)" box of Part VI line 18. This comes from its position in TY2012 filings and its 2013 successor <code>OtherInd</code>. It now maps to <code>F9_06_DISCLOSURE_AVBL_OTH_X</code>.</li>
+<li><strong>990-PF merge (fixes 11&ndash;15).</strong>
+  <ul>
+  <li>Source: <code>F990-PF-FULL.xlsx</code>, merged as form F990PF. The shared header uses the same <code>F9_00_</code> variables.</li>
+  <li>Attachments filed with every form map per form (<code>xpath_forms.csv</code>), and the build writes <code>concordance-990pf.csv</code> for the separate PF database.</li>
+  <li>The 11 rows without a variable now have variables.</li>
+  <li>With the workbook's names, none of the 34 PF collision errors in issues.html remain.</li>
+  <li>The rest of the PF review, with 2023 schema line numbers, added the 2023 qualifying distributions, the section 4960 tax and the unredacted 990-PF Schedule B, and fixed the table cardinalities.</li>
+  </ul></li>
+<li><strong>990-PF Part IX-A, direct charitable activities (fix 16).</strong> The schemas allow at most four activities (Part VIII-A from 2023), each slot its own element, with no repeating "other" group. The four slots are now <code>PF_09_CHARIT_ACT_DESC_1</code>&ndash;<code>_4</code> and <code>PF_09_CHARIT_ACT_EXP_1</code>&ndash;<code>_4</code>, in wide format in the one-row table <code>PF-P09-T01-CHARITABLE-ACTIVITIES</code>. Before, one description and one expense variable in a table marked MANY received up to four values per filing. In TY2023, slot 1 is filled by 32,488 foundations and slots 2&ndash;4 by 7,668, 4,769 and 3,257.</li>
+<li><strong>Schedule B contributor number (fix 17).</strong> <code>SB_01_CONTRIBUTOR_TYPE</code>, which holds the Part I contributor number, is renamed <code>SB_01_CONTRIBUTOR_NUM</code>, matching <code>SB_02_NONCASH_CONTRIBUTOR_NUM</code> and <code>SB_03_CONTRIBUTOR_NUM</code>. The contributor type is the person/payroll/noncash checkboxes.</li>
+</ul>
+
+<div class="memo">
+<h3>Follow-up outside this repository (not blocking)</h3>
+<ul>
+<li><strong>ef2 builds both databases.</strong> Once the concordance is reconciled, ef2 builds the 990/990-EZ database and the 990-PF database; ef2pf, a temporary project for the PF tables, is retired. ef2 takes both from this package:
+  <ul>
+  <li>the 990/990-EZ database uses <code>build_concordance(form = "F990")</code>, or <code>concordance.csv</code> without the F990PF rows;</li>
+  <li>the 990-PF database uses <code>build_concordance(form = "F990PF")</code>, or <code>concordance-990pf.csv</code>: the PF xpaths, the shared <code>F9_00_</code> header, Schedule B, and the per-form mappings of <code>xpath_forms.csv</code> (attachments filed with every form map to PF variables in PF returns);</li>
+  <li>the PF variable names are those of <code>F990-PF-FULL.xlsx</code> (<code>PF_…</code>, <code>PF_AXnn_…</code>), not the older names in <code>F990-PF-FULL.CSV</code> that ef2pf read.</li>
+  </ul>
+  ef2 also needs to:
+  <ul>
+  <li>join repeated values into one cell when <code>multi_value = TRUE</code>;</li>
+  <li>read XML attributes (xpaths ending <code>/@name</code>, used by <code>F9_00_EXEMPT_STAT_501C_TYPE</code>).</li>
+  </ul></li>
+<li><strong>Rebuild the evidence.</strong> <code>build_evidence()</code> now counts collisions per repeating row. Re-run it on the September 2026 builds to confirm in every year what TY2012 and TY2019 showed: the address collisions were false positives. Add more 990-PF years than TY2023 when available; the PF checks cover one year only.</li>
+<li><strong>Please review:</strong>
+  <ul>
+  <li>the new table names (<code>SH-P05-T03</code>, <code>SA-P01-T02</code>, <code>SA-P01-T03</code>, <code>F9-P00-T01</code>, <code>SC-P02-T01</code>, <code>SB-P00-T00</code>, <code>SB-P02-T01</code>, <code>SB-P03-T00/T01</code>);</li>
+  <li>labels inferred from element names (Schedule H 2016 lines, 990-PF heading items);</li>
+  <li>the reviewer notes in <code>inst/extdata/validation/validation_log.csv</code>.</li>
+  </ul></li>
+<li><strong>V_MEDIAN_JUMP (246 cases).</strong> These are review-only by definition and were not examined one by one.</li>
+</ul>
+</div>

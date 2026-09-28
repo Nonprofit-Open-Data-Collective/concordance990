@@ -11,7 +11,8 @@ collect_issues(
   flags_pf = NULL,
   value_checks_pf = NULL,
   pf_concordance = NULL,
-  reports_dir = "reports"
+  reports_dir = "reports",
+  validation_log = read_validation_log()
 )
 }
 \arguments{
@@ -26,6 +27,9 @@ collect_issues(
 \item{pf_concordance}{The v1 PF concordance, used to show PF tables.}
 
 \item{reports_dir}{Directory of rendered variable reports, used for links.}
+
+\item{validation_log}{Reviewer decisions (\code{\link[=read_validation_log]{read_validation_log()}}); cases
+accepted there are left out.}
 }
 \value{
 A data.table, one row per case.

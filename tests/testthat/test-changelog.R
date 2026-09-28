@@ -59,6 +59,6 @@ test_that("check_changelog reports unlogged differences", {
 
 test_that("the v1 crosswalk covers every xpath", {
   cw <- v1_crosswalk()
-  expect_identical(nrow(cw), nrow(read_cc_csv(v1_path_default())))
+  expect_identical(nrow(cw), length(union(read_cc_csv(v1_path_default())$xpath, read_src()$xpaths$xpath)))
   expect_true(all(cw$status %in% c("unchanged", "metadata_changed", "remapped", "moved_table", "added", "removed")))
 })

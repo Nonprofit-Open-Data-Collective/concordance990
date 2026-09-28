@@ -8,9 +8,11 @@
 # Primary key(s) of each component table, and its change-log level
 src_keys <- list(forms = "form_id", parts = "part_id", tables = "table_id",
                  variables = "variable_name", xpaths = "xpath",
-                 xpath_overrides = c("xpath", "field"), families = "family_id")
+                 xpath_overrides = c("xpath", "field"), families = "family_id",
+                 xpath_forms = c("xpath", "form_id"))
 src_levels <- c(forms = "form", parts = "part", tables = "table", variables = "variable",
-                xpaths = "xpath", xpath_overrides = "xpath_override", families = "family")
+                xpaths = "xpath", xpath_overrides = "xpath_override", families = "family",
+                xpath_forms = "xpath_form")
 
 changelog_columns <- c("change_id", "date", "version", "commit", "author", "level", "key", "field",
                        "old_value", "new_value", "change_type", "reason", "evidence", "affects_data")
@@ -116,45 +118,75 @@ diff_src <- function(old, new) {
 apply_changes <- function(src, changes) {
   src <- lapply(src, function(d) data.table::copy(d)[, lapply(.SD, as.character)])
   tb_of <- stats::setNames(names(src_levels), src_levels)
-  for (i in seq_len(nrow(changes))) {
-    ch <- changes[i]
-    tb <- tb_of[[ch$level]]
-    if (is.null(tb)) stop(ch$change_id, ": unknown level '", ch$level, "'")
-    d <- src[[tb]]; keys <- src_keys[[tb]]
-    fail <- function(...) stop(ch$change_id, " (", ch$level, " ", ch$key, ", ", ch$field, "): ", ...)
 
-    if (ch$change_type == "add_column") {
-      if (ch$field %in% names(d)) fail("column already exists")
-      d[, (ch$field) := ""]
-    } else if (ch$change_type == "remove_column") {
-      if (!ch$field %in% names(d)) fail("no such column")
-      if (any(d[[ch$field]] != "")) fail("column still has values; blank them first")
-      d[, (ch$field) := NULL]
-    } else if (ch$field == "*") {
-      k <- key_string(d, keys)
-      if (ch$change_type == "add") {
-        if (ch$key %in% k) fail("row already exists")
-        new <- data.table::as.data.table(stats::setNames(as.list(rep("", ncol(d))), names(d)))
-        parts <- strsplit(ch$key, key_sep, fixed = TRUE)[[1]]
-        for (j in seq_along(keys)) new[[keys[j]]] <- parts[j]
-        d <- rbind(d, new)
-      } else if (ch$change_type == "remove") {
-        r <- which(k == ch$key)
-        if (!length(r)) fail("row not found")
-        vals <- unlist(d[r, setdiff(names(d), keys), with = FALSE])
-        if (any(vals != "")) fail("row still has values; blank them first")
-        d <- d[-r]
-      } else fail("field '*' is only used with add or remove")
-    } else {
-      if (!ch$field %in% names(d)) fail("no such column")
-      r <- which(key_string(d, keys) == ch$key)
-      if (!length(r)) fail("row not found")
-      if (!identical(d[[ch$field]][r], ch$old_value))
-        fail("old_value '", ch$old_value, "' does not match current value '", d[[ch$field]][r], "'")
-      data.table::set(d, i = r, j = ch$field, value = ch$new_value)
+  # Runs of consecutive cell edits on one level and field (distinct keys) are
+  # applied together; this gives the same result as row-by-row application.
+  n <- nrow(changes)
+  is_cell <- changes$field != "*" & !changes$change_type %in% c("add_column", "remove_column")
+  run_id <- cumsum(c(TRUE, !(is_cell[-1] & is_cell[-n] & changes$level[-1] == changes$level[-n] &
+                               changes$field[-1] == changes$field[-n])))
+  i <- 1L
+  while (i <= n) {
+    j <- i
+    while (j < n && run_id[j + 1L] == run_id[i]) j <- j + 1L
+    if (j > i && is_cell[i] && !anyDuplicated(changes$key[i:j]) && changes$level[i] %in% names(tb_of)) {
+      blk <- changes[i:j]
+      tb <- tb_of[[blk$level[1]]]; d <- src[[tb]]; fld <- blk$field[1]
+      if (fld %in% names(d)) {
+        r <- match(blk$key, key_string(d, src_keys[[tb]]))
+        cur <- d[[fld]][r]
+        if (!anyNA(r) && identical(cur, blk$old_value)) {
+          data.table::set(d, i = r, j = fld, value = blk$new_value)
+          src[[tb]] <- d
+          i <- j + 1L
+          next
+        }
+      }
     }
-    src[[tb]] <- d
+    # otherwise apply row by row (this also reports the first failing row)
+    for (k in i:j) src <- apply_change_row(src, changes[k], tb_of)
+    i <- j + 1L
   }
+  src
+}
+
+apply_change_row <- function(src, ch, tb_of) {
+  tb <- tb_of[[ch$level]]
+  if (is.null(tb)) stop(ch$change_id, ": unknown level '", ch$level, "'")
+  d <- src[[tb]]; keys <- src_keys[[tb]]
+  fail <- function(...) stop(ch$change_id, " (", ch$level, " ", ch$key, ", ", ch$field, "): ", ...)
+
+  if (ch$change_type == "add_column") {
+    if (ch$field %in% names(d)) fail("column already exists")
+    d[, (ch$field) := ""]
+  } else if (ch$change_type == "remove_column") {
+    if (!ch$field %in% names(d)) fail("no such column")
+    if (any(d[[ch$field]] != "")) fail("column still has values; blank them first")
+    d[, (ch$field) := NULL]
+  } else if (ch$field == "*") {
+    k <- key_string(d, keys)
+    if (ch$change_type == "add") {
+      if (ch$key %in% k) fail("row already exists")
+      new <- data.table::as.data.table(stats::setNames(as.list(rep("", ncol(d))), names(d)))
+      parts <- strsplit(ch$key, key_sep, fixed = TRUE)[[1]]
+      for (j in seq_along(keys)) new[[keys[j]]] <- parts[j]
+      d <- rbind(d, new)
+    } else if (ch$change_type == "remove") {
+      r <- which(k == ch$key)
+      if (!length(r)) fail("row not found")
+      vals <- unlist(d[r, setdiff(names(d), keys), with = FALSE])
+      if (any(vals != "")) fail("row still has values; blank them first")
+      d <- d[-r]
+    } else fail("field '*' is only used with add or remove")
+  } else {
+    if (!ch$field %in% names(d)) fail("no such column")
+    r <- which(key_string(d, keys) == ch$key)
+    if (!length(r)) fail("row not found")
+    if (!identical(d[[ch$field]][r], ch$old_value))
+      fail("old_value '", ch$old_value, "' does not match current value '", d[[ch$field]][r], "'")
+    data.table::set(d, i = r, j = ch$field, value = ch$new_value)
+  }
+  src[[tb]] <- d
   src
 }
 

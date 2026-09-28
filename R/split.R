@@ -115,7 +115,8 @@ split_v1 <- function(v1_path = v1_path_default(), out_dir = NULL) {
                                      label = character(), definition = character())
 
   out <- list(forms = forms, parts = parts, tables = tables, variables = variables,
-              xpaths = xpaths, xpath_overrides = overrides, families = families)
+              xpaths = xpaths, xpath_overrides = overrides, families = families,
+              xpath_forms = data.table::data.table(xpath = character(), form_id = character(), variable_name = character()))
   # all columns as character, exactly as they are read back from disk
   out <- lapply(out, function(d) d[, lapply(.SD, as.character)])
   if (!is.null(out_dir)) write_src(out, out_dir)

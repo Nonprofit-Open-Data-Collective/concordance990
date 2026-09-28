@@ -110,6 +110,25 @@ flag_xpaths <- function(concordance, evidence_dir = "evidence", min_filings = 30
                     100 * share_unrepeated)))
 
   # --- collisions -------------------------------------------------------------
+  # The evidence was built with the mapping of its day. Re-split each xpath
+  # set by the current mapping, so a variable that has since been split no
+  # longer collides (exact for splits and remaps; a merge of two variables
+  # needs a new evidence build to show its collisions).
+  if (nrow(co)) {
+    # xpaths collide only within one table: a variable name shared by several
+    # tables (Part III programs) is several columns
+    xm <- stats::setNames(cc$variable_name, cc$xpath)
+    xt <- stats::setNames(cc$rdb_table, cc$xpath)
+    co <- co[, {
+      xs <- strsplit(xpaths, " ; ", fixed = TRUE)[[1]]
+      v <- unname(xm[xs]); t <- unname(xt[xs])
+      ok <- !is.na(v)
+      g <- split(xs[ok], paste(v[ok], t[ok], sep = "\r"))
+      g <- g[lengths(g) > 1]
+      list(variable_name = sub("\r.*", "", names(g)), xpaths = vapply(g, paste, "", collapse = " ; "))
+    }, by = .(tax_year, set_id = seq_len(nrow(co)), n_filings)]
+    co <- co[, .(n_filings = sum(n_filings)), by = .(tax_year, variable_name, xpaths)]
+  }
   cl <- co[, .(n_filings = sum(n_filings), years = yrs(tax_year),
                xpaths = xpaths[which.max(n_filings)]), by = variable_name]
   cl <- merge(cl, unique(cc[, .(variable_name, rdb_table)])[!duplicated(variable_name)], by = "variable_name")
