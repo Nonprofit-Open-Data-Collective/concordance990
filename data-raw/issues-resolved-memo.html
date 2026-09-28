@@ -26,13 +26,17 @@
 <div class="memo">
 <h3>1. 990-PF Part IX-A: four activity slots in one variable</h3>
 <p><strong>Cases:</strong> <code>PF_09_CHARIT_ACT_DESC</code>, <code>PF_09_CHARIT_ACT_EXP</code> (table <code>PF-P09-T01-CHARITABLE-ACTIVITIES</code>).</p>
-<p>The summary of direct charitable activities has four fixed slots: <code>Description1Txt</code>&ndash;<code>Description4Txt</code> and <code>Expenses1Amt</code>&ndash;<code>Expenses4Amt</code>. All four are mapped to one variable in one table, so a filing's four values compete for one cell. This is not a repeating element.</p>
+<p>Form 990-PF Part IX-A, "Summary of Direct Charitable Activities" (Part VIII-A from the 2023 redesign). The schemas show:</p>
+<ul>
+<li>It is a hard limit of four activities, with no catch-all. The group (<code>SummaryOfDirectCharitableActy</code> in 2009&ndash;2012, <code>SummaryOfDirectChrtblActyGrp</code> from 2013) occurs at most once per return. It holds exactly four numbered slot pairs: <code>Description1</code>&ndash;<code>4</code> and <code>Expenses1</code>&ndash;<code>4</code> (2009v1.0), later <code>Description1Txt</code>&ndash;<code>4Txt</code> and <code>Expenses1Amt</code>&ndash;<code>4Amt</code> (2023v5.0). There is no "other activities" element and no many-row case, unlike Form 990 Part III, where line 4d "other program services" repeats without limit.</li>
+<li>Each slot has its own xpath. In TY2023 filings slot 1 is used by 32,488 foundations and slots 2&ndash;4 by 7,668, 4,769 and 3,257. No slot repeats within a filing.</li>
+<li>The v1 PF concordance maps all four slots to one description variable and one expense variable in a table marked MANY. Because the slots are sibling elements, not repeated rows, a parser gets up to four values for one cell in a single row.</li>
+</ul>
 <ol>
-<li>Four variables per column (<code>_1</code>&ndash;<code>_4</code>) in a one-row table, like the program-related investments of Part IX-B.</li>
-<li>Keep one variable per column in a MANY table and add a slot column, which parsers fill from the element name.</li>
-<li>Four one-row tables sharing variable names, like the 990 Part III programs, stacked later.</li>
+<li>Four variables per column (<code>PF_09_CHARIT_ACT_DESC_1</code>&ndash;<code>_4</code> and <code>PF_09_CHARIT_ACT_EXP_1</code>&ndash;<code>_4</code>) in a one-row table. This is how Part IX-B program-related investments is already mapped (<code>DESC_1</code>, <code>DESC_2</code>, <code>AMT_1</code>&ndash;<code>AMT_3</code>).</li>
+<li>Four one-row tables sharing variable names, stacked later, like the 990 Part III programs.</li>
 </ol>
-<p><strong>Recommendation:</strong> option 3, for consistency with the Part III approach you described. Option 1 is simplest if the tables are never stacked.</p>
+<p><strong>Recommendation:</strong> option 1. The Part III approach answers a mix of one-row programs (4a&ndash;4c) and a many-row "other" group, which Part IX-A does not have. A fixed four-slot line is a plain one-row table, and stacking into long form can still be done downstream from the <code>_1</code>&ndash;<code>_4</code> suffixes.</p>
 </div>
 
 <div class="memo">
@@ -43,11 +47,16 @@
 <div class="memo">
 <h3>3. Follow-up outside this repository (not blocking)</h3>
 <ul>
-<li><strong>Parsers (ef2, ef2pf).</strong> They need to:
+<li><strong>ef2 builds both databases.</strong> Once the concordance is reconciled, ef2 builds the 990/990-EZ database and the 990-PF database; ef2pf, a temporary project for the PF tables, is retired. ef2 takes both from this package:
   <ul>
-  <li>join repeated values when <code>multi_value = TRUE</code>;</li>
-  <li>read XML attributes (xpaths with <code>/@</code>, used by <code>F9_00_EXEMPT_STAT_501C_TYPE</code>);</li>
-  <li>use <code>concordance-990pf.csv</code> (or <code>build_concordance(form = "F990PF")</code>) for the PF database in place of <code>F990-PF-FULL.CSV</code>.</li>
+  <li>the 990/990-EZ database uses <code>build_concordance(form = "F990")</code>, or <code>concordance.csv</code> without the F990PF rows;</li>
+  <li>the 990-PF database uses <code>build_concordance(form = "F990PF")</code>, or <code>concordance-990pf.csv</code>: the PF xpaths, the shared <code>F9_00_</code> header, Schedule B, and the per-form mappings of <code>xpath_forms.csv</code> (attachments filed with every form map to PF variables in PF returns);</li>
+  <li>the PF variable names are those of <code>F990-PF-FULL.xlsx</code> (<code>PF_…</code>, <code>PF_AXnn_…</code>), not the older names in <code>F990-PF-FULL.CSV</code> that ef2pf read.</li>
+  </ul>
+  ef2 also needs to:
+  <ul>
+  <li>join repeated values into one cell when <code>multi_value = TRUE</code>;</li>
+  <li>read XML attributes (xpaths ending <code>/@name</code>, used by <code>F9_00_EXEMPT_STAT_501C_TYPE</code>).</li>
   </ul></li>
 <li><strong>Rebuild the evidence.</strong> <code>build_evidence()</code> now counts collisions per repeating row. Re-run it on the September 2026 builds to confirm in every year what TY2012 and TY2019 showed: the address collisions were false positives. Add more 990-PF years than TY2023 when available; the PF checks cover one year only.</li>
 <li><strong>Please review:</strong>
