@@ -18,3 +18,18 @@ test_that("consumer tables have the expected size", {
   expect_true(all(c("family_id", "part_id") %in% names(concordance("v2"))))
   expect_setequal(unique(trimws(xpath_map()$rdb_relationship)), c("ONE", "MANY"))
 })
+
+test_that("per-form views and the data dictionary", {
+  pf <- concordance(form = "F990PF")
+  f9 <- concordance(form = "F990")
+  expect_true(all(pf$form %in% c("F990PF", "F990", "SCHED-B")))
+  expect_false(any(f9$form == "F990PF"))
+  # the shared attachments map to PF variables in 990-PF returns
+  x <- "/Return/ReturnData/ReasonableCauseExplanation/ExplanationTxt"
+  expect_identical(pf[xpath == x, variable_name], "PF_AX44_CAUSE_EXPLANATION")
+  expect_identical(f9[xpath == x, variable_name], "F9_00_REASONABLE_CAUSE_TXT")
+  dd <- data_dictionary("F990PF")
+  expect_true(all(c("variable_name", "rdb_table", "label", "part_title") %in% names(dd)))
+  expect_false(anyDuplicated(dd[, .(rdb_table, variable_name)]) > 0)
+  expect_setequal(unique(dd$variable_name), unique(pf$variable_name))
+})

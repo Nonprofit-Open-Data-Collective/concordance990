@@ -1,0 +1,114 @@
+---
+title: "How the concordance tables are built"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{How the concordance tables are built}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(concordance990)
+library(data.table)
+```
+
+The package generates the one-row-per-xpath concordance, in the v1 layout and
+in a v2 layout, from the component tables described in
+`vignette("table-structure")`. This page shows the steps and the functions
+data users and parsers call.
+
+## From components to one row per xpath
+
+`build_concordance()` does five things:
+
+1. **Join** each xpath to its variable (`xpaths.csv` + `variables.csv`).
+   Variable-level attributes (table, label, description, location code,
+   scope, data type) come from the variable.
+2. **Apply the xpath overrides**: where v1 recorded a different value for one
+   xpath, that value replaces the variable's (`xpath_overrides.csv`).
+3. **Add the table attributes**: cardinality (`rdb_relationship`) and part.
+4. **Select a form**, if asked (below).
+5. **Order** the rows as in v1 (`v1_order`, new xpaths at the end) and select
+   the columns: `format = "v1"` returns exactly the v1 columns; `format =
+   "v2"` adds `family_id`, `part_id` and `multi_value`.
+
+```{r build}
+cc <- build_concordance(format = "v2")
+dim(cc)
+cc[variable_name == "F9_01_REV_TOT_CY", .(xpath, rdb_table, rdb_relationship, form_type)]
+```
+
+## One database per form
+
+ef2 builds two research databases from the e-file XML: one for 990 and 990-EZ
+returns (with their schedules) and one for 990-PF returns. Each gets its own
+view of the concordance:
+
+```{r forms}
+f990 <- concordance(form = "F990")      # 990 and 990-EZ returns
+f990pf <- concordance(form = "F990PF")  # 990-PF returns
+c(all = nrow(concordance()), F990 = nrow(f990), F990PF = nrow(f990pf))
+```
+
+The 990-PF view holds the PF xpaths, the return header (the same `F9_00_`
+variables as the 990) and Schedule B, which foundations also file. Attachments
+filed with every form map to PF variables there (`xpath_forms.csv`):
+
+```{r per-form}
+x <- "/Return/ReturnData/ReasonableCauseExplanation/ExplanationTxt"
+rbind(f990[xpath == x, .(view = "F990", variable_name, rdb_table)],
+      f990pf[xpath == x, .(view = "F990PF", variable_name, rdb_table)])
+```
+
+## Functions for parsers and data users
+
+```{r api}
+# the minimal mapping a parser needs
+head(xpath_map(form = "F990"), 3)
+
+# one-to-many tables
+head(table_names("MANY"))
+
+# clean xpaths from an XML document and look them up
+lookup_xpath("/irs:Return/irs:ReturnData/IRS990/Form990PartVIISectionAGrp[2]/PersonNm")
+
+# one row per variable, in form order
+dd <- data_dictionary("F990")
+dd[part_id == "F9-P01", .(variable_name, label, data_type_simple)][1:5]
+```
+
+`cc_forms()`, `cc_parts()`, `cc_tables()`, `cc_variables()` and
+`cc_xpaths()` return the component tables themselves.
+
+## How a parser uses the concordance
+
+For each return, a parser flattens the XML into (xpath, value) pairs, removes
+the `[n]` indexes and namespace prefixes (`normalize_xpath()`), joins the
+xpaths to its database's concordance view, and writes the values into tables:
+
+* In a **ONE** table each variable is one column of the filing's row.
+* In a **MANY** table each instance of the repeating group is a row.
+* A **`multi_value`** variable can repeat inside a one-row table (for example
+  the states where the return is filed); its values are joined into one cell.
+* Xpaths ending in **`/@name`** are XML attributes of the element before
+  them (for example the 501(c) subsection of `Organization501c`).
+* A **`production_rule`** on an xpath describes any other special handling.
+
+## Generated files
+
+`data-raw/build-concordance.R` writes the files kept at the top of the
+repository and stops if anything is wrong:
+
+1. `check_changelog()`: every difference from v1 is in the change log, and
+   replaying the log on v1 reproduces the current tables.
+2. `validation_summary()`: every structural rule passes.
+3. `concordance.csv` and `concordance.xlsx`: all xpaths, v1 layout.
+4. `concordance-990pf.csv`: the 990-PF view, v1 layout.
+5. `inst/extdata/changelog/v1_to_v2_crosswalk.csv`: `v1_crosswalk()`.
+
+```{r write, eval = FALSE}
+source("data-raw/build-concordance.R")
+# or, for one file
+write_concordance(build_concordance(format = "v1", form = "F990PF"), "concordance-990pf.csv")
+```

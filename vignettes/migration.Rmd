@@ -1,0 +1,130 @@
+---
+title: "From the v1 concordance to v2"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{From the v1 concordance to v2}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(concordance990)
+library(data.table)
+n <- function(x) format(x, big.mark = ",")
+v1 <- read_cc_csv(system.file("extdata", "v1", "concordance-v1.csv", package = "concordance990"))
+s <- read_src()
+ch <- read_changelog()
+cw <- read_cc_csv(system.file("extdata", "changelog", "v1_to_v2_crosswalk.csv", package = "concordance990"))
+```
+
+## Why a new version
+
+The version 1 Master Concordance File (`concordance.csv` in the
+`irs-efile-master-concordance-file` repository) mapped
+`r n(nrow(v1))` xpaths to `r n(uniqueN(v1$variable_name))` variables in
+`r uniqueN(v1$rdb_table)` tables. It has been the backbone of the e-file
+research databases, but its single flat file made it hard to maintain and to
+check:
+
+* **Facts were repeated and disagreed.** Every row carried its variable's
+  description, table, label and scope. For 829 variables the xpaths gave
+  different descriptions; 15 variables were assigned to more than one table.
+* **Loose vocabularies.** Missing values were sometimes empty and sometimes
+  the text `NA` (23,528 cells); a cardinality was `"ONE "` with a trailing
+  space, so parsers skipped three Schedule H tables; identifiers such as EINs
+  and ZIP codes were typed numeric.
+* **No evidence loop.** Nothing tested a mapping against real filings. When
+  the xpaths of every variable were compared with 5.98 million 990 and
+  990-EZ filings (TY2009-2024), the checks found opposite meanings pooled
+  into one variable (Schedule B *required* with Schedule B *not required*),
+  revenue lines in expense variables, repeating groups in one-row tables that
+  silently dropped values, and hundreds of observed fields with no mapping.
+* **Every downstream package patched its own copy.** ef2, panel990, fiscal
+  and efile-rdb-tables each re-derived table headers, types and fixes.
+* **The 990-PF lived elsewhere**, in a separate concordance with its own
+  naming.
+
+## Design decisions
+
+| | Decision |
+|---|---|
+| D1 | 990 and 990-EZ xpaths are pooled under one variable when they measure the same thing; non-equivalent lines become sibling variables. |
+| D2 | The 990-PF is in scope, merged as form `F990PF`. |
+| D3 | The component CSVs in GitHub are the source of truth; a v1-shaped `concordance.csv` (and `.xlsx`) is always generated. |
+| D4 | The concordance ships as an R package that partner packages import. |
+| D5 | Evidence comes from the e-file DuckDB builds, joined to the current concordance by cleaned xpath. |
+| D6 | A family is named after its anchor variable. |
+| D7 | Who files a part is declared per part and checked against filings. |
+| D8 | Every change from v1 is logged line by line, so data built with v1 stays reconcilable. |
+
+## How the migration was done
+
+1. **Baseline.** `split_v1()` decomposed the frozen v1 file into the
+   component tables without changing a value. Where v1 disagreed with itself,
+   the most common value went to the variable and the rest were kept as
+   xpath overrides. The v1 layout rebuilt from this baseline is byte-identical
+   to v1 (a test checks it), and it is tagged `v2.0.0-baseline` on GitHub.
+2. **Evidence.** Filing evidence was built from the DuckDB builds: for every
+   xpath and year, how many filings use it, how often it repeats, and a
+   profile of its values. Checks turn this into an issues list
+   (`reports/issues.html`: `r n(29937)` cases).
+3. **Fixes, each logged.** Every fix is a script in `data-raw/fixes/` that
+   edits the component tables and appends one change-log row per changed
+   cell, with a reason and the evidence behind it. Reviewed cases that are
+   correct as they are go to the validation log instead.
+4. **990-PF merge.** The PF concordance (`F990-PF-FULL.xlsx`) was split the
+   same way and merged as form `F990PF`, then checked against the TY2023 PF
+   filings and the 2023 schemas.
+
+`reports/issues-resolved.html` lists every case of the issues list with what
+was done and where it landed.
+
+## What changed
+
+```{r changes}
+ch[, .(rows = .N), by = .(level, change_type)][order(-rows)][1:12]
+ch[, .N, by = affects_data]
+```
+
+`affects_data = TRUE` marks changes that change data built with v1 (remaps,
+splits, retypes, table moves, renames); `FALSE` marks metadata such as labels,
+whitespace and the `NA` clean-up.
+
+Today the concordance has `r n(nrow(s$xpaths))` xpaths,
+`r n(nrow(s$variables))` variables and `r n(nrow(s$tables))` tables, including
+the 990-PF (`r n(sum(s$xpaths$form == "F990PF"))` xpaths).
+
+## Reconciling data built with v1
+
+The crosswalk (`inst/extdata/changelog/v1_to_v2_crosswalk.csv`, rebuilt with
+`v1_crosswalk()`) has one row per xpath in v1 or now, with the v1 and current
+variable and table:
+
+```{r crosswalk}
+cw[, .N, by = status][order(-N)]
+cw[status == "remapped", .(xpath, v1_variable_name, variable_name)][1:5]
+```
+
+To re-map a dataset built with v1, join its columns through the crosswalk:
+`remapped` and `moved_table` rows move values, `added` rows are new
+coverage, and `metadata_changed` rows need no data change. The change-log rows
+with `affects_data = TRUE` explain each move.
+
+## Changes that affect downstream code
+
+* **Renamed variables**: names with trailing spaces or lower case,
+  `SH_01_CHNA_DESC_RESOURCES_X` to `SH_05_...`, `SB_01_CONTRIBUTOR_TYPE` to
+  `SB_01_CONTRIBUTOR_NUM`, and the 990-PF Part IX-A slots
+  (`PF_09_CHARIT_ACT_DESC_1` ... `_4`).
+* **Renamed table**: `SO-T99-SUPPLEMENTAL-INFO` is now
+  `SO-P00-T99-SUPPLEMENTAL-INFO`.
+* **New and re-shaped tables**: supplemental-information tables and
+  per-facility tables are MANY; new tables hold Schedule H facility policies,
+  Schedule A hospitals and agricultural research colleges, group-return
+  subordinates, Schedule C affiliated groups and the 990-PF Schedule B.
+* **The 990-PF is included.** `concordance.csv` contains the 990-PF rows;
+  parsers select a database with `concordance(form = "F990")` or
+  `concordance(form = "F990PF")`.
+* **New conventions for parsers**: `multi_value` fields join repeated values,
+  and xpaths ending in `/@name` are XML attributes.

@@ -1,0 +1,49 @@
+---
+title: "Outline of forms, parts and schedules"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+source("_dictionary.R")
+```
+
+The IRS 990 returns are divided into **parts** that group fields by theme.
+This page outlines every part of the Form 990 (with the 990-EZ), the
+Schedules A to R and the Form 990-PF, and the concordance tables that hold
+their fields. Table names follow `FF-PNN-TNN-NAME`: form, part, table number
+(by convention `T00` tables have one row per filing, `T01` and higher one row
+per repeated item, `T99` supplemental explanations) and a short name.
+
+The part titles follow the IRS forms. Form 990-EZ lines are mapped into the
+matching part of the Form 990. The 990-PF parts are numbered as on the forms
+before the 2023 redesign, which moved most parts down by one number; the 2023
+number is given in parentheses.
+
+Variable counts link to the data dictionaries:
+[Form 990 and 990-EZ](data-dictionary-990.html) and
+[Form 990-PF](data-dictionary-990pf.html).
+
+```{r outline, results = "asis"}
+tb <- cc_tables()
+v990 <- data_dictionary("F990")[, .(n = uniqueN(variable_name)), by = rdb_table]
+vpf <- data_dictionary("F990PF")[, .(n = uniqueN(variable_name)), by = rdb_table]
+nv <- rbind(v990, vpf[!rdb_table %in% v990$rdb_table])
+tb <- merge(tb, nv, by.x = "table_id", by.y = "rdb_table", all.x = TRUE)
+tb[is.na(n), n := 0L]
+pt <- cc_parts()
+fm <- cc_forms()[order(as.integer(sort_order))]
+# the 990-PF after the 990 and before the schedules it does not file
+fm <- rbind(fm[form_id == "F990"], fm[form_id == "F990PF"], fm[!form_id %in% c("F990", "F990PF")])
+for (f in fm$form_id) {
+  cat(sprintf("\n## %s\n\n", fm[form_id == f, title]))
+  cat(sprintf("*Filed with: %s.*\n\n", filed_with[[f]]))
+  for (p in pt[form_id == f][order(part_id), part_id]) {
+    cat(sprintf("* **%s**\n", pt[part_id == p, title]))
+    for (t in tb[part_id == p][order(table_id), table_id]) {
+      x <- tb[table_id == t]
+      cat(sprintf("    * `%s` &nbsp;<span class='text-muted small'>%s, %s variables</span>\n",
+                  t, x$cardinality, x$n))
+    }
+  }
+}
+```

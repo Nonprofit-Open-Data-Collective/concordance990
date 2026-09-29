@@ -1,0 +1,168 @@
+---
+title: "The component tables"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{The component tables}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+library(concordance990)
+library(data.table)
+s <- read_src()
+n <- function(x) format(x, big.mark = ",")
+```
+
+The version 1 Master Concordance was one flat file with one row per xpath.
+Every row repeated the attributes of its variable, table, part and form, so
+the same fact was stored many times and could disagree with itself. Version 2
+decomposes that file into small **component tables**, one per level of the
+hierarchy. Each fact is stored once, and the familiar one-row-per-xpath file
+is generated from the components (see `vignette("building")`).
+
+The component tables are CSV files in `inst/extdata/src/`. They are the
+source of truth: edit these, never the generated `concordance.csv`.
+
+## The hierarchy
+
+```
+form        F990, F990PF, SCHED-A ... SCHED-R
+ └ part     F9-P07  (Form 990 Part VII)
+    └ table F9-P07-T01-COMPENSATION       one row per filing (ONE) or many (MANY)
+       └ variable  F9_07_COMP_DTK_NAME_PERS
+          └ xpath  /Return/ReturnData/IRS990/Form990PartVIISectionAGrp/PersonNm
+                   /Return/ReturnData/IRS990/Form990PartVIISectionA/NamePerson   (2009-2012)
+```
+
+A **variable** is one research concept, a column in a table. It pools every
+xpath that records that concept: the 990 and 990-EZ versions of a line and
+the element names of different schema years (the IRS renamed most elements in
+2013). An **xpath** belongs to exactly one variable; a variable belongs to
+exactly one table.
+
+## The tables
+
+```{r counts, echo = FALSE}
+d <- as.data.table(list(
+  file = paste0(names(s), ".csv"),
+  key = c("form_id", "part_id", "table_id", "variable_name", "xpath", "xpath + field", "family_id", "xpath + form_id"),
+  rows = sapply(s, nrow),
+  holds = c("Forms and schedules, with the XML root elements of each",
+            "Parts of each form (Part I, Part II, ...), with titles",
+            "Relational tables: part, cardinality (ONE / MANY)",
+            "Variables: table, label, description, data type, scope, location code, list-valued flag",
+            "Xpaths: variable, form line, schema versions and other xpath-level metadata",
+            "Where one xpath of a variable differs from the variable value (kept from v1)",
+            "Groups of alternate versions of one form line (e.g. _V2 variables)",
+            "Form-specific mappings for returns parsed as a separate database")))
+knitr::kable(d[, .(File = file, Key = key, Rows = n(rows), Holds = holds)])
+```
+
+### forms.csv
+
+One row per form: the Form 990 (with the 990-EZ, whose lines are mapped into
+the matching 990 parts), the 990-PF and Schedules A to R. `xml_roots` lists
+the root elements of the form's xpaths (for example `IRS990`, `IRS990EZ`,
+`ReturnHeader` and attachments such as `CompensationExplanation` for the
+990). The validation rule R08 checks every xpath against these roots.
+
+### parts.csv and tables.csv
+
+A part is a numbered part of a form (`F9-P08`: Form 990 Part VIII, Statement
+of Revenue). Parts `P00` hold the heading of a form; parts `P99` hold lines
+from earlier versions of a schedule, or the auxiliary schedules of the 990-PF.
+
+A table (`rdb_table`) is the unit a parser writes:
+
+* **ONE** tables have one row per filing (`F9-P08-T00-REVENUE`).
+* **MANY** tables have one row per repeating group in a filing: a person in
+  Part VII, a grant recipient in Schedule I, a hospital facility in Schedule
+  H (`F9-P07-T01-COMPENSATION`). By convention `T00` tables are ONE and
+  `T01`+ tables MANY; `T99` tables hold supplemental explanations.
+
+```{r cardinality}
+cc_tables()[, .N, by = .(form = form_id, cardinality)][order(form, cardinality)][1:8]
+```
+
+### variables.csv
+
+```{r variables}
+cc_variables()[variable_name %in% c("F9_08_REV_TOT_CY", "F9_06_DISCLOSURE_STATES_FILED"),
+               .(variable_name, table_id, label, data_type_simple, variable_scope, multi_value)]
+```
+
+* **Names** follow `FF_PP_NAME`: a two-character form code (`F9` Form
+  990/990-EZ, `SA`-`SR` Schedules A to R, `PF` Form 990-PF), the two-digit
+  part, and a descriptive name, at most 32 characters. 990-PF auxiliary
+  schedules use `PF_AXnn_` for schedule `nn` (table `PF-P99-Tnn-...`).
+* **`variable_scope`**: `HD` header (shared by all returns), `PC` full 990
+  only, `EZ` 990-EZ only, `PZ` both, `PF` 990-PF.
+* **`data_type_simple`**: `numeric`, `text`, `checkbox` or `date`.
+  Identifiers (EIN, ZIP, phone) are text so leading zeros survive.
+* **`multi_value`**: `TRUE` for fields whose element repeats inside a
+  one-row table (states where the return is filed, foreign countries);
+  parsers join the values into one cell.
+* **`family_id`**: the variable itself, or the anchor variable of a family of
+  alternate versions of one line (`families.csv`).
+
+### xpaths.csv
+
+One row per xpath, the primary key of the concordance. Besides the variable it
+records the form, form type (`PC`, `EZ`, `SZ` schedule, `PF`), form part and
+line, the IRS data type, the schema versions it appears in, and a free-text
+`production_rule` where a value needs special handling (for example the TY2009
+501(c)(3) flag, which is an attribute of `Organization501c`). Xpaths ending in
+`/@name` are XML attributes.
+
+`v1_order` keeps the row order of the v1 file, so the generated file stays in
+the familiar order.
+
+### xpath_overrides.csv
+
+When v1 was split, each variable-level column got the most common value
+across the variable's xpaths. Where an xpath disagreed (a different
+description, a different table), the difference was kept here instead of
+being lost. The build applies overrides after the join. Resolving a conflict
+means deleting its override row, with a change-log entry.
+
+```{r overrides}
+cc_xpaths()[, .N]; read_src()$xpath_overrides[, .N, by = field][order(-N)]
+```
+
+### xpath_forms.csv
+
+Some attachments are filed with every form (compensation explanations,
+reasonable-cause statements). In 990 returns they belong to 990 variables; in
+990-PF returns, which are parsed as a separate database, to PF variables. An
+xpath has one primary mapping in `xpaths.csv`; `xpath_forms.csv` gives the
+mapping for another form, applied by `concordance(form = "F990PF")`.
+
+```{r xpath-forms}
+read_src()$xpath_forms[1:3]
+```
+
+## Around the component tables
+
+| File | Role |
+|---|---|
+| `inst/extdata/changelog/changes.csv` | Every cell changed since v1, with reason and evidence (`vignette("migration")`) |
+| `inst/extdata/changelog/v1_to_v2_crosswalk.csv` | Each v1 xpath with its v1 and current variable and table |
+| `inst/extdata/validation/validation_log.csv` | Reviewer decisions on flagged cases (`vignette("testing-updates")`) |
+| `inst/extdata/validation/rule_ceilings.csv` | Ceilings for structural rules still being fixed (none at present) |
+| `inst/extdata/v1/concordance-v1.csv` | The frozen v1 file, byte for byte |
+| `concordance.csv`, `concordance.xlsx` | Generated: all xpaths in the v1 column layout |
+| `concordance-990pf.csv` | Generated: the 990-PF view |
+
+## Reading the tables
+
+```{r join}
+x <- merge(cc_xpaths()[, .(xpath, variable_name)],
+           cc_variables()[, .(variable_name, table_id, label)], by = "variable_name")
+x <- merge(x, cc_tables()[, .(table_id, cardinality, part_id)], by = "table_id")
+x <- merge(x, cc_parts()[, .(part_id, title)], by = "part_id")
+x[variable_name == "F9_01_REV_TOT_CY", .(xpath, table_id, cardinality, title)]
+```
+
+`concordance()` does this join (and applies the overrides) for you.

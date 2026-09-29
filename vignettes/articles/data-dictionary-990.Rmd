@@ -1,0 +1,64 @@
+---
+title: "Data dictionary: Form 990 and 990-EZ"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+source("_dictionary.R")
+dd <- data_dictionary("F990")
+```
+
+This dictionary documents every variable of the **990 / 990-EZ research
+database**: the Form 990, the 990-EZ and Schedules A to R. It is generated
+from the concordance with `data_dictionary("F990")`, so it always matches the
+package. The 990-PF has [its own dictionary](data-dictionary-990pf.html); the
+[outline](form-outline.html) lists every part and table on one page.
+
+## Reading the dictionary
+
+**Variables and fields.** A variable is not a field on one form. It pools
+every xpath that records the same thing: the 990 and 990-EZ versions of a line
+(for example total revenue), and the element names of different schema years
+(the IRS renamed most elements in 2013). A
+variable that exists only on the full 990 (the number of volunteers, say) is
+missing for 990-EZ filers.
+
+**Names** follow `FF_PP_NAME`:
+
+* `FF` is the form: `F9` for the Form 990 and 990-EZ (and the return header),
+  `SA` to `SR` for Schedules A to R.
+* `PP` is the part of the form (`00` for the heading, `01` for Part I, ...;
+  `99` for lines from earlier versions of a schedule).
+* `NAME` describes the field; `_X` marks a checkbox, `_CY`/`_PY` current and
+  prior year, `_BOY`/`_EOY` beginning and end of year.
+
+**Scope** says which returns report the variable: *header* (all returns,
+including the 990-PF), *990* (full form only), *990-EZ* (EZ only) or *990 +
+990-EZ*. 990-EZ lines are mapped into the matching part of the 990.
+
+**Tables.** Each variable is a column of one table. *ONE* tables have one row
+per filing; *MANY* tables have one row per repeated item (a person, a grant
+recipient, a facility). The Part III program tables share variable names on
+purpose, so the programs can be stacked.
+
+**Type** is `numeric`, `text`, `checkbox` or `date`; identifiers such as EINs
+and ZIP codes are text. A <span class='badge bg-secondary'>list</span> marks a
+field whose repeated values are joined into one cell (for example the states
+where the return is filed).
+
+**Location** is the form, part and line code of the variable. Each table is a block headed by its name and cardinality: ONE (one row per filing) or MANY (one row per repeated item).
+
+## Contents
+
+```{r summary}
+dictionary_summary("F990")
+```
+
+```{r css, results = "asis"}
+cat(dictionary_css())
+```
+
+```{r sections, results = "asis"}
+cat(dictionary_sections("F990"))
+```
+

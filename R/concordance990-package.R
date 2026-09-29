@@ -19,5 +19,9 @@ utils::globalVariables(c(
   # value checks and issues
   "cases", "cat_sev", "check", "code", "detail", "evidence", "is_pf", "level", "max_len", "med",
   "name", "p99", "prev", "prev_n", "q99", "r", "report", "result", "series", "shape", "table_990",
-  "table_pf", "where"
+  "table_pf", "where",
+  # resolved issues and per-form mappings
+  "change_id", "change_ids", "change_type", "cleanup", "files", "fix", "i.variable_name", "log_note",
+  "log_status", "new_value", "note", "old", "old_value", "reason", "resolution", "total", "v_note",
+  "v_status", "why", "label", "table_order", "part_title", "form_types", "multi_value", "title", "sort_order"
 ))
