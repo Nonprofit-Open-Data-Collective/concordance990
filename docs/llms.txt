@@ -1,0 +1,252 @@
+# concordance990
+
+The IRS 990 e-file **Master Concordance**, version 2, as an R package.
+It maps xpaths in Form 990, 990-EZ and 990-PF e-file XML returns onto
+documented research variables and relational tables.
+
+Version 2 stores the concordance as small component tables (one per
+level of the hierarchy) and generates the familiar one-row-per-xpath
+file from them. Every change from the v1 Master Concordance File is
+recorded in a change log.
+
+**Documentation site:** guides to the table structure, the move from v1,
+how the tables are built and how updates are tested, plus data
+dictionaries for the 990 / 990-EZ and the 990-PF and an outline of every
+part and schedule:
+<https://nonprofit-open-data-collective.github.io/concordance990/>
+(built into `docs/`).
+
+> **Status:** the issues list of the v1 concordance has been worked
+> through (`reports/issues-resolved.html`) and the 990-PF concordance is
+> merged.
+
+## For partner packages
+
+``` r
+# install.packages("remotes")
+remotes::install_github("Nonprofit-Open-Data-Collective/concordance990")
+
+library(concordance990)
+cc   <- concordance()                 # one row per xpath (v1 columns + family_id, part_id, multi_value)
+f990 <- concordance(form = "F990")    # the 990 / 990-EZ database
+pf   <- concordance(form = "F990PF")  # the 990-PF database
+map  <- xpath_map(form = "F990")      # xpath -> variable_name, rdb_table, rdb_relationship, form_type, multi_value
+dd   <- data_dictionary("F990PF")     # one row per variable
+tabs <- table_names("MANY")           # one-to-many tables
+lookup_xpath("/irs:Return/irs:ReturnData/IRS990/Form990PartVIISectionAGrp[2]/PersonNm")
+```
+
+`concordance("v1")` returns exactly the v1 columns. For non-R users,
+[`concordance.csv`](https://nonprofit-open-data-collective.github.io/concordance990/concordance.csv)
+and `concordance.xlsx` at the repository root are generated copies in
+the v1 layout (all xpaths), and
+[`concordance-990pf.csv`](https://nonprofit-open-data-collective.github.io/concordance990/concordance-990pf.csv)
+is the 990-PF view.
+
+## Where things live
+
+| Path | Contents |
+|----|----|
+| `inst/extdata/src/` | The component tables: forms, parts, tables, variables, xpaths, xpath overrides, families, per-form mappings. **Edit these, not the generated files.** |
+| `inst/extdata/v1/` | The frozen v1 concordance, byte for byte, with its provenance. |
+| `inst/extdata/changelog/` | `changes.csv`, one row per change from v1, and the v1 crosswalk. |
+| `inst/extdata/validation/` | The validation log (reviewed cases) and rule ceilings. |
+| `inst/reports/` | Validation report templates ([README](https://nonprofit-open-data-collective.github.io/concordance990/inst/reports/README.md)). |
+| `data-raw/` | Scripts that split v1, build the concordance, build filing evidence and render reports; `data-raw/fixes/` holds every fix since v1. |
+| `docs/` | The documentation site, built with [`pkgdown::build_site()`](https://pkgdown.r-lib.org/reference/build_site.html). |
+
+## Making a change
+
+Every difference from v1 is recorded line by line in
+`inst/extdata/changelog/changes.csv`, so data built with v1 can always
+be reconciled. The guide [Validation, tests and making
+updates](https://nonprofit-open-data-collective.github.io/concordance990/articles/testing-updates.html)
+has the details.
+
+1.  Write a fix script in `data-raw/fixes/` (see the existing ones):
+    each `fix_step()` edits the component tables and logs its changes
+    with a reason and evidence. Or edit `inst/extdata/src/` by hand and
+    run `draft_changes(author = "Your Name", write = TRUE)`.
+
+2.  Rebuild and check. The build stops if an edit is not logged, the log
+    does not replay exactly, or a validation rule fails:
+
+    ``` r
+    source("data-raw/build-concordance.R")   # concordance.csv/.xlsx, concordance-990pf.csv, v1 crosswalk
+    devtools::test()
+    ```
+
+3.  Record reviewed flags in
+    `inst/extdata/validation/validation_log.csv`.
+
+4.  Rebuild the site
+    ([`pkgdown::build_site()`](https://pkgdown.r-lib.org/reference/build_site.html))
+    and commit the component tables, the change log, the generated files
+    and `docs/` together.
+
+[`v1_crosswalk()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/v1_crosswalk.md)
+(written to `inst/extdata/changelog/v1_to_v2_crosswalk.csv`) lists every
+v1 xpath with its v1 and current variable and table and the columns that
+changed.
+
+## License
+
+Concordance data: Open Data Commons Attribution License (ODC-By) v1.0,
+as for the v1 Master Concordance File. The license for the package code
+has not been chosen yet.
+
+# Package index
+
+## Using the concordance
+
+For parsers and data users (ef2, panel990, fiscal and others).
+
+- [`concordance()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/concordance.md)
+  : The concordance: one row per xpath
+- [`xpath_map()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/xpath_map.md)
+  : Lookup table from xpath to variable and table
+- [`data_dictionary()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/data_dictionary.md)
+  : Data dictionary: one row per variable
+- [`table_names()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/table_names.md)
+  : Table names
+- [`cc_forms()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/cc_tables.md)
+  [`cc_parts()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/cc_tables.md)
+  [`cc_tables()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/cc_tables.md)
+  [`cc_variables()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/cc_tables.md)
+  [`cc_xpaths()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/cc_tables.md)
+  [`cc_families()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/cc_tables.md)
+  : Component tables
+- [`lookup_xpath()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/lookup_xpath.md)
+  : Look up raw xpaths
+- [`normalize_xpath()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/normalize_xpath.md)
+  : Normalize raw xpaths for lookup
+- [`concordance_version()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/concordance_version.md)
+  : Version of the concordance
+- [`v1_columns`](https://nonprofit-open-data-collective.github.io/concordance990/reference/v1_columns.md)
+  : Columns of the v1 concordance, in order
+
+## Building the concordance
+
+- [`read_src()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/read_src.md)
+  : Read the component tables
+- [`write_src()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/write_src.md)
+  : Write component tables
+- [`build_concordance()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/build_concordance.md)
+  : Build the unified concordance from the component tables
+- [`write_concordance()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/write_concordance.md)
+  : Write the unified concordance
+- [`read_cc_csv()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/read_cc_csv.md)
+  : Read a concordance CSV exactly as stored
+- [`write_cc_csv()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/write_cc_csv.md)
+  : Write a concordance CSV in the v1 style
+- [`split_v1()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/split_v1.md)
+  : Split the v1 concordance into component tables
+
+## Change log and v1 crosswalk
+
+- [`read_changelog()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/read_changelog.md)
+  : Read the change log
+- [`change_types`](https://nonprofit-open-data-collective.github.io/concordance990/reference/change_types.md)
+  : Change types
+- [`diff_src()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/diff_src.md)
+  : Cell-level differences between two sets of component tables
+- [`apply_changes()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/apply_changes.md)
+  : Apply change-log rows to component tables
+- [`check_changelog()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/check_changelog.md)
+  : Check the change log against the current component tables
+- [`draft_changes()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/draft_changes.md)
+  : Draft change-log rows for unlogged edits
+- [`baseline_src()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/baseline_src.md)
+  : Baseline component tables (v1, split without changes)
+- [`v1_crosswalk()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/v1_crosswalk.md)
+  : Crosswalk from v1 rows to the current concordance
+
+## Validation
+
+- [`validation_rules`](https://nonprofit-open-data-collective.github.io/concordance990/reference/validation_rules.md)
+  : Structural validation rules (PLAN.md section 6.1)
+- [`validate_concordance()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/validate_concordance.md)
+  : Run the structural validation rules
+- [`validation_summary()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/validation_summary.md)
+  : Summarise validation against the rule ceilings
+- [`read_validation_log()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/read_validation_log.md)
+  : Read the validation log
+- [`drop_accepted()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/drop_accepted.md)
+  : Drop issues accepted in the validation log
+
+## Filing evidence, flags and reports
+
+- [`build_evidence()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/build_evidence.md)
+  : Build filing evidence from ef2 DuckDB builds
+
+- [`combine_evidence()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/combine_evidence.md)
+  : Stack per-year evidence files
+
+- [`load_evidence()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/load_evidence.md)
+  : Load evidence tables for reporting
+
+- [`read_xpath_stats()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/read_xpath_stats.md)
+  :
+
+  Read `xpath_stats.csv` with numeric quantiles
+
+- [`flag_xpaths()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/flag_xpaths.md)
+  : Flag xpaths that look mis-mapped
+
+- [`observed_table_groups()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/observed_table_groups.md)
+  : Observed repeating groups per table
+
+- [`value_checks()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/value_checks.md)
+  : Value checks for one variable, by report type
+
+- [`run_value_checks()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/run_value_checks.md)
+  : Run the value checks for every variable
+
+- [`partial_year()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/partial_year.md)
+  : The partial final year of the evidence, if any
+
+- [`report_type()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/report_type.md)
+  : Choose the report type for a variable
+
+- [`render_reports()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/render_reports.md)
+  : Render validation reports
+
+- [`reports`](https://nonprofit-open-data-collective.github.io/concordance990/reference/reports.md)
+  : Validation reports, one per variable
+
+- [`issue_catalog`](https://nonprofit-open-data-collective.github.io/concordance990/reference/issue_catalog.md)
+  : Catalog of checks
+
+- [`collect_issues()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/collect_issues.md)
+  : Collect every failing case
+
+- [`write_issues_report()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/write_issues_report.md)
+  : Write the issues report (HTML and CSV)
+
+- [`resolve_issues()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/resolve_issues.md)
+  : Resolve an issues list against the current concordance
+
+- [`write_resolved_report()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/write_resolved_report.md)
+  : Write the resolved-issues report (HTML and CSV)
+
+# Articles
+
+### Guides
+
+- [The component
+  tables](https://nonprofit-open-data-collective.github.io/concordance990/articles/table-structure.md):
+- [From the v1 concordance to
+  v2](https://nonprofit-open-data-collective.github.io/concordance990/articles/migration.md):
+- [How the concordance tables are
+  built](https://nonprofit-open-data-collective.github.io/concordance990/articles/building.md):
+- [Validation, tests and making
+  updates](https://nonprofit-open-data-collective.github.io/concordance990/articles/testing-updates.md):
+
+### Data dictionaries
+
+- [Data dictionary: Form 990 and
+  990-EZ](https://nonprofit-open-data-collective.github.io/concordance990/articles/data-dictionary-990.md):
+- [Data dictionary: Form
+  990-PF](https://nonprofit-open-data-collective.github.io/concordance990/articles/data-dictionary-990pf.md):
+- [Outline of forms, parts and
+  schedules](https://nonprofit-open-data-collective.github.io/concordance990/articles/form-outline.md):

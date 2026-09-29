@@ -4,11 +4,18 @@
 \alias{xpath_map}
 \title{Lookup table from xpath to variable and table}
 \usage{
-xpath_map()
+xpath_map(form = NULL)
+}
+\arguments{
+\item{form}{\code{NULL} for every xpath with its primary mapping, or the
+database being built: \code{"F990"} (990 and 990-EZ returns with their
+schedules) or \code{"F990PF"} (990-PF returns: PF xpaths, the shared header,
+Schedule B and the form-specific mappings of \code{xpath_forms.csv}). See
+\code{\link[=build_concordance]{build_concordance()}}.}
 }
 \value{
 A data.table with \code{xpath}, \code{variable_name}, \code{rdb_table},
-\code{rdb_relationship} and \code{form_type}.
+\code{rdb_relationship}, \code{form_type} and \code{multi_value}.
 }
 \description{
 The minimal columns a parser needs.

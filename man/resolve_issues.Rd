@@ -10,7 +10,8 @@ resolve_issues(
   changes,
   log = read_validation_log(),
   fixes = character(),
-  xpath_var = NULL
+  xpath_var = NULL,
+  aliases = NULL
 )
 }
 \arguments{

@@ -1,0 +1,61 @@
+---
+title: "Data dictionary: Form 990-PF"
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+source("_dictionary.R")
+```
+
+This dictionary documents every variable of the **990-PF research
+database**: the Form 990-PF, the auxiliary schedules and statements filed with
+it, Schedule B and the return header shared with the 990. It is generated from
+the concordance with `data_dictionary("F990PF")`, the variables of
+`concordance(form = "F990PF")`. The Form 990 and 990-EZ have
+[their own dictionary](data-dictionary-990.html).
+
+## Reading the dictionary
+
+**Names** follow `PF_PP_NAME`, where `PP` is the part of the 990-PF, numbered
+as on the forms before the 2023 redesign (the part titles give the 2023
+number). Two other prefixes appear:
+
+* `F9_00_` for the **return header**, shared with the 990 and 990-EZ: the
+  same variables in both databases.
+* `PF_AXnn_` for **auxiliary schedule** `nn`, the statements a foundation
+  attaches (depreciation, other income, grants approved for future payment,
+  compensation explanations, and others), in tables `PF-P99-Tnn-...`.
+* `SB_` for **Schedule B**, which foundations file too. Unlike the 990,
+  990-PF Schedule B contributor names and addresses are public.
+
+**Attachments filed with every form** (compensation explanations,
+reasonable-cause statements) map to their `PF_AX` variables in this database
+and to 990 variables in the 990 database.
+
+**Tables.** *ONE* tables have one row per filing; *MANY* tables have one row
+per repeated item (an officer, a grant paid, an asset sold). Fixed line slots
+are columns of a one-row table, for example the four direct charitable
+activities of Part IX-A (`PF_09_CHARIT_ACT_DESC_1` to `_4`).
+
+**Type** is `numeric`, `text`, `checkbox` or `date`. A
+<span class='badge bg-secondary'>list</span> marks a field whose repeated
+values are joined into one cell (for example the manager names of Part XV).
+
+**Evidence.** The 990-PF mapping was checked against one year of filings
+(TY2023, 114,559 returns) and the 2023 schemas. Xpaths of earlier schema
+versions are kept from the v1 PF concordance.
+
+## Contents
+
+```{r summary}
+dictionary_summary("F990PF")
+```
+
+```{r css, results = "asis"}
+cat(dictionary_css())
+```
+
+```{r sections, results = "asis"}
+cat(dictionary_sections("F990PF"))
+```
+

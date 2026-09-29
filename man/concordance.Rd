@@ -4,11 +4,17 @@
 \alias{concordance}
 \title{The concordance: one row per xpath}
 \usage{
-concordance(format = c("v2", "v1"))
+concordance(format = c("v2", "v1"), form = NULL)
 }
 \arguments{
-\item{format}{\code{"v2"} (v1 columns plus \code{family_id} and \code{part_id}) or
-\code{"v1"} (exactly the v1 columns).}
+\item{format}{\code{"v2"} (v1 columns plus \code{family_id}, \code{part_id} and
+\code{multi_value}) or \code{"v1"} (exactly the v1 columns).}
+
+\item{form}{\code{NULL} for every xpath with its primary mapping, or the
+database being built: \code{"F990"} (990 and 990-EZ returns with their
+schedules) or \code{"F990PF"} (990-PF returns: PF xpaths, the shared header,
+Schedule B and the form-specific mappings of \code{xpath_forms.csv}). See
+\code{\link[=build_concordance]{build_concordance()}}.}
 }
 \value{
 A data.table.
@@ -19,4 +25,5 @@ The concordance: one row per xpath
 \examples{
 cc <- concordance()
 head(cc[, .(xpath, variable_name, rdb_table)])
+pf <- concordance(form = "F990PF")
 }
