@@ -11,8 +11,17 @@ every change from version 1.
 
 Useful links:
 
+- <https://nonprofit-open-data-collective.github.io/concordance990/>
+
 - <https://github.com/Nonprofit-Open-Data-Collective/concordance990>
+
+- Report bugs at
+  <https://github.com/Nonprofit-Open-Data-Collective/concordance990/issues>
 
 ## Author
 
 **Maintainer**: Jesse Lecy <jdlecy@gmail.com>
+
+Authors:
+
+- Hyunrang Han
