@@ -116,11 +116,13 @@ evidence_year <- function(year, db_path, ydir, concordance, temp_dir, memory_lim
   # Cleaned rows. repeat_root = the deepest indexed ([n]) ancestor-or-self,
   # i.e. the repeating element the value sits in. For a remote database the
   # rows are materialized once, so the queries below don't each re-read it
-  # over HTTP.
+  # over HTTP. ef2 strips only indices of up to five digits from XPATH2, so a
+  # repeat numbered 100000+ keeps its index; strip every index here.
   run(paste0("
     CREATE TEMP ", if (remote) "TABLE" else "VIEW", " f AS
     SELECT OBJECTID,
-           regexp_replace(XPATH2, '(irs|efile):', '', 'g')          AS xpath,
+           regexp_replace(regexp_replace(XPATH2, '(irs|efile):', '', 'g'),
+                          '\\[[0-9]+\\]', '', 'g')                   AS xpath,
            TYPE                                                    AS node_type,
            TABLE_HEADER                                            AS table_header,
            regexp_replace(regexp_replace(regexp_extract(XPATH, '^(.*\\])', 1),
