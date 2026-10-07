@@ -47,7 +47,7 @@ dictionary_sections <- function(form) {
         # (a raw html block: pandoc passes it through instead of parsing ~1 MB of HTML)
         out <- c(out,
                  "\n```{=html}",
-                 sprintf("<div class='dict-table' id='%s'>", tolower(t)),
+                 sprintf("<div class='dict-table dict-table-%s' id='%s'>", tolower(card), tolower(t)),
                  sprintf("<div class='dict-head'><code class='dict-name'>%s</code><span class='dict-card dict-card-%s'>%s</span><span class='dict-card-text'>%s</span></div>",
                          t, tolower(card), card, card_text[[card]]),
                  knitr::kable(tbl, format = "html", escape = FALSE, table.attr = "class='table table-sm dictionary'"),
@@ -75,15 +75,15 @@ dictionary_css <- function() {
   '<style>
 main h2 { margin-top: 3rem; padding-top: 1rem; border-top: 3px solid #153243; }
 main h3 { margin-top: 2.25rem; padding-bottom: .35rem; border-bottom: 1px solid #c3c8cf; font-size: 1.3rem; }
-.dict-table { margin: 1.25rem 0 1.75rem; border: 1px solid #c3c8cf; border-radius: 6px; overflow: hidden; }
+.dict-table { margin: 1.25rem 0 1.75rem; border: 1.5px solid #1f3864; border-radius: 6px; overflow: hidden; }
+.dict-table-many { border-color: #9c5a1c; }
 .dict-head { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap;
-             background: #eef1f4; border-bottom: 1px solid #c3c8cf; padding: .45rem .75rem; }
-.dict-head .dict-name { background: transparent; font-weight: 600; font-size: .95rem; color: #153243; padding: 0; }
+             background: #1f3864; padding: .45rem .75rem; }
+.dict-table-many .dict-head { background: #9c5a1c; }
+.dict-head .dict-name { background: transparent; font-weight: 600; font-size: .95rem; color: #fff; padding: 0; }
 .dict-card { font-size: .72rem; font-weight: 700; letter-spacing: .05em; padding: .1rem .5rem; border-radius: 1rem;
-             border: 1.5px solid currentColor; }
-.dict-card-one { color: #1b6e2b; }
-.dict-card-many { color: #8f3f10; }
-.dict-card-text { font-size: .85rem; color: #6d7681; }
+             border: 1.5px solid currentColor; color: #fff; }
+.dict-card-text { font-size: .85rem; color: rgba(255, 255, 255, .82); }
 table.dictionary { margin: 0; font-size: .85rem; table-layout: fixed; width: 100%; }
 table.dictionary thead th { background: #fafbfc; font-size: .72rem; text-transform: uppercase; letter-spacing: .06em;
                             color: #4d565f; border-bottom: 1px solid #c3c8cf; }
@@ -95,6 +95,7 @@ table.dictionary th:nth-child(3), table.dictionary td:nth-child(3) { width: 17%;
 table.dictionary th:nth-child(4), table.dictionary td:nth-child(4) { width: 8%; white-space: nowrap; }
 table.dictionary th:nth-child(5), table.dictionary td:nth-child(5) { width: 10%; white-space: nowrap; }
 table.dictionary code { font-size: .8rem; }
+table.dictionary td:nth-child(1) code { background: #3a3f45; color: #fff; padding: .1rem .35rem; border-radius: 3px; }
 .dict-desc { display: block; margin-top: .15rem; color: #6d7681; font-size: .8rem; }
 .dict-loc { font-size: .75rem; color: #4d565f; hyphens: none; }
 </style>'
