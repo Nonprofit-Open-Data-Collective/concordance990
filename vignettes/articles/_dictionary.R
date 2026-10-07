@@ -14,12 +14,35 @@ filed_with <- c(F990 = "990 and 990-EZ", F990PF = "990-PF",
                 "SCHED-R" = "990")
 card_text <- c(ONE = "one row per filing", MANY = "one row per repeated item")
 
+# Compact percent: one decimal, "0" for none, "<0.1" below the first decimal
+pct_short <- function(p) {
+  p <- suppressWarnings(as.numeric(p))
+  out <- ifelse(p == 0, "0", ifelse(p < 0.05, "<0.1", formatC(p, format = "f", digits = 1)))
+  out <- sub("^100\\.0$", "100", out)
+  ifelse(is.na(p), "", paste0(out, "%"))
+}
+
+# Percent of filers reporting each variable in the newest schema year, from its
+# current xpaths. A 990 + 990-EZ variable with current xpaths on both main forms
+# gets two values, 990/990-EZ; otherwise one value (the highest xpath).
+variable_rates <- function(form) {
+  cc <- concordance("v2", form = form)[current_version == "TRUE"]
+  cc[, p := suppressWarnings(as.numeric(pct_filers_reporting))]
+  cc[, side := fifelse(grepl("^/Return/ReturnData/IRS990EZ/", xpath), "EZ",
+                       fifelse(grepl("^/Return/ReturnData/IRS990/", xpath), "PC", "ALL"))]
+  s <- cc[!is.na(p), .(p = max(p)), by = .(variable_name, variable_scope, side)]
+  s[, .(rate = if (variable_scope[1] == "PZ" && all(c("PC", "EZ") %in% side))
+    paste(pct_short(p[side == "PC"]), pct_short(p[side == "EZ"]), sep = "/") else pct_short(max(p))),
+    by = variable_name]
+}
+
 # The dictionary sections: form > part > table > variables
 dictionary_sections <- function(form) {
   dd <- data_dictionary(form)
   fm <- cc_forms()[, .(form_id, form_title = title, form_order = as.integer(sort_order))]
   dd <- merge(dd, fm, by = "form_id", all.x = TRUE, sort = FALSE)
   dd[, order := seq_len(.N)]
+  rates <- variable_rates(form)
   out <- character()
   if (form == "F990PF") { dd[form_id == "F990", form_title := "Return header (shared with the Form 990 and 990-EZ)"]; dd[form_id == "F990", form_order := 0L] }
   for (f in dd[order(form_order, order), unique(form_id)]) {
@@ -42,7 +65,8 @@ dictionary_sections <- function(form) {
           Description = desc,
           Location = sprintf("<span class='dict-loc'>%s</span>", esc(dt$location_code_family)),
           Type = dt$data_type_simple,
-          Scope = unname(scope_names[dt$variable_scope]))
+          Scope = unname(scope_names[dt$variable_scope]),
+          `% Reporting` = sprintf("<span class='dict-rate'>%s</span>", rates[dt$variable_name, on = "variable_name", fcoalesce(rate, "")]))
         # one block per table: a header bar with the table name and cardinality, then the variables
         # (a raw html block: pandoc passes it through instead of parsing ~1 MB of HTML)
         out <- c(out,
@@ -72,7 +96,8 @@ dictionary_summary <- function(form) {
 # Styles for the dictionary pages: crisp breaks between parts and tables,
 # one header bar per table, fixed column widths
 dictionary_css <- function() {
-  '<style>
+  '<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap">
+<style>
 main h2 { margin-top: 3rem; padding-top: 1rem; border-top: 3px solid #153243; }
 main h3 { margin-top: 2.25rem; padding-bottom: .35rem; border-bottom: 1px solid #c3c8cf; font-size: 1.3rem; }
 .dict-table { margin: 1.25rem 0 1.75rem; border: 1.5px solid #1f3864; border-radius: 6px; overflow: hidden; }
@@ -89,14 +114,17 @@ table.dictionary thead th { background: #fafbfc; font-size: .72rem; text-transfo
                             color: #4d565f; border-bottom: 1px solid #c3c8cf; }
 table.dictionary th, table.dictionary td { padding: .4rem .75rem; vertical-align: top; }
 table.dictionary tbody tr:nth-child(even) { background: #fafbfc; }
-table.dictionary th:nth-child(1), table.dictionary td:nth-child(1) { width: 29%; overflow-wrap: anywhere; }
-table.dictionary th:nth-child(2), table.dictionary td:nth-child(2) { width: 37%; }
-table.dictionary th:nth-child(3), table.dictionary td:nth-child(3) { width: 17%; overflow-wrap: normal; word-break: normal; }
+table.dictionary th:nth-child(1), table.dictionary td:nth-child(1) { width: 27%; overflow-wrap: anywhere; }
+table.dictionary th:nth-child(2), table.dictionary td:nth-child(2) { width: 33%; }
+table.dictionary th:nth-child(3), table.dictionary td:nth-child(3) { width: 15%; overflow-wrap: normal; word-break: normal; }
 table.dictionary th:nth-child(4), table.dictionary td:nth-child(4) { width: 8%; white-space: nowrap; }
-table.dictionary th:nth-child(5), table.dictionary td:nth-child(5) { width: 10%; white-space: nowrap; }
+table.dictionary th:nth-child(5), table.dictionary td:nth-child(5) { width: 8%; white-space: nowrap; }
+table.dictionary th:nth-child(6), table.dictionary td:nth-child(6) { width: 9%; white-space: nowrap; text-align: right; }
 table.dictionary code { font-size: .8rem; }
-table.dictionary td:nth-child(1) code { background: #3a3f45; color: #fff; padding: .1rem .35rem; border-radius: 3px; }
+table.dictionary td:nth-child(1) code { font-family: "JetBrains Mono", ui-monospace, Consolas, monospace; font-weight: 700;
+                                        font-size: .78rem; background: transparent; color: #1b1f23; padding: 0; }
 .dict-desc { display: block; margin-top: .15rem; color: #6d7681; font-size: .8rem; }
+.dict-rate { font-variant-numeric: tabular-nums; font-size: .8rem; }
 .dict-loc { font-size: .75rem; color: #4d565f; hyphens: none; }
 </style>'
 }
