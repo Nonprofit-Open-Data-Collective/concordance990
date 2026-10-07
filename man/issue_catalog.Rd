@@ -5,7 +5,7 @@
 \alias{issue_catalog}
 \title{Catalog of checks}
 \format{
-An object of class \code{data.table} (inherits from \code{data.frame}) with 33 rows and 6 columns.
+An object of class \code{data.table} (inherits from \code{data.frame}) with 34 rows and 6 columns.
 }
 \usage{
 issue_catalog

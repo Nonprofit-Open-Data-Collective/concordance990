@@ -57,6 +57,16 @@ test_that("check_changelog reports unlogged differences", {
   expect_identical(nrow(chk$unlogged), 1L)
 })
 
+test_that("derived columns are not logged cell by cell, other xpath columns are", {
+  s <- read_src()
+  s$xpaths[1:3, `:=`(pct_filers_reporting = "1", latest_version = "2099")]
+  expect_true(check_changelog(src = s)$ok)
+  s$xpaths[1, form_line_number := "changed without logging"]
+  chk <- check_changelog(src = s)
+  expect_false(chk$ok)
+  expect_identical(chk$unlogged$field, "form_line_number")
+})
+
 test_that("the v1 crosswalk covers every xpath", {
   cw <- v1_crosswalk()
   expect_identical(nrow(cw), length(union(read_cc_csv(v1_path_default())$xpath, read_src()$xpaths$xpath)))

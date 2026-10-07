@@ -19,3 +19,13 @@ test_that("rules catch a broken reference and a bad cardinality", {
   expect_true("R02" %in% v$rule)
   expect_true(any(v$rule == "R03" & v$value == "SOME"))
 })
+
+test_that("R13 catches a table number that disagrees with its cardinality", {
+  s <- read_src()
+  i <- which(grepl("-T00-", s$tables$table_id))[1]
+  j <- which(!grepl("-T00-", s$tables$table_id))[1]
+  s$tables[i, cardinality := "MANY"]
+  s$tables[j, cardinality := "ONE"]
+  v <- validate_concordance(s)
+  expect_setequal(v[rule == "R13", key], s$tables$table_id[c(i, j)])
+})

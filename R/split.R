@@ -1,10 +1,22 @@
 #' Columns of the v1 concordance, in order
+#'
+#' `v1_columns` are the columns of the v1 file. `concordance_columns` are
+#' the columns of the current concordance in the v1 layout: since fix 24,
+#' `versions` is `schema_versions` (XSD and observed versions),
+#' `earliest_version` and `pct_filers_reporting` are added and `duplicated` is
+#' dropped (see [xpath_version_fields()]).
 #' @export
 v1_columns <- c("xpath", "variable_name", "rdb_relationship", "rdb_table", "label", "description",
                 "location_code_xsd", "location_code_family", "location_code", "form", "form_type",
                 "form_part", "form_line_number", "variable_scope", "data_type_xsd", "data_type_simple",
                 "required", "versions", "latest_version", "duplicated", "current_version",
                 "production_rule", "validated")
+
+#' @rdname v1_columns
+#' @export
+concordance_columns <- c(v1_columns[seq_len(match("required", v1_columns))],
+                         "schema_versions", "earliest_version", "latest_version", "current_version",
+                         "pct_filers_reporting", "production_rule", "validated")
 
 # v1 columns that describe the variable (stored once in variables.csv); every
 # other v1 column except rdb_relationship describes the xpath.

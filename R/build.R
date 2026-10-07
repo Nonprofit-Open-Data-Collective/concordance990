@@ -18,7 +18,9 @@ read_src <- function(src_dir = src_path()) {
 #' Joins xpaths to their variables, applies the xpath-level overrides, adds
 #' table cardinality, and returns one row per xpath in v1 order.
 #'
-#' * `format = "v1"` returns exactly the v1 columns. For the baseline this
+#' * `format = "v1"` returns the v1 layout: [concordance_columns] (the v1
+#'   columns with the version fields of fix 24). For the baseline tables,
+#'   which still have the v1 columns, it returns exactly [v1_columns] and
 #'   reproduces the v1 file byte for byte (see [write_concordance()]).
 #' * `format = "v2"` adds `family_id` and `part_id` after the v1 columns.
 #'
@@ -65,7 +67,8 @@ build_concordance <- function(src_dir = src_path(), format = c("v1", "v2"), form
   if (anyNA(x$rdb_relationship)) stop("xpaths reference unknown tables.")
 
   data.table::setorder(x, v1_order)
-  cols <- if (format == "v1") v1_columns else c(v1_columns, "family_id", "part_id", intersect("multi_value", names(x)))
+  base <- if ("schema_versions" %in% names(x)) concordance_columns else v1_columns
+  cols <- if (format == "v1") base else c(base, "family_id", "part_id", intersect("multi_value", names(x)))
   x[, cols, with = FALSE]
 }
 

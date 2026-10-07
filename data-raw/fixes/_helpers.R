@@ -28,7 +28,7 @@ fix_step <- function(edit, reason, evidence = "", type = NULL, affects = NULL) {
   if (!is.null(type)) rows[!change_type %in% c("add", "remove", "add_column", "remove_column"), change_type := type]
   if (!is.null(affects)) rows[, affects_data := if (affects) "TRUE" else "FALSE"]
   ch <- rbind(read_changelog(), rows)
-  retry(function() write_cc_csv(ch, changelog_path(), eol = "\n"))
+  retry(function() write_changelog(ch))
   message(sprintf("%4d rows  %s", nrow(rows), substr(reason, 1, 90)))
   invisible(rows)
 }

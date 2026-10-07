@@ -8,7 +8,9 @@ observed_table_groups(concordance, evidence_dir = "evidence")
 }
 \arguments{
 \item{concordance}{Data frame in the v1 layout (\code{xpath}, \code{variable_name},
-\code{rdb_table}, \code{rdb_relationship}, \code{data_type_simple}).}
+\code{rdb_table}, \code{rdb_relationship}, \code{data_type_simple}), optionally with
+\code{multi_value} (otherwise read from \code{variables.csv}). List-valued
+(\code{multi_value}) fields repeat by design and are not flagged ONE_REPEATS.}
 
 \item{evidence_dir}{Directory written by \code{\link[=combine_evidence]{combine_evidence()}}.}
 }

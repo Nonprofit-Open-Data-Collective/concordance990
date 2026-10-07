@@ -3,14 +3,23 @@
 \docType{data}
 \name{v1_columns}
 \alias{v1_columns}
+\alias{concordance_columns}
 \title{Columns of the v1 concordance, in order}
 \format{
 An object of class \code{character} of length 23.
+
+An object of class \code{character} of length 24.
 }
 \usage{
 v1_columns
+
+concordance_columns
 }
 \description{
-Columns of the v1 concordance, in order
+\code{v1_columns} are the columns of the v1 file. \code{concordance_columns} are
+the columns of the current concordance in the v1 layout: since fix 24,
+\code{versions} is \code{schema_versions} (XSD and observed versions),
+\code{earliest_version} and \code{pct_filers_reporting} are added and \code{duplicated} is
+dropped (see \code{\link[=xpath_version_fields]{xpath_version_fields()}}).
 }
 \keyword{datasets}

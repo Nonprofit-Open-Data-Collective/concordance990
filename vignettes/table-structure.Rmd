@@ -111,10 +111,26 @@ cc_variables()[variable_name %in% c("F9_08_REV_TOT_CY", "F9_06_DISCLOSURE_STATES
 
 One row per xpath, the primary key of the concordance. Besides the variable it
 records the form, form type (`PC`, `EZ`, `SZ` schedule, `PF`), form part and
-line, the IRS data type, the schema versions it appears in, and a free-text
-`production_rule` where a value needs special handling (for example the TY2009
-501(c)(3) flag, which is an attribute of `Organization501c`). Xpaths ending in
-`/@name` are XML attributes.
+line, the IRS data type, and a free-text `production_rule` where a value needs
+special handling (for example the TY2009 501(c)(3) flag, which is an attribute
+of `Organization501c`). Xpaths ending in `/@name` are XML attributes.
+
+Its version fields come from the filings (`update_xpath_versions()`, from the
+evidence built from the ef2 databases):
+
+* **`schema_versions`**: every schema version the xpath is defined in (the
+  XSDs, as recorded in v1) or observed in (filings). Either source can have
+  gaps, so the list is their union.
+* **`earliest_version`**, **`latest_version`**: the first and last schema year
+  the xpath is observed in.
+* **`current_version`**: `TRUE` when the xpath is observed in the newest
+  schema year, `FALSE` when only earlier, empty when never observed.
+* **`pct_filers_reporting`**: the percent of filers in the xpath's scope whose
+  return holds the xpath, in its `latest_version` year. The scope is 990
+  filers (`PC`), 990-EZ filers (`EZ`), both (`PZ`, header, signature) or
+  990-PF filers (`PF`); a main-form xpath counts only the filers of its form,
+  and the header and shared schedules also count the 990-PF filers who file
+  them.
 
 `v1_order` keeps the row order of the v1 file, so the generated file stays in
 the familiar order.
@@ -147,7 +163,8 @@ read_src()$xpath_forms[1:3]
 
 | File | Role |
 |---|---|
-| `inst/extdata/changelog/changes.csv` | Every cell changed since v1, with reason and evidence (`vignette("migration")`) |
+| `inst/extdata/changelog/changes.csv` | Every cell changed since v1 (`vignette("migration")`) |
+| `inst/extdata/changelog/change_sets.csv` | The date, author, reason and evidence of each set of changes in `changes.csv` |
 | `inst/extdata/changelog/v1_to_v2_crosswalk.csv` | Each v1 xpath with its v1 and current variable and table |
 | `inst/extdata/validation/validation_log.csv` | Reviewer decisions on flagged cases (`vignette("testing-updates")`) |
 | `inst/extdata/validation/rule_ceilings.csv` | Ceilings for structural rules still being fixed (none at present) |

@@ -7,8 +7,16 @@
 read_changelog(path = changelog_path())
 }
 \arguments{
-\item{path}{Path to \code{changes.csv}.}
+\item{path}{Path to \code{changes.csv}; \code{change_sets.csv} is read from the
+same folder.}
+}
+\value{
+A data.table with one row per change: \code{change_id}, \code{date},
+\code{version}, \code{commit}, \code{author}, \code{level}, \code{key}, \code{field}, \code{old_value},
+\code{new_value}, \code{change_type}, \code{reason}, \code{evidence}, \code{affects_data}.
 }
 \description{
-Read the change log
+Joins \code{changes.csv} (one row per change) with \code{change_sets.csv} (the
+date, version, commit, author, reason and evidence each set of changes
+shares) and returns one row per change with all of them.
 }

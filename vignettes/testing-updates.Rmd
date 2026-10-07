@@ -100,7 +100,10 @@ vignettes) on every push and pull request (`.github/workflows/R-CMD-check.yaml`)
 
 Edit the component tables, never the generated files. Each fix is logged, one
 change-log row per changed cell (`inst/extdata/changelog/changes.csv`), with a
-reason and the evidence behind it. Replaying the log on the frozen v1 must
+reason and the evidence behind it, stored once per set of changes in
+`change_sets.csv` (`read_changelog()` joins them). Derived columns
+(`derived_columns`: the xpath version fields and `pct_filers_reporting`) are
+recomputed from the filing evidence and not logged cell by cell. Replaying the log on the frozen v1 must
 reproduce the current tables exactly; the build stops if it does not.
 
 ### With a fix script (recommended)
