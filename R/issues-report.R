@@ -45,7 +45,7 @@ write_issues_report <- function(issues, path = "reports/issues.html", commit = "
   add('<div class="concepts"><dl class="kv">',
       '<dt>Work from</dt><dd>The <code>concordance990</code> repository (GitHub <code>main</code>). Not the v1 repository, and not <code>concordance.csv</code> or <code>concordance.xlsx</code>, which are generated.</dd>',
       '<dt>Edit</dt><dd>The component tables in <code>inst/extdata/src/</code>. Each case below names the file, the row (its key) and the column.</dd>',
-      '<dt>Log</dt><dd>After editing, run <code>devtools::load_all(); draft_changes(author = "...", write = TRUE)</code>, then fill in <code>reason</code> and <code>evidence</code> in <code>inst/extdata/changelog/changes.csv</code>.</dd>',
+      '<dt>Log</dt><dd>After editing, run <code>devtools::load_all(); draft_changes(author = "...", write = TRUE)</code>, then fill in <code>reason</code> and <code>evidence</code> in <code>inst/extdata/changelog/change_sets.csv</code>.</dd>',
       '<dt>Rebuild</dt><dd><code>Rscript data-raw/build-concordance.R</code>, then <code>devtools::test()</code>. When a structural rule improves, lower its ceiling in <code>inst/extdata/validation/rule_ceilings.csv</code>.</dd>',
       '<dt>990-PF</dt><dd>PF cases point to the v1 file <code>F990-PF-FULL.CSV</code> because the PF concordance is not yet in the v2 component tables. Fix them after the PF merge (Phase 5) so the fixes are logged.</dd>',
       '<dt>Accepting a case</dt><dd>If a flagged case is correct as it is, record that in the validation log (Phase 4) instead of changing data.</dd>',

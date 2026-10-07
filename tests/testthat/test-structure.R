@@ -40,8 +40,23 @@ test_that("cardinality is exactly ONE or MANY", {
 test_that("the change log has the documented columns", {
   p <- system.file("extdata", "changelog", "changes.csv", package = "concordance990")
   if (!nzchar(p)) p <- test_path("..", "..", "inst", "extdata", "changelog", "changes.csv")
-  ch <- read_cc_csv(p)
-  expect_identical(names(ch), c("change_id", "date", "version", "commit", "author", "level", "key",
-                                "field", "old_value", "new_value", "change_type", "reason",
-                                "evidence", "affects_data"))
+  expect_identical(names(read_cc_csv(p)), c("change_id", "set_id", "level", "key", "field", "old_value",
+                                            "new_value", "change_type", "affects_data"))
+  expect_identical(names(read_cc_csv(file.path(dirname(p), "change_sets.csv"))),
+                   c("set_id", "date", "version", "commit", "author", "reason", "evidence"))
+  expect_identical(names(read_changelog(p)), c("change_id", "date", "version", "commit", "author", "level", "key",
+                                               "field", "old_value", "new_value", "change_type", "reason",
+                                               "evidence", "affects_data"))
+})
+
+test_that("write_changelog round-trips and keeps set ids when rows are appended", {
+  d <- tempfile(); dir.create(d); p <- file.path(d, "changes.csv")
+  ch <- read_changelog()[c(1:3, (.N - 1):.N)]
+  write_changelog(ch, p)
+  expect_identical(read_changelog(p), ch)
+  ids <- read_cc_csv(p)$set_id
+  extra <- data.table::copy(ch[.N])[, `:=`(change_id = "C99999", reason = "another set")]
+  write_changelog(rbind(ch, extra), p)
+  expect_identical(utils::head(read_cc_csv(p)$set_id, length(ids)), ids)
+  expect_identical(nrow(read_cc_csv(file.path(d, "change_sets.csv"))), length(unique(ids)) + 1L)
 })

@@ -31,5 +31,6 @@ Compares the current component tables with the baseline plus the existing
 log and returns rows for the differences, with ids, date, author, a
 guessed \code{change_type} and \code{affects_data} filled in. \code{reason} and
 \code{evidence} are left for the editor. With \code{write = TRUE} the rows are
-appended to \code{changes.csv}.
+appended to the change log (one new set in \code{change_sets.csv}, where the
+reason and evidence can be filled in).
 }

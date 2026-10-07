@@ -5,7 +5,7 @@
 \alias{validation_rules}
 \title{Structural validation rules (PLAN.md section 6.1)}
 \format{
-An object of class \code{data.table} (inherits from \code{data.frame}) with 12 rows and 3 columns.
+An object of class \code{data.table} (inherits from \code{data.frame}) with 13 rows and 3 columns.
 }
 \usage{
 validation_rules

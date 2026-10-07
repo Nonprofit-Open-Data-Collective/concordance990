@@ -14,6 +14,21 @@ src_levels <- c(forms = "form", parts = "part", tables = "table", variables = "v
                 xpaths = "xpath", xpath_overrides = "xpath_override", families = "family",
                 xpath_forms = "xpath_form")
 
+#' Derived columns
+#'
+#' Columns of `xpaths.csv` whose values are computed from the filing
+#' evidence by [update_xpath_versions()] (and the v1 columns they replaced).
+#' The change log records when one is added or removed, not its cell values:
+#' they are measurements, rebuilt from the evidence, and logging each refresh
+#' would add a row per xpath. [diff_src()] skips their cells,
+#' [check_changelog()] does not require them to be logged, and they can be
+#' removed while they still hold values.
+#' @export
+derived_columns <- c("schema_versions", "earliest_version", "latest_version", "current_version",
+                     "pct_filers_reporting", "versions", "duplicated")
+
+derived_of <- function(tb) if (identical(tb, "xpaths")) derived_columns else character()
+
 changelog_columns <- c("change_id", "date", "version", "commit", "author", "level", "key", "field",
                        "old_value", "new_value", "change_type", "reason", "evidence", "affects_data")
 
@@ -74,11 +89,12 @@ diff_src <- function(old, new) {
     for (cl in added_cols) { out[[length(out) + 1]] <- row("*", cl, "", "", "add_column"); o[, (cl) := ""] }
 
     ko <- key_string(o, keys); kn <- key_string(n, keys)
-    cols <- setdiff(names(n), keys)
+    # derived columns (values computed from the evidence) are not logged cell by cell
+    cols <- setdiff(names(n), c(keys, derived_of(tb)))
 
     # removed rows: blank the content, then delete the row
     for (i in which(!ko %in% kn)) {
-      vals <- unlist(o[i, setdiff(names(o), keys), with = FALSE])
+      vals <- unlist(o[i, setdiff(names(o), c(keys, derived_of(tb))), with = FALSE])
       vals <- vals[vals != ""]
       if (length(vals)) out[[length(out) + 1]] <- row(ko[i], names(vals), unname(vals), "", "remove")
       out[[length(out) + 1]] <- row(ko[i], "*", "", "", "remove")
@@ -161,7 +177,7 @@ apply_change_row <- function(src, ch, tb_of) {
     d[, (ch$field) := ""]
   } else if (ch$change_type == "remove_column") {
     if (!ch$field %in% names(d)) fail("no such column")
-    if (any(d[[ch$field]] != "")) fail("column still has values; blank them first")
+    if (!ch$field %in% derived_of(tb) && any(d[[ch$field]] != "")) fail("column still has values; blank them first")
     d[, (ch$field) := NULL]
   } else if (ch$field == "*") {
     k <- key_string(d, keys)
@@ -174,7 +190,7 @@ apply_change_row <- function(src, ch, tb_of) {
     } else if (ch$change_type == "remove") {
       r <- which(k == ch$key)
       if (!length(r)) fail("row not found")
-      vals <- unlist(d[r, setdiff(names(d), keys), with = FALSE])
+      vals <- unlist(d[r, setdiff(names(d), c(keys, derived_of(tb))), with = FALSE])
       if (any(vals != "")) fail("row still has values; blank them first")
       d <- d[-r]
     } else fail("field '*' is only used with add or remove")
@@ -190,13 +206,62 @@ apply_change_row <- function(src, ch, tb_of) {
   src
 }
 
+# The change log is stored as two files in one folder: changes.csv, one row
+# per changed cell or row, and change_sets.csv, one row per set of changes
+# made together (a fix step), holding what the set's rows share: date,
+# version, commit, author, reason and evidence. Storing these once per set
+# instead of on every row keeps the log small.
+change_columns <- c("change_id", "set_id", "level", "key", "field", "old_value", "new_value",
+                    "change_type", "affects_data")
+change_set_columns <- c("set_id", "date", "version", "commit", "author", "reason", "evidence")
+
+#' @keywords internal
+change_sets_path <- function(path = changelog_path()) file.path(dirname(path), "change_sets.csv")
+
 #' Read the change log
-#' @param path Path to `changes.csv`.
+#'
+#' Joins `changes.csv` (one row per change) with `change_sets.csv` (the
+#' date, version, commit, author, reason and evidence each set of changes
+#' shares) and returns one row per change with all of them.
+#' @param path Path to `changes.csv`; `change_sets.csv` is read from the
+#'   same folder.
+#' @return A data.table with one row per change: `change_id`, `date`,
+#'   `version`, `commit`, `author`, `level`, `key`, `field`, `old_value`,
+#'   `new_value`, `change_type`, `reason`, `evidence`, `affects_data`.
 #' @export
 read_changelog <- function(path = changelog_path()) {
   ch <- read_cc_csv(path)
-  if (!identical(names(ch), changelog_columns)) stop("changes.csv must have columns: ", paste(changelog_columns, collapse = ", "))
-  ch
+  if (identical(names(ch), changelog_columns)) return(ch)  # a log written as one file
+  if (!identical(names(ch), change_columns)) stop("changes.csv must have columns: ", paste(change_columns, collapse = ", "))
+  sets <- read_cc_csv(change_sets_path(path))
+  if (!identical(names(sets), change_set_columns)) stop("change_sets.csv must have columns: ", paste(change_set_columns, collapse = ", "))
+  i <- match(ch$set_id, sets$set_id)
+  if (anyNA(i)) stop("changes.csv refers to unknown set_id: ", paste(utils::head(unique(ch$set_id[is.na(i)]), 5), collapse = ", "))
+  out <- cbind(ch[, !"set_id"], sets[i, !"set_id"])
+  out[, changelog_columns, with = FALSE]
+}
+
+#' Write the change log
+#'
+#' Splits the rows into `changes.csv` and `change_sets.csv`. Each run of
+#' consecutive rows sharing date, version, commit, author, reason and
+#' evidence is one set; sets are numbered in order (`S0001`, ...), so the
+#' ids of earlier sets do not change when rows are appended.
+#' @param ch Change-log rows with the columns of
+#'   [read_changelog()].
+#' @param path Path of `changes.csv`; `change_sets.csv` is written to the
+#'   same folder.
+#' @export
+write_changelog <- function(ch, path = changelog_path()) {
+  ch <- data.table::as.data.table(ch)
+  if (!identical(names(ch), changelog_columns)) stop("The change log must have columns: ", paste(changelog_columns, collapse = ", "))
+  shared <- setdiff(change_set_columns, "set_id")
+  run <- if (nrow(ch)) do.call(data.table::rleid, unname(as.list(ch[, shared, with = FALSE]))) else integer()
+  ch[, set_id := sprintf("S%04d", run)]
+  sets <- unique(ch[, change_set_columns, with = FALSE], by = "set_id")
+  write_cc_csv(ch[, change_columns, with = FALSE], path, eol = "\n")
+  write_cc_csv(sets, change_sets_path(path), eol = "\n")
+  invisible(path)
 }
 
 #' Check the change log against the current component tables
@@ -241,7 +306,8 @@ check_changelog <- function(src = read_src(), changes = read_changelog()) {
 #' log and returns rows for the differences, with ids, date, author, a
 #' guessed `change_type` and `affects_data` filled in. `reason` and
 #' `evidence` are left for the editor. With `write = TRUE` the rows are
-#' appended to `changes.csv`.
+#' appended to the change log (one new set in `change_sets.csv`, where the
+#' reason and evidence can be filled in).
 #'
 #' @param author Name to record.
 #' @param reason Optional reason applied to every drafted row.
@@ -278,7 +344,7 @@ draft_changes <- function(author, reason = "", evidence = "", write = FALSE, pat
     change_type = type, reason = rep(reason, n), evidence = rep(evidence, n),
     affects_data = ifelse(affects, "TRUE", "FALSE")))
   if (write) {
-    write_cc_csv(rbind(changes, rows), path, eol = "\n")
+    write_changelog(rbind(changes, rows), path)
     message(nrow(rows), " rows appended to ", path)
     return(invisible(rows))
   }
@@ -298,6 +364,11 @@ draft_changes <- function(author, reason = "", evidence = "", write = FALSE, pat
 #' @export
 v1_crosswalk <- function(current = build_concordance(format = "v1")) {
   v1 <- read_cc_csv(v1_path_default())
+  # fix 24 renamed versions to schema_versions and dropped duplicated
+  current <- data.table::copy(data.table::as.data.table(current))
+  if ("schema_versions" %in% names(current)) data.table::setnames(current, "schema_versions", "versions")
+  for (cl in setdiff(v1_columns, names(current))) data.table::set(current, j = cl, value = "")
+  current <- current[, v1_columns, with = FALSE]
   cols <- setdiff(v1_columns, "xpath")
   m <- merge(v1, current, by = "xpath", all = TRUE, suffixes = c(".v1", ".now"), sort = FALSE)
   differs <- vapply(cols, function(cl) {

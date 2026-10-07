@@ -7,8 +7,8 @@
 concordance(format = c("v2", "v1"), form = NULL)
 }
 \arguments{
-\item{format}{\code{"v2"} (v1 columns plus \code{family_id}, \code{part_id} and
-\code{multi_value}) or \code{"v1"} (exactly the v1 columns).}
+\item{format}{\code{"v2"} (the v1 layout plus \code{family_id}, \code{part_id} and
+\code{multi_value}) or \code{"v1"} (the v1 layout, \link{concordance_columns}).}
 
 \item{form}{\code{NULL} for every xpath with its primary mapping, or the
 database being built: \code{"F990"} (990 and 990-EZ returns with their

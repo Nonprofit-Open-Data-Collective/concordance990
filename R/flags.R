@@ -7,7 +7,9 @@
 #' `concordance.csv` is used for variable and table attributes.
 #'
 #' @param concordance Data frame in the v1 layout (`xpath`, `variable_name`,
-#'   `rdb_table`, `rdb_relationship`, `data_type_simple`).
+#'   `rdb_table`, `rdb_relationship`, `data_type_simple`), optionally with
+#'   `multi_value` (otherwise read from `variables.csv`). List-valued
+#'   (`multi_value`) fields repeat by design and are not flagged ONE_REPEATS.
 #' @param evidence_dir Directory written by [combine_evidence()].
 #' @param min_filings Minimum filings before value-based flags are raised.
 #'
@@ -16,8 +18,14 @@
 #' @export
 flag_xpaths <- function(concordance, evidence_dir = "evidence", min_filings = 30) {
   `%chin%` <- data.table::`%chin%`
-  cc <- data.table::as.data.table(concordance)[, .(xpath, variable_name, rdb_table,
-                                                  rdb_relationship, data_type_simple)]
+  cc <- data.table::as.data.table(concordance)
+  # the v1 layout has no multi_value column: take it from variables.csv
+  if (!"multi_value" %in% names(cc)) {
+    mv <- read_src()$variables[, .(variable_name, multi_value)]
+    cc <- merge(cc, mv, by = "variable_name", all.x = TRUE, sort = FALSE)
+  }
+  cc <- cc[, .(xpath, variable_name, rdb_table, rdb_relationship, data_type_simple,
+               multi_value = multi_value %in% c("TRUE", "true", "1"))]
   st <- read_xpath_stats(file.path(evidence_dir, "xpath_stats.csv"))
   fl <- data.table::fread(file.path(evidence_dir, "filings.csv"))
   gr <- data.table::fread(file.path(evidence_dir, "xpath_groups.csv"))
@@ -94,10 +102,17 @@ flag_xpaths <- function(concordance, evidence_dir = "evidence", min_filings = 30
       quote(sprintf("xpath root %s, table %s", root, rdb_table)))
 
   # --- cardinality ----------------------------------------------------------
-  add(obs[rdb_relationship == "ONE" & n_filings_repeat / n_filings > 0.01],
-      "ONE_REPEATS", "warn",
+  # A list-valued field (multi_value) repeats by design: it is collapsed into
+  # one cell, so it fits a one-to-one table and is not flagged. Any other
+  # repeat drops values; under 1% of filings (e.g. a schedule attached twice)
+  # it is reported as info, so rare repeats are still seen.
+  one <- obs[rdb_relationship == "ONE" & n_filings_repeat > 0 & !multi_value]
+  add(one[n_filings_repeat / n_filings > 0.01], "ONE_REPEATS", "warn",
       quote(sprintf("one-to-one table, repeats in %.1f%% of filings (max %s per filing)",
                     100 * n_filings_repeat / n_filings, max_per_filing)))
+  add(one[n_filings_repeat / n_filings <= 0.01], "ONE_REPEATS", "info",
+      quote(sprintf("one-to-one table, repeats in %s filings (%.2f%%; max %s per filing)",
+                    n_filings_repeat, 100 * n_filings_repeat / n_filings, max_per_filing)))
 
   g <- gr[, .(n_filings = sum(n_filings)), by = .(xpath, repeat_root)]
   g <- merge(g, cc[, .(xpath, rdb_table, rdb_relationship, variable_name)], by = "xpath")

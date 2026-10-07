@@ -26,7 +26,9 @@ A data.table.
 Joins xpaths to their variables, applies the xpath-level overrides, adds
 table cardinality, and returns one row per xpath in v1 order.
 \itemize{
-\item \code{format = "v1"} returns exactly the v1 columns. For the baseline this
+\item \code{format = "v1"} returns the v1 layout: \link{concordance_columns} (the v1
+columns with the version fields of fix 24). For the baseline tables,
+which still have the v1 columns, it returns exactly \link{v1_columns} and
 reproduces the v1 file byte for byte (see \code{\link[=write_concordance]{write_concordance()}}).
 \item \code{format = "v2"} adds \code{family_id} and \code{part_id} after the v1 columns.
 }

@@ -18,8 +18,8 @@ cached <- function(key, expr) {
 
 #' The concordance: one row per xpath
 #'
-#' @param format `"v2"` (v1 columns plus `family_id`, `part_id` and
-#'   `multi_value`) or `"v1"` (exactly the v1 columns).
+#' @param format `"v2"` (the v1 layout plus `family_id`, `part_id` and
+#'   `multi_value`) or `"v1"` (the v1 layout, [concordance_columns]).
 #' @param form `NULL` for every xpath with its primary mapping, or the
 #'   database being built: `"F990"` (990 and 990-EZ returns with their
 #'   schedules) or `"F990PF"` (990-PF returns: PF xpaths, the shared header,

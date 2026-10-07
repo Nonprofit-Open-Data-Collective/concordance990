@@ -10,9 +10,9 @@
 #'
 #' @export
 validation_rules <- data.table::data.table(
-  rule = c("R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09", "R10", "R11", "R12"),
+  rule = c("R01", "R02", "R03", "R04", "R05", "R06", "R07", "R08", "R09", "R10", "R11", "R12", "R13"),
   status = c("enforced", "enforced", "enforced", "enforced", "enforced", "enforced", "enforced",
-             "enforced", "enforced", "enforced", "enforced", "enforced"),
+             "enforced", "enforced", "enforced", "enforced", "enforced", "enforced"),
   description = c(
     "Primary keys are unique in every component table",
     "Every reference resolves (form, part, table, variable, override target)",
@@ -25,7 +25,8 @@ validation_rules <- data.table::data.table(
     "data_type_simple is numeric, text, checkbox or date",
     "Missing values are empty cells, not the text 'NA'",
     "Text is valid UTF-8",
-    "Values have no leading or trailing whitespace"
+    "Values have no leading or trailing whitespace",
+    "Table number agrees with cardinality: -T00- tables are ONE, T01+ tables are MANY"
   )
 )
 
@@ -65,6 +66,16 @@ validate_concordance <- function(src = read_src()) {
 
   # R03 cardinality
   bad <- s$tables[!cardinality %in% c("ONE", "MANY")]; v("R03", "table", bad$table_id, "cardinality", bad$cardinality)
+
+  # R13 the table number says how ef2 builds the table: -T00- one row per filing
+  # (build_table), T01+ one row per repeating group (build_rdb_table). A MANY table
+  # named T00 keeps one value of each repeated field. A list-valued field
+  # (multi_value) repeats without making its table MANY: it is collapsed into one
+  # cell, so it belongs in a ONE table; ONE_REPEATS (flag_xpaths) checks this
+  # against the filings.
+  t00 <- grepl("-T00-", s$tables$table_id, fixed = TRUE)
+  bad <- s$tables[(t00 & cardinality == "MANY") | (!t00 & cardinality == "ONE")]
+  v("R13", "table", bad$table_id, "cardinality", bad$cardinality)
 
   # R04-R06 variable names
   vars <- s$variables
