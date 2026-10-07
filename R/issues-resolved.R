@@ -22,14 +22,15 @@
 #' @param xpath_var data.table with `xpath` and `variable_name` (current and
 #'   earlier mappings), so that override changes, which are keyed by xpath,
 #'   also count as changes to the xpath's variable.
+#' @param aliases data.table with `old` and `new` for variables renamed
+#'   wholesale (e.g. the 990-PF names of the v1 PF file to the merged PF
+#'   names); a variable-level case still fails if the same check fails for any
+#'   of its new names.
 #' @return `before` with columns `status`, `resolution`, `fix`, `files`,
 #'   `change_ids`.
 #' @export
 resolve_issues <- function(before, now, changes, log = read_validation_log(), fixes = character(),
                            xpath_var = NULL, aliases = NULL) {
-  # aliases: data.table(old, new) for variables renamed wholesale (e.g. the
-  # 990-PF names of the v1 PF file -> the merged PF names); a variable-level
-  # case still fails if the same check fails for any of its new names
   if (!is.null(aliases) && nrow(aliases)) {
     now <- data.table::copy(now); now[is.na(variable_name), variable_name := ""]
     al <- merge(now[level == "variable", .(check, new = variable_name)], unique(aliases), by = "new", allow.cartesian = TRUE)

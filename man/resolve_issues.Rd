@@ -30,6 +30,11 @@ still listed).}
 \item{xpath_var}{data.table with \code{xpath} and \code{variable_name} (current and
 earlier mappings), so that override changes, which are keyed by xpath,
 also count as changes to the xpath's variable.}
+
+\item{aliases}{data.table with \code{old} and \code{new} for variables renamed
+wholesale (e.g. the 990-PF names of the v1 PF file to the merged PF
+names); a variable-level case still fails if the same check fails for any
+of its new names.}
 }
 \value{
 \code{before} with columns \code{status}, \code{resolution}, \code{fix}, \code{files},
