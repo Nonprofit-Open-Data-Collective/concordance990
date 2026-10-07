@@ -11,12 +11,19 @@ The Master Concordance maps xpaths in IRS Form 990 e-file XML returns onto a doc
 \seealso{
 Useful links:
 \itemize{
+  \item \url{https://nonprofit-open-data-collective.github.io/concordance990/}
   \item \url{https://github.com/Nonprofit-Open-Data-Collective/concordance990}
+  \item Report bugs at \url{https://github.com/Nonprofit-Open-Data-Collective/concordance990/issues}
 }
 
 }
 \author{
 \strong{Maintainer}: Jesse Lecy \email{jdlecy@gmail.com}
+
+Authors:
+\itemize{
+  \item Hyunrang Han
+}
 
 }
 \keyword{internal}

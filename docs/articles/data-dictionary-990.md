@@ -14,9 +14,9 @@ lists every part and table on one page.
 **Variables and fields.** A variable is not a field on one form. It
 pools every xpath that records the same thing: the 990 and 990-EZ
 versions of a line (for example total revenue), and the element names of
-different schema years (the IRS renamed most elements in 2013). The
-*Xpaths* column counts them. A variable that exists only on the full 990
-(the number of volunteers, say) is missing for 990-EZ filers.
+different schema years (the IRS renamed most elements in 2013). A
+variable that exists only on the full 990 (the number of volunteers,
+say) is missing for 990-EZ filers.
 
 **Names** follow `FF_PP_NAME`:
 
