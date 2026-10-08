@@ -11,6 +11,17 @@
   any future type fixes. They reproduce exactly the rule panel990 uses to
   build its normalization concordance (no differences over 2,413 990 and
   1,056 990-PF variables).
+* Fix 27 relabels 514 variables whose label was only a column heading, so
+  dozens shared one label ("Book Value" x70, "Adjusted Net Income" x32,
+  "Net Investment Income" x30, "Amount", "Year 1", `BusinessNameLine1`, ...).
+  990-PF labels now read "<line> - <column>", e.g. "Cash - book value,
+  beginning of year" or "Legal fees schedule - net investment income". Also
+  fixed: Schedule A support-schedule total rows, Schedule A Part V carryover
+  years 2-5 (copies of year 2), and blank labels in the 990 header and
+  Schedule B Part I.
+* Fix 28 drops "foreign" from eight 990-PF address labels set by fix 27
+  (location of books and books in care of): each variable pools the US and
+  the foreign address.
 
 # concordance990 2.0.1
 
@@ -42,14 +53,6 @@
   xpaths without a type fall from 149 to 1. Consumers that read the type of
   the current xpath, such as panel990, again see `SM_01_RE_OTH_NONCSH_CONTR`
   and 15 other variables typed.
-* Fix 27 relabels 514 variables whose label was only a column heading, so
-  dozens shared one label ("Book Value" x70, "Adjusted Net Income" x32,
-  "Net Investment Income" x30, "Amount", "Year 1", `BusinessNameLine1`, ...).
-  990-PF labels now read "<line> - <column>", e.g. "Cash - book value,
-  beginning of year" or "Legal fees schedule - net investment income". Also
-  fixed: Schedule A support-schedule total rows, Schedule A Part V carryover
-  years 2-5 (copies of year 2), and blank labels in the 990 header and
-  Schedule B Part I.
 
 # concordance990 2.0.0
 
