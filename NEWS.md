@@ -1,4 +1,4 @@
-# concordance990 (development version)
+# concordance990 2.0.1
 
 * New `dd()` looks up the data dictionary entry of a table or of variables:
   label, description, location code, scope, data type, family and the number
