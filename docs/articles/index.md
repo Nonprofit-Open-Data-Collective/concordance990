@@ -2,6 +2,8 @@
 
 ### Guides
 
+- [Looking up tables and
+  variables](https://nonprofit-open-data-collective.github.io/concordance990/articles/looking-up-variables.md):
 - [The component
   tables](https://nonprofit-open-data-collective.github.io/concordance990/articles/table-structure.md):
 - [From the v1 concordance to

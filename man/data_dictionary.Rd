@@ -16,7 +16,8 @@ A data.table ordered as the form: by table, then location code.
 The variables of one database with the attributes a data user needs:
 table and part, label and description, data type, scope, location code,
 the number of xpaths pooled into the variable and the return types they
-come from. A variable used in several tables (the Part III program
+come from, and the \code{family_id} that links alternate versions of one line.
+See \code{\link[=dd]{dd()}} to look up one table or variable. A variable used in several tables (the Part III program
 tables) has one row per table.
 }
 \examples{

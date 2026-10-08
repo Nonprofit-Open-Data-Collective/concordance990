@@ -3,8 +3,11 @@
 The variables of one database with the attributes a data user needs:
 table and part, label and description, data type, scope, location code,
 the number of xpaths pooled into the variable and the return types they
-come from. A variable used in several tables (the Part III program
-tables) has one row per table.
+come from, and the `family_id` that links alternate versions of one
+line. See
+[`dd()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/dd.md)
+to look up one table or variable. A variable used in several tables (the
+Part III program tables) has one row per table.
 
 ## Usage
 

@@ -1,3 +1,17 @@
+# concordance990 (development version)
+
+* New `dd()` looks up the data dictionary entry of a table or of variables:
+  label, description, location code, scope, data type, family and the number
+  of xpaths pooled. `xpaths = TRUE` adds each xpath with its schema years and
+  percent of filers reporting. A variable prints as a record card and a table
+  as a listing fitted to the console. In R Markdown, results render as
+  markdown tables. Misspelled names get suggestions. See the new article
+  "Looking up tables and variables" (`vignette("looking-up-variables")`).
+* `data_dictionary()` also returns `family_id`.
+* Fix 25 corrects two labels: `SD_02_EMT_STAFF_HOURS_ENFORCE` ("conservation
+  easements", was "conversation") and `PF_01_REV_CONTR_REC_BOOKS` (was the
+  bare column heading "Revenue and Expenses per Books").
+
 # concordance990 2.0.0
 
 First release of the Master Concordance version 2. The frozen v1 concordance

@@ -88,7 +88,7 @@ ch[, .(rows = .N), by = .(level, change_type)][order(-rows)][1:12]
 ch[, .N, by = affects_data]
 #>    affects_data     N
 #>          <char> <int>
-#> 1:        FALSE 23761
+#> 1:        FALSE 23763
 #> 2:         TRUE 38964
 ```
 
