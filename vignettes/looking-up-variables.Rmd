@@ -1,0 +1,174 @@
+---
+title: "Looking up tables and variables"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Looking up tables and variables}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(collapse = TRUE, comment = "#>")
+options(width = 90)
+library(concordance990)
+library(data.table)
+```
+
+The research databases built from the concordance have hundreds of tables and
+thousands of variables. `dd()` answers the question you have while working
+with them: *what is this column?* Give it a table name or a variable name and
+it returns the data dictionary entry: label, description, the line of the
+form it comes from (location code), which returns report it (scope), the data
+type, and how many xpaths are pooled into it.
+
+`dd()` reads the same dictionary as `data_dictionary()`, which returns the
+whole dictionary of one database. The [Form 990](data-dictionary-990.html)
+and [990-PF](data-dictionary-990pf.html) dictionary pages are built
+from it too, so the three always agree.
+
+## Look up a variable
+
+A variable prints as a record card:
+
+```{r}
+print(dd("F9_01_REV_TOT_CY"))
+```
+
+* **Location** is the form, return type, part and line the value comes from
+  (`F990-PC-PART-01-LINE-12-CY` is Form 990, Part I, line 12, current year).
+* **Scope** says which returns have the variable: `PC` full 990 only, `EZ`
+  990-EZ only, `PZ` both, `HD` the return header shared by all returns, `PF`
+  the 990-PF. A `PC` variable is missing for 990-EZ filers.
+* **Database** is the research database the variable belongs to (`F990` or
+  `F990PF`). Header and Schedule B variables belong to both.
+* **Forms** are the return types whose xpaths feed the variable, and
+  **Xpaths** counts them.
+
+Names are matched exactly, then ignoring case, so `dd("f9_01_rev_tot_cy")`
+works too. Several variables print as several cards:
+
+```{r}
+print(dd(c("F9_01_REV_TOT_CY", "F9_01_EXP_TOT_CY"), fields = c("label", "location_code_family")))
+```
+
+`fields` picks the columns to return; `fields = "all"` returns every column
+of the dictionary, and `names(dd("F9_00_ORG_EIN"))` lists them.
+
+### Where does the value come from? Ask for the xpaths
+
+The xpaths are not reported by default. Set `xpaths = TRUE` to list every
+xpath pooled into the variable, with the schema years it appears in and the
+percent of filers of that return type who report it:
+
+```{r}
+print(dd("F9_01_REV_TOT_CY", xpaths = TRUE))
+```
+
+The IRS renamed most elements in 2013, so a variable usually pools a
+2009-2012 xpath and a 2013-2024 xpath, for each return type. Xpaths with
+no years (`-`) are in the IRS schemas but have not been seen in filings.
+
+### Families of alternate versions
+
+A few lines of the form are asked differently on the 990 and the 990-EZ, so
+they are separate variables linked in a **family**. The card shows the family
+and its definition:
+
+```{r}
+print(dd("F9_04_SCHED_B_REQ_X"))
+```
+
+## Look up a table
+
+A table prints as a listing of its variables, in the order they appear on the
+form, under a header with the part, the database and whether the table has
+one row per filing (`ONE`) or one row per repeated item (`MANY`):
+
+```{r}
+print(dd("F9-P07-T02-CONTRACTORS"))
+```
+
+The listing fits the console. When the console is too narrow for the label to
+share a line with the other columns, the label moves under each row, as above.
+In a wider console it is a column:
+
+```{r}
+print(dd("F9-P07-T02-CONTRACTORS"), n = 4, width = 140)
+```
+
+Long tables show the first 50 variables; `n` changes that. `description =
+TRUE` prints each variable's description under it:
+
+```{r}
+print(dd("F9-P01-T00-SUMMARY"), n = 3, description = TRUE)
+```
+
+With `xpaths = TRUE` a table lookup lists the xpaths of the variables shown.
+
+A multi-value variable (`multi`) is a field that repeats inside a one-row
+table, such as the states where the return is filed; parsers join the values
+into one cell. The column only appears when the table has one.
+
+## When a name is not found
+
+A misspelled name is an error that suggests the closest names:
+
+```{r, error = TRUE}
+dd("F9_00_EIN")
+dd("F9-P01-T00-SUMARY")
+```
+
+`form` limits the search to one database:
+
+```{r, error = TRUE}
+dd("PF-P01-T00-REVENUE-EXPENSE", form = "F990")
+```
+
+One call looks up either tables or variables. To see a variable in its table,
+look up the variable, then its table:
+
+```{r}
+v <- dd("F9_06_DISCLOSURE_STATES_FILED")
+v$rdb_table
+```
+
+## The result is a data.table
+
+What prints is formatting only. `dd()` returns a data.table, one row per
+variable, so you can filter it, join it to your data or write it out:
+
+```{r}
+x <- dd("F9-P01-T00-SUMMARY")
+x[variable_scope == "PZ", .(variable_name, label)][1:5]
+```
+
+Once you select columns the result prints as a plain data.table, as above.
+The xpaths are in an attribute:
+
+```{r}
+xp <- attr(dd("F9_01_REV_TOT_CY", xpaths = TRUE), "xpaths")
+xp[, .(form_type, earliest_version, latest_version, pct_filers_reporting)]
+```
+
+To find variables by keyword, search the whole dictionary with
+`data_dictionary()` and pass the names to `dd()`:
+
+```{r}
+d <- data_dictionary("F990")
+hits <- d[grepl("volunteer", label, ignore.case = TRUE), variable_name]
+print(dd(hits, fields = c("label", "rdb_table")))
+```
+
+## In R Markdown
+
+Printed automatically in an R Markdown document (without `print()`), a `dd()`
+result renders as markdown tables instead of console text, so the same call
+documents variables in a report:
+
+```{r}
+dd("F9_01_REV_TOT_CY", xpaths = TRUE)
+```
+
+```{r}
+dd("F9-P07-T02-CONTRACTORS", fields = c("label", "data_type_simple"))
+```

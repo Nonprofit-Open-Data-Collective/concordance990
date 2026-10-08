@@ -54,7 +54,8 @@ xpath_map <- function(form = NULL) {
 #' The variables of one database with the attributes a data user needs:
 #' table and part, label and description, data type, scope, location code,
 #' the number of xpaths pooled into the variable and the return types they
-#' come from. A variable used in several tables (the Part III program
+#' come from, and the `family_id` that links alternate versions of one line.
+#' See [dd()] to look up one table or variable. A variable used in several tables (the Part III program
 #' tables) has one row per table.
 #'
 #' @param form `"F990"` (990 and 990-EZ with their schedules) or `"F990PF"`.
@@ -78,7 +79,7 @@ data_dictionary <- function(form = c("F990", "F990PF")) {
   dd <- cc[, .(label = modal(label), description = modal(description), data_type_simple = modal(data_type_simple),
                variable_scope = modal(variable_scope), location_code_family = modal(location_code_family),
                multi_value = modal(multi_value), rdb_relationship = rdb_relationship[1], part_id = part_id[1],
-               n_xpaths = .N, form_types = paste(sort(unique(form_type)), collapse = ";")),
+               n_xpaths = .N, form_types = paste(sort(unique(form_type)), collapse = ";"), family_id = modal(family_id)),
            by = .(rdb_table, variable_name)]
   dd <- merge(dd, pt, by = "part_id", all.x = TRUE, sort = FALSE)
   dd <- merge(dd, tb, by = "rdb_table", all.x = TRUE, sort = FALSE)
