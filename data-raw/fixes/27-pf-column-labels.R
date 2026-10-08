@@ -288,7 +288,7 @@ step(function(s) {
 }, reason = "Fill blank labels in the 990 header (e-file security and trusted-customer fields) and Schedule B Part I (contributor name, address and total contributions), and tell apart two Schedule H supplemental-information pairs that shared a label.",
    evidence = "xpaths in xpaths.csv (ReturnHeader/FilingSecurityInformation, AdditionalFilerInformation/TrustedCustomerGrp; IRS990ScheduleB/ContributorInfo); IRS Schedule B Part I columns (b)-(c); Schedule H Parts V-C and VI", type = "relabel", affects = FALSE)
 
-# Logged for the 2.0.1 release, not the package version this ran under
+# Logged for the 2.0.2 release, not the package version this ran under
 ch <- read_changelog()
-ch[reason %in% fix_reasons, version := "2.0.1"]
+ch[reason %in% fix_reasons, version := "2.0.2"]
 retry(function() write_changelog(ch))
