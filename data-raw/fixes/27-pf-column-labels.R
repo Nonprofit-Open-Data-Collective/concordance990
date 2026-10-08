@@ -1,4 +1,4 @@
-# Fix 26: labels that were only a column heading.
+# Fix 27: labels that were only a column heading.
 #
 # Many 990-PF variables carried the form's column heading as their label
 # ("Book Value", "Adjusted Net Income", "Net Investment Income", "Amount",
@@ -11,7 +11,7 @@
 # XML tag names (BusinessNameLine1), Schedule A support-schedule rows
 # labeled with their column only, Schedule A Part V carryover years copied
 # from year 2, and labels left blank in the 990 header and Schedule B.
-#   Rscript data-raw/fixes/26-pf-column-labels.R
+#   Rscript data-raw/fixes/27-pf-column-labels.R
 
 source("data-raw/fixes/_helpers.R")
 
@@ -33,9 +33,16 @@ relabel <- function(s, new, old) {
   s
 }
 
+# fix_step(), remembering each reason for the version override at the end
+fix_reasons <- character()
+step <- function(edit, reason, ...) {
+  fix_reasons <<- c(fix_reasons, reason)
+  fix_step(edit, reason, ...)
+}
+
 # ---- 990-PF Part I: analysis of revenue and expenses ----------------------
 
-fix_step(function(s) {
+step(function(s) {
   cols <- c("Revenue and Expenses per Books", "Net Investment Income",
             "Adjusted Net Income", "Disbursements for Charitable Purposes")
   v <- s$variables[table_id == "PF-P01-T00-REVENUE-EXPENSE" & label %in% cols]
@@ -55,7 +62,7 @@ fix_step(function(s) {
 
 # ---- 990-PF Part II: balance sheets ---------------------------------------
 
-fix_step(function(s) {
+step(function(s) {
   cols <- c("Book Value", "Fair Market Value")
   v <- s$variables[table_id == "PF-P02-T00-BALANCE-SHEET" & label %in% cols]
   m <- regmatches(v$description, regexec("^(.*) - (Beginning|End) of Year - (Book Value|Fair Market Value)$", v$description))
@@ -70,7 +77,7 @@ fix_step(function(s) {
 
 # ---- 990-PF statements (PF_AXnn): column-only labels ----------------------
 
-fix_step(function(s) {
+step(function(s) {
   sched <- c(AX01 = "Accounting fees schedule", AX03 = "Other program-related investments schedule",
              AX04 = "Amortization schedule", AX11 = "Depreciation schedule", AX23 = "Corporate bonds schedule",
              AX24 = "Corporate stock schedule", AX26 = "Land investments schedule",
@@ -106,7 +113,7 @@ fix_step(function(s) {
 }, reason = "Relabel 990-PF statement (PF_AXnn) columns that were labeled with the column heading alone ('Adjusted Net Income', 'Amount', 'Book Value', ...) as '<statement> - <column>'.",
    evidence = "Form 990-PF e-file statement schemas (AccountingFeesSchedule, TaxesSchedule, OtherAssetsSchedule, ...); xpaths in xpaths.csv", type = "relabel", affects = FALSE)
 
-fix_step(function(s) {
+step(function(s) {
   new <- c(PF_AX02_ACT_NEW_EXPLANATION = "Activities not previously reported - explanation",
            PF_AX07_CASH_DEEMED_EXPLANATION = "Cash deemed charitable - explanation",
            PF_AX08_CASH_DIST_EXPLANATION = "Cash distributions - explanation",
@@ -126,7 +133,7 @@ fix_step(function(s) {
 
 # ---- 990-PF names and addresses -------------------------------------------
 
-fix_step(function(s) {
+step(function(s) {
   who <- c(PF_07_BOOK_IN_CARE_OF = "Books in care of", PF_07_BOOK_PERS = "Person with books",
            PF_08_COMP_DTK = "Officer, director, trustee, or key employee",
            PF_08_COMP_DTK_HCE = "Highest paid employee", PF_08_COMP_KONTR = "Highest paid contractor",
@@ -161,7 +168,7 @@ fix_step(function(s) {
 
 # ---- 990-PF multi-column parts -------------------------------------------
 
-fix_step(function(s) {
+step(function(s) {
   # Part V (pre-2019): section 4940(e) base period years
   p5 <- c(DIST_QUAL = "Adjusted qualifying distributions", ASSET_NOCHARIT = "Net value of noncharitable-use assets",
           DIST_RATIO = "Distribution ratio")
@@ -193,7 +200,7 @@ fix_step(function(s) {
 }, reason = "Relabel 990-PF amounts labeled with a column heading only ('Year 1'..'Year 5', 'Current Year', 'Total', 'Amount') in Part V (4940(e) base period), Part IX-B, Part XIII line 3, Part XIV and Part XV as '<line> - <column>'.",
    evidence = "IRS Form 990-PF Part V (2018 and earlier), Part IX-B line 3, Part XIII line 3, Part XIV lines 2-3, Part XV line 3", type = "relabel", affects = FALSE)
 
-fix_step(function(s) {
+step(function(s) {
   # Part XVI-A: analysis of income-producing activities
   line <- c(PROG = "Program service revenue", PROG_FEES = "Fees and contracts from government agencies",
             MEMBSHIP_DUE = "Membership dues and assessments",
@@ -221,7 +228,7 @@ fix_step(function(s) {
 
 # ---- Other forms ------------------------------------------------------------
 
-fix_step(function(s) {
+step(function(s) {
   per <- c(CY = "current tax year", CY_M1 = "current tax year minus one year", CY_M2 = "current tax year minus two years",
            CY_M3 = "current tax year minus three years", CY_M4 = "current tax year minus four years",
            TOT = "total, current and four prior years")
@@ -249,7 +256,7 @@ fix_step(function(s) {
 }, reason = "Schedule A: the Part II/III support-schedule totals were labeled 'Total public support during the current tax year ...' for both the total row and the 'amounts from line 4/6' row; label them by row and column. Part V Section E carryover years 2-5 had copies of the year-2 label (and year-3 description); label each by its year as in the xpath.",
    evidence = "IRS Schedule A (Form 990) Part II lines 4 and 7, Part III lines 6 and 9; xpaths ExcessDistributionCyovYr1-5Amt and ExcessFromYear1-5Amt", type = "relabel", affects = FALSE)
 
-fix_step(function(s) {
+step(function(s) {
   hd <- c(F9_00_DISASTER_RELIEF = "Disaster relief text",
           F9_00_FORM_8822B_X = "Form 8822-B (change of address) attached",
           F9_00_IRS_RESP_PARTY_INFO_CURR_X = "IRS responsible party information current",
@@ -280,3 +287,8 @@ fix_step(function(s) {
   relabel(s, c(SH_06_EXPLANATION_ADDITIONAL = "Additional explanations (2009 form)"), "Additional explanations")
 }, reason = "Fill blank labels in the 990 header (e-file security and trusted-customer fields) and Schedule B Part I (contributor name, address and total contributions), and tell apart two Schedule H supplemental-information pairs that shared a label.",
    evidence = "xpaths in xpaths.csv (ReturnHeader/FilingSecurityInformation, AdditionalFilerInformation/TrustedCustomerGrp; IRS990ScheduleB/ContributorInfo); IRS Schedule B Part I columns (b)-(c); Schedule H Parts V-C and VI", type = "relabel", affects = FALSE)
+
+# Logged for the 2.0.1 release, not the package version this ran under
+ch <- read_changelog()
+ch[reason %in% fix_reasons, version := "2.0.1"]
+retry(function() write_changelog(ch))

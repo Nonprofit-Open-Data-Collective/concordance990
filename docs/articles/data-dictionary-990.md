@@ -15,6 +15,12 @@ lists every part and table on one page.
 
 ## Reading the dictionary
 
+**Validation pages.** Click a variable name to open its [validation
+page](https://nonprofit-open-data-collective.github.io/concordance990/variables/index.md):
+the xpaths pooled into it and the years each was used, coverage and fill
+rate by tax year, value checks and flags, and example filings with links
+to the XML. From R, `dd("<name>", report = TRUE)` opens the same page.
+
 **Variables and fields.** A variable is not a field on one form. It
 pools every xpath that records the same thing: the 990 and 990-EZ
 versions of a line (for example total revenue), and the element names of
@@ -92,15 +98,15 @@ not in the current schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `F9_00_AFFIL_ADDR_CITY` | Group return - subordinate city | F990-PC-PART-00 | text | header | \<0.1% |
-| `F9_00_AFFIL_ADDR_L1` | Group return - subordinate street address line 1 | F990-PC-PART-00 | text | header | \<0.1% |
-| `F9_00_AFFIL_ADDR_L2` | Group return - subordinate street address line 2 | F990-PC-PART-00 | text | header | \<0.1% |
-| `F9_00_AFFIL_ADDR_STATE` | Group return - subordinate state | F990-PC-PART-00 | text | header | \<0.1% |
-| `F9_00_AFFIL_ADDR_ZIP` | Group return - subordinate ZIP code | F990-PC-PART-00 | text | header | \<0.1% |
-| `F9_00_AFFIL_EIN` | Group return - subordinate (affiliate) EIN | F990-PC-PART-00 | text | header | \<0.1% |
-| `F9_00_AFFIL_NAME_CTRL` | Group return - subordinate name control | F990-PC-PART-00 | text | header | \<0.1% |
-| `F9_00_AFFIL_NAME_L1` | Group return - subordinate name line 1 | F990-PC-PART-00 | text | header | \<0.1% |
-| `F9_00_AFFIL_NAME_L2` | Group return - subordinate name line 2 | F990-PC-PART-00 | text | header | \<0.1% |
+| [`F9_00_AFFIL_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_ADDR_CITY.md "Validation page") | Group return - subordinate city | F990-PC-PART-00 | text | header | \<0.1% |
+| [`F9_00_AFFIL_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_ADDR_L1.md "Validation page") | Group return - subordinate street address line 1 | F990-PC-PART-00 | text | header | \<0.1% |
+| [`F9_00_AFFIL_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_ADDR_L2.md "Validation page") | Group return - subordinate street address line 2 | F990-PC-PART-00 | text | header | \<0.1% |
+| [`F9_00_AFFIL_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_ADDR_STATE.md "Validation page") | Group return - subordinate state | F990-PC-PART-00 | text | header | \<0.1% |
+| [`F9_00_AFFIL_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_ADDR_ZIP.md "Validation page") | Group return - subordinate ZIP code | F990-PC-PART-00 | text | header | \<0.1% |
+| [`F9_00_AFFIL_EIN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_EIN.md "Validation page") | Group return - subordinate (affiliate) EIN | F990-PC-PART-00 | text | header | \<0.1% |
+| [`F9_00_AFFIL_NAME_CTRL`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_NAME_CTRL.md "Validation page") | Group return - subordinate name control | F990-PC-PART-00 | text | header | \<0.1% |
+| [`F9_00_AFFIL_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_NAME_L1.md "Validation page") | Group return - subordinate name line 1 | F990-PC-PART-00 | text | header | \<0.1% |
+| [`F9_00_AFFIL_NAME_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_NAME_L2.md "Validation page") | Group return - subordinate name line 2 | F990-PC-PART-00 | text | header | \<0.1% |
 
 ### Part I - Summary
 
@@ -262,11 +268,11 @@ not in the current schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SA_01_PCSTAT_AGRI_UNIV_CITY` | Agricultural research org - college/university city (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SA_01_PCSTAT_AGRI_UNIV_CNTR` | Agricultural research org - college/university country (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SA_01_PCSTAT_AGRI_UNIV_NAME_L1` | Agricultural research org - college/university name line 1 (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SA_01_PCSTAT_AGRI_UNIV_NAME_L2` | Agricultural research org - college/university name line 2 (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SA_01_PCSTAT_AGRI_UNIV_STATE` | Agricultural research org - college/university state (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SA_01_PCSTAT_AGRI_UNIV_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SA/SA_01_PCSTAT_AGRI_UNIV_CITY.md "Validation page") | Agricultural research org - college/university city (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SA_01_PCSTAT_AGRI_UNIV_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SA/SA_01_PCSTAT_AGRI_UNIV_CNTR.md "Validation page") | Agricultural research org - college/university country (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SA_01_PCSTAT_AGRI_UNIV_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SA/SA_01_PCSTAT_AGRI_UNIV_NAME_L1.md "Validation page") | Agricultural research org - college/university name line 1 (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SA_01_PCSTAT_AGRI_UNIV_NAME_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SA/SA_01_PCSTAT_AGRI_UNIV_NAME_L2.md "Validation page") | Agricultural research org - college/university name line 2 (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SA_01_PCSTAT_AGRI_UNIV_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SA/SA_01_PCSTAT_AGRI_UNIV_STATE.md "Validation page") | Agricultural research org - college/university state (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
 
 ### Part II - Support Schedule for Organizations Described in Sections 170(b)(1)(A)(iv) and 170(b)(1)(A)(vi)
 
@@ -314,12 +320,12 @@ not in the current schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SB_00_GENERAL_RULE_X` | General Rule applies (contributor gave \$5,000 or more) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 4.9% |
-| `SB_00_ORG_TYPE_4947A1_PF_X` | Organization type: 4947(a)(1) nonexempt charitable trust treated as a private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
-| `SB_00_ORG_TYPE_501C3_EXEMPT_PF_X` | Organization type: 501(c)(3) exempt private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 5.2% |
-| `SB_00_ORG_TYPE_501C3_TAX_PF_X` | Organization type: 501(c)(3) taxable private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
-| `SB_00_ORG_TYPE_501C_X` | Organization type: 501(c) organization (subsection in attribute organization501cTypeTxt) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
-| `SB_00_SPECIAL_RULE_33PCT_X` | Special Rule: 501(c)(3) org meeting the 33-1/3% support test | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| [`SB_00_GENERAL_RULE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_GENERAL_RULE_X.md "Validation page") | General Rule applies (contributor gave \$5,000 or more) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 4.9% |
+| [`SB_00_ORG_TYPE_4947A1_PF_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_ORG_TYPE_4947A1_PF_X.md "Validation page") | Organization type: 4947(a)(1) nonexempt charitable trust treated as a private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| [`SB_00_ORG_TYPE_501C3_EXEMPT_PF_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_ORG_TYPE_501C3_EXEMPT_PF_X.md "Validation page") | Organization type: 501(c)(3) exempt private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 5.2% |
+| [`SB_00_ORG_TYPE_501C3_TAX_PF_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_ORG_TYPE_501C3_TAX_PF_X.md "Validation page") | Organization type: 501(c)(3) taxable private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| [`SB_00_ORG_TYPE_501C_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_ORG_TYPE_501C_X.md "Validation page") | Organization type: 501(c) organization (subsection in attribute organization501cTypeTxt) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| [`SB_00_SPECIAL_RULE_33PCT_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_SPECIAL_RULE_33PCT_X.md "Validation page") | Special Rule: 501(c)(3) org meeting the 33-1/3% support test | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
 
 ### Part II - Noncash Property
 
@@ -327,10 +333,10 @@ not in the current schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SB_02_NONCASH_CONTRIBUTOR_NUM` | Noncash property: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
-| `SB_02_NONCASH_DATE_RECEIVED` | Date noncash property received | SCHED-B-PART-01 | date | 990 + 990-EZ | 1.2% |
-| `SB_02_NONCASH_PROP_DESC` | Description of noncash property given | SCHED-B-PART-01 | text | 990 + 990-EZ | 1.3% |
-| `SB_02_NONCASH_PROP_FMV` | FMV (or estimate) of noncash property | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
+| [`SB_02_NONCASH_CONTRIBUTOR_NUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_02_NONCASH_CONTRIBUTOR_NUM.md "Validation page") | Noncash property: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
+| [`SB_02_NONCASH_DATE_RECEIVED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_02_NONCASH_DATE_RECEIVED.md "Validation page") | Date noncash property received | SCHED-B-PART-01 | date | 990 + 990-EZ | 1.2% |
+| [`SB_02_NONCASH_PROP_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_02_NONCASH_PROP_DESC.md "Validation page") | Description of noncash property given | SCHED-B-PART-01 | text | 990 + 990-EZ | 1.3% |
+| [`SB_02_NONCASH_PROP_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_02_NONCASH_PROP_FMV.md "Validation page") | FMV (or estimate) of noncash property | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
 
 ### Part III - Exclusively Religious, Charitable, etc., Contributions to Organizations Described in Section 501(c)(7), (8), or (10)
 
@@ -338,24 +344,24 @@ not in the current schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SB_03_CONTRIBUTOR_NUM` | Exclusively religious etc. gift: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
-| `SB_03_GIFT_HOW_HELD` | Description of how gift is held | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_GIFT_PURPOSE` | Purpose of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_GIFT_USE` | Use of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_ADDR_CITY` | Transferee address - city | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_ADDR_CNTR` | Transferee address - country | SCHED-B-PART-01 | text | 990 + 990-EZ |  |
-| `SB_03_TRANSFEREE_ADDR_L1` | Transferee address - line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_ADDR_STATE` | Transferee address - state/province | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_ADDR_ZIP` | Transferee address - ZIP/postal code | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_NAME_ORG_L1` | Transferee name - business, line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_NAME_PERS` | Transferee name - individual | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_RELATIONSHIP` | Relationship of transferor to transferee | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_CONTRIBUTOR_NUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_CONTRIBUTOR_NUM.md "Validation page") | Exclusively religious etc. gift: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
+| [`SB_03_GIFT_HOW_HELD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_GIFT_HOW_HELD.md "Validation page") | Description of how gift is held | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_GIFT_PURPOSE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_GIFT_PURPOSE.md "Validation page") | Purpose of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_GIFT_USE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_GIFT_USE.md "Validation page") | Use of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_CITY.md "Validation page") | Transferee address - city | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_ADDR_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_CNTR.md "Validation page") | Transferee address - country | SCHED-B-PART-01 | text | 990 + 990-EZ |  |
+| [`SB_03_TRANSFEREE_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_L1.md "Validation page") | Transferee address - line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_STATE.md "Validation page") | Transferee address - state/province | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_ZIP.md "Validation page") | Transferee address - ZIP/postal code | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_NAME_ORG_L1.md "Validation page") | Transferee name - business, line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_NAME_PERS.md "Validation page") | Transferee name - individual | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_RELATIONSHIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_RELATIONSHIP.md "Validation page") | Relationship of transferor to transferee | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
 
 `SB-P03-T00-EXCLUSIVELY-RELIGIOUS`ONEone row per filing
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SB_03_CONTR_UNDER_1000_TOT` | Total of exclusively religious, charitable, etc. contributions of \$1,000 or less | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
+| [`SB_03_CONTR_UNDER_1000_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_CONTR_UNDER_1000_TOT.md "Validation page") | Total of exclusively religious, charitable, etc. contributions of \$1,000 or less | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
 
 ## Schedule C: Political Campaign and Lobbying Activities
 
@@ -381,25 +387,25 @@ not in the current schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SC_02_AFFIL_ADDR_CITY` | Affiliated group member city | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_ADDR_L1` | Affiliated group member street address line 1 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_ADDR_L2` | Affiliated group member street address line 2 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_ADDR_STATE` | Affiliated group member state | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_ADDR_ZIP` | Affiliated group member ZIP code | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EIN` | Affiliated group member EIN (Schedule C Part II-A affiliated group schedule) | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_ELECTING_X` | Affiliated group member is an electing (501(h)) organization | SCHED-C-PART-02-A | checkbox | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_DIRECT_LOB` | Affiliated member - total direct lobbying expenditures (line 1b) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_GRASS_LOB` | Affiliated member - total grassroots lobbying expenditures (line 1a) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_GRASS_M_NONTAX` | Affiliated member - grassroots lobbying minus grassroots nontaxable amount (line 1h) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_GRASS_NONTAX` | Affiliated member - grassroots nontaxable amount (line 1g) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_LOB_M_NONTAX` | Affiliated member - total lobbying expenditures minus lobbying nontaxable amount (line 1i) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_LOB_NONTAX` | Affiliated member - lobbying nontaxable amount (line 1f) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_OTH_EXEMPT` | Affiliated member - other exempt purpose expenditures (line 1d) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_SHARE_EXCESS` | Affiliated member - share of excess lobbying expenditures | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_TOT_EXEMPT` | Affiliated member - total exempt purpose expenditures (line 1e) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_EXP_TOT_LOB` | Affiliated member - total lobbying expenditures (line 1c) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_NAME_L1` | Affiliated group member name line 1 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
-| `SC_02_AFFIL_NAME_L2` | Affiliated group member name line 2 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_ADDR_CITY.md "Validation page") | Affiliated group member city | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_ADDR_L1.md "Validation page") | Affiliated group member street address line 1 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_ADDR_L2.md "Validation page") | Affiliated group member street address line 2 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_ADDR_STATE.md "Validation page") | Affiliated group member state | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_ADDR_ZIP.md "Validation page") | Affiliated group member ZIP code | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EIN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EIN.md "Validation page") | Affiliated group member EIN (Schedule C Part II-A affiliated group schedule) | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_ELECTING_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_ELECTING_X.md "Validation page") | Affiliated group member is an electing (501(h)) organization | SCHED-C-PART-02-A | checkbox | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_DIRECT_LOB`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_DIRECT_LOB.md "Validation page") | Affiliated member - total direct lobbying expenditures (line 1b) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_GRASS_LOB`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_GRASS_LOB.md "Validation page") | Affiliated member - total grassroots lobbying expenditures (line 1a) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_GRASS_M_NONTAX`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_GRASS_M_NONTAX.md "Validation page") | Affiliated member - grassroots lobbying minus grassroots nontaxable amount (line 1h) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_GRASS_NONTAX`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_GRASS_NONTAX.md "Validation page") | Affiliated member - grassroots nontaxable amount (line 1g) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_LOB_M_NONTAX`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_LOB_M_NONTAX.md "Validation page") | Affiliated member - total lobbying expenditures minus lobbying nontaxable amount (line 1i) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_LOB_NONTAX`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_LOB_NONTAX.md "Validation page") | Affiliated member - lobbying nontaxable amount (line 1f) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_OTH_EXEMPT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_OTH_EXEMPT.md "Validation page") | Affiliated member - other exempt purpose expenditures (line 1d) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_SHARE_EXCESS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_SHARE_EXCESS.md "Validation page") | Affiliated member - share of excess lobbying expenditures | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_TOT_EXEMPT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_TOT_EXEMPT.md "Validation page") | Affiliated member - total exempt purpose expenditures (line 1e) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_EXP_TOT_LOB`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_EXP_TOT_LOB.md "Validation page") | Affiliated member - total lobbying expenditures (line 1c) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_NAME_L1.md "Validation page") | Affiliated group member name line 1 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| [`SC_02_AFFIL_NAME_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SC/SC_02_AFFIL_NAME_L2.md "Validation page") | Affiliated group member name line 2 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
 
 ### Part III - Lobbying and Political Activities of Section 501(c)(4), (5), and (6) Organizations (III-A, III-B)
 
@@ -803,7 +809,7 @@ not in the current schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SL_02_LOAN_BALANCE_DUE_TOT` | Total balance due | SCHED-L-PART-02-COL-F-TOT | numeric | 990 + 990-EZ | 1.8% |
+| [`SL_02_LOAN_BALANCE_DUE_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SL/SL_02_LOAN_BALANCE_DUE_TOT.md "Validation page") | Total balance due | SCHED-L-PART-02-COL-F-TOT | numeric | 990 + 990-EZ | 1.8% |
 
 `SL-P02-T01-LOANS-INTERESTED-PERS`MANYone row per repeated item
 
