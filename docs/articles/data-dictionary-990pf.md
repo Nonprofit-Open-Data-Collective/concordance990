@@ -14,6 +14,12 @@ dictionary](https://nonprofit-open-data-collective.github.io/concordance990/arti
 
 ## Reading the dictionary
 
+**Validation pages.** Click a variable name to open its [validation
+page](https://nonprofit-open-data-collective.github.io/concordance990/variables/index.md):
+the xpaths pooled into it and the years each was used, coverage and fill
+rate by tax year, value checks and flags, and example filings with links
+to the XML. From R, `dd("<name>", report = TRUE)` opens the same page.
+
 **Names** follow `PF_PP_NAME`, where `PP` is the part of the 990-PF,
 numbered as on the forms before the 2023 redesign (the part titles give
 the 2023 number). Two other prefixes appear:
@@ -89,12 +95,12 @@ schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SB_00_GENERAL_RULE_X` | General Rule applies (contributor gave \$5,000 or more) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 4.9% |
-| `SB_00_ORG_TYPE_4947A1_PF_X` | Organization type: 4947(a)(1) nonexempt charitable trust treated as a private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
-| `SB_00_ORG_TYPE_501C3_EXEMPT_PF_X` | Organization type: 501(c)(3) exempt private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 5.2% |
-| `SB_00_ORG_TYPE_501C3_TAX_PF_X` | Organization type: 501(c)(3) taxable private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
-| `SB_00_ORG_TYPE_501C_X` | Organization type: 501(c) organization (subsection in attribute organization501cTypeTxt) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
-| `SB_00_SPECIAL_RULE_33PCT_X` | Special Rule: 501(c)(3) org meeting the 33-1/3% support test | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| [`SB_00_GENERAL_RULE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_GENERAL_RULE_X.md "Validation page") | General Rule applies (contributor gave \$5,000 or more) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 4.9% |
+| [`SB_00_ORG_TYPE_4947A1_PF_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_ORG_TYPE_4947A1_PF_X.md "Validation page") | Organization type: 4947(a)(1) nonexempt charitable trust treated as a private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| [`SB_00_ORG_TYPE_501C3_EXEMPT_PF_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_ORG_TYPE_501C3_EXEMPT_PF_X.md "Validation page") | Organization type: 501(c)(3) exempt private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 5.2% |
+| [`SB_00_ORG_TYPE_501C3_TAX_PF_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_ORG_TYPE_501C3_TAX_PF_X.md "Validation page") | Organization type: 501(c)(3) taxable private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| [`SB_00_ORG_TYPE_501C_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_ORG_TYPE_501C_X.md "Validation page") | Organization type: 501(c) organization (subsection in attribute organization501cTypeTxt) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| [`SB_00_SPECIAL_RULE_33PCT_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_00_SPECIAL_RULE_33PCT_X.md "Validation page") | Special Rule: 501(c)(3) org meeting the 33-1/3% support test | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
 
 ### Part II - Noncash Property
 
@@ -102,10 +108,10 @@ schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SB_02_NONCASH_CONTRIBUTOR_NUM` | Noncash property: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
-| `SB_02_NONCASH_DATE_RECEIVED` | Date noncash property received | SCHED-B-PART-01 | date | 990 + 990-EZ | 1.2% |
-| `SB_02_NONCASH_PROP_DESC` | Description of noncash property given | SCHED-B-PART-01 | text | 990 + 990-EZ | 1.3% |
-| `SB_02_NONCASH_PROP_FMV` | FMV (or estimate) of noncash property | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
+| [`SB_02_NONCASH_CONTRIBUTOR_NUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_02_NONCASH_CONTRIBUTOR_NUM.md "Validation page") | Noncash property: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
+| [`SB_02_NONCASH_DATE_RECEIVED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_02_NONCASH_DATE_RECEIVED.md "Validation page") | Date noncash property received | SCHED-B-PART-01 | date | 990 + 990-EZ | 1.2% |
+| [`SB_02_NONCASH_PROP_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_02_NONCASH_PROP_DESC.md "Validation page") | Description of noncash property given | SCHED-B-PART-01 | text | 990 + 990-EZ | 1.3% |
+| [`SB_02_NONCASH_PROP_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_02_NONCASH_PROP_FMV.md "Validation page") | FMV (or estimate) of noncash property | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
 
 ### Part III - Exclusively Religious, Charitable, etc., Contributions to Organizations Described in Section 501(c)(7), (8), or (10)
 
@@ -113,24 +119,24 @@ schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SB_03_CONTRIBUTOR_NUM` | Exclusively religious etc. gift: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
-| `SB_03_GIFT_HOW_HELD` | Description of how gift is held | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_GIFT_PURPOSE` | Purpose of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_GIFT_USE` | Use of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_ADDR_CITY` | Transferee address - city | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_ADDR_CNTR` | Transferee address - country | SCHED-B-PART-01 | text | 990 + 990-EZ |  |
-| `SB_03_TRANSFEREE_ADDR_L1` | Transferee address - line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_ADDR_STATE` | Transferee address - state/province | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_ADDR_ZIP` | Transferee address - ZIP/postal code | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_NAME_ORG_L1` | Transferee name - business, line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_NAME_PERS` | Transferee name - individual | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
-| `SB_03_TRANSFEREE_RELATIONSHIP` | Relationship of transferor to transferee | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_CONTRIBUTOR_NUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_CONTRIBUTOR_NUM.md "Validation page") | Exclusively religious etc. gift: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
+| [`SB_03_GIFT_HOW_HELD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_GIFT_HOW_HELD.md "Validation page") | Description of how gift is held | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_GIFT_PURPOSE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_GIFT_PURPOSE.md "Validation page") | Purpose of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_GIFT_USE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_GIFT_USE.md "Validation page") | Use of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_CITY.md "Validation page") | Transferee address - city | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_ADDR_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_CNTR.md "Validation page") | Transferee address - country | SCHED-B-PART-01 | text | 990 + 990-EZ |  |
+| [`SB_03_TRANSFEREE_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_L1.md "Validation page") | Transferee address - line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_STATE.md "Validation page") | Transferee address - state/province | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_ADDR_ZIP.md "Validation page") | Transferee address - ZIP/postal code | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_NAME_ORG_L1.md "Validation page") | Transferee name - business, line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_NAME_PERS.md "Validation page") | Transferee name - individual | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| [`SB_03_TRANSFEREE_RELATIONSHIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_TRANSFEREE_RELATIONSHIP.md "Validation page") | Relationship of transferor to transferee | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
 
 `SB-P03-T00-EXCLUSIVELY-RELIGIOUS`ONEone row per filing
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `SB_03_CONTR_UNDER_1000_TOT` | Total of exclusively religious, charitable, etc. contributions of \$1,000 or less | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
+| [`SB_03_CONTR_UNDER_1000_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_03_CONTR_UNDER_1000_TOT.md "Validation page") | Total of exclusively religious, charitable, etc. contributions of \$1,000 or less | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
 
 ## Form 990-PF: Return of Private Foundation
 
@@ -166,8 +172,8 @@ schema.
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_04_CAP_GAINLOSS_NET_INCOME` | Capital Gain Net Income | F990-PF-PART-04-LINE-02 | numeric | 990-PF | 58.7% |
-| `PF_04_CAP_GAINLOSS_NET_SHORTTERM` | Net Short-Term Capital Gain or Loss | F990-PF-PART-04-LINE-03 | numeric | 990-PF | 11.4% |
+| [`PF_04_CAP_GAINLOSS_NET_INCOME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_04_CAP_GAINLOSS_NET_INCOME.md "Validation page") | Capital Gain Net Income | F990-PF-PART-04-LINE-02 | numeric | 990-PF | 58.7% |
+| [`PF_04_CAP_GAINLOSS_NET_SHORTTERM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_04_CAP_GAINLOSS_NET_SHORTTERM.md "Validation page") | Net Short-Term Capital Gain or Loss | F990-PF-PART-04-LINE-03 | numeric | 990-PF | 11.4% |
 
 `PF-P04-T01-INVEST-INCOME-TAX-CAPITAL-GAINLOSS`MANYone row per repeated
 item
@@ -202,15 +208,15 @@ item
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_08_COMP_KONTR_NONE` | If there are none; enter "None" | F990-PF-PART-08-LINE-03 | text | 990-PF | 88.2% |
-| `PF_08_COMP_KONTR_NUM_GT_50K` | Total number of other contractors paid over \$50;000 | F990-PF-PART-08-LINE-03 | numeric | 990-PF | 57.6% |
+| [`PF_08_COMP_KONTR_NONE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_NONE.md "Validation page") | If there are none; enter "None" | F990-PF-PART-08-LINE-03 | text | 990-PF | 88.2% |
+| [`PF_08_COMP_KONTR_NUM_GT_50K`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_NUM_GT_50K.md "Validation page") | Total number of other contractors paid over \$50;000 | F990-PF-PART-08-LINE-03 | numeric | 990-PF | 57.6% |
 
 `PF-P08-T00-COMPENSATION-HIGHEST`ONEone row per filing
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_08_COMP_DTK_NONE_HCE` | If there are none; enter "None" | F990-PF-PART-08-LINE-02 | text | 990-PF | 89.1% |
-| `PF_08_COMP_DTK_NUM_GT_50K_HCE` | Total number of other employees paid over \$50;000 | F990-PF-PART-08-LINE-02 | numeric | 990-PF | 62.3% |
+| [`PF_08_COMP_DTK_NONE_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NONE_HCE.md "Validation page") | If there are none; enter "None" | F990-PF-PART-08-LINE-02 | text | 990-PF | 89.1% |
+| [`PF_08_COMP_DTK_NUM_GT_50K_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NUM_GT_50K_HCE.md "Validation page") | Total number of other employees paid over \$50;000 | F990-PF-PART-08-LINE-02 | numeric | 990-PF | 62.3% |
 
 `PF-P08-T01-COMPENSATION`MANYone row per repeated item
 
@@ -240,16 +246,16 @@ item
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_10_FMV_ASSET_NOCHARIT_SEC` | Average Monthly FMV of Securities | F990-PF-PART-10-LINE-01A | numeric | 990-PF | 98.2% |
-| `PF_10_FMV_ASSET_NOCHARIT_CASH` | Average Monthly Cash Balances | F990-PF-PART-10-LINE-01B | numeric | 990-PF | 98.2% |
-| `PF_10_FMV_ASSET_NOCHARIT_OTH` | FMV of All Other Noncharitable Assets | F990-PF-PART-10-LINE-01C | numeric | 990-PF | 98.2% |
-| `PF_10_FMV_ASSET_NOCHARIT_TOT` | Total FMV of Unused Assets | F990-PF-PART-10-LINE-01D | numeric | 990-PF | 98.2% |
-| `PF_10_FMV_ASSET_NOCHARIT_REDUCT` | Reduction Claimed | F990-PF-PART-10-LINE-01E | numeric | 990-PF | 78.6% |
-| `PF_10_FMV_ASSET_ACQUISITION` | Acquisition Indebtedness | F990-PF-PART-10-LINE-02 | numeric | 990-PF | 66.5% |
-| `PF_10_FMV_ASSET_NOCHARIT_TOT_ADJ` | Adjusted Total FMV of Unused Assets (subtract line 2 from line 1d) | F990-PF-PART-10-LINE-03 | numeric | 990-PF | 98.2% |
-| `PF_10_CASH_DEEMED_CHARIT` | Cash Deemed Charitable | F990-PF-PART-10-LINE-04 | numeric | 990-PF | 98.2% |
-| `PF_10_ASSET_NOCHARIT_NET` | Net Noncharitable Assets | F990-PF-PART-10-LINE-05 | numeric | 990-PF | 98.2% |
-| `PF_10_INVEST_RETURN_MINIMUM` | Minimum Investment Return | F990-PF-PART-10-LINE-06 | numeric | 990-PF | 98.2% |
+| [`PF_10_FMV_ASSET_NOCHARIT_SEC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_FMV_ASSET_NOCHARIT_SEC.md "Validation page") | Average Monthly FMV of Securities | F990-PF-PART-10-LINE-01A | numeric | 990-PF | 98.2% |
+| [`PF_10_FMV_ASSET_NOCHARIT_CASH`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_FMV_ASSET_NOCHARIT_CASH.md "Validation page") | Average Monthly Cash Balances | F990-PF-PART-10-LINE-01B | numeric | 990-PF | 98.2% |
+| [`PF_10_FMV_ASSET_NOCHARIT_OTH`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_FMV_ASSET_NOCHARIT_OTH.md "Validation page") | FMV of All Other Noncharitable Assets | F990-PF-PART-10-LINE-01C | numeric | 990-PF | 98.2% |
+| [`PF_10_FMV_ASSET_NOCHARIT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_FMV_ASSET_NOCHARIT_TOT.md "Validation page") | Total FMV of Unused Assets | F990-PF-PART-10-LINE-01D | numeric | 990-PF | 98.2% |
+| [`PF_10_FMV_ASSET_NOCHARIT_REDUCT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_FMV_ASSET_NOCHARIT_REDUCT.md "Validation page") | Reduction Claimed | F990-PF-PART-10-LINE-01E | numeric | 990-PF | 78.6% |
+| [`PF_10_FMV_ASSET_ACQUISITION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_FMV_ASSET_ACQUISITION.md "Validation page") | Acquisition Indebtedness | F990-PF-PART-10-LINE-02 | numeric | 990-PF | 66.5% |
+| [`PF_10_FMV_ASSET_NOCHARIT_TOT_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_FMV_ASSET_NOCHARIT_TOT_ADJ.md "Validation page") | Adjusted Total FMV of Unused Assets (subtract line 2 from line 1d) | F990-PF-PART-10-LINE-03 | numeric | 990-PF | 98.2% |
+| [`PF_10_CASH_DEEMED_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_CASH_DEEMED_CHARIT.md "Validation page") | Cash Deemed Charitable | F990-PF-PART-10-LINE-04 | numeric | 990-PF | 98.2% |
+| [`PF_10_ASSET_NOCHARIT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_ASSET_NOCHARIT_NET.md "Validation page") | Net Noncharitable Assets | F990-PF-PART-10-LINE-05 | numeric | 990-PF | 98.2% |
+| [`PF_10_INVEST_RETURN_MINIMUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_10_INVEST_RETURN_MINIMUM.md "Validation page") | Minimum Investment Return | F990-PF-PART-10-LINE-06 | numeric | 990-PF | 98.2% |
 
 ### Part XI - Distributable Amount (2023: Part X)
 
@@ -257,16 +263,16 @@ item
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_11_4942J3J5_POF_FRGN_X` | Section 4942(j)(3)&(j)(5) Private Operating Foundations and Certain Foreign Organizations | F990-PF-PART-11-LINE-00 | checkbox | header | 1.9% |
-| `PF_11_INVEST_RETURN_MINIMUM` | Minimum Investment Return | F990-PF-PART-11-LINE-01 | numeric | 990-PF | 81.6% |
-| `PF_11_TAX_INVEST_INCOME` | Tax Based on Investment Income | F990-PF-PART-11-LINE-02A | numeric | 990-PF | 72.4% |
-| `PF_11_TAX_INCOME_CY` | Income Tax for This Year | F990-PF-PART-11-LINE-02B | numeric | 990-PF | 6.0% |
-| `PF_11_TAX_TOT` | Total Tax (add lines 2a and 2b) | F990-PF-PART-11-LINE-02C | numeric | 990-PF | 79.2% |
-| `PF_11_DIST_AMT_BEFORE_ADJ` | Distributable Amount Before Adjustments | F990-PF-PART-11-LINE-03 | numeric | 990-PF | 82.7% |
-| `PF_11_RECOVERIES_DIST_QUAL` | Recoveries of Qualified Distributions | F990-PF-PART-11-LINE-04 | numeric | 990-PF | 53.2% |
-| `PF_11_DIST_AMT_BEFORE_DEDUCT` | Distributable Amount Before Deduction (add lines 3 and 4) | F990-PF-PART-11-LINE-05 | numeric | 990-PF | 82.8% |
-| `PF_11_DEDUCT_DIST_AMT` | Deduction from Distributable Amount | F990-PF-PART-11-LINE-06 | numeric | 990-PF | 52.9% |
-| `PF_11_DIST_AMT_ADJ` | Distributable Amount as Adjusted | F990-PF-PART-11-LINE-07 | numeric | 990-PF | 91.3% |
+| [`PF_11_4942J3J5_POF_FRGN_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_4942J3J5_POF_FRGN_X.md "Validation page") | Section 4942(j)(3)&(j)(5) Private Operating Foundations and Certain Foreign Organizations | F990-PF-PART-11-LINE-00 | checkbox | header | 1.9% |
+| [`PF_11_INVEST_RETURN_MINIMUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_INVEST_RETURN_MINIMUM.md "Validation page") | Minimum Investment Return | F990-PF-PART-11-LINE-01 | numeric | 990-PF | 81.6% |
+| [`PF_11_TAX_INVEST_INCOME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_TAX_INVEST_INCOME.md "Validation page") | Tax Based on Investment Income | F990-PF-PART-11-LINE-02A | numeric | 990-PF | 72.4% |
+| [`PF_11_TAX_INCOME_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_TAX_INCOME_CY.md "Validation page") | Income Tax for This Year | F990-PF-PART-11-LINE-02B | numeric | 990-PF | 6.0% |
+| [`PF_11_TAX_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_TAX_TOT.md "Validation page") | Total Tax (add lines 2a and 2b) | F990-PF-PART-11-LINE-02C | numeric | 990-PF | 79.2% |
+| [`PF_11_DIST_AMT_BEFORE_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_DIST_AMT_BEFORE_ADJ.md "Validation page") | Distributable Amount Before Adjustments | F990-PF-PART-11-LINE-03 | numeric | 990-PF | 82.7% |
+| [`PF_11_RECOVERIES_DIST_QUAL`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_RECOVERIES_DIST_QUAL.md "Validation page") | Recoveries of Qualified Distributions | F990-PF-PART-11-LINE-04 | numeric | 990-PF | 53.2% |
+| [`PF_11_DIST_AMT_BEFORE_DEDUCT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_DIST_AMT_BEFORE_DEDUCT.md "Validation page") | Distributable Amount Before Deduction (add lines 3 and 4) | F990-PF-PART-11-LINE-05 | numeric | 990-PF | 82.8% |
+| [`PF_11_DEDUCT_DIST_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_DEDUCT_DIST_AMT.md "Validation page") | Deduction from Distributable Amount | F990-PF-PART-11-LINE-06 | numeric | 990-PF | 52.9% |
+| [`PF_11_DIST_AMT_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_11_DIST_AMT_ADJ.md "Validation page") | Distributable Amount as Adjusted | F990-PF-PART-11-LINE-07 | numeric | 990-PF | 91.3% |
 
 ### Part XII - Qualifying Distributions (2023: Part XI)
 
@@ -292,9 +298,9 @@ item
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_15_MGR_CONTR` list | Contributing Manager | F990-PF-PART-15-LINE-01A | text | 990-PF | 35.0% |
-| `PF_15_MGR_SHAREHOLDER` list | Shareholder Manager | F990-PF-PART-15-LINE-01B | text | 990-PF | 15.0% |
-| `PF_15_CONTR_PRESELECTED_X` | Only Contributes to Preselected Charitable Organizations | F990-PF-PART-15-LINE-02 | checkbox | 990-PF | 72.2% |
+| [`PF_15_MGR_CONTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_MGR_CONTR.md "Validation page") list | Contributing Manager | F990-PF-PART-15-LINE-01A | text | 990-PF | 35.0% |
+| [`PF_15_MGR_SHAREHOLDER`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_MGR_SHAREHOLDER.md "Validation page") list | Shareholder Manager | F990-PF-PART-15-LINE-01B | text | 990-PF | 15.0% |
+| [`PF_15_CONTR_PRESELECTED_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_CONTR_PRESELECTED_X.md "Validation page") | Only Contributes to Preselected Charitable Organizations | F990-PF-PART-15-LINE-02 | checkbox | 990-PF | 72.2% |
 
 `PF-P15-T03-SUPPLEMENTARY-INFO-GRANT-APP`MANYone row per repeated item
 
@@ -304,13 +310,13 @@ item
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_15_G_FUTURE_AMT_TOT` | Total Grant or Contribution Approved for Future Payment | F990-PF-PART-15-LINE-03B-COL-05-TOT | numeric | 990-PF | 42.7% |
+| [`PF_15_G_FUTURE_AMT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_AMT_TOT.md "Validation page") | Total Grant or Contribution Approved for Future Payment | F990-PF-PART-15-LINE-03B-COL-05-TOT | numeric | 990-PF | 42.7% |
 
 `PF-P15-T00-SUPPLEMENTARY-INFO-GRANT-PAID`ONEone row per filing
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_15_G_PAID_AMT_TOT` | Total Grant or Contribution Paid During Year | F990-PF-PART-15-LINE-03A-COL-05-TOT | numeric | 990-PF | 85.6% |
+| [`PF_15_G_PAID_AMT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_AMT_TOT.md "Validation page") | Total Grant or Contribution Paid During Year | F990-PF-PART-15-LINE-03A-COL-05-TOT | numeric | 990-PF | 85.6% |
 
 `PF-P15-T01-SUPPLEMENTARY-INFO-GRANT-PAID`MANYone row per repeated item
 
@@ -346,21 +352,21 @@ item
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_17_RELATIONSHIP_X` | Relationships with noncharitable EOs | F990-PF-PART-17-LINE-02A | checkbox | 990-PF | 98.8% |
+| [`PF_17_RELATIONSHIP_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_RELATIONSHIP_X.md "Validation page") | Relationships with noncharitable EOs | F990-PF-PART-17-LINE-02A | checkbox | 990-PF | 98.8% |
 
 `PF-P17-T00-TRANSFERS-TRANSACTIONS`ONEone row per filing
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_17_TRANSFER_CASH_X` | Transfers of cash to noncharitable EO | F990-PF-PART-17-LINE-01A(1) | checkbox | 990-PF | 98.8% |
-| `PF_17_TRANSFER_OTH_ASSET_X` | Transfers of other assets to noncharitable EO | F990-PF-PART-17-LINE-01A(2) | checkbox | 990-PF | 98.8% |
-| `PF_17_TRANSAC_SALE_ASSET_X` | Other transactions : Sales or exchanges of assets with a noncharitable exempt organization | F990-PF-PART-17-LINE-01B(1) | checkbox | 990-PF | 98.8% |
-| `PF_17_TRANSAC_PURCHASE_ASSET_X` | Other transactions : Purchases of assets from a noncharitable exempt organization | F990-PF-PART-17-LINE-01B(2) | checkbox | 990-PF | 98.8% |
-| `PF_17_TRANSAC_RENT_FACILITIES_X` | Other transactions : Rental of facilities; equipment; or other assets | F990-PF-PART-17-LINE-01B(3) | checkbox | 990-PF | 98.8% |
-| `PF_17_TRANSAC_REIMBURSE_X` | Other transactions : Reimbursement arrangements | F990-PF-PART-17-LINE-01B(4) | checkbox | 990-PF | 98.8% |
-| `PF_17_TRANSAC_LOAN_X` | Other transactions : Loans or loan guarantees | F990-PF-PART-17-LINE-01B(5) | checkbox | 990-PF | 98.8% |
-| `PF_17_TRANSAC_PERFORM_SVC_X` | Other transactions : Performance of Services or membership or fundraising solicitations | F990-PF-PART-17-LINE-01B(6) | checkbox | 990-PF | 98.8% |
-| `PF_17_TRANSAC_SHARE_FACILITIES_X` | Other transactions : Sharing of facilities; equipment; mailing lists; other assets; or paid employees | F990-PF-PART-17-LINE-01C | checkbox | 990-PF | 98.8% |
+| [`PF_17_TRANSFER_CASH_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSFER_CASH_X.md "Validation page") | Transfers of cash to noncharitable EO | F990-PF-PART-17-LINE-01A(1) | checkbox | 990-PF | 98.8% |
+| [`PF_17_TRANSFER_OTH_ASSET_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSFER_OTH_ASSET_X.md "Validation page") | Transfers of other assets to noncharitable EO | F990-PF-PART-17-LINE-01A(2) | checkbox | 990-PF | 98.8% |
+| [`PF_17_TRANSAC_SALE_ASSET_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSAC_SALE_ASSET_X.md "Validation page") | Other transactions : Sales or exchanges of assets with a noncharitable exempt organization | F990-PF-PART-17-LINE-01B(1) | checkbox | 990-PF | 98.8% |
+| [`PF_17_TRANSAC_PURCHASE_ASSET_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSAC_PURCHASE_ASSET_X.md "Validation page") | Other transactions : Purchases of assets from a noncharitable exempt organization | F990-PF-PART-17-LINE-01B(2) | checkbox | 990-PF | 98.8% |
+| [`PF_17_TRANSAC_RENT_FACILITIES_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSAC_RENT_FACILITIES_X.md "Validation page") | Other transactions : Rental of facilities; equipment; or other assets | F990-PF-PART-17-LINE-01B(3) | checkbox | 990-PF | 98.8% |
+| [`PF_17_TRANSAC_REIMBURSE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSAC_REIMBURSE_X.md "Validation page") | Other transactions : Reimbursement arrangements | F990-PF-PART-17-LINE-01B(4) | checkbox | 990-PF | 98.8% |
+| [`PF_17_TRANSAC_LOAN_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSAC_LOAN_X.md "Validation page") | Other transactions : Loans or loan guarantees | F990-PF-PART-17-LINE-01B(5) | checkbox | 990-PF | 98.8% |
+| [`PF_17_TRANSAC_PERFORM_SVC_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSAC_PERFORM_SVC_X.md "Validation page") | Other transactions : Performance of Services or membership or fundraising solicitations | F990-PF-PART-17-LINE-01B(6) | checkbox | 990-PF | 98.8% |
+| [`PF_17_TRANSAC_SHARE_FACILITIES_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSAC_SHARE_FACILITIES_X.md "Validation page") | Other transactions : Sharing of facilities; equipment; mailing lists; other assets; or paid employees | F990-PF-PART-17-LINE-01C | checkbox | 990-PF | 98.8% |
 
 `PF-P17-T01-TRANSFERS-TRANSACTIONS`MANYone row per repeated item
 
@@ -388,15 +394,15 @@ item
 
 | Variable | Description | Location | Type | Scope | % Reporting |
 |:---|:---|:---|:---|:---|:---|
-| `PF_AX04_AMORT_AMT_AMORTIZED` | Amount Amortized | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
-| `PF_AX04_AMORT_AMT_CY` | Current Year Amortization | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
-| `PF_AX04_AMORT_AMT_TOT` | Total Amount of Amortization | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.5% |
-| `PF_AX04_AMORT_DATE_ACQUIRED` | Date Acquired; Completed; or Expended | F990-PF-PART-99-AUX-SCHED-04 | date | 990-PF | 0.4% |
-| `PF_AX04_AMORT_DEDUCT_PYZ` | Deduction for Prior Years | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
-| `PF_AX04_AMORT_EXP_DESC` | Description of Amortized Expenses | F990-PF-PART-99-AUX-SCHED-04 | text | 990-PF | 0.5% |
-| `PF_AX04_AMORT_INCOME_NET_ADJ` | Adjusted Net Income | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.1% |
-| `PF_AX04_AMORT_INVEST_NET` | Net Investment Income | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.3% |
-| `PF_AX04_AMORT_METHOD` | Amortization Method | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
+| [`PF_AX04_AMORT_AMT_AMORTIZED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_AMT_AMORTIZED.md "Validation page") | Amount Amortized | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
+| [`PF_AX04_AMORT_AMT_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_AMT_CY.md "Validation page") | Current Year Amortization | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
+| [`PF_AX04_AMORT_AMT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_AMT_TOT.md "Validation page") | Total Amount of Amortization | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.5% |
+| [`PF_AX04_AMORT_DATE_ACQUIRED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_DATE_ACQUIRED.md "Validation page") | Date Acquired; Completed; or Expended | F990-PF-PART-99-AUX-SCHED-04 | date | 990-PF | 0.4% |
+| [`PF_AX04_AMORT_DEDUCT_PYZ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_DEDUCT_PYZ.md "Validation page") | Deduction for Prior Years | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
+| [`PF_AX04_AMORT_EXP_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_EXP_DESC.md "Validation page") | Description of Amortized Expenses | F990-PF-PART-99-AUX-SCHED-04 | text | 990-PF | 0.5% |
+| [`PF_AX04_AMORT_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_INCOME_NET_ADJ.md "Validation page") | Adjusted Net Income | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.1% |
+| [`PF_AX04_AMORT_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_INVEST_NET.md "Validation page") | Net Investment Income | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.3% |
+| [`PF_AX04_AMORT_METHOD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_METHOD.md "Validation page") | Amortization Method | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
 
 `PF-P99-T06-FUND-BORROWED`MANYone row per repeated item
 
