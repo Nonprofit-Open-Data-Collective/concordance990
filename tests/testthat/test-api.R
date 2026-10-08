@@ -33,3 +33,22 @@ test_that("per-form views and the data dictionary", {
   expect_false(anyDuplicated(dd[, .(rdb_table, variable_name)]) > 0)
   expect_setequal(unique(dd$variable_name), unique(pf$variable_name))
 })
+
+test_that("the data dictionary flags money fields and the meaning of a blank", {
+  for (f in c("F990", "F990PF")) {
+    dd <- data_dictionary(f)
+    expect_type(dd$money_field, "logical")
+    expect_false(anyNA(dd$money_field))
+    expect_setequal(unique(dd$blank_meaning), c("implicit_false", "implicit_zero", "literal_missing"))
+    # money is numeric; a blank checkbox is unchecked; a blank amount is zero
+    expect_true(all(dd[money_field == TRUE, data_type_simple] == "numeric"))
+    expect_true(all(dd[data_type_simple == "checkbox", blank_meaning] == "implicit_false"))
+    expect_identical(dd[blank_meaning == "implicit_zero", variable_name], dd[money_field == TRUE, variable_name])
+  }
+  f9 <- data_dictionary("F990")
+  expect_true(f9[variable_name == "F9_01_REV_TOT_CY", money_field])
+  # numeric but not money: a count
+  expect_identical(f9[variable_name == "F9_01_ACT_GVRN_EMPL_TOT", blank_meaning], "literal_missing")
+  pf <- data_dictionary("F990PF")
+  expect_true(all(pf[grepl("^PF-P0[1-3]-", rdb_table) & data_type_simple == "numeric", money_field]))
+})

@@ -20,6 +20,27 @@ come from, and the \code{family_id} that links alternate versions of one line.
 See \code{\link[=dd]{dd()}} to look up one table or variable. A variable used in several tables (the Part III program
 tables) has one row per table.
 }
+\section{Money fields and blank cells}{
+
+\code{money_field} is \code{TRUE} for a numeric variable that holds a US dollar
+amount: its XSD type is an amount type (\code{USAmountType}, \code{USAmountNNType},
+...). The type of the current schema is used when one of the variable's
+current xpaths declares it, otherwise the type of the older xpaths. Counts,
+ratios, years and identifiers are numeric but not money.
+
+\code{blank_meaning} says how to read a blank cell in a filed return, for a
+variable on that return's form:
+\itemize{
+\item \code{implicit_false}: a blank checkbox is unchecked.
+\item \code{implicit_zero}: a blank money amount is zero.
+\item \code{literal_missing}: everything else (text, dates, and numeric values that
+are not money): nothing was reported.
+}
+
+A blank on a form that does not carry the variable is structural, whatever
+its \code{blank_meaning}; \code{variable_scope} and \code{form_types} tell which forms do.
+}
+
 \examples{
 dd <- data_dictionary("F990")
 dd[rdb_table == "F9-P01-T00-SUMMARY", .(variable_name, label, data_type_simple)]

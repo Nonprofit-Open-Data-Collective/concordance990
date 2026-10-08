@@ -58,6 +58,23 @@ xpath_map <- function(form = NULL) {
 #' See [dd()] to look up one table or variable. A variable used in several tables (the Part III program
 #' tables) has one row per table.
 #'
+#' @section Money fields and blank cells:
+#' `money_field` is `TRUE` for a numeric variable that holds a US dollar
+#' amount: its XSD type is an amount type (`USAmountType`, `USAmountNNType`,
+#' ...). The type of the current schema is used when one of the variable's
+#' current xpaths declares it, otherwise the type of the older xpaths. Counts,
+#' ratios, years and identifiers are numeric but not money.
+#'
+#' `blank_meaning` says how to read a blank cell in a filed return, for a
+#' variable on that return's form:
+#' * `implicit_false`: a blank checkbox is unchecked.
+#' * `implicit_zero`: a blank money amount is zero.
+#' * `literal_missing`: everything else (text, dates, and numeric values that
+#'   are not money): nothing was reported.
+#'
+#' A blank on a form that does not carry the variable is structural, whatever
+#' its `blank_meaning`; `variable_scope` and `form_types` tell which forms do.
+#'
 #' @param form `"F990"` (990 and 990-EZ with their schedules) or `"F990PF"`.
 #' @return A data.table ordered as the form: by table, then location code.
 #' @examples
@@ -83,11 +100,12 @@ data_dictionary <- function(form = c("F990", "F990PF")) {
            by = .(rdb_table, variable_name)]
   dd <- merge(dd, pt, by = "part_id", all.x = TRUE, sort = FALSE)
   dd <- merge(dd, tb, by = "rdb_table", all.x = TRUE, sort = FALSE)
+  dd <- merge(dd, money_blank(cc), by = c("rdb_table", "variable_name"), all.x = TRUE, sort = FALSE)
   data.table::setorder(dd, table_order, location_code_family, variable_name)
   dd[, table_order := NULL]
   data.table::setcolorder(dd, c("form_id", "part_id", "part_title", "rdb_table", "rdb_relationship", "variable_name",
-                                "label", "description", "data_type_simple", "variable_scope",
-                                "location_code_family", "multi_value", "n_xpaths", "form_types"))
+                                "label", "description", "data_type_simple", "money_field", "blank_meaning",
+                                "variable_scope", "location_code_family", "multi_value", "n_xpaths", "form_types"))
   dd[]
 }
 #' Component tables
