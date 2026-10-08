@@ -21,7 +21,7 @@ knitr::kable(validation_summary()[, .(rule, status, violations, description)])
 | R01 | enforced | 0 | Primary keys are unique in every component table |
 | R02 | enforced | 0 | Every reference resolves (form, part, table, variable, override target) |
 | R03 | enforced | 0 | Table cardinality is ONE or MANY |
-| R04 | enforced | 0 | Variable names match [¹](#fn1){2}*\[0-9\]{2}*\[A-Z0-9\_\]+\$ (990-PF auxiliary schedules: ^PF_AX\[0-9\]{2}\_) |
+| R04 | enforced | 0 | Variable names match [^1]{2}*\[0-9\]{2}*\[A-Z0-9\_\]+\$ (990-PF auxiliary schedules: ^PF_AX\[0-9\]{2}\_) |
 | R05 | enforced | 0 | Variable names are at most 32 characters |
 | R06 | enforced | 0 | Variable name prefix matches its table (F9_01 \<-\> F9-P01) |
 | R07 | enforced | 0 | Each variable belongs to exactly one table |
@@ -30,6 +30,7 @@ knitr::kable(validation_summary()[, .(rule, status, violations, description)])
 | R10 | enforced | 0 | Missing values are empty cells, not the text ‘NA’ |
 | R11 | enforced | 0 | Text is valid UTF-8 |
 | R12 | enforced | 0 | Values have no leading or trailing whitespace |
+| R13 | enforced | 0 | Table number agrees with cardinality: -T00- tables are ONE, T01+ tables are MANY |
 
 Two rules accept documented exceptions: R04/R06 allow the 990-PF
 auxiliary schedule names `PF_AXnn_` in `PF-P99` tables, and R07 skips
@@ -67,6 +68,7 @@ knitr::kable(issue_catalog[, .(check, severity, name)])
 | R10 | cleanup | Missing values are empty cells, not the text ‘NA’ |
 | R11 | cleanup | Text is valid UTF-8 |
 | R12 | cleanup | No leading or trailing whitespace |
+| R13 | error | Table number agrees with cardinality |
 | COLLISION | error | Two xpaths of one variable filled in the same filing |
 | POLARITY | error | Opposite meanings pooled |
 | TYPE_CHECKBOX | error | Checkbox variable holds non-checkbox values |
@@ -123,7 +125,7 @@ vl <- read_validation_log()
 vl[, .N, by = status]
 #>      status     N
 #>      <char> <int>
-#> 1: accepted  5607
+#> 1: accepted  6253
 vl[check == "POLARITY"][1, .(check, variable_name, status, note)]
 #>       check              variable_name   status
 #>      <char>                     <char>   <char>
@@ -158,8 +160,13 @@ vignettes) on every push and pull request
 Edit the component tables, never the generated files. Each fix is
 logged, one change-log row per changed cell
 (`inst/extdata/changelog/changes.csv`), with a reason and the evidence
-behind it. Replaying the log on the frozen v1 must reproduce the current
-tables exactly; the build stops if it does not.
+behind it, stored once per set of changes in `change_sets.csv`
+([`read_changelog()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/read_changelog.md)
+joins them). Derived columns (`derived_columns`: the xpath version
+fields and `pct_filers_reporting`) are recomputed from the filing
+evidence and not logged cell by cell. Replaying the log on the frozen v1
+must reproduce the current tables exactly; the build stops if it does
+not.
 
 ### With a fix script (recommended)
 
@@ -211,6 +218,4 @@ Mark `affects_data = TRUE` when data built with v1 changes (a remap,
 split, retype, table move or rename) and `FALSE` for metadata (labels,
 whitespace).
 
-------------------------------------------------------------------------
-
-1.  A-Z0-9
+[^1]: A-Z0-9

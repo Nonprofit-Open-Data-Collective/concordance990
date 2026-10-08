@@ -32,10 +32,10 @@ variable belongs to exactly one table.
 |:---|:---|:---|:---|
 | forms.csv | form_id | 18 | Forms and schedules, with the XML root elements of each |
 | parts.csv | part_id | 113 | Parts of each form (Part I, Part II, …), with titles |
-| tables.csv | table_id | 214 | Relational tables: part, cardinality (ONE / MANY) |
-| variables.csv | variable_name | 3,358 | Variables: table, label, description, data type, scope, location code, list-valued flag |
-| xpaths.csv | xpath | 9,267 | Xpaths: variable, form line, schema versions and other xpath-level metadata |
-| xpath_overrides.csv | xpath + field | 2,374 | Where one xpath of a variable differs from the variable value (kept from v1) |
+| tables.csv | table_id | 212 | Relational tables: part, cardinality (ONE / MANY) |
+| variables.csv | variable_name | 3,366 | Variables: table, label, description, data type, scope, location code, list-valued flag |
+| xpaths.csv | xpath | 9,326 | Xpaths: variable, form line, schema versions and other xpath-level metadata |
+| xpath_overrides.csv | xpath + field | 2,368 | Where one xpath of a variable differs from the variable value (kept from v1) |
 | families.csv | family_id | 2 | Groups of alternate versions of one form line (e.g. \_V2 variables) |
 | xpath_forms.csv | xpath + form_id | 16 | Form-specific mappings for returns parsed as a separate database |
 
@@ -70,8 +70,8 @@ cc_tables()[, .N, by = .(form = form_id, cardinality)][order(form, cardinality)]
 #>     <char>      <char> <int>
 #> 1:    F990        MANY     9
 #> 2:    F990         ONE    20
-#> 3:  F990PF        MANY    50
-#> 4:  F990PF         ONE    27
+#> 3:  F990PF        MANY    51
+#> 4:  F990PF         ONE    25
 #> 5: SCHED-A        MANY     4
 #> 6: SCHED-A         ONE     6
 #> 7: SCHED-B        MANY     3
@@ -113,11 +113,28 @@ cc_variables()[variable_name %in% c("F9_08_REV_TOT_CY", "F9_06_DISCLOSURE_STATES
 
 One row per xpath, the primary key of the concordance. Besides the
 variable it records the form, form type (`PC`, `EZ`, `SZ` schedule,
-`PF`), form part and line, the IRS data type, the schema versions it
-appears in, and a free-text `production_rule` where a value needs
-special handling (for example the TY2009 501(c)(3) flag, which is an
-attribute of `Organization501c`). Xpaths ending in `/@name` are XML
-attributes.
+`PF`), form part and line, the IRS data type, and a free-text
+`production_rule` where a value needs special handling (for example the
+TY2009 501(c)(3) flag, which is an attribute of `Organization501c`).
+Xpaths ending in `/@name` are XML attributes.
+
+Its version fields come from the filings
+([`update_xpath_versions()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/update_xpath_versions.md),
+from the evidence built from the ef2 databases):
+
+- **`schema_versions`**: every schema version the xpath is defined in
+  (the XSDs, as recorded in v1) or observed in (filings). Either source
+  can have gaps, so the list is their union.
+- **`earliest_version`**, **`latest_version`**: the first and last
+  schema year the xpath is observed in.
+- **`current_version`**: `TRUE` when the xpath is observed in the newest
+  schema year, `FALSE` when only earlier, empty when never observed.
+- **`pct_filers_reporting`**: the percent of filers in the xpath’s scope
+  whose return holds the xpath, in its `latest_version` year. The scope
+  is 990 filers (`PC`), 990-EZ filers (`EZ`), both (`PZ`, header,
+  signature) or 990-PF filers (`PF`); a main-form xpath counts only the
+  filers of its form, and the header and shared schedules also count the
+  990-PF filers who file them.
 
 `v1_order` keeps the row order of the v1 file, so the generated file
 stays in the familiar order.
@@ -132,14 +149,14 @@ conflict means deleting its override row, with a change-log entry.
 
 ``` r
 cc_xpaths()[, .N]; read_src()$xpath_overrides[, .N, by = field][order(-N)]
-#> [1] 9267
+#> [1] 9326
 #>                   field     N
 #>                  <char> <int>
-#> 1:          description  2033
-#> 2:                label   257
+#> 1:          description  2031
+#> 2:                label   255
 #> 3:            rdb_table    57
 #> 4:       variable_scope    14
-#> 5: location_code_family    13
+#> 5: location_code_family    11
 ```
 
 ### xpath_forms.csv
@@ -169,7 +186,8 @@ read_src()$xpath_forms[1:3]
 
 | File | Role |
 |----|----|
-| `inst/extdata/changelog/changes.csv` | Every cell changed since v1, with reason and evidence ([`vignette("migration")`](https://nonprofit-open-data-collective.github.io/concordance990/articles/migration.md)) |
+| `inst/extdata/changelog/changes.csv` | Every cell changed since v1 ([`vignette("migration")`](https://nonprofit-open-data-collective.github.io/concordance990/articles/migration.md)) |
+| `inst/extdata/changelog/change_sets.csv` | The date, author, reason and evidence of each set of changes in `changes.csv` |
 | `inst/extdata/changelog/v1_to_v2_crosswalk.csv` | Each v1 xpath with its v1 and current variable and table |
 | `inst/extdata/validation/validation_log.csv` | Reviewer decisions on flagged cases ([`vignette("testing-updates")`](https://nonprofit-open-data-collective.github.io/concordance990/articles/testing-updates.md)) |
 | `inst/extdata/validation/rule_ceilings.csv` | Ceilings for structural rules still being fixed (none at present) |

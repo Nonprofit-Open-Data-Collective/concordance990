@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>How the concordance tables are built • concordance990</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="How the concordance tables are built">
 </head>
@@ -44,6 +44,10 @@
 <li><a class="dropdown-item" href="../articles/data-dictionary-990.html">Form 990 and 990-EZ</a></li>
     <li><a class="dropdown-item" href="../articles/data-dictionary-990pf.html">Form 990-PF</a></li>
     <li><a class="dropdown-item" href="../articles/form-outline.html">Outline of forms, parts and schedules</a></li>
+    <li><hr class="dropdown-divider"></li>
+    <li><h6 class="dropdown-header" data-toc-skip>Printable (PDF)</h6></li>
+    <li><a class="dropdown-item" href="../print/data-dictionary-990.pdf">Form 990 and 990-EZ</a></li>
+    <li><a class="dropdown-item" href="../print/data-dictionary-990pf.pdf">Form 990-PF</a></li>
   </ul>
 </li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
@@ -101,14 +105,17 @@ different value for one xpath, that value replaces the variable’s
 <li>
 <strong>Order</strong> the rows as in v1 (<code>v1_order</code>, new
 xpaths at the end) and select the columns: <code>format = "v1"</code>
-returns exactly the v1 columns; <code>format =    "v2"</code> adds
-<code>family_id</code>, <code>part_id</code> and
+returns the v1 layout (<code>concordance_columns</code>: the v1 columns,
+with <code>versions</code> renamed <code>schema_versions</code>,
+<code>earliest_version</code> and <code>pct_filers_reporting</code>
+added and <code>duplicated</code> dropped); <code>format = "v2"</code>
+adds <code>family_id</code>, <code>part_id</code> and
 <code>multi_value</code>.</li>
 </ol>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cc</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/build_concordance.html">build_concordance</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"v2"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/dim.html" class="external-link">dim</a></span><span class="op">(</span><span class="va">cc</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] 9267   26</span></span>
+<span><span class="co">#&gt; [1] 9326   27</span></span>
 <span><span class="va">cc</span><span class="op">[</span><span class="va">variable_name</span> <span class="op">==</span> <span class="st">"F9_01_REV_TOT_CY"</span>, <span class="fu">.</span><span class="op">(</span><span class="va">xpath</span>, <span class="va">rdb_table</span>, <span class="va">rdb_relationship</span>, <span class="va">form_type</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt;                                                             xpath</span></span>
 <span><span class="co">#&gt;                                                            &lt;char&gt;</span></span>
@@ -138,7 +145,7 @@ Each gets its own view of the concordance:</p>
 <span><span class="va">f990pf</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/concordance.html">concordance</a></span><span class="op">(</span>form <span class="op">=</span> <span class="st">"F990PF"</span><span class="op">)</span>  <span class="co"># 990-PF returns</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span>all <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="fu"><a href="../reference/concordance.html">concordance</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span>, F990 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">f990</span><span class="op">)</span>, F990PF <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/nrow.html" class="external-link">nrow</a></span><span class="op">(</span><span class="va">f990pf</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;    all   F990 F990PF </span></span>
-<span><span class="co">#&gt;   9267   7016   2465</span></span></code></pre></div>
+<span><span class="co">#&gt;   9326   7075   2524</span></span></code></pre></div>
 <p>The 990-PF view holds the PF xpaths, the return header (the same
 <code>F9_00_</code> variables as the 990) and Schedule B, which
 foundations also file. Attachments filed with every form map to PF
@@ -270,7 +277,7 @@ xpaths, v1 layout.</li>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
 </div>
 
     </footer>

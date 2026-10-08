@@ -12,8 +12,9 @@ concordance(format = c("v2", "v1"), form = NULL)
 
 - format:
 
-  `"v2"` (v1 columns plus `family_id`, `part_id` and `multi_value`) or
-  `"v1"` (exactly the v1 columns).
+  `"v2"` (the v1 layout plus `family_id`, `part_id` and `multi_value`)
+  or `"v1"` (the v1 layout,
+  [concordance_columns](https://nonprofit-open-data-collective.github.io/concordance990/reference/v1_columns.md)).
 
 - form:
 

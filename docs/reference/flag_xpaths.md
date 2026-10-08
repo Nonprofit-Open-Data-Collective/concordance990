@@ -17,7 +17,9 @@ flag_xpaths(concordance, evidence_dir = "evidence", min_filings = 30)
 - concordance:
 
   Data frame in the v1 layout (`xpath`, `variable_name`, `rdb_table`,
-  `rdb_relationship`, `data_type_simple`).
+  `rdb_relationship`, `data_type_simple`), optionally with `multi_value`
+  (otherwise read from `variables.csv`). List-valued (`multi_value`)
+  fields repeat by design and are not flagged ONE_REPEATS.
 
 - evidence_dir:
 

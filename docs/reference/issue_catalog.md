@@ -14,5 +14,5 @@ issue_catalog
 
 ## Format
 
-An object of class `data.table` (inherits from `data.frame`) with 33
+An object of class `data.table` (inherits from `data.frame`) with 34
 rows and 6 columns.

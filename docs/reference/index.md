@@ -26,6 +26,7 @@ For parsers and data users (ef2, panel990, fiscal and others).
 - [`concordance_version()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/concordance_version.md)
   : Version of the concordance
 - [`v1_columns`](https://nonprofit-open-data-collective.github.io/concordance990/reference/v1_columns.md)
+  [`concordance_columns`](https://nonprofit-open-data-collective.github.io/concordance990/reference/v1_columns.md)
   : Columns of the v1 concordance, in order
 
 ## Building the concordance
@@ -49,8 +50,12 @@ For parsers and data users (ef2, panel990, fiscal and others).
 
 - [`read_changelog()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/read_changelog.md)
   : Read the change log
+- [`write_changelog()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/write_changelog.md)
+  : Write the change log
 - [`change_types`](https://nonprofit-open-data-collective.github.io/concordance990/reference/change_types.md)
   : Change types
+- [`derived_columns`](https://nonprofit-open-data-collective.github.io/concordance990/reference/derived_columns.md)
+  : Derived columns
 - [`diff_src()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/diff_src.md)
   : Cell-level differences between two sets of component tables
 - [`apply_changes()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/apply_changes.md)
@@ -92,6 +97,16 @@ For parsers and data users (ef2, panel990, fiscal and others).
   :
 
   Read `xpath_stats.csv` with numeric quantiles
+
+- [`xpath_observations()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/xpath_observations.md)
+  : Xpath observations from filing evidence
+
+- [`xpath_version_fields()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/xpath_version_fields.md)
+  : Schema versions, current status and reporting rate of each xpath
+
+- [`update_xpath_versions()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/update_xpath_versions.md)
+  : Update the version fields of the component tables from filing
+  evidence
 
 - [`flag_xpaths()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/flag_xpaths.md)
   : Flag xpaths that look mis-mapped
