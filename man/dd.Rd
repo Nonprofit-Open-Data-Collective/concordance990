@@ -5,7 +5,7 @@
 \alias{print.cc_dd}
 \title{Look up the data dictionary}
 \usage{
-dd(x, form = NULL, fields = NULL, xpaths = FALSE)
+dd(x, form = NULL, fields = NULL, xpaths = FALSE, report = FALSE)
 
 \method{print}{cc_dd}(x, n = 50L, description = FALSE, width = getOption("width"), ...)
 }
@@ -22,6 +22,14 @@ of lookup, \code{"all"} gives every column of the dictionary.}
 \item{xpaths}{If \code{TRUE}, also list the xpaths pooled into each variable
 with the schema years they appear in and the percent of filers reporting
 them. They are stored in the \code{"xpaths"} attribute of the result.}
+
+\item{report}{If \code{TRUE}, open the validation page of each variable (up to
+five) in the browser: coverage by tax year, value checks, flags and
+example filings with links to the XML. For a table, opens the index of
+variable pages. The pages are on the package website; set
+\code{options(concordance990.variable_pages = "<dir or URL>")} to use pages
+rendered locally by \code{\link[=render_variable_pages]{render_variable_pages()}}. Outside an interactive
+session the addresses are printed instead.}
 
 \item{n}{Maximum number of rows to print for a table lookup.}
 
@@ -49,6 +57,9 @@ dd("F9-P01-T00-SUMMARY")
 dd("F9_01_REV_TOT_CY")
 dd("f9_01_rev_tot_cy", xpaths = TRUE)
 dd(c("F9_01_REV_TOT_CY", "F9_01_EXP_TOT_CY"), fields = c("label", "location_code_family"))
+\dontrun{
+dd("F9_01_REV_TOT_CY", report = TRUE)  # opens the validation page
+}
 }
 \seealso{
 \code{\link[=data_dictionary]{data_dictionary()}} for the whole dictionary of a database.

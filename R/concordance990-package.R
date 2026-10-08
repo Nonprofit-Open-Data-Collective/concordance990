@@ -26,5 +26,8 @@ utils::globalVariables(c(
   "v_status", "why", "label", "table_order", "part_title", "form_types", "multi_value", "title", "sort_order",
   # dd()
   "database", "n_xpaths", "table_title", "i.title", "family_label", "family_definition", "family_members",
-  "i.family_label", "i.family_definition", "i.family_members", "earliest_version", "pct_filers_reporting"
+  "i.family_label", "i.family_definition", "i.family_members", "earliest_version", "pct_filers_reporting",
+  # render_variable_pages()
+  "y0", "y1", "n_rep", "id", "schema_versions", "i.status", "i.note", "key", "p_negative", "p_zero",
+  "q25", "q75", "avg_len", "value", "shape", "n_fail", "n_warn", "n_flags_open", "den", "flag_code", "severity"
 ))
