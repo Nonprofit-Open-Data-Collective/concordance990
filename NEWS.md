@@ -18,6 +18,17 @@
 * `flag_xpaths()` no longer raises GAP flags for the few filings with no
   return type (132 false GAP flags in the 990 evidence).
 * `data_dictionary()` also returns `family_id`.
+* `data_dictionary()` also returns `money_field` and `blank_meaning`, so
+  partner packages share one rule for reading blank cells instead of each
+  deriving it. `money_field` marks numeric variables whose XSD type is a
+  dollar amount (preferring the current schema's type); counts, ratios,
+  years and identifiers are numeric but not money. `blank_meaning` is
+  `implicit_false` for checkboxes, `implicit_zero` for money, and
+  `literal_missing` otherwise. Both are derived from `data_type_simple` and
+  `data_type_xsd`, so they need no edits to the component tables and follow
+  any future type fixes. They reproduce exactly the rule panel990 uses to
+  build its normalization concordance (no differences over 2,413 990 and
+  1,056 990-PF variables).
 * Fix 25 corrects two labels: `SD_02_EMT_STAFF_HOURS_ENFORCE` ("conservation
   easements", was "conversation") and `PF_01_REV_CONTR_REC_BOOKS` (was the
   bare column heading "Revenue and Expenses per Books").
