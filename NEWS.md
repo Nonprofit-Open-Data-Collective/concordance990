@@ -21,6 +21,13 @@
 * Fix 25 corrects two labels: `SD_02_EMT_STAFF_HOURS_ENFORCE` ("conservation
   easements", was "conversation") and `PF_01_REV_CONTR_REC_BOOKS` (was the
   bare column heading "Revenue and Expenses per Books").
+* Fix 26 fills blank `data_type_xsd` from the IRS schemas: 2,510 of 4,361
+  blank cells get the type that the latest schema version declaring the xpath
+  gives it (990, 990-EZ and 990-PF XSDs, 56 versions 2009v1.0 to 2023v5.1,
+  read by `data-raw/xsd-types.R`). Existing types are unchanged. Current 990
+  xpaths without a type fall from 149 to 1. Consumers that read the type of
+  the current xpath, such as panel990, again see `SM_01_RE_OTH_NONCSH_CONTR`
+  and 15 other variables typed.
 
 # concordance990 2.0.0
 
