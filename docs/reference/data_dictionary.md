@@ -25,6 +25,29 @@ data_dictionary(form = c("F990", "F990PF"))
 
 A data.table ordered as the form: by table, then location code.
 
+## Money fields and blank cells
+
+`money_field` is `TRUE` for a numeric variable that holds a US dollar
+amount: its XSD type is an amount type (`USAmountType`,
+`USAmountNNType`, ...). The type of the current schema is used when one
+of the variable's current xpaths declares it, otherwise the type of the
+older xpaths. Counts, ratios, years and identifiers are numeric but not
+money.
+
+`blank_meaning` says how to read a blank cell in a filed return, for a
+variable on that return's form:
+
+- `implicit_false`: a blank checkbox is unchecked.
+
+- `implicit_zero`: a blank money amount is zero.
+
+- `literal_missing`: everything else (text, dates, and numeric values
+  that are not money): nothing was reported.
+
+A blank on a form that does not carry the variable is structural,
+whatever its `blank_meaning`; `variable_scope` and `form_types` tell
+which forms do.
+
 ## Examples
 
 ``` r

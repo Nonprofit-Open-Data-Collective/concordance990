@@ -1,5 +1,31 @@
 # Changelog
 
+## concordance990 (development version)
+
+- [`data_dictionary()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/data_dictionary.md)
+  also returns `money_field` and `blank_meaning`, so partner packages
+  share one rule for reading blank cells instead of each deriving it.
+  `money_field` marks numeric variables whose XSD type is a dollar
+  amount (preferring the current schema’s type); counts, ratios, years
+  and identifiers are numeric but not money. `blank_meaning` is
+  `implicit_false` for checkboxes, `implicit_zero` for money, and
+  `literal_missing` otherwise. Both are derived from `data_type_simple`
+  and `data_type_xsd`, so they need no edits to the component tables and
+  follow any future type fixes. They reproduce exactly the rule panel990
+  uses to build its normalization concordance (no differences over 2,413
+  990 and 1,056 990-PF variables).
+- Fix 27 relabels 514 variables whose label was only a column heading,
+  so dozens shared one label (“Book Value” x70, “Adjusted Net Income”
+  x32, “Net Investment Income” x30, “Amount”, “Year 1”,
+  `BusinessNameLine1`, …). 990-PF labels now read “ - ”, e.g. “Cash -
+  book value, beginning of year” or “Legal fees schedule - net
+  investment income”. Also fixed: Schedule A support-schedule total
+  rows, Schedule A Part V carryover years 2-5 (copies of year 2), and
+  blank labels in the 990 header and Schedule B Part I.
+- Fix 28 drops “foreign” from eight 990-PF address labels set by fix 27
+  (location of books and books in care of): each variable pools the US
+  and the foreign address.
+
 ## concordance990 2.0.1
 
 - New
