@@ -32,10 +32,16 @@ cc   <- concordance()                 # one row per xpath (v1 columns + family_i
 f990 <- concordance(form = "F990")    # the 990 / 990-EZ database
 pf   <- concordance(form = "F990PF")  # the 990-PF database
 map  <- xpath_map(form = "F990")      # xpath -> variable_name, rdb_table, rdb_relationship, form_type, multi_value
-dd   <- data_dictionary("F990PF")     # one row per variable
+dict <- data_dictionary("F990PF")     # one row per variable
 tabs <- table_names("MANY")           # one-to-many tables
 lookup_xpath("/irs:Return/irs:ReturnData/IRS990/Form990PartVIISectionAGrp[2]/PersonNm")
+
+dd("F9-P01-T00-SUMMARY")              # dictionary entry of a table: its variables
+dd("F9_01_REV_TOT_CY", xpaths = TRUE) # of a variable, with the xpaths pooled into it
 ```
+
+See [Looking up tables and
+variables](https://nonprofit-open-data-collective.github.io/concordance990/articles/looking-up-variables.html).
 
 `concordance("v1")` returns exactly the v1 columns. For non-R users,
 [`concordance.csv`](https://nonprofit-open-data-collective.github.io/concordance990/concordance.csv)

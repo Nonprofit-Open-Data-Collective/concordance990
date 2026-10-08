@@ -10,6 +10,9 @@ For parsers and data users (ef2, panel990, fiscal and others).
   : Lookup table from xpath to variable and table
 - [`data_dictionary()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/data_dictionary.md)
   : Data dictionary: one row per variable
+- [`dd()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/dd.md)
+  [`print(`*`<cc_dd>`*`)`](https://nonprofit-open-data-collective.github.io/concordance990/reference/dd.md)
+  : Look up the data dictionary
 - [`table_names()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/table_names.md)
   : Table names
 - [`cc_forms()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/cc_tables.md)
