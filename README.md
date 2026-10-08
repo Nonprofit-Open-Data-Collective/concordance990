@@ -14,7 +14,8 @@ the 990 / 990-EZ and the 990-PF and an outline of every part and schedule:
 <https://nonprofit-open-data-collective.github.io/concordance990/> (built into
 `docs/`).
 
-> **Status:** the issues list of the v1 concordance has been worked through
+> **Status:** version 2.0.0 is released (see [NEWS.md](NEWS.md)). The issues
+> list of the v1 concordance has been worked through
 > (`reports/issues-resolved.html`) and the 990-PF concordance is merged.
 
 ## For partner packages
