@@ -1,13 +1,14 @@
-# Printable data dictionaries: one clean table per database, laid out for
-# landscape letter paper, rendered to PDF with headless Chrome. The tables
-# come from the same helpers as the dictionary articles
+# Printable data dictionaries and form outline: one clean table per database
+# on landscape letter paper, and the outline on portrait letter, rendered to
+# PDF with headless Chrome. The tables come from the same helpers as the
+# dictionary and outline articles
 # (vignettes/articles/_dictionary.R), so they match the website.
 #
 # From the repository root, after rebuilding the concordance:
 #   Rscript data-raw/print-dictionaries.R
 #
-# Writes pkgdown/assets/print/data-dictionary-990.pdf and
-# data-dictionary-990pf.pdf (pkgdown copies them to docs/print/ when it
+# Writes pkgdown/assets/print/data-dictionary-990.pdf, data-dictionary-990pf.pdf
+# and form-outline.pdf (pkgdown copies them to docs/print/ when it
 # builds the site) and copies them to docs/print/ now.
 
 local({
@@ -129,21 +130,96 @@ print_dictionary <- function(form, out_dir) {
     "<thead><tr><th>Variable</th><th>Label / description</th><th>Location</th><th>Type</th><th>Scope</th><th class='rate'>% Reporting</th></tr></thead><tbody>",
     paste(rows, collapse = "\n"), "</tbody></table></body></html>")
 
-  base <- if (form == "F990") "data-dictionary-990" else "data-dictionary-990pf"
+  chrome_pdf(html, if (form == "F990") "data-dictionary-990" else "data-dictionary-990pf", out_dir)
+}
+
+# Print an html page to <out_dir>/<base>.pdf with headless Chrome
+chrome_pdf <- function(html, base, out_dir) {
   src <- file.path(tempdir(), paste0(base, ".html"))
   writeLines(html, src, useBytes = TRUE)
   pdf <- normalizePath(file.path(out_dir, paste0(base, ".pdf")), mustWork = FALSE)
   status <- system2(chrome, c("--headless=new", "--disable-gpu", "--no-pdf-header-footer", "--run-all-compositor-stages-before-draw",
                               "--virtual-time-budget=10000",
-                              shQuote(paste0("--user-data-dir=", file.path(tempdir(), "chrome"))),shQuote(paste0("--print-to-pdf=", pdf)),
+                              shQuote(paste0("--user-data-dir=", file.path(tempdir(), "chrome"))), shQuote(paste0("--print-to-pdf=", pdf)),
                               shQuote(paste0("file:///", normalizePath(src, winslash = "/")))))
   if (status != 0 || !file.exists(pdf)) stop("Chrome failed to print ", base)
   message("Wrote ", pdf)
   pdf
 }
 
+# The outline of forms, parts and tables (as the form-outline article):
+# portrait, one row per table with its part, cardinality and variable count
+outline_css <- '
+@page { size: letter portrait; margin: .5in .55in .55in; }
+table.outline { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 7.8pt; }
+table.outline thead th { font-size: 6.6pt; text-transform: uppercase; letter-spacing: .05em; color: #4d565f;
+                         text-align: left; padding: .3em .5em; border-bottom: 1.2px solid #1b1f23; }
+table.outline td { padding: .2em .5em; vertical-align: top; border-bottom: .5px solid #dde1e5; }
+table.outline tr { break-inside: avoid; }
+col.c-part { width: 46%; } col.c-tbl { width: 36%; } col.c-card { width: 9%; } col.c-n { width: 9%; }
+td.part { font-weight: 600; color: #153243; border-bottom: 0; }
+tr.pfirst td { border-top: .6px solid #8a939c; }
+td.tname { font-family: "JetBrains Mono", Consolas, "Courier New", monospace; font-weight: 700; font-size: 7.2pt; }
+td.n, th.n { text-align: right; font-variant-numeric: tabular-nums; }
+td.none { color: #8a939c; font-style: italic; }
+.cbadge { font-size: 6.3pt; font-weight: 700; letter-spacing: .05em; color: #fff; border-radius: 1em; padding: .05em .5em; }
+.cbadge-one { background: #1f3864; } .cbadge-many { background: #9c5a1c; }
+tr.form td { background: #153243; color: #fff; font-size: 9.5pt; font-weight: 700; padding: .4em .5em; border: 0; break-after: avoid; }
+tr.form td .filed { font-weight: 400; font-size: 7.3pt; color: rgba(255,255,255,.8); margin-left: .8em; }
+'
+
+print_outline <- function(out_dir) {
+  tb <- cc_tables()
+  v990 <- data_dictionary("F990")[, .(n = uniqueN(variable_name)), by = rdb_table]
+  vpf <- data_dictionary("F990PF")[, .(n = uniqueN(variable_name)), by = rdb_table]
+  nv <- rbind(v990, vpf[!rdb_table %in% v990$rdb_table])
+  tb <- merge(tb, nv, by.x = "table_id", by.y = "rdb_table", all.x = TRUE)
+  tb[is.na(n), n := 0L]
+  pt <- cc_parts()
+  fm <- cc_forms()[order(as.integer(sort_order))]
+  fm <- rbind(fm[form_id == "F990"], fm[form_id == "F990PF"], fm[!form_id %in% c("F990", "F990PF")])
+
+  rows <- character()
+  for (f in fm$form_id) {
+    ft <- tb[form_id == f]
+    rows <- c(rows, sprintf("<tr class='form'><td colspan='4'>%s<span class='filed'>Filed with: %s &middot; %s tables, %s variables</span></td></tr>",
+                            esc(fm[form_id == f, title]), filed_with[[f]], nrow(ft), n_fmt(sum(ft$n))))
+    for (p in pt[form_id == f][order(part_id), part_id]) {
+      tp <- tb[part_id == p][order(table_id)]
+      part <- esc(pt[part_id == p, title])
+      if (!nrow(tp)) {
+        rows <- c(rows, sprintf("<tr class='pfirst'><td class='part'>%s</td><td class='none' colspan='3'>no tables</td></tr>", part))
+        next
+      }
+      for (i in seq_len(nrow(tp))) {
+        rows <- c(rows, sprintf("<tr%s><td class='part'>%s</td><td class='tname'>%s</td><td><span class='cbadge cbadge-%s'>%s</span></td><td class='n'>%s</td></tr>",
+                                if (i == 1) " class='pfirst'" else "", if (i == 1) part else "",
+                                tp$table_id[i], tolower(tp$cardinality[i]), tp$cardinality[i], n_fmt(tp$n[i])))
+      }
+    }
+  }
+
+  title <- "Outline of forms, parts and schedules"
+  legend <- paste0("<div class='legend'>",
+    "<div><b>Tables</b> are named <code>FF-PNN-TNN-NAME</code>: form, part, table number and a short name. By convention <code>T00</code> tables have one row per filing, <code>T01</code> and higher one row per repeated item, <code>T99</code> supplemental explanations.</div>",
+    "<div><b style='color:#1f3864'>ONE</b>: one row per filing. <b style='color:#9c5a1c'>MANY</b>: one row per repeated item. 990-EZ lines are mapped into the matching part of the 990; 990-PF parts are numbered as before the 2023 redesign (the 2023 number in parentheses). Variables are documented in the data dictionaries.</div></div>")
+  html <- paste0(
+    "<!doctype html><html><head><meta charset='utf-8'><title>", title, "</title>",
+    "<link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&display=swap'>",
+    "<style>:root { --doc-title: \"", title, " \\00b7  concordance990 ", as.character(packageVersion("concordance990")), "\"; }",
+    print_css, outline_css, "</style></head><body>",
+    "<h1>", title, "</h1>",
+    sprintf("<p class='sub'>concordance990 version %s &middot; generated %s &middot; %s forms and schedules, %s parts, %s tables &middot; nonprofit-open-data-collective.github.io/concordance990</p>",
+            packageVersion("concordance990"), format(Sys.Date(), "%B %e, %Y"), nrow(fm), nrow(pt), nrow(tb)),
+    legend,
+    "<table class='outline'><colgroup><col class='c-part'><col class='c-tbl'><col class='c-card'><col class='c-n'></colgroup>",
+    "<thead><tr><th>Part</th><th>Table</th><th>Rows</th><th class='n'>Variables</th></tr></thead><tbody>",
+    paste(rows, collapse = "\n"), "</tbody></table></body></html>")
+  chrome_pdf(html, "form-outline", out_dir)
+}
+
 out_dir <- file.path("pkgdown", "assets", "print")
 dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-pdfs <- vapply(c("F990", "F990PF"), print_dictionary, "", out_dir = out_dir)
+pdfs <- c(vapply(c("F990", "F990PF"), print_dictionary, "", out_dir = out_dir), print_outline(out_dir))
 dir.create(file.path("docs", "print"), recursive = TRUE, showWarnings = FALSE)
 file.copy(pdfs, file.path("docs", "print"), overwrite = TRUE)

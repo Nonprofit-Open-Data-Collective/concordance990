@@ -18,6 +18,10 @@ Variable counts link to the data dictionaries: [Form 990 and
 and [Form
 990-PF](https://nonprofit-open-data-collective.github.io/concordance990/articles/data-dictionary-990pf.md).
 
+[Printable version
+(PDF)](https://nonprofit-open-data-collective.github.io/concordance990/print/form-outline.pdf)
+ one table on portrait letter pages, for printing or offline reading.
+
 ## Form 990 / 990-EZ: Return of Organization Exempt From Income Tax
 
 *Filed with: 990 and 990-EZ.*
