@@ -66,3 +66,23 @@ test_that("dd() renders markdown tables in R Markdown", {
   expect_match(out, "|field", fixed = TRUE)
   expect_match(out, "CYTotalRevenueAmt", fixed = TRUE)
 })
+
+test_that("dd(report = TRUE) points to the variable pages", {
+  expect_identical(variable_page_url("F9_01_REV_TOT_CY"),
+                   "https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_01_REV_TOT_CY.html")
+  old <- options(concordance990.variable_pages = "some/dir/")
+  on.exit(options(old))
+  expect_identical(variable_page_url(c("PF_01_REV_CONTR_REC_BOOKS", "SA_01_X")),
+                   c("some/dir/PF/PF_01_REV_CONTR_REC_BOOKS.html", "some/dir/SA/SA_01_X.html"))
+  expect_identical(variable_page_url(), "some/dir/index.html")
+  # outside an interactive session the address is printed, not opened
+  expect_message(suppressWarnings(dd("F9_01_REV_TOT_CY", report = TRUE)), "some/dir/F9/F9_01_REV_TOT_CY.html", fixed = TRUE)
+})
+
+test_that("a table's page is its section of the form index", {
+  old <- options(concordance990.variable_pages = "pages")
+  on.exit(options(old))
+  expect_identical(variable_page_url(table = c("PF-P01-T00-REVENUE-EXPENSE", "F9-P01-T00-SUMMARY")),
+                   c("pages/PF/index.html#pf-p01-t00-revenue-expense", "pages/F9/index.html#f9-p01-t00-summary"))
+  expect_message(suppressWarnings(dd("F9-P01-T00-SUMMARY", report = TRUE)), "pages/F9/index.html#f9-p01-t00-summary", fixed = TRUE)
+})

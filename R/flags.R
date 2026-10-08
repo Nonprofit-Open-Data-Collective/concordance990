@@ -152,7 +152,8 @@ flag_xpaths <- function(concordance, evidence_dir = "evidence", min_filings = 30
       quote(sprintf("%s filings contain 2+ of its xpaths; most common set: %s", n_filings, xpaths)))
 
   # --- continuity: gaps and incidence breaks, per variable and return type ----
-  den <- fl[, .(den = sum(n_filings)), by = .(tax_year, return_type)]
+  # a few filings have no return type; alone they would look like gaps
+  den <- fl[!is.na(return_type) & return_type != "", .(den = sum(n_filings)), by = .(tax_year, return_type)]
   vy <- merge(st[, .(xpath, tax_year, return_type, n_filings)], cc[, .(xpath, variable_name, rdb_table)], by = "xpath")
   vy <- vy[, .(n = sum(n_filings)), by = .(variable_name, rdb_table, return_type, tax_year)]
   grid <- vy[, .(tax_year = seq(min(tax_year), max(tax_year))), by = .(variable_name, rdb_table, return_type)]

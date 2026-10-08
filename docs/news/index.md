@@ -1,5 +1,39 @@
 # Changelog
 
+## concordance990 (development version)
+
+- New
+  [`dd()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/dd.md)
+  looks up the data dictionary entry of a table or of variables: label,
+  description, location code, scope, data type, family and the number of
+  xpaths pooled. `xpaths = TRUE` adds each xpath with its schema years
+  and percent of filers reporting. A variable prints as a record card
+  and a table as a listing fitted to the console. In R Markdown, results
+  render as markdown tables. Misspelled names get suggestions. See the
+  new article “Looking up tables and variables”
+  ([`vignette("looking-up-variables")`](https://nonprofit-open-data-collective.github.io/concordance990/articles/looking-up-variables.md)).
+- New validation pages, one per variable (3,366), published with the
+  site at `variables/`: dictionary entry, value checks, flags with the
+  reviewer’s decision, the xpaths and the years each was used, coverage
+  and fill rate by tax year, a value summary, and example filings with
+  links to the XML.
+  [`render_variable_pages()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/render_variable_pages.md)
+  writes them from the filing evidence
+  (`data-raw/render-variable-pages.R`). `dd(x, report = TRUE)` opens the
+  page of a variable, or a table’s section of the index;
+  [`variable_page_url()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/variable_page_url.md)
+  gives the address. See
+  [`vignette("variable-pages")`](https://nonprofit-open-data-collective.github.io/concordance990/articles/variable-pages.md).
+- [`flag_xpaths()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/flag_xpaths.md)
+  no longer raises GAP flags for the few filings with no return type
+  (132 false GAP flags in the 990 evidence).
+- [`data_dictionary()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/data_dictionary.md)
+  also returns `family_id`.
+- Fix 25 corrects two labels: `SD_02_EMT_STAFF_HOURS_ENFORCE`
+  (“conservation easements”, was “conversation”) and
+  `PF_01_REV_CONTR_REC_BOOKS` (was the bare column heading “Revenue and
+  Expenses per Books”).
+
 ## concordance990 2.0.0
 
 First release of the Master Concordance version 2. The frozen v1

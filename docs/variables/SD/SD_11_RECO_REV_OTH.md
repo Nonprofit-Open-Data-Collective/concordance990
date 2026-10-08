@@ -1,0 +1,107 @@
+# SD_11_RECO_REV_OTH
+
+[Variable
+pages](https://nonprofit-open-data-collective.github.io/concordance990/variables/index.md)
+· IRS 990 Master Concordance
+
+# SD_11_RECO_REV_OTH
+
+Other revenue
+
+- Description: Other revenues
+
+- Table:
+
+  [`SD-P11-T00-RECONCILIATION-REVENUE`](https://nonprofit-open-data-collective.github.io/concordance990/articles/data-dictionary-990.html#sd-p11-t00-reconciliation-revenue)
+  (one)
+
+- Part: Part XI - Reconciliation of Revenue per Audited Financial
+  Statements With Revenue per Return
+
+- Location:
+
+  `SCHED-D-PART-11-LINE-02D`
+
+- Type: numeric
+
+- Scope: PC – 990 only
+
+- Database: F990
+
+- Forms: SZ
+
+2 / 3
+
+xpaths observed / mapped
+
+398k
+
+filings with a value
+
+2009–2024
+
+tax years observed
+
+0
+
+open flags
+
+## Checks
+
+### Value checks
+
+| Result | Value check | Detail |
+|----|----|----|
+| ✓ pass | Values parse as numbers | 100.0% of values are numeric |
+| ✓ pass | No sudden change in the median between adjacent years | largest change 1.5x (IRS990ScheduleD/OtherRevenues, 990, TY2011) |
+| ✓ pass | Pooled xpaths are on the same scale (same return type) | largest ratio of medians between xpaths: 1.3x |
+| ⓘ info | Sign convention | 14.3% of values are negative (fine for net amounts) |
+
+No flags.
+
+## Xpaths
+
+|  | Xpath (under /Return/ReturnData or /Return/ReturnHeader) | Form | Years | Filings | % filers | Repeats in |
+|----|----|----|----|----|----|----|
+| x1 | `IRS990ScheduleD/OtherRevenues` | SZ | 2009–2012 | 72,012 | 13.2% |  |
+| x2 | `IRS990ScheduleD/OtherRevenueAmt` | SZ | 2013–2024 | 326,281 | 7.28% |  |
+| x3 | `IRS990ScheduleD/Form990ScheduleDPartXII/OtherRevenues` | SZ | not observed | 0 |  |  |
+
+**% filers**: percent of in-scope filers whose return has the xpath, in
+its latest year. **Repeats in**: share of filings where the element
+occurs more than once.
+
+## Coverage by tax year
+
+| Filings | ’09 | ’10 | ’11 | ’12 | ’13 | ’14 | ’15 | ’16 | ’17 | ’18 | ’19 | ’20 | ’21 | ’22 | ’23 | ’24 |
+|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|----|
+| x1 | 8.0k | 18k | 22k | 24k |  |  |  |  |  |  |  |  |  |  |  |  |
+| x2 |  |  |  |  | 25k | 26k | 27k | 28k | 29k | 28k | 28k | 29k | 28k | 29k | 28k | 20k |
+| Fill rate: % of all filings of the return type (largest xpath) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |
+| 990 | 24 | 15 | 14 | 13 | 13 | 12 | 12 | 11 | 11 | 10 | 10 | 9 | 8 | 8 | 8 | 7 |
+
+Filings with a value, by xpath (rows, numbered as in the xpath table)
+and tax year. A change of row from one year to the next is usually the
+IRS renaming the element (most were renamed in 2013). Hover a cell for
+the exact count.
+
+## Values
+
+| Return | Filings | % numeric | % zero | % negative | P25   | Median | P75     | P99        |
+|--------|---------|-----------|--------|------------|-------|--------|---------|------------|
+| 990    | 398,293 | 100.0%    | 7.8%   | 14.3%      | 3,060 | 31,475 | 166,927 | 30,509,037 |
+
+Percentiles are the median over tax years of each year's percentile.
+
+## Example filings
+
+| Tax year | Return | Xpath | Organization | Value |  |
+|----|----|----|----|----|----|
+| 2024 | 990 | x2 | GIRL SCOUTS OF KANSAS HEARTLAND INC | 14045 | [XML](https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/202630479349301123_public.xml) |
+| 2012 | 990 | x1 | BAPTIST HEALTH AMBULATORY SERVICES INC | 0 | [XML](https://gt990datalake-rawdata.s3.amazonaws.com/EfileData/XmlFiles/201412209349300421_public.xml) |
+
+Evidence: e-filed returns TY2009–2024, built 2026-09-23 from the ef2
+DuckDB builds. Checks and flags are recomputed for the current
+concordance; reviewer decisions come from `validation_log.csv`. Variable
+SD_11_RECO_REV_OTH, report type *amount*. Source:
+[concordance990](https://github.com/Nonprofit-Open-Data-Collective/concordance990).

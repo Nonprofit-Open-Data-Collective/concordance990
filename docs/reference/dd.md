@@ -11,7 +11,7 @@ nothing raises an error that suggests the closest names.
 ## Usage
 
 ``` r
-dd(x, form = NULL, fields = NULL, xpaths = FALSE)
+dd(x, form = NULL, fields = NULL, xpaths = FALSE, report = FALSE)
 
 # S3 method for class 'cc_dd'
 print(x, n = 50L, description = FALSE, width = getOption("width"), ...)
@@ -39,6 +39,17 @@ print(x, n = 50L, description = FALSE, width = getOption("width"), ...)
   If `TRUE`, also list the xpaths pooled into each variable with the
   schema years they appear in and the percent of filers reporting them.
   They are stored in the `"xpaths"` attribute of the result.
+
+- report:
+
+  If `TRUE`, open the validation page of each variable (up to five) in
+  the browser: coverage by tax year, value checks, flags and example
+  filings with links to the XML. For a table, opens the table's section
+  of the index of variable pages. The pages are on the package website;
+  set `options(concordance990.variable_pages = "<dir or URL>")` to use
+  pages rendered locally by
+  [`render_variable_pages()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/render_variable_pages.md).
+  Outside an interactive session the addresses are printed instead.
 
 - n:
 
@@ -197,4 +208,7 @@ dd(c("F9_01_REV_TOT_CY", "F9_01_EXP_TOT_CY"), fields = c("label", "location_code
 #> ── F9_01_EXP_TOT_CY ────────────────────────────────────────────────────────────
 #>   Label       Total expenses - current year
 #>   Location    F990-PC-PART-01-LINE-18-CY
+if (FALSE) { # \dontrun{
+dd("F9_01_REV_TOT_CY", report = TRUE)  # opens the validation page
+} # }
 ```
