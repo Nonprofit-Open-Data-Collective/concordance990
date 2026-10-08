@@ -17,5 +17,5 @@ validation_rules
 
 ## Format
 
-An object of class `data.table` (inherits from `data.frame`) with 12
+An object of class `data.table` (inherits from `data.frame`) with 13
 rows and 3 columns.

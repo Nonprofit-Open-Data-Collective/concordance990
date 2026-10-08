@@ -21,13 +21,16 @@ does five things:
     part.
 4.  **Select a form**, if asked (below).
 5.  **Order** the rows as in v1 (`v1_order`, new xpaths at the end) and
-    select the columns: `format = "v1"` returns exactly the v1 columns;
-    `format = "v2"` adds `family_id`, `part_id` and `multi_value`.
+    select the columns: `format = "v1"` returns the v1 layout
+    (`concordance_columns`: the v1 columns, with `versions` renamed
+    `schema_versions`, `earliest_version` and `pct_filers_reporting`
+    added and `duplicated` dropped); `format = "v2"` adds `family_id`,
+    `part_id` and `multi_value`.
 
 ``` r
 cc <- build_concordance(format = "v2")
 dim(cc)
-#> [1] 9267   26
+#> [1] 9326   27
 cc[variable_name == "F9_01_REV_TOT_CY", .(xpath, rdb_table, rdb_relationship, form_type)]
 #>                                                             xpath
 #>                                                            <char>
@@ -58,7 +61,7 @@ f990 <- concordance(form = "F990")      # 990 and 990-EZ returns
 f990pf <- concordance(form = "F990PF")  # 990-PF returns
 c(all = nrow(concordance()), F990 = nrow(f990), F990PF = nrow(f990pf))
 #>    all   F990 F990PF 
-#>   9267   7016   2465
+#>   9326   7075   2524
 ```
 
 The 990-PF view holds the PF xpaths, the return header (the same

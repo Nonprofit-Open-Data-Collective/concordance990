@@ -4,7 +4,8 @@ Compares the current component tables with the baseline plus the
 existing log and returns rows for the differences, with ids, date,
 author, a guessed `change_type` and `affects_data` filled in. `reason`
 and `evidence` are left for the editor. With `write = TRUE` the rows are
-appended to `changes.csv`.
+appended to the change log (one new set in `change_sets.csv`, where the
+reason and evidence can be filled in).
 
 ## Usage
 

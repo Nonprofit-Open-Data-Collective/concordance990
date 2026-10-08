@@ -49,7 +49,7 @@ is the 990-PF view.
 |----|----|
 | `inst/extdata/src/` | The component tables: forms, parts, tables, variables, xpaths, xpath overrides, families, per-form mappings. **Edit these, not the generated files.** |
 | `inst/extdata/v1/` | The frozen v1 concordance, byte for byte, with its provenance. |
-| `inst/extdata/changelog/` | `changes.csv`, one row per change from v1, and the v1 crosswalk. |
+| `inst/extdata/changelog/` | `changes.csv`, one row per change from v1; `change_sets.csv`, the date, author, reason and evidence of each set of changes; and the v1 crosswalk. |
 | `inst/extdata/validation/` | The validation log (reviewed cases) and rule ceilings. |
 | `inst/reports/` | Validation report templates ([README](https://nonprofit-open-data-collective.github.io/concordance990/inst/reports/README.md)). |
 | `data-raw/` | Scripts that split v1, build the concordance, build filing evidence and render reports; `data-raw/fixes/` holds every fix since v1. |

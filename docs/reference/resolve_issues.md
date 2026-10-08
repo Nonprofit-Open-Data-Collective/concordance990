@@ -64,6 +64,13 @@ resolve_issues(
   mappings), so that override changes, which are keyed by xpath, also
   count as changes to the xpath's variable.
 
+- aliases:
+
+  data.table with `old` and `new` for variables renamed wholesale (e.g.
+  the 990-PF names of the v1 PF file to the merged PF names); a
+  variable-level case still fails if the same check fails for any of its
+  new names.
+
 ## Value
 
 `before` with columns `status`, `resolution`, `fix`, `files`,

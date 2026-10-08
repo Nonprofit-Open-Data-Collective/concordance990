@@ -3,8 +3,12 @@
 Joins xpaths to their variables, applies the xpath-level overrides, adds
 table cardinality, and returns one row per xpath in v1 order.
 
-- `format = "v1"` returns exactly the v1 columns. For the baseline this
-  reproduces the v1 file byte for byte (see
+- `format = "v1"` returns the v1 layout:
+  [concordance_columns](https://nonprofit-open-data-collective.github.io/concordance990/reference/v1_columns.md)
+  (the v1 columns with the version fields of fix 24). For the baseline
+  tables, which still have the v1 columns, it returns exactly
+  [v1_columns](https://nonprofit-open-data-collective.github.io/concordance990/reference/v1_columns.md)
+  and reproduces the v1 file byte for byte (see
   [`write_concordance()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/write_concordance.md)).
 
 - `format = "v2"` adds `family_id` and `part_id` after the v1 columns.

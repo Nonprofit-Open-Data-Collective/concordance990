@@ -23,7 +23,7 @@ and [Form
 *Filed with: 990 and 990-EZ.*
 
 - **Heading (items A-O)**
-  - `F9-P00-T00-HEADER`  ONE, 77 variables
+  - `F9-P00-T00-HEADER`  ONE, 84 variables
   - `F9-P00-T01-AFFILIATE-LISTING`  MANY, 9 variables
 - **Part I - Summary**
   - `F9-P01-T00-SUMMARY`  ONE, 41 variables
@@ -102,9 +102,8 @@ and [Form
   - `PF-P08-T03-COMPENSATION-CONTRACTORS`  MANY, 11 variables
 - **Part IX-A - Summary of Direct Charitable Activities; Part IX-B -
   Summary of Program-Related Investments (2023: Part VIII-A, VIII-B)**
-  - `PF-P09-T00-PROG-RELATED-INVESTMENTS`  ONE, 1 variables
-  - `PF-P09-T01-CHARITABLE-ACTIVITIES`  ONE, 8 variables
-  - `PF-P09-T02-PROG-RELATED-INVESTMENTS`  ONE, 5 variables
+  - `PF-P09-T00-CHARITABLE-ACTIVITIES`  ONE, 8 variables
+  - `PF-P09-T00-PROG-RELATED-INVESTMENTS`  ONE, 6 variables
 - **Part X - Minimum Investment Return (2023: Part IX)**
   - `PF-P10-T00-MINIMUM-INVESTMENT-RETURN`  ONE, 10 variables
 - **Part XI - Distributable Amount (2023: Part X)**
@@ -112,16 +111,16 @@ and [Form
 - **Part XII - Qualifying Distributions (2023: Part XI)**
   - `PF-P12-T00-QUALIFYING-DISTRIBUTIONS`  ONE, 8 variables
 - **Part XIII - Undistributed Income (2023: Part XII)**
-  - `PF-P13-T00-UNDISTRIBUTED-INCOME`  ONE, 33 variables
+  - `PF-P13-T00-UNDISTRIBUTED-INCOME`  ONE, 34 variables
 - **Part XIV - Private Operating Foundations (2023: Part XIII)**
   - `PF-P14-T00-PRIVATE-OPERATING-FOUNDATIONS`  ONE, 63 variables
 - **Part XV - Supplementary Information (2023: Part XIV)**
   - `PF-P15-T00-SUPPLEMENTARY-INFO`  ONE, 3 variables
-  - `PF-P15-T00-SUPPLEMENTARY-INFO-GRANT-APP`  MANY, 12 variables
   - `PF-P15-T00-SUPPLEMENTARY-INFO-GRANT-FUTURE`  ONE, 1 variables
   - `PF-P15-T00-SUPPLEMENTARY-INFO-GRANT-PAID`  ONE, 1 variables
   - `PF-P15-T01-SUPPLEMENTARY-INFO-GRANT-PAID`  MANY, 13 variables
   - `PF-P15-T02-SUPPLEMENTARY-INFO-GRANT-FUTURE`  MANY, 13 variables
+  - `PF-P15-T03-SUPPLEMENTARY-INFO-GRANT-APP`  MANY, 12 variables
 - **Part XVI-A - Analysis of Income-Producing Activities; Part XVI-B -
   Relationship of Activities to the Accomplishment of Exempt Purposes
   (2023: Part XV)**
@@ -155,7 +154,7 @@ and [Form
   - `PF-P99-T22-SUPPLEMENTAL-INFO`  MANY, 4 variables
   - `PF-P99-T23-INVEST-CORP-BOND`  MANY, 3 variables
   - `PF-P99-T24-INVEST-CORP-STOCK`  MANY, 3 variables
-  - `PF-P99-T25-INVEST-GOVT-SEC`  ONE, 4 variables
+  - `PF-P99-T25-INVEST-GOVT-SEC`  MANY, 4 variables
   - `PF-P99-T26-INVEST-LAND`  MANY, 5 variables
   - `PF-P99-T27-INVEST-OTH`  MANY, 5 variables
   - `PF-P99-T28-LAND-ETC`  MANY, 5 variables
@@ -255,9 +254,9 @@ and [Form
 - **Part VI - Land, Buildings, and Equipment**
   - `SD-P06-T00-LAND-BLDG-EQUIP`  ONE, 20 variables
 - **Part VII - Investments - Other Securities**
+  - `SD-P07-T00-INVESTMENTS-OTH-DERIVATIVES`  ONE, 2 variables
+  - `SD-P07-T00-INVESTMENTS-OTH-EQUITY`  ONE, 2 variables
   - `SD-P07-T00-INVESTMENTS-SECURITIES`  ONE, 1 variables
-  - `SD-P07-T01-INVESTMENTS-OTH-DERIVATIVES`  ONE, 2 variables
-  - `SD-P07-T01-INVESTMENTS-OTH-EQUITY`  ONE, 2 variables
   - `SD-P07-T01-INVESTMENTS-OTH-SECURITIES`  MANY, 3 variables
 - **Part VIII - Investments - Program Related**
   - `SD-P08-T00-INVESTMENTS-PROG-RLTD`  ONE, 1 variables
@@ -319,8 +318,7 @@ and [Form
   - `SG-P01-T00-FUNDRAISING-ACTS`  ONE, 12 variables
   - `SG-P01-T01-FUNDRAISERS-INFO`  MANY, 14 variables
 - **Part II - Fundraising Events**
-  - `SG-P02-T00-FUNDRAISING-EVENTS`  ONE, 11 variables
-  - `SG-P02-T01-FUNDRAISING-EVENTS`  ONE, 30 variables
+  - `SG-P02-T00-FUNDRAISING-EVENTS`  ONE, 41 variables
 - **Part III - Gaming**
   - `SG-P03-T00-GAMING`  ONE, 68 variables
 - **Part IV - Supplemental Information**
@@ -349,7 +347,7 @@ and [Form
   - `SH-P06-T99-SUPPLEMENTAL-INFO`  MANY, 20 variables
 - **Lines from earlier versions of the schedule (Part V, Section B
   facility policies)**
-  - `SH-P99-T00-FAP-COMMUNITY-BENEFIT-POLICY`  MANY, 48 variables
+  - `SH-P99-T01-FAP-COMMUNITY-BENEFIT-POLICY`  MANY, 48 variables
 
 ## Schedule I: Grants and Other Assistance to Organizations, Governments, and Individuals in the United States
 

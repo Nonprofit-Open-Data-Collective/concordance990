@@ -73,30 +73,30 @@ what was done and where it landed.
 ch[, .(rows = .N), by = .(level, change_type)][order(-rows)][1:12]
 #>              level  change_type  rows
 #>             <char>       <char> <int>
-#>  1:          xpath          add 26306
+#>  1:          xpath          add 26676
 #>  2:          xpath recode_value 23601
-#>  3:       variable          add  8472
+#>  3:       variable          add  8536
 #>  4: xpath_override          add  2331
-#>  5:          table          add   440
-#>  6: xpath_override       remove   202
-#>  7:       variable       remove   150
-#>  8:           part      relabel   113
-#>  9:       variable   move_table   106
+#>  5:          table          add   465
+#>  6: xpath_override       remove   220
+#>  7:       variable   move_table   213
+#>  8:       variable       remove   150
+#>  9:           part      relabel   113
 #> 10:           part          add    88
-#> 11:       variable       retype    64
+#> 11:       variable       retype    67
 #> 12:          xpath        remap    52
 ch[, .N, by = affects_data]
 #>    affects_data     N
 #>          <char> <int>
-#> 1:        FALSE 23756
-#> 2:         TRUE 38338
+#> 1:        FALSE 23761
+#> 2:         TRUE 38964
 ```
 
 `affects_data = TRUE` marks changes that change data built with v1
 (remaps, splits, retypes, table moves, renames); `FALSE` marks metadata
 such as labels, whitespace and the `NA` clean-up.
 
-Today the concordance has 9,267 xpaths, 3,358 variables and 214 tables,
+Today the concordance has 9,326 xpaths, 3,366 variables and 212 tables,
 including the 990-PF (2,251 xpaths).
 
 ## Reconciling data built with v1
@@ -111,12 +111,11 @@ table:
 cw[, .N, by = status][order(-N)]
 #>              status     N
 #>              <char> <int>
-#> 1: metadata_changed  6625
-#> 2:            added  2404
-#> 3:      moved_table   163
+#> 1: metadata_changed  6451
+#> 2:            added  2463
+#> 3:      moved_table   350
 #> 4:         remapped    62
-#> 5:        unchanged    13
-#> 6:          removed     1
+#> 5:          removed     1
 cw[status == "remapped", .(xpath, v1_variable_name, variable_name)][1:5]
 #>                                                                           xpath
 #>                                                                          <char>

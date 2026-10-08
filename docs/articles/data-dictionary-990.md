@@ -9,6 +9,10 @@ the
 [outline](https://nonprofit-open-data-collective.github.io/concordance990/articles/form-outline.md)
 lists every part and table on one page.
 
+[Printable version
+(PDF)](https://nonprofit-open-data-collective.github.io/concordance990/print/data-dictionary-990.pdf)
+ one table on landscape letter pages, for printing or offline reading.
+
 ## Reading the dictionary
 
 **Variables and fields.** A variable is not a field on one form. It
@@ -46,18 +50,24 @@ filed).
 is a block headed by its name and cardinality: ONE (one row per filing)
 or MANY (one row per repeated item).
 
+**% Reporting** is the percent of filers in the variable’s scope whose
+return reports it in the newest schema year (TY2024). A *990 + 990-EZ*
+variable shows two values, 990/990-EZ (for example `16.9%/3.2%`).
+`<0.1%` is under one filer in a thousand; blank means the variable is
+not in the current schema.
+
 ## Contents
 
 | Form | Filed with | Tables | Variables | Xpaths |
 |:---|:---|---:|:---|:---|
-| Form 990 / 990-EZ: Return of Organization Exempt From Income Tax | 990 and 990-EZ | 29 | 704 | 2,443 |
+| Form 990 / 990-EZ: Return of Organization Exempt From Income Tax | 990 and 990-EZ | 29 | 711 | 2,450 |
 | Schedule A: Public Charity Status and Public Support | 990, 990-EZ | 10 | 329 | 720 |
-| Schedule B: Schedule of Contributors | 990, 990-EZ, 990-PF | 5 | 38 | 61 |
+| Schedule B: Schedule of Contributors | 990, 990-EZ, 990-PF | 5 | 38 | 113 |
 | Schedule C: Political Campaign and Lobbying Activities | 990, 990-EZ | 6 | 121 | 369 |
 | Schedule D: Supplemental Financial Statements | 990 | 20 | 160 | 436 |
 | Schedule E: Schools | 990, 990-EZ | 2 | 27 | 70 |
 | Schedule F: Statement of Activities Outside the United States | 990 | 8 | 44 | 118 |
-| Schedule G: Supplemental Information Regarding Fundraising or Gaming Activities | 990, 990-EZ | 6 | 139 | 482 |
+| Schedule G: Supplemental Information Regarding Fundraising or Gaming Activities | 990, 990-EZ | 5 | 139 | 482 |
 | Schedule H: Hospitals | 990 | 11 | 371 | 876 |
 | Schedule I: Grants and Other Assistance to Organizations, Governments, and Individuals in the United States | 990 | 6 | 29 | 102 |
 | Schedule J: Compensation Information | 990 | 3 | 48 | 121 |
@@ -70,7 +80,7 @@ or MANY (one row per repeated item).
 
 ## Form 990 / 990-EZ: Return of Organization Exempt From Income Tax
 
-*Filed with: 990 and 990-EZ. 704 variables in 29 tables.*
+*Filed with: 990 and 990-EZ. 711 variables in 29 tables.*
 
 ### Heading (items A-O)
 
@@ -80,17 +90,17 @@ or MANY (one row per repeated item).
 
 `F9-P00-T01-AFFILIATE-LISTING`MANYone row per repeated item
 
-| Variable | Description | Location | Type | Scope |
-|:---|:---|:---|:---|:---|
-| `F9_00_AFFIL_ADDR_CITY` | Group return - subordinate city | F990-PC-PART-00 | text | header |
-| `F9_00_AFFIL_ADDR_L1` | Group return - subordinate street address line 1 | F990-PC-PART-00 | text | header |
-| `F9_00_AFFIL_ADDR_L2` | Group return - subordinate street address line 2 | F990-PC-PART-00 | text | header |
-| `F9_00_AFFIL_ADDR_STATE` | Group return - subordinate state | F990-PC-PART-00 | text | header |
-| `F9_00_AFFIL_ADDR_ZIP` | Group return - subordinate ZIP code | F990-PC-PART-00 | text | header |
-| `F9_00_AFFIL_EIN` | Group return - subordinate (affiliate) EIN | F990-PC-PART-00 | text | header |
-| `F9_00_AFFIL_NAME_CTRL` | Group return - subordinate name control | F990-PC-PART-00 | text | header |
-| `F9_00_AFFIL_NAME_L1` | Group return - subordinate name line 1 | F990-PC-PART-00 | text | header |
-| `F9_00_AFFIL_NAME_L2` | Group return - subordinate name line 2 | F990-PC-PART-00 | text | header |
+| Variable | Description | Location | Type | Scope | % Reporting |
+|:---|:---|:---|:---|:---|:---|
+| `F9_00_AFFIL_ADDR_CITY` | Group return - subordinate city | F990-PC-PART-00 | text | header | \<0.1% |
+| `F9_00_AFFIL_ADDR_L1` | Group return - subordinate street address line 1 | F990-PC-PART-00 | text | header | \<0.1% |
+| `F9_00_AFFIL_ADDR_L2` | Group return - subordinate street address line 2 | F990-PC-PART-00 | text | header | \<0.1% |
+| `F9_00_AFFIL_ADDR_STATE` | Group return - subordinate state | F990-PC-PART-00 | text | header | \<0.1% |
+| `F9_00_AFFIL_ADDR_ZIP` | Group return - subordinate ZIP code | F990-PC-PART-00 | text | header | \<0.1% |
+| `F9_00_AFFIL_EIN` | Group return - subordinate (affiliate) EIN | F990-PC-PART-00 | text | header | \<0.1% |
+| `F9_00_AFFIL_NAME_CTRL` | Group return - subordinate name control | F990-PC-PART-00 | text | header | \<0.1% |
+| `F9_00_AFFIL_NAME_L1` | Group return - subordinate name line 1 | F990-PC-PART-00 | text | header | \<0.1% |
+| `F9_00_AFFIL_NAME_L2` | Group return - subordinate name line 2 | F990-PC-PART-00 | text | header | \<0.1% |
 
 ### Part I - Summary
 
@@ -250,13 +260,13 @@ or MANY (one row per repeated item).
 
 `SA-P01-T03-AGRI-RESEARCH-UNIV`MANYone row per repeated item
 
-| Variable | Description | Location | Type | Scope |
-|:---|:---|:---|:---|:---|
-| `SA_01_PCSTAT_AGRI_UNIV_CITY` | Agricultural research org - college/university city (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ |
-| `SA_01_PCSTAT_AGRI_UNIV_CNTR` | Agricultural research org - college/university country (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ |
-| `SA_01_PCSTAT_AGRI_UNIV_NAME_L1` | Agricultural research org - college/university name line 1 (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ |
-| `SA_01_PCSTAT_AGRI_UNIV_NAME_L2` | Agricultural research org - college/university name line 2 (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ |
-| `SA_01_PCSTAT_AGRI_UNIV_STATE` | Agricultural research org - college/university state (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ |
+| Variable | Description | Location | Type | Scope | % Reporting |
+|:---|:---|:---|:---|:---|:---|
+| `SA_01_PCSTAT_AGRI_UNIV_CITY` | Agricultural research org - college/university city (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SA_01_PCSTAT_AGRI_UNIV_CNTR` | Agricultural research org - college/university country (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SA_01_PCSTAT_AGRI_UNIV_NAME_L1` | Agricultural research org - college/university name line 1 (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SA_01_PCSTAT_AGRI_UNIV_NAME_L2` | Agricultural research org - college/university name line 2 (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SA_01_PCSTAT_AGRI_UNIV_STATE` | Agricultural research org - college/university state (Part I line 9) | SCHED-A-PART-01 | text | 990 + 990-EZ | \<0.1% |
 
 ### Part II - Support Schedule for Organizations Described in Sections 170(b)(1)(A)(iv) and 170(b)(1)(A)(vi)
 
@@ -302,50 +312,50 @@ or MANY (one row per repeated item).
 
 `SB-P00-T00-HEADER`ONEone row per filing
 
-| Variable | Description | Location | Type | Scope |
-|:---|:---|:---|:---|:---|
-| `SB_00_GENERAL_RULE_X` | General Rule applies (contributor gave \$5,000 or more) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ |
-| `SB_00_ORG_TYPE_4947A1_PF_X` | Organization type: 4947(a)(1) nonexempt charitable trust treated as a private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ |
-| `SB_00_ORG_TYPE_501C3_EXEMPT_PF_X` | Organization type: 501(c)(3) exempt private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ |
-| `SB_00_ORG_TYPE_501C3_TAX_PF_X` | Organization type: 501(c)(3) taxable private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ |
-| `SB_00_ORG_TYPE_501C_X` | Organization type: 501(c) organization (subsection in attribute organization501cTypeTxt) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ |
-| `SB_00_SPECIAL_RULE_33PCT_X` | Special Rule: 501(c)(3) org meeting the 33-1/3% support test | SCHED-B-PART-01 | checkbox | 990 + 990-EZ |
+| Variable | Description | Location | Type | Scope | % Reporting |
+|:---|:---|:---|:---|:---|:---|
+| `SB_00_GENERAL_RULE_X` | General Rule applies (contributor gave \$5,000 or more) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 4.9% |
+| `SB_00_ORG_TYPE_4947A1_PF_X` | Organization type: 4947(a)(1) nonexempt charitable trust treated as a private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| `SB_00_ORG_TYPE_501C3_EXEMPT_PF_X` | Organization type: 501(c)(3) exempt private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | 5.2% |
+| `SB_00_ORG_TYPE_501C3_TAX_PF_X` | Organization type: 501(c)(3) taxable private foundation | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| `SB_00_ORG_TYPE_501C_X` | Organization type: 501(c) organization (subsection in attribute organization501cTypeTxt) | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
+| `SB_00_SPECIAL_RULE_33PCT_X` | Special Rule: 501(c)(3) org meeting the 33-1/3% support test | SCHED-B-PART-01 | checkbox | 990 + 990-EZ | \<0.1% |
 
 ### Part II - Noncash Property
 
 `SB-P02-T01-NONCASH-PROPERTY`MANYone row per repeated item
 
-| Variable | Description | Location | Type | Scope |
-|:---|:---|:---|:---|:---|
-| `SB_02_NONCASH_CONTRIBUTOR_NUM` | Noncash property: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ |
-| `SB_02_NONCASH_DATE_RECEIVED` | Date noncash property received | SCHED-B-PART-01 | date | 990 + 990-EZ |
-| `SB_02_NONCASH_PROP_DESC` | Description of noncash property given | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_02_NONCASH_PROP_FMV` | FMV (or estimate) of noncash property | SCHED-B-PART-01 | numeric | 990 + 990-EZ |
+| Variable | Description | Location | Type | Scope | % Reporting |
+|:---|:---|:---|:---|:---|:---|
+| `SB_02_NONCASH_CONTRIBUTOR_NUM` | Noncash property: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
+| `SB_02_NONCASH_DATE_RECEIVED` | Date noncash property received | SCHED-B-PART-01 | date | 990 + 990-EZ | 1.2% |
+| `SB_02_NONCASH_PROP_DESC` | Description of noncash property given | SCHED-B-PART-01 | text | 990 + 990-EZ | 1.3% |
+| `SB_02_NONCASH_PROP_FMV` | FMV (or estimate) of noncash property | SCHED-B-PART-01 | numeric | 990 + 990-EZ | 1.3% |
 
 ### Part III - Exclusively Religious, Charitable, etc., Contributions to Organizations Described in Section 501(c)(7), (8), or (10)
 
 `SB-P03-T01-EXCLUSIVELY-RELIGIOUS`MANYone row per repeated item
 
-| Variable | Description | Location | Type | Scope |
-|:---|:---|:---|:---|:---|
-| `SB_03_CONTRIBUTOR_NUM` | Exclusively religious etc. gift: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ |
-| `SB_03_GIFT_HOW_HELD` | Description of how gift is held | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_GIFT_PURPOSE` | Purpose of gift | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_GIFT_USE` | Use of gift | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_TRANSFEREE_ADDR_CITY` | Transferee address - city | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_TRANSFEREE_ADDR_CNTR` | Transferee address - country | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_TRANSFEREE_ADDR_L1` | Transferee address - line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_TRANSFEREE_ADDR_STATE` | Transferee address - state/province | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_TRANSFEREE_ADDR_ZIP` | Transferee address - ZIP/postal code | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_TRANSFEREE_NAME_ORG_L1` | Transferee name - business, line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_TRANSFEREE_NAME_PERS` | Transferee name - individual | SCHED-B-PART-01 | text | 990 + 990-EZ |
-| `SB_03_TRANSFEREE_RELATIONSHIP` | Relationship of transferor to transferee | SCHED-B-PART-01 | text | 990 + 990-EZ |
+| Variable | Description | Location | Type | Scope | % Reporting |
+|:---|:---|:---|:---|:---|:---|
+| `SB_03_CONTRIBUTOR_NUM` | Exclusively religious etc. gift: contributor number from Part I | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
+| `SB_03_GIFT_HOW_HELD` | Description of how gift is held | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SB_03_GIFT_PURPOSE` | Purpose of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SB_03_GIFT_USE` | Use of gift | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SB_03_TRANSFEREE_ADDR_CITY` | Transferee address - city | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SB_03_TRANSFEREE_ADDR_CNTR` | Transferee address - country | SCHED-B-PART-01 | text | 990 + 990-EZ |  |
+| `SB_03_TRANSFEREE_ADDR_L1` | Transferee address - line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SB_03_TRANSFEREE_ADDR_STATE` | Transferee address - state/province | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SB_03_TRANSFEREE_ADDR_ZIP` | Transferee address - ZIP/postal code | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SB_03_TRANSFEREE_NAME_ORG_L1` | Transferee name - business, line 1 | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SB_03_TRANSFEREE_NAME_PERS` | Transferee name - individual | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
+| `SB_03_TRANSFEREE_RELATIONSHIP` | Relationship of transferor to transferee | SCHED-B-PART-01 | text | 990 + 990-EZ | \<0.1% |
 
 `SB-P03-T00-EXCLUSIVELY-RELIGIOUS`ONEone row per filing
 
-| Variable | Description | Location | Type | Scope |
-|:---|:---|:---|:---|:---|
-| `SB_03_CONTR_UNDER_1000_TOT` | Total of exclusively religious, charitable, etc. contributions of \$1,000 or less | SCHED-B-PART-01 | numeric | 990 + 990-EZ |
+| Variable | Description | Location | Type | Scope | % Reporting |
+|:---|:---|:---|:---|:---|:---|
+| `SB_03_CONTR_UNDER_1000_TOT` | Total of exclusively religious, charitable, etc. contributions of \$1,000 or less | SCHED-B-PART-01 | numeric | 990 + 990-EZ | \<0.1% |
 
 ## Schedule C: Political Campaign and Lobbying Activities
 
@@ -369,27 +379,27 @@ or MANY (one row per repeated item).
 
 `SC-P02-T01-AFFILIATED-GROUP`MANYone row per repeated item
 
-| Variable | Description | Location | Type | Scope |
-|:---|:---|:---|:---|:---|
-| `SC_02_AFFIL_ADDR_CITY` | Affiliated group member city | SCHED-C-PART-02-A | text | 990 + 990-EZ |
-| `SC_02_AFFIL_ADDR_L1` | Affiliated group member street address line 1 | SCHED-C-PART-02-A | text | 990 + 990-EZ |
-| `SC_02_AFFIL_ADDR_L2` | Affiliated group member street address line 2 | SCHED-C-PART-02-A | text | 990 + 990-EZ |
-| `SC_02_AFFIL_ADDR_STATE` | Affiliated group member state | SCHED-C-PART-02-A | text | 990 + 990-EZ |
-| `SC_02_AFFIL_ADDR_ZIP` | Affiliated group member ZIP code | SCHED-C-PART-02-A | text | 990 + 990-EZ |
-| `SC_02_AFFIL_EIN` | Affiliated group member EIN (Schedule C Part II-A affiliated group schedule) | SCHED-C-PART-02-A | text | 990 + 990-EZ |
-| `SC_02_AFFIL_ELECTING_X` | Affiliated group member is an electing (501(h)) organization | SCHED-C-PART-02-A | checkbox | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_DIRECT_LOB` | Affiliated member - total direct lobbying expenditures (line 1b) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_GRASS_LOB` | Affiliated member - total grassroots lobbying expenditures (line 1a) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_GRASS_M_NONTAX` | Affiliated member - grassroots lobbying minus grassroots nontaxable amount (line 1h) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_GRASS_NONTAX` | Affiliated member - grassroots nontaxable amount (line 1g) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_LOB_M_NONTAX` | Affiliated member - total lobbying expenditures minus lobbying nontaxable amount (line 1i) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_LOB_NONTAX` | Affiliated member - lobbying nontaxable amount (line 1f) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_OTH_EXEMPT` | Affiliated member - other exempt purpose expenditures (line 1d) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_SHARE_EXCESS` | Affiliated member - share of excess lobbying expenditures | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_TOT_EXEMPT` | Affiliated member - total exempt purpose expenditures (line 1e) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_EXP_TOT_LOB` | Affiliated member - total lobbying expenditures (line 1c) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ |
-| `SC_02_AFFIL_NAME_L1` | Affiliated group member name line 1 | SCHED-C-PART-02-A | text | 990 + 990-EZ |
-| `SC_02_AFFIL_NAME_L2` | Affiliated group member name line 2 | SCHED-C-PART-02-A | text | 990 + 990-EZ |
+| Variable | Description | Location | Type | Scope | % Reporting |
+|:---|:---|:---|:---|:---|:---|
+| `SC_02_AFFIL_ADDR_CITY` | Affiliated group member city | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_ADDR_L1` | Affiliated group member street address line 1 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_ADDR_L2` | Affiliated group member street address line 2 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_ADDR_STATE` | Affiliated group member state | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_ADDR_ZIP` | Affiliated group member ZIP code | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EIN` | Affiliated group member EIN (Schedule C Part II-A affiliated group schedule) | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_ELECTING_X` | Affiliated group member is an electing (501(h)) organization | SCHED-C-PART-02-A | checkbox | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_DIRECT_LOB` | Affiliated member - total direct lobbying expenditures (line 1b) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_GRASS_LOB` | Affiliated member - total grassroots lobbying expenditures (line 1a) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_GRASS_M_NONTAX` | Affiliated member - grassroots lobbying minus grassroots nontaxable amount (line 1h) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_GRASS_NONTAX` | Affiliated member - grassroots nontaxable amount (line 1g) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_LOB_M_NONTAX` | Affiliated member - total lobbying expenditures minus lobbying nontaxable amount (line 1i) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_LOB_NONTAX` | Affiliated member - lobbying nontaxable amount (line 1f) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_OTH_EXEMPT` | Affiliated member - other exempt purpose expenditures (line 1d) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_SHARE_EXCESS` | Affiliated member - share of excess lobbying expenditures | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_TOT_EXEMPT` | Affiliated member - total exempt purpose expenditures (line 1e) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_EXP_TOT_LOB` | Affiliated member - total lobbying expenditures (line 1c) | SCHED-C-PART-02-A | numeric | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_NAME_L1` | Affiliated group member name line 1 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
+| `SC_02_AFFIL_NAME_L2` | Affiliated group member name line 2 | SCHED-C-PART-02-A | text | 990 + 990-EZ | \<0.1% |
 
 ### Part III - Lobbying and Political Activities of Section 501(c)(4), (5), and (6) Organizations (III-A, III-B)
 
@@ -449,11 +459,11 @@ or MANY (one row per repeated item).
 
 [TABLE]
 
-`SD-P07-T01-INVESTMENTS-OTH-DERIVATIVES`ONEone row per filing
+`SD-P07-T00-INVESTMENTS-OTH-DERIVATIVES`ONEone row per filing
 
 [TABLE]
 
-`SD-P07-T01-INVESTMENTS-OTH-EQUITY`ONEone row per filing
+`SD-P07-T00-INVESTMENTS-OTH-EQUITY`ONEone row per filing
 
 [TABLE]
 
@@ -581,7 +591,7 @@ or MANY (one row per repeated item).
 
 ## Schedule G: Supplemental Information Regarding Fundraising or Gaming Activities
 
-*Filed with: 990, 990-EZ. 139 variables in 6 tables.*
+*Filed with: 990, 990-EZ. 139 variables in 5 tables.*
 
 ### Part I - Fundraising Activities
 
@@ -596,10 +606,6 @@ or MANY (one row per repeated item).
 ### Part II - Fundraising Events
 
 `SG-P02-T00-FUNDRAISING-EVENTS`ONEone row per filing
-
-[TABLE]
-
-`SG-P02-T01-FUNDRAISING-EVENTS`ONEone row per filing
 
 [TABLE]
 
@@ -673,7 +679,7 @@ or MANY (one row per repeated item).
 
 ### Lines from earlier versions of the schedule (Part V, Section B facility policies)
 
-`SH-P99-T00-FAP-COMMUNITY-BENEFIT-POLICY`MANYone row per repeated item
+`SH-P99-T01-FAP-COMMUNITY-BENEFIT-POLICY`MANYone row per repeated item
 
 [TABLE]
 
@@ -795,9 +801,9 @@ or MANY (one row per repeated item).
 
 `SL-P02-T00-LOANS-INTERESTED-PERS`ONEone row per filing
 
-| Variable | Description | Location | Type | Scope |
-|:---|:---|:---|:---|:---|
-| `SL_02_LOAN_BALANCE_DUE_TOT` | Total balance due | SCHED-L-PART-02-COL-F-TOT | numeric | 990 + 990-EZ |
+| Variable | Description | Location | Type | Scope | % Reporting |
+|:---|:---|:---|:---|:---|:---|
+| `SL_02_LOAN_BALANCE_DUE_TOT` | Total balance due | SCHED-L-PART-02-COL-F-TOT | numeric | 990 + 990-EZ | 1.8% |
 
 `SL-P02-T01-LOANS-INTERESTED-PERS`MANYone row per repeated item
 
