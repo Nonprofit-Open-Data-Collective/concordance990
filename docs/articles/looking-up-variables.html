@@ -33,6 +33,7 @@
   <button class="nav-link dropdown-toggle" type="button" id="dropdown-guides" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Guides</button>
   <ul class="dropdown-menu" aria-labelledby="dropdown-guides">
 <li><a class="dropdown-item" href="../articles/looking-up-variables.html">Looking up tables and variables</a></li>
+    <li><a class="dropdown-item" href="../articles/variable-pages.html">Validation pages for every variable</a></li>
     <li><a class="dropdown-item" href="../articles/table-structure.html">The component tables</a></li>
     <li><a class="dropdown-item" href="../articles/migration.html">From the v1 concordance to v2</a></li>
     <li><a class="dropdown-item" href="../articles/building.html">How the concordance tables are built</a></li>
@@ -180,13 +181,29 @@ no years (<code>-</code>) are in the IRS schemas but have not been seen
 in filings.</p>
 </div>
 <div class="section level3">
+<h3 id="questions-about-the-raw-data-open-the-validation-page">Questions about the raw data? Open the validation page<a class="anchor" aria-label="anchor" href="#questions-about-the-raw-data-open-the-validation-page"></a>
+</h3>
+<p>Every variable has a validation page built from the e-filed returns
+(TY2009-2024): the value checks and flags with the reviewer’s decisions,
+the xpaths and the years each was used, filings and fill rate by tax
+year, a summary of the values, and example filings with links to the
+XML. <code>report = TRUE</code> opens it in the browser:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9_01_REV_TOT_CY"</span>, report <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
+<p><code><a href="../reference/variable_page_url.html">variable_page_url()</a></code> gives the address without opening
+it:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/variable_page_url.html">variable_page_url</a></span><span class="op">(</span><span class="st">"F9_01_REV_TOT_CY"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; [1] "https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_01_REV_TOT_CY.html"</span></span></code></pre></div>
+</div>
+<div class="section level3">
 <h3 id="families-of-alternate-versions">Families of alternate versions<a class="anchor" aria-label="anchor" href="#families-of-alternate-versions"></a>
 </h3>
 <p>A few lines of the form are asked differently on the 990 and the
 990-EZ, so they are separate variables linked in a
 <strong>family</strong>. The card shows the family and its
 definition:</p>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9_04_SCHED_B_REQ_X"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── F9_04_SCHED_B_REQ_X ───────────────────────────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt;   <span style="font-weight: bold;">Label      </span> Required to complete Schedule B [x]</span></span>
@@ -214,7 +231,7 @@ definition:</p>
 appear on the form, under a header with the part, the database and
 whether the table has one row per filing (<code>ONE</code>) or one row
 per repeated item (<code>MANY</code>):</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9-P07-T02-CONTRACTORS"</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── F9-P07-T02-CONTRACTORS ────────────────────────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt; Part VII - Compensation of Officers, Directors, Trustees, Key Employees, Highest</span></span>
@@ -247,7 +264,7 @@ per repeated item (<code>MANY</code>):</p>
 <p>The listing fits the console. When the console is too narrow for the
 label to share a line with the other columns, the label moves under each
 row, as above. In a wider console it is a column:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9-P07-T02-CONTRACTORS"</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">4</span>, width <span class="op">=</span> <span class="fl">140</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── F9-P07-T02-CONTRACTORS ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt; Part VII - Compensation of Officers, Directors, Trustees, Key Employees, Highest Compensated Employees, and Independent Contractors | F990</span></span>
@@ -262,7 +279,7 @@ row, as above. In a wider console it is a column:</p>
 <p>Long tables show the first 50 variables; <code>n</code> changes that.
 <code>description = TRUE</code> prints each variable’s description under
 it:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9-P01-T00-SUMMARY"</span><span class="op">)</span>, n <span class="op">=</span> <span class="fl">3</span>, description <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; ── F9-P01-T00-SUMMARY ────────────────────────────────────────────────────────────────────</span></span>
 <span><span class="co">#&gt; Part I - Summary | F990 | one row per filing | 41 variables</span></span>
@@ -289,7 +306,7 @@ table has one.</p>
 <h2 id="when-a-name-is-not-found">When a name is not found<a class="anchor" aria-label="anchor" href="#when-a-name-is-not-found"></a>
 </h2>
 <p>A misspelled name is an error that suggests the closest names:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9_00_EIN"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> No table or variable 'F9_00_EIN'. Did you mean: F9_00_ORG_EIN, F9_00_AFFIL_EIN, F9_04_DAF_X, F9_04_LTD_X, F9_04_DOA_X?</span></span>
@@ -297,13 +314,13 @@ table has one.</p>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> No table or variable 'F9-P01-T00-SUMARY'. Did you mean: F9-P01-T00-SUMMARY, F9-P01-T00-SUMMARY-EZ, F9-P00-T00-HEADER, F9-P02-T00-SIGNATURE, F9-P11-T00-ASSETS?</span></span></code></pre></div>
 <p><code>form</code> limits the search to one database:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"PF-P01-T00-REVENUE-EXPENSE"</span>, form <span class="op">=</span> <span class="st">"F990"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;">:</span></span></span>
 <span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> No table or variable 'PF-P01-T00-REVENUE-EXPENSE' in F990. Did you mean: F9-P08-T02-REVENUE-MISC, F9-P08-T00-REVENUE, F9-P08-T01-REVENUE-PROGRAMS, F9-P09-T00-EXPENSES, SF-P01-T00-FRGN-ACTS?</span></span></code></pre></div>
 <p>One call looks up either tables or variables. To see a variable in
 its table, look up the variable, then its table:</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">v</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9_06_DISCLOSURE_STATES_FILED"</span><span class="op">)</span></span>
 <span><span class="va">v</span><span class="op">$</span><span class="va">rdb_table</span></span>
 <span><span class="co">#&gt; [1] "F9-P06-T00-GOVERNANCE"</span></span></code></pre></div>
@@ -314,7 +331,7 @@ its table, look up the variable, then its table:</p>
 <p>What prints is formatting only. <code><a href="../reference/dd.html">dd()</a></code> returns a
 data.table, one row per variable, so you can filter it, join it to your
 data or write it out:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9-P01-T00-SUMMARY"</span><span class="op">)</span></span>
 <span><span class="va">x</span><span class="op">[</span><span class="va">variable_scope</span> <span class="op">==</span> <span class="st">"PZ"</span>, <span class="fu">.</span><span class="op">(</span><span class="va">variable_name</span>, <span class="va">label</span><span class="op">)</span><span class="op">]</span><span class="op">[</span><span class="fl">1</span><span class="op">:</span><span class="fl">5</span><span class="op">]</span></span>
 <span><span class="co">#&gt;                variable_name                                                      label</span></span>
@@ -326,7 +343,7 @@ data or write it out:</p>
 <span><span class="co">#&gt; 5:          F9_01_REV_OTH_CY                               Other revenue - current year</span></span></code></pre></div>
 <p>Once you select columns the result prints as a plain data.table, as
 above. The xpaths are in an attribute:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">xp</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/attr.html" class="external-link">attr</a></span><span class="op">(</span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9_01_REV_TOT_CY"</span>, xpaths <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="st">"xpaths"</span><span class="op">)</span></span>
 <span><span class="va">xp</span><span class="op">[</span>, <span class="fu">.</span><span class="op">(</span><span class="va">form_type</span>, <span class="va">earliest_version</span>, <span class="va">latest_version</span>, <span class="va">pct_filers_reporting</span><span class="op">)</span><span class="op">]</span></span>
 <span><span class="co">#&gt;    form_type earliest_version latest_version pct_filers_reporting</span></span>
@@ -340,7 +357,7 @@ above. The xpaths are in an attribute:</p>
 <p>To find variables by keyword, search the whole dictionary with
 <code><a href="../reference/data_dictionary.html">data_dictionary()</a></code> and pass the names to
 <code><a href="../reference/dd.html">dd()</a></code>:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">d</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/data_dictionary.html">data_dictionary</a></span><span class="op">(</span><span class="st">"F990"</span><span class="op">)</span></span>
 <span><span class="va">hits</span> <span class="op">&lt;-</span> <span class="va">d</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/grep.html" class="external-link">grepl</a></span><span class="op">(</span><span class="st">"volunteer"</span>, <span class="va">label</span>, ignore.case <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">variable_name</span><span class="op">]</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="va">hits</span>, fields <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"label"</span>, <span class="st">"rdb_table"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
@@ -392,7 +409,7 @@ above. The xpaths are in an attribute:</p>
 <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code>), a <code><a href="../reference/dd.html">dd()</a></code> result renders as markdown
 tables instead of console text, so the same call documents variables in
 a report:</p>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9_01_REV_TOT_CY"</span>, xpaths <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
 <p><strong>F9_01_REV_TOT_CY</strong></p>
 <table class="table">
@@ -508,7 +525,7 @@ a report:</p>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/dd.html">dd</a></span><span class="op">(</span><span class="st">"F9-P07-T02-CONTRACTORS"</span>, fields <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"label"</span>, <span class="st">"data_type_simple"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p><strong>F9-P07-T02-CONTRACTORS</strong>: Part VII - Compensation of
 Officers, Directors, Trustees, Key Employees, Highest Compensated

@@ -7,6 +7,16 @@
   as a listing fitted to the console. In R Markdown, results render as
   markdown tables. Misspelled names get suggestions. See the new article
   "Looking up tables and variables" (`vignette("looking-up-variables")`).
+* New validation pages, one per variable (3,366), published with the site at
+  `variables/`: dictionary entry, value checks, flags with the reviewer's
+  decision, the xpaths and the years each was used, coverage and fill rate by
+  tax year, a value summary, and example filings with links to the XML.
+  `render_variable_pages()` writes them from the filing evidence
+  (`data-raw/render-variable-pages.R`). `dd(x, report = TRUE)` opens the page
+  of a variable, or a table's section of the index; `variable_page_url()`
+  gives the address. See `vignette("variable-pages")`.
+* `flag_xpaths()` no longer raises GAP flags for the few filings with no
+  return type (132 false GAP flags in the 990 evidence).
 * `data_dictionary()` also returns `family_id`.
 * Fix 25 corrects two labels: `SD_02_EMT_STAFF_HOURS_ENFORCE` ("conservation
   easements", was "conversation") and `PF_01_REV_CONTR_REC_BOOKS` (was the

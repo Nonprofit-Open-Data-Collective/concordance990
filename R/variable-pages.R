@@ -26,7 +26,8 @@
 #'   evidence directory, which may be older than the concordance.
 #' @param out_dir Output directory; `docs/variables` publishes the pages
 #'   with the site.
-#' @param index Also write `index.html` listing the pages written.
+#' @param index Also write the indexes: `index.html` listing the forms and
+#'   `<form>/index.html` listing the pages of each form by table.
 #' @return Invisibly, a data.table with one row per page.
 #' @export
 render_variable_pages <- function(variables = NULL, evidence = c(F990 = "evidence", F990PF = "evidence/pf"),
@@ -56,7 +57,7 @@ render_variable_pages <- function(variables = NULL, evidence = c(F990 = "evidenc
     writeLines(p$html, file.path(sub_dir, paste0(v, ".html")), useBytes = TRUE)
     p$summary
   }))
-  if (index) writeLines(variable_index(res, ev), file.path(out_dir, "index.html"), useBytes = TRUE)
+  if (index) write_variable_indexes(res, out_dir)
   invisible(res)
 }
 
@@ -356,18 +357,51 @@ pg_examples <- function(ex, x) {
            cls = "tbl ex", num = 1)
 }
 
-variable_index <- function(res, ev) {
-  res <- res[order(variable_name)]
-  rows <- lapply(seq_len(nrow(res)), function(i) with(res[i], c(
-    sprintf("<a href=\"%s/%s.html\"><code>%s</code></a>", page_dir(variable_name), variable_name, variable_name), pg_esc(label),
-    sprintf("<code>%s</code>", rdb_table), report_type, pg_k(n_filings),
-    paste(c(if (n_fail) pg_status("fail"), if (n_warn) pg_status("warn"),
-            if (n_flags_open) sprintf("%d open flag%s", n_flags_open, if (n_flags_open > 1) "s" else "")), collapse = " ")
-  )))
-  paste(c(pg_head("Variable pages", "Light validation pages, one per variable", root = ""),
-          "<header><p class=\"kicker\"><a href=\"../index.html\">concordance990</a> · IRS 990 Master Concordance</p>",
-          "<h1>Variable pages</h1>",
-          sprintf("<p class=\"lede\">One page per variable: its dictionary entry, checks and flags, the xpaths pooled into it, coverage by tax year, values, and example filings. %d pages.</p></header>", nrow(res)),
-          pg_table(c("Variable", "Label", "Table", "Type", "Filings", "Attention"), rows, num = 5),
-          "</main></body></html>"), collapse = "\n")
+# The index: one page listing the forms, and one page per form folder listing
+# its variables by table (in form order), with an anchor per table.
+write_variable_indexes <- function(res, out_dir) {
+  res <- data.table::copy(res)[, dir := page_dir(variable_name)]
+  tb <- cc_tables()[, .(rdb_table = table_id, table_order = as.integer(sort_order))]
+  res <- merge(res, tb, by = "rdb_table", all.x = TRUE, sort = FALSE)
+  attention <- function(r) paste(c(if (r$n_fail) pg_status("fail"), if (r$n_warn) pg_status("warn"),
+                                   if (r$n_flags_open) sprintf("%d open flag%s", r$n_flags_open, if (r$n_flags_open > 1) "s" else "")),
+                                 collapse = " ")
+  for (d in unique(res$dir)) {
+    r <- res[dir == d][order(table_order, variable_name)]
+    body <- unlist(lapply(unique(r$rdb_table), function(t) {
+      rt <- r[rdb_table == t]
+      c(sprintf("<h2 id=\"%s\"><code>%s</code></h2>", tolower(t), pg_esc(t)),
+        pg_table(c("Variable", "Label", "Type", "Filings", "Attention"),
+                 lapply(seq_len(nrow(rt)), function(i) c(
+                   sprintf("<a href=\"%s.html\"><code>%s</code></a>", rt$variable_name[i], rt$variable_name[i]),
+                   pg_esc(rt$label[i]), rt$report_type[i], pg_k(rt$n_filings[i]), attention(rt[i]))), num = 4))
+    }))
+    writeLines(c(pg_head(paste(page_form_title(d), "- variable pages"), "Validation pages by table"),
+                 "<header><p class=\"kicker\"><a href=\"../index.html\">Variable pages</a> \u00B7 IRS 990 Master Concordance</p>",
+                 sprintf("<h1>%s</h1>", pg_esc(page_form_title(d))),
+                 sprintf("<p class=\"lede\">%d variables in %d tables.</p></header>", nrow(r), data.table::uniqueN(r$rdb_table)),
+                 body, "</main></body></html>"),
+               file.path(out_dir, d, "index.html"), useBytes = TRUE)
+  }
+  s <- res[, .(n = .N, fail = sum(n_fail > 0), warn = sum(n_warn > 0), flags = sum(n_flags_open > 0),
+               unobserved = sum(n_filings == 0)), by = dir]
+  s <- s[order(match(dir, c("F9", "PF")), dir)]
+  rows <- lapply(seq_len(nrow(s)), function(i) with(s[i], c(
+    sprintf("<a href=\"%s/index.html\">%s</a>", dir, pg_esc(page_form_title(dir))), pg_n(n),
+    pg_n(fail), pg_n(warn), pg_n(flags), pg_n(unobserved))))
+  writeLines(c(pg_head("Variable pages", "Light validation pages, one per variable", root = ""),
+               "<header><p class=\"kicker\"><a href=\"../index.html\">concordance990</a> \u00B7 IRS 990 Master Concordance</p>",
+               "<h1>Variable pages</h1>",
+               sprintf("<p class=\"lede\">One page per variable: its dictionary entry, checks and flags, the xpaths pooled into it, coverage by tax year, values, and example filings with links to the XML. %s pages. See <a href=\"../articles/variable-pages.html\">how to read them</a>.</p></header>", pg_n(nrow(res))),
+               pg_table(c("Form or schedule", "Variables", "Failing a check", "With warnings", "With open flags", "Never observed"),
+                        rows, num = 2:6),
+               "</main></body></html>"),
+             file.path(out_dir, "index.html"), useBytes = TRUE)
+}
+
+page_form_title <- function(d) {
+  f <- cc_forms()
+  id <- ifelse(d == "F9", "F990", ifelse(d == "PF", "F990PF", paste0("SCHED-", substr(d, 2, 2))))
+  t <- f$title[match(id, f$form_id)]
+  ifelse(is.na(t), d, sub(":.*", "", t))
 }

@@ -2,20 +2,24 @@
 % Please edit documentation in R/dd.R
 \name{variable_page_url}
 \alias{variable_page_url}
-\title{Address of a variable's validation page}
+\title{Address of a validation page}
 \usage{
-variable_page_url(v = character())
+variable_page_url(v = character(), table = NULL)
 }
 \arguments{
 \item{v}{Variable names; \code{character()} for the index of pages.}
+
+\item{table}{Table ids, instead of \code{v}: the table's section of the index
+of its form.}
 }
 \value{
 The URLs (or local paths) of the pages written by
 \code{\link[=render_variable_pages]{render_variable_pages()}}.
 }
 \description{
-Address of a variable's validation page
+Address of a validation page
 }
 \examples{
 variable_page_url("F9_01_REV_TOT_CY")
+variable_page_url(table = "F9-P01-T00-SUMMARY")
 }

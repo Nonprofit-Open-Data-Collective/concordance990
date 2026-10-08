@@ -13,6 +13,8 @@ For parsers and data users (ef2, panel990, fiscal and others).
 - [`dd()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/dd.md)
   [`print(`*`<cc_dd>`*`)`](https://nonprofit-open-data-collective.github.io/concordance990/reference/dd.md)
   : Look up the data dictionary
+- [`variable_page_url()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/variable_page_url.md)
+  : Address of a validation page
 - [`table_names()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/table_names.md)
   : Table names
 - [`cc_forms()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/cc_tables.md)
@@ -131,6 +133,9 @@ For parsers and data users (ef2, panel990, fiscal and others).
 
 - [`render_reports()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/render_reports.md)
   : Render validation reports
+
+- [`render_variable_pages()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/render_variable_pages.md)
+  : Render light validation pages
 
 - [`reports`](https://nonprofit-open-data-collective.github.io/concordance990/reference/reports.md)
   : Validation reports, one per variable

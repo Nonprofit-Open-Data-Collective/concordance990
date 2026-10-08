@@ -25,8 +25,8 @@ them. They are stored in the \code{"xpaths"} attribute of the result.}
 
 \item{report}{If \code{TRUE}, open the validation page of each variable (up to
 five) in the browser: coverage by tax year, value checks, flags and
-example filings with links to the XML. For a table, opens the index of
-variable pages. The pages are on the package website; set
+example filings with links to the XML. For a table, opens the table's
+section of the index of variable pages. The pages are on the package website; set
 \code{options(concordance990.variable_pages = "<dir or URL>")} to use pages
 rendered locally by \code{\link[=render_variable_pages]{render_variable_pages()}}. Outside an interactive
 session the addresses are printed instead.}

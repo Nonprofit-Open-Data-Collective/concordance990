@@ -26,7 +26,8 @@ evidence directory, which may be older than the concordance.}
 \item{out_dir}{Output directory; \code{docs/variables} publishes the pages
 with the site.}
 
-\item{index}{Also write \code{index.html} listing the pages written.}
+\item{index}{Also write the indexes: \code{index.html} listing the forms and
+\verb{<form>/index.html} listing the pages of each form by table.}
 }
 \value{
 Invisibly, a data.table with one row per page.

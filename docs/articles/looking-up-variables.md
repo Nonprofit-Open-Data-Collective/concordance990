@@ -102,6 +102,26 @@ The IRS renamed most elements in 2013, so a variable usually pools a
 2009-2012 xpath and a 2013-2024 xpath, for each return type. Xpaths with
 no years (`-`) are in the IRS schemas but have not been seen in filings.
 
+### Questions about the raw data? Open the validation page
+
+Every variable has a validation page built from the e-filed returns
+(TY2009-2024): the value checks and flags with the reviewer’s decisions,
+the xpaths and the years each was used, filings and fill rate by tax
+year, a summary of the values, and example filings with links to the
+XML. `report = TRUE` opens it in the browser:
+
+``` r
+dd("F9_01_REV_TOT_CY", report = TRUE)
+```
+
+[`variable_page_url()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/variable_page_url.md)
+gives the address without opening it:
+
+``` r
+variable_page_url("F9_01_REV_TOT_CY")
+#> [1] "https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_01_REV_TOT_CY.html"
+```
+
 ### Families of alternate versions
 
 A few lines of the form are asked differently on the 990 and the 990-EZ,

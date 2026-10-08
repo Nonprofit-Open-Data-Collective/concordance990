@@ -22,8 +22,8 @@
 #'   them. They are stored in the `"xpaths"` attribute of the result.
 #' @param report If `TRUE`, open the validation page of each variable (up to
 #'   five) in the browser: coverage by tax year, value checks, flags and
-#'   example filings with links to the XML. For a table, opens the index of
-#'   variable pages. The pages are on the package website; set
+#'   example filings with links to the XML. For a table, opens the table's
+#'   section of the index of variable pages. The pages are on the package website; set
 #'   `options(concordance990.variable_pages = "<dir or URL>")` to use pages
 #'   rendered locally by [render_variable_pages()]. Outside an interactive
 #'   session the addresses are printed instead.
@@ -66,39 +66,49 @@ dd <- function(x, form = NULL, fields = NULL, xpaths = FALSE, report = FALSE) {
   data.table::setattr(d, "dd_tables", meta)
   if (xpaths) data.table::setattr(d, "xpaths", dd_xpaths(unique(d$variable_name), form))
   data.table::setattr(d, "class", c("cc_dd", class(d)))
-  if (report) dd_open_report(if (hit$type == "variable") hit$names else character())
+  if (report) dd_open_report(if (hit$type == "variable") variable_page_url(hit$names) else variable_page_url(table = hit$names))
   d
 }
 
-#' Address of a variable's validation page
+#' Address of a validation page
 #'
 #' @param v Variable names; `character()` for the index of pages.
+#' @param table Table ids, instead of `v`: the table's section of the index
+#'   of its form.
 #' @return The URLs (or local paths) of the pages written by
 #'   [render_variable_pages()].
 #' @export
 #' @examples
 #' variable_page_url("F9_01_REV_TOT_CY")
-variable_page_url <- function(v = character()) {
+#' variable_page_url(table = "F9-P01-T00-SUMMARY")
+variable_page_url <- function(v = character(), table = NULL) {
   base <- sub("/+$", "", getOption("concordance990.variable_pages",
                                    "https://nonprofit-open-data-collective.github.io/concordance990/variables"))
+  if (!is.null(table)) {
+    # the index of the folder holding the table's variables
+    first <- dd_index()[rdb_table %in% table, .(v = variable_name[1]), by = rdb_table]
+    dir <- page_dir(first$v[match(table, first$rdb_table)])
+    return(paste0(base, "/", dir, "/index.html#", tolower(table)))
+  }
   if (!length(v)) return(paste0(base, "/index.html"))
   paste0(base, "/", page_dir(v), "/", v, ".html")
 }
 
-dd_open_report <- function(v) {
-  url <- variable_page_url(v)
+dd_open_report <- function(url) {
   if (length(url) > 5L) {
-    message(sprintf("Opening the first 5 of %d variable pages.", length(url)))
+    message(sprintf("Opening the first 5 of %d pages.", length(url)))
     url <- url[1:5]
   }
+  file <- sub("#.*$", "", url)
   local <- !grepl("^https?://", url)
-  if (any(local & !file.exists(url)))
-    warning("No local page: ", paste(url[local & !file.exists(url)], collapse = ", "), call. = FALSE)
+  if (any(local & !file.exists(file)))
+    warning("No local page: ", paste(file[local & !file.exists(file)], collapse = ", "), call. = FALSE)
   if (!interactive()) {
     message(paste(c("Validation page:", url), collapse = "\n  "))
     return(invisible(url))
   }
-  for (u in url) utils::browseURL(if (grepl("^https?://", u)) u else normalizePath(u, winslash = "/"))
+  for (i in seq_along(url))
+    utils::browseURL(if (local[i]) paste0("file:///", normalizePath(file[i], winslash = "/"), sub("^[^#]*", "", url[i])) else url[i])
   invisible(url)
 }
 
