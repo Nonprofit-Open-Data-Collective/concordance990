@@ -29,5 +29,8 @@ utils::globalVariables(c(
   "i.family_label", "i.family_definition", "i.family_members", "earliest_version", "pct_filers_reporting",
   # render_variable_pages()
   "y0", "y1", "n_rep", "id", "schema_versions", "i.status", "i.note", "key", "p_negative", "p_zero",
-  "q25", "q75", "avg_len", "value", "shape", "n_fail", "n_warn", "n_flags_open", "den", "flag_code", "severity", "dir", "unobserved"
+  "q25", "q75", "avg_len", "value", "shape", "n_fail", "n_warn", "n_flags_open", "den", "flag_code", "severity", "dir", "unobserved",
+  # data_dictionary(), dd_index() and the xpath version fields
+  "variable_scope", "location_code_family", "definition", "current_version", "latest_version",
+  "earliest", "latest", "n_reported", "n_scope", "ord", "schema_version", "set_id", "xsd", "observed"
 ))

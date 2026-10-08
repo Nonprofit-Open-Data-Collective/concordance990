@@ -124,7 +124,7 @@ pg_num <- function(x) {
                               formatC(x, format = "f", digits = 2, big.mark = ",")))
 }
 pg_pct <- function(x, digits = 1) ifelse(is.na(x), "", paste0(formatC(100 * x, format = "f", digits = digits), "%"))
-pg_trunc <- function(x, n) ifelse(nchar(x) > n, paste0(substr(x, 1, n - 1), "…"), x)
+pg_trunc <- function(x, n) ifelse(nchar(x) > n, paste0(substr(x, 1, n - 1), "\u2026"), x)
 
 pg_table <- function(header, rows, cls = "tbl", num = integer()) {
   th <- paste0("<th", ifelse(seq_along(header) %in% num, " class=\"num\"", ""), ">", header, "</th>", collapse = "")
@@ -134,8 +134,8 @@ pg_table <- function(header, rows, cls = "tbl", num = integer()) {
 }
 
 pg_status <- function(s) {
-  lab <- c(pass = "✓ pass", warn = "▲ warn", fail = "⚠ fail", info = "ⓘ info",
-           error = "⚠ error", open = "open", accepted = "✓ accepted", needs_input = "needs input",
+  lab <- c(pass = "\u2713 pass", warn = "\u25B2 warn", fail = "\u26A0 fail", info = "\u24D8 info",
+           error = "\u26A0 error", open = "open", accepted = "\u2713 accepted", needs_input = "needs input",
            deferred = "deferred")
   sprintf("<span class=\"s s-%s\">%s</span>", s, ifelse(s %in% names(lab), lab[s], s))
 }
@@ -168,7 +168,7 @@ variable_page <- function(v, d, xp, ev, flags, skip) {
   parts <- c(
     pg_head(v, d1$label),
     "<header>",
-    "<p class=\"kicker\"><a href=\"../index.html\">Variable pages</a> · IRS 990 Master Concordance</p>",
+    "<p class=\"kicker\"><a href=\"../index.html\">Variable pages</a> \u00B7 IRS 990 Master Concordance</p>",
     sprintf("<h1>%s</h1>", pg_esc(v)),
     sprintf("<p class=\"lede\">%s</p>", pg_esc(d1$label)),
     "</header>",
@@ -180,7 +180,7 @@ variable_page <- function(v, d, xp, ev, flags, skip) {
     "<h2>Values</h2>", pg_values(rtype, st, vals, shp, x),
     "<h2>Example filings</h2>", pg_examples(ev$examples[list(xp$xpath), nomatch = NULL], x),
     sprintf("<footer><p>Evidence: e-filed returns TY%s, built %s from the ef2 DuckDB builds. Checks and flags are recomputed for the current concordance; reviewer decisions come from <code>validation_log.csv</code>. Variable %s, report type <i>%s</i>. Source: <a href=\"https://github.com/Nonprofit-Open-Data-Collective/concordance990\">concordance990</a>.</p></footer>",
-            if (length(years)) paste0(min(years), "–", max(years)) else "?", pg_esc(sub(" .*", "", ev$built)), pg_esc(v), rtype),
+            if (length(years)) paste0(min(years), "\u2013", max(years)) else "?", pg_esc(sub(" .*", "", ev$built)), pg_esc(v), rtype),
     "</main></body></html>")
   fl_open <- if (nrow(fl)) fl[status != "accepted"] else fl
   list(html = paste(parts, collapse = "\n"),
@@ -194,7 +194,7 @@ variable_page <- function(v, d, xp, ev, flags, skip) {
 pg_head <- function(v, label, root = "../") {
   sprintf(paste0("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">",
                  "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
-                 "<title>%s · concordance990</title><meta name=\"description\" content=\"%s\">",
+                 "<title>%s \u00B7 concordance990</title><meta name=\"description\" content=\"%s\">",
                  "<link rel=\"stylesheet\" href=\"%svariables.css\"></head><body><main>"), pg_esc(v), pg_esc(label), root)
 }
 
@@ -204,7 +204,7 @@ pg_dictionary <- function(d, xp) {
   tbl <- paste(sprintf("<a href=\"../../articles/%s#%s\"><code>%s</code></a> (%s)", dict_page, tolower(d$rdb_table),
                        pg_esc(d$rdb_table), tolower(d$rdb_relationship)), collapse = "<br>")
   scope <- d1$variable_scope
-  if (scope %in% names(scope_text)) scope <- paste0(scope, " – ", scope_text[[scope]])
+  if (scope %in% names(scope_text)) scope <- paste0(scope, " \u2013 ", scope_text[[scope]])
   kv <- c(Description = pg_esc(d1$description),
           Table = tbl,
           Part = pg_esc(d1$part_title),
@@ -225,7 +225,7 @@ pg_dictionary <- function(d, xp) {
 
 pg_tiles <- function(x, fl, years) {
   obs <- x[n > 0]
-  yrs <- if (nrow(obs)) paste0(min(obs$y0), "–", max(obs$y1)) else "never"
+  yrs <- if (nrow(obs)) paste0(min(obs$y0), "\u2013", max(obs$y1)) else "never"
   open <- if (nrow(fl)) fl[status != "accepted"] else fl
   tile <- function(v, k) sprintf("<div class=\"tile\"><div class=\"v\">%s</div><div class=\"k\">%s</div></div>", v, k)
   paste0("<div class=\"tiles\">",
@@ -261,7 +261,7 @@ pg_xpaths <- function(x) {
   rows <- lapply(seq_len(nrow(x)), function(i) {
     r <- x[i]
     c(r$id, sprintf("<code class=\"xp\">%s</code>", pg_esc(short_xpath(r$xpath))), pg_esc(r$form_type),
-      if (r$n > 0) paste0(r$y0, "–", r$y1) else "<span class=\"muted\">not observed</span>",
+      if (r$n > 0) paste0(r$y0, "\u2013", r$y1) else "<span class=\"muted\">not observed</span>",
       pg_n(r$n),
       if (!is.na(r$pct_filers_reporting) && nzchar(r$pct_filers_reporting)) paste0(r$pct_filers_reporting, "%") else "",
       if (r$n > 0 && r$n_rep > 0) pg_pct(r$n_rep / r$n) else "")
