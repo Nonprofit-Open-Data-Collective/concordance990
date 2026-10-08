@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_DIVIDEND_SEC_UBIZ_CODE
 
-Business code
+Dividends and interest from securities - business code
 
 - Description: Dividends And Int From Sec Part VII - Business code
 

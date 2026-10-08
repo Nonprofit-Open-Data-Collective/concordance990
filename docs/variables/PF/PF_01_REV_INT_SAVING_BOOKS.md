@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_INT_SAVING_BOOKS
 
-Revenue and Expenses per Books
+Interest on savings and temporary cash investments - revenue and
+expenses per books
 
 - Description: Interest on Savings and Temporary Cash Investments -
   Revenue and Expenses per Books

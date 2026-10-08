@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_OTH_NOTE_EOY_FMV
 
-Fair Market Value
+Other notes and loans receivable - fair market value, end of year
 
 - Description: Other Notes and Loans Receivable - End of Year - Fair
   Market Value

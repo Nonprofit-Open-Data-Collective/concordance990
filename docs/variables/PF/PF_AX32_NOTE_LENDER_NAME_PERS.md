@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX32_NOTE_LENDER_NAME_PERS
 
-Individual
+Lender (mortgages and notes payable) - individual name
 
 - Description: Lenders Name - Individual
 

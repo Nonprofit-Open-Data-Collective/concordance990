@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_LAND_BOY_BV
 
-Book Value
+Land, buildings, and equipment - book value, beginning of year
 
 - Description: Land; Buildings; and Equipment - Beginning of Year - Book
   Value

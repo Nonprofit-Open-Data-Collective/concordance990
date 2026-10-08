@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # SH_06_EXPLANATION_ADDITIONAL
 
-Additional explanations
+Additional explanations (2009 form)
 
 - Description: Additional explanations (see
   SH-FORM-VERSION-2009-PART-06)

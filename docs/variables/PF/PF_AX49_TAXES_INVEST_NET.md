@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX49_TAXES_INVEST_NET
 
-Net Investment Income
+Taxes schedule - net investment income
 
 - Description: Net Investment Income
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TRAVEL_CONF_NET
 
-Net Investment Income
+Travel, conferences, and meetings - net investment income
 
 - Description: Travel; Conferences; and Meetings - Net Investment Income
 

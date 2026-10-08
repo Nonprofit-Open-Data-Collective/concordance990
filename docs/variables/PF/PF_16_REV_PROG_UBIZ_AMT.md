@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_PROG_UBIZ_AMT
 
-Amount
+Program service revenue - unrelated business income
 
 - Description: Program Service Revenue Part VII - Amount
 

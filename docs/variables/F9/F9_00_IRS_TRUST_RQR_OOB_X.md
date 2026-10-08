@@ -6,6 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # F9_00_IRS_TRUST_RQR_OOB_X
 
+Last submission required out-of-band verification
+
 - Description: Verification
 
 - Table:

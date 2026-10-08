@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TOT_EXP_DISBMT_ADJ_NET
 
-Adjusted Net Income
+Total expenses and disbursements - adjusted net income
 
 - Description: Total Expenses and Disbursements - Adjusted Net Income
 

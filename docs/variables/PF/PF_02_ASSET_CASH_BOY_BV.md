@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_CASH_BOY_BV
 
-Book Value
+Cash - book value, beginning of year
 
 - Description: Cash - Beginning of Year - Book Value
 

@@ -6,6 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # F9_00_IRS_TRUST_FED_ASSURANCE_X
 
+Federated assurance level
+
 - Description: Verification
 
 - Table:

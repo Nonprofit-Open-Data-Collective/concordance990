@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_LEGAL_BEN_BOOKS
 
-Revenue and Expenses per Books
+Legal fees - revenue and expenses per books
 
 - Description: Legal Fees - Revenue and Expenses per Books
 

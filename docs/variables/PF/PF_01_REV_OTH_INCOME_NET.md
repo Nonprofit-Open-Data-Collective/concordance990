@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_OTH_INCOME_NET
 
-Net Investment Income
+Other income - net investment income
 
 - Description: Other Income - Net Investment Income
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX39_LIAB_OTH_DESC
 
-Description
+Other liabilities schedule - description
 
 - Description: Other Liabilities - Description
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX45_REDUCT_EXPLANATION
 
-Explanation
+Reduction explanation
 
 - Description: Reduction Explanation Statement - Explanation
 

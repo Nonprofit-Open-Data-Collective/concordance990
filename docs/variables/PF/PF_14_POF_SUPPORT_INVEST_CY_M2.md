@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_SUPPORT_INVEST_CY_M2
 
-Year 2
+Support test: gross investment income - current year minus 2
 
 - Description: Gross Investment Income - Year 2
 

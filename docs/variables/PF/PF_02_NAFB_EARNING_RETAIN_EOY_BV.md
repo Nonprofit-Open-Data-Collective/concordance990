@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_NAFB_EARNING_RETAIN_EOY_BV
 
-Book Value
+Retained earnings - book value, end of year
 
 - Description: Retained Earnings - End of Year - Book Value
 

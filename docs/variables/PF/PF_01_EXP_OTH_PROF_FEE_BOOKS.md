@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_OTH_PROF_FEE_BOOKS
 
-Revenue and Expenses per Books
+Other professional fees - revenue and expenses per books
 
 - Description: Other Professional Fees - Revenue and Expenses per Books
 

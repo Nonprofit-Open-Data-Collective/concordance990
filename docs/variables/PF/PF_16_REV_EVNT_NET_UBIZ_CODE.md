@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_EVNT_NET_UBIZ_CODE
 
-Business code
+Net income from special events - business code
 
 - Description: Net Income Loss From Special Events - Business code
 

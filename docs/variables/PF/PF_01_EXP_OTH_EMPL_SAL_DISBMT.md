@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_OTH_EMPL_SAL_DISBMT
 
-Disbursements for Charitable Purposes
+Other employee salaries and wages - disbursements for charitable
+purposes
 
 - Description: Other Employee Salaries and Wages - Disbursements for
   Charitable Purposes

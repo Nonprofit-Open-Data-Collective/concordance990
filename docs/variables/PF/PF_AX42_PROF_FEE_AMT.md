@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX42_PROF_FEE_AMT
 
-Amount
+Other professional fees schedule - amount
 
 - Description: Other Professional Fees - Amount
 

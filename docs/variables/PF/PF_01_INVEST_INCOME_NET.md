@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_INVEST_INCOME_NET
 
-Net Investment Income
+Net investment income (line 27b)
 
 - Description: Net Investment Income
 

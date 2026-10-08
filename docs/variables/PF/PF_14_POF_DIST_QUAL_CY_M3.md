@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_DIST_QUAL_CY_M3
 
-Year 3
+Qualifying distributions - current year minus 3
 
 - Description: Qualifying Distributions Grp - Year 3
 

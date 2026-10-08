@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_LAND_EOY_FMV
 
-Fair Market Value
+Land, buildings, and equipment - fair market value, end of year
 
 - Description: Land; Buildings; and Equipment - End of Year - Fair
   Market Value

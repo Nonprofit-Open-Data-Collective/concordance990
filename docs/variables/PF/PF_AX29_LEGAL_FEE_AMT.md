@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX29_LEGAL_FEE_AMT
 
-Amount
+Legal fees schedule - amount
 
 - Description: Legal Fees - Amount
 

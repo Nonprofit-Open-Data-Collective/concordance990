@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_LESSOR_85PCT_CY
 
-Current Year
+85% of lesser of adjusted net income or minimum investment return -
+current year
 
 - Description: Percent85 Of Lessor - Current Year
 

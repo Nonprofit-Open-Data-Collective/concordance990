@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_SUPPORT_LARGEST_CY
 
-Current Year
+Support test: largest support from an exempt organization - current year
 
 - Description: Largest Support From EO - Current Year
 

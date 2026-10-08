@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX49_TAXES_INCOME_NET_ADJ
 
-Adjusted Net Income
+Taxes schedule - adjusted net income
 
 - Description: Adjusted Net Income
 

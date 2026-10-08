@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_SALE_ASSET_NET_BOOKS
 
-Revenue and Expenses per Books
+Net gain from sale of assets - revenue and expenses per books
 
 - Description: Net Gain from Sale of Assets - Revenue and Expenses per
   Books

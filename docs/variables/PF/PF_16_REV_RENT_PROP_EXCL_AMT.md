@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_RENT_PROP_EXCL_AMT
 
-Excluded by section 512; 513; or 514: Amount
+Net rental income from personal property - excluded amount
 
 - Description: Excluded by section 512; 513; or 514: Amount
 

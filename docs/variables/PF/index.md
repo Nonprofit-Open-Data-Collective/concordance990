@@ -35,97 +35,97 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_01_EXCESS_REV_OVER_EXP_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXCESS_REV_OVER_EXP_BOOKS.md) | Revenue and Expenses per Books | amount | 1.2M |  |
-| [`PF_01_EXP_ACC_FEE_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_ACC_FEE_ADJ_NET.md) | Adjusted Net Income | amount | 267k |  |
-| [`PF_01_EXP_ACC_FEE_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_ACC_FEE_BOOKS.md) | Revenue and Expenses per Books | amount | 760k |  |
-| [`PF_01_EXP_ACC_FEE_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_ACC_FEE_DISBMT.md) | Disbursements for Charitable Purposes | amount | 572k |  |
-| [`PF_01_EXP_ACC_FEE_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_ACC_FEE_NET.md) | Net Investment Income | amount | 576k |  |
-| [`PF_01_EXP_COMP_OFF_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_COMP_OFF_ADJ_NET.md) | Adjusted Net Income | amount | 142k | ▲ warn |
-| [`PF_01_EXP_COMP_OFF_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_COMP_OFF_BOOKS.md) | Revenue and Expenses per Books | amount | 739k |  |
-| [`PF_01_EXP_COMP_OFF_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_COMP_OFF_DISBMT.md) | Disbursements for Charitable Purposes | amount | 639k | ▲ warn |
-| [`PF_01_EXP_COMP_OFF_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_COMP_OFF_NET.md) | Net Investment Income | amount | 642k | ▲ warn |
-| [`PF_01_EXP_CONTR_PAID_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_CONTR_PAID_BOOKS.md) | Revenue and Expenses per Books | amount | 1.2M |  |
-| [`PF_01_EXP_CONTR_PAID_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_CONTR_PAID_DISBMT.md) | Disbursements for Charitable Purposes | amount | 1.2M |  |
-| [`PF_01_EXP_DEPREC_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_DEPREC_ADJ_NET.md) | Adjusted Net Income | amount | 55k |  |
-| [`PF_01_EXP_DEPREC_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_DEPREC_BOOKS.md) | Revenue and Expenses per Books | amount | 318k | ▲ warn |
-| [`PF_01_EXP_DEPREC_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_DEPREC_NET.md) | Net Investment Income | amount | 237k | ▲ warn |
-| [`PF_01_EXP_INT_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_INT_ADJ_NET.md) | Adjusted Net Income | amount | 35k | ⚠ fail |
-| [`PF_01_EXP_INT_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_INT_BOOKS.md) | Revenue and Expenses per Books | amount | 76k | ▲ warn |
-| [`PF_01_EXP_INT_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_INT_DISBMT.md) | Disbursements for Charitable Purposes | amount | 216k |  |
-| [`PF_01_EXP_INT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_INT_NET.md) | Net Investment Income | amount | 67k |  |
-| [`PF_01_EXP_LEGAL_BEN_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_LEGAL_BEN_ADJ_NET.md) | Adjusted Net Income | amount | 89k |  |
-| [`PF_01_EXP_LEGAL_BEN_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_LEGAL_BEN_BOOKS.md) | Revenue and Expenses per Books | amount | 245k |  |
-| [`PF_01_EXP_LEGAL_BEN_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_LEGAL_BEN_DISBMT.md) | Disbursements for Charitable Purposes | amount | 316k | ▲ warn |
-| [`PF_01_EXP_LEGAL_BEN_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_LEGAL_BEN_NET.md) | Net Investment Income | amount | 165k | ▲ warn |
-| [`PF_01_EXP_OCCUPANCY_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OCCUPANCY_ADJ_NET.md) | Adjusted Net Income | amount | 45k | ▲ warn |
-| [`PF_01_EXP_OCCUPANCY_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OCCUPANCY_BOOKS.md) | Revenue and Expenses per Books | amount | 95k |  |
-| [`PF_01_EXP_OCCUPANCY_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OCCUPANCY_DISBMT.md) | Disbursements for Charitable Purposes | amount | 79k |  |
-| [`PF_01_EXP_OCCUPANCY_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OCCUPANCY_NET.md) | Net Investment Income | amount | 65k | ▲ warn |
-| [`PF_01_EXP_OTH_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_ADJ_NET.md) | Adjusted Net Income | amount | 162k | ▲ warn |
-| [`PF_01_EXP_OTH_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_BOOKS.md) | Revenue and Expenses per Books | amount | 819k |  |
-| [`PF_01_EXP_OTH_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_DISBMT.md) | Disbursements for Charitable Purposes | amount | 563k | ▲ warn |
-| [`PF_01_EXP_OTH_EMPL_SAL_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_EMPL_SAL_ADJ_NET.md) | Adjusted Net Income | amount | 206k | ▲ warn |
-| [`PF_01_EXP_OTH_EMPL_SAL_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_EMPL_SAL_BOOKS.md) | Revenue and Expenses per Books | amount | 86k |  |
-| [`PF_01_EXP_OTH_EMPL_SAL_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_EMPL_SAL_DISBMT.md) | Disbursements for Charitable Purposes | amount | 239k | ▲ warn |
-| [`PF_01_EXP_OTH_EMPL_SAL_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_EMPL_SAL_NET.md) | Net Investment Income | amount | 224k |  |
-| [`PF_01_EXP_OTH_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_NET.md) | Net Investment Income | amount | 555k |  |
-| [`PF_01_EXP_OTH_PROF_FEE_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_PROF_FEE_ADJ_NET.md) | Adjusted Net Income | amount | 87k | ▲ warn |
-| [`PF_01_EXP_OTH_PROF_FEE_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_PROF_FEE_BOOKS.md) | Revenue and Expenses per Books | amount | 418k |  |
-| [`PF_01_EXP_OTH_PROF_FEE_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_PROF_FEE_DISBMT.md) | Disbursements for Charitable Purposes | amount | 401k | ▲ warn |
-| [`PF_01_EXP_OTH_PROF_FEE_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_PROF_FEE_NET.md) | Net Investment Income | amount | 331k |  |
-| [`PF_01_EXP_PENSION_EMPL_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PENSION_EMPL_ADJ_NET.md) | Adjusted Net Income | amount | 200k | ▲ warn |
-| [`PF_01_EXP_PENSION_EMPL_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PENSION_EMPL_BOOKS.md) | Revenue and Expenses per Books | amount | 72k | ▲ warn |
-| [`PF_01_EXP_PENSION_EMPL_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PENSION_EMPL_DISBMT.md) | Disbursements for Charitable Purposes | amount | 67k |  |
-| [`PF_01_EXP_PENSION_EMPL_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PENSION_EMPL_NET.md) | Net Investment Income | amount | 218k | ▲ warn |
-| [`PF_01_EXP_PRINT_PUBLICA_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PRINT_PUBLICA_ADJ_NET.md) | Adjusted Net Income | amount | 198k | ▲ warn |
-| [`PF_01_EXP_PRINT_PUBLICA_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PRINT_PUBLICA_BOOKS.md) | Revenue and Expenses per Books | amount | 72k | ▲ warn |
-| [`PF_01_EXP_PRINT_PUBLICA_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PRINT_PUBLICA_DISBMT.md) | Disbursements for Charitable Purposes | amount | 57k |  |
-| [`PF_01_EXP_PRINT_PUBLICA_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PRINT_PUBLICA_NET.md) | Net Investment Income | amount | 207k |  |
-| [`PF_01_EXP_TAXES_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TAXES_ADJ_NET.md) | Adjusted Net Income | amount | 123k | ▲ warn |
-| [`PF_01_EXP_TAXES_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TAXES_BOOKS.md) | Revenue and Expenses per Books | amount | 785k |  |
-| [`PF_01_EXP_TAXES_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TAXES_DISBMT.md) | Disbursements for Charitable Purposes | amount | 534k | ▲ warn |
-| [`PF_01_EXP_TAXES_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TAXES_NET.md) | Net Investment Income | amount | 598k |  |
-| [`PF_01_EXP_TOT_EXP_DISBMT_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_EXP_DISBMT_ADJ_NET.md) | Adjusted Net Income | amount | 405k | ⚠ fail |
-| [`PF_01_EXP_TOT_EXP_DISBMT_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_EXP_DISBMT_BOOKS.md) | Revenue and Expenses per Books | amount | 1.2M |  |
-| [`PF_01_EXP_TOT_EXP_DISBMT_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_EXP_DISBMT_DISBMT.md) | Disbursements for Charitable Purposes | amount | 1.2M |  |
-| [`PF_01_EXP_TOT_EXP_DISBMT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_EXP_DISBMT_NET.md) | Net Investment Income | amount | 1.2M |  |
-| [`PF_01_EXP_TOT_OPERATING_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_OPERATING_ADJ_NET.md) | Adjusted Net Income | amount | 405k | ⚠ fail |
-| [`PF_01_EXP_TOT_OPERATING_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_OPERATING_BOOKS.md) | Revenue and Expenses per Books | amount | 1.2M |  |
-| [`PF_01_EXP_TOT_OPERATING_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_OPERATING_DISBMT.md) | Disbursements for Charitable Purposes | amount | 1.2M | ▲ warn |
-| [`PF_01_EXP_TOT_OPERATING_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_OPERATING_NET.md) | Net Investment Income | amount | 1.2M |  |
-| [`PF_01_EXP_TRAVEL_CONF_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TRAVEL_CONF_ADJ_NET.md) | Adjusted Net Income | amount | 212k | ▲ warn |
-| [`PF_01_EXP_TRAVEL_CONF_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TRAVEL_CONF_BOOKS.md) | Revenue and Expenses per Books | amount | 140k |  |
-| [`PF_01_EXP_TRAVEL_CONF_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TRAVEL_CONF_DISBMT.md) | Disbursements for Charitable Purposes | amount | 113k |  |
-| [`PF_01_EXP_TRAVEL_CONF_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TRAVEL_CONF_NET.md) | Net Investment Income | amount | 247k | ▲ warn |
-| [`PF_01_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_INCOME_NET_ADJ.md) | Adjusted Net Income | amount | 524k | ▲ warn |
-| [`PF_01_INVEST_INCOME_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_INVEST_INCOME_NET.md) | Net Investment Income | amount | 1.2M |  |
-| [`PF_01_REV_CAP_GAIN_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_CAP_GAIN_ADJ_NET.md) | Adjusted Net Income | amount | 235k | ▲ warn |
-| [`PF_01_REV_CAP_GAIN_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_CAP_GAIN_NET.md) | Net Investment Income | amount | 896k | ▲ warn |
+| [`PF_01_EXCESS_REV_OVER_EXP_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXCESS_REV_OVER_EXP_BOOKS.md) | Excess of revenue over expenses and disbursements (line 27a) | amount | 1.2M |  |
+| [`PF_01_EXP_ACC_FEE_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_ACC_FEE_ADJ_NET.md) | Accounting fees - adjusted net income | amount | 267k |  |
+| [`PF_01_EXP_ACC_FEE_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_ACC_FEE_BOOKS.md) | Accounting fees - revenue and expenses per books | amount | 760k |  |
+| [`PF_01_EXP_ACC_FEE_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_ACC_FEE_DISBMT.md) | Accounting fees - disbursements for charitable purposes | amount | 572k |  |
+| [`PF_01_EXP_ACC_FEE_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_ACC_FEE_NET.md) | Accounting fees - net investment income | amount | 576k |  |
+| [`PF_01_EXP_COMP_OFF_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_COMP_OFF_ADJ_NET.md) | Compensation of officers, directors, trustees, etc. - adjusted net income | amount | 142k | ▲ warn |
+| [`PF_01_EXP_COMP_OFF_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_COMP_OFF_BOOKS.md) | Compensation of officers, directors, trustees, etc. - revenue and expenses per books | amount | 739k |  |
+| [`PF_01_EXP_COMP_OFF_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_COMP_OFF_DISBMT.md) | Compensation of officers, directors, trustees, etc. - disbursements for charitable purposes | amount | 639k | ▲ warn |
+| [`PF_01_EXP_COMP_OFF_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_COMP_OFF_NET.md) | Compensation of officers, directors, trustees, etc. - net investment income | amount | 642k | ▲ warn |
+| [`PF_01_EXP_CONTR_PAID_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_CONTR_PAID_BOOKS.md) | Contributions, gifts, grants paid - revenue and expenses per books | amount | 1.2M |  |
+| [`PF_01_EXP_CONTR_PAID_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_CONTR_PAID_DISBMT.md) | Contributions, gifts, grants paid - disbursements for charitable purposes | amount | 1.2M |  |
+| [`PF_01_EXP_DEPREC_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_DEPREC_ADJ_NET.md) | Depreciation and depletion - adjusted net income | amount | 55k |  |
+| [`PF_01_EXP_DEPREC_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_DEPREC_BOOKS.md) | Depreciation and depletion - revenue and expenses per books | amount | 318k | ▲ warn |
+| [`PF_01_EXP_DEPREC_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_DEPREC_NET.md) | Depreciation and depletion - net investment income | amount | 237k | ▲ warn |
+| [`PF_01_EXP_INT_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_INT_ADJ_NET.md) | Interest - adjusted net income | amount | 35k | ⚠ fail |
+| [`PF_01_EXP_INT_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_INT_BOOKS.md) | Interest - revenue and expenses per books | amount | 76k | ▲ warn |
+| [`PF_01_EXP_INT_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_INT_DISBMT.md) | Interest - disbursements for charitable purposes | amount | 216k |  |
+| [`PF_01_EXP_INT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_INT_NET.md) | Interest - net investment income | amount | 67k |  |
+| [`PF_01_EXP_LEGAL_BEN_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_LEGAL_BEN_ADJ_NET.md) | Legal fees - adjusted net income | amount | 89k |  |
+| [`PF_01_EXP_LEGAL_BEN_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_LEGAL_BEN_BOOKS.md) | Legal fees - revenue and expenses per books | amount | 245k |  |
+| [`PF_01_EXP_LEGAL_BEN_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_LEGAL_BEN_DISBMT.md) | Legal fees - disbursements for charitable purposes | amount | 316k | ▲ warn |
+| [`PF_01_EXP_LEGAL_BEN_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_LEGAL_BEN_NET.md) | Legal fees - net investment income | amount | 165k | ▲ warn |
+| [`PF_01_EXP_OCCUPANCY_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OCCUPANCY_ADJ_NET.md) | Occupancy - adjusted net income | amount | 45k | ▲ warn |
+| [`PF_01_EXP_OCCUPANCY_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OCCUPANCY_BOOKS.md) | Occupancy - revenue and expenses per books | amount | 95k |  |
+| [`PF_01_EXP_OCCUPANCY_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OCCUPANCY_DISBMT.md) | Occupancy - disbursements for charitable purposes | amount | 79k |  |
+| [`PF_01_EXP_OCCUPANCY_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OCCUPANCY_NET.md) | Occupancy - net investment income | amount | 65k | ▲ warn |
+| [`PF_01_EXP_OTH_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_ADJ_NET.md) | Other expenses - adjusted net income | amount | 162k | ▲ warn |
+| [`PF_01_EXP_OTH_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_BOOKS.md) | Other expenses - revenue and expenses per books | amount | 819k |  |
+| [`PF_01_EXP_OTH_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_DISBMT.md) | Other expenses - disbursements for charitable purposes | amount | 563k | ▲ warn |
+| [`PF_01_EXP_OTH_EMPL_SAL_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_EMPL_SAL_ADJ_NET.md) | Other employee salaries and wages - adjusted net income | amount | 206k | ▲ warn |
+| [`PF_01_EXP_OTH_EMPL_SAL_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_EMPL_SAL_BOOKS.md) | Other employee salaries and wages - revenue and expenses per books | amount | 86k |  |
+| [`PF_01_EXP_OTH_EMPL_SAL_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_EMPL_SAL_DISBMT.md) | Other employee salaries and wages - disbursements for charitable purposes | amount | 239k | ▲ warn |
+| [`PF_01_EXP_OTH_EMPL_SAL_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_EMPL_SAL_NET.md) | Other employee salaries and wages - net investment income | amount | 224k |  |
+| [`PF_01_EXP_OTH_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_NET.md) | Other expenses - net investment income | amount | 555k |  |
+| [`PF_01_EXP_OTH_PROF_FEE_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_PROF_FEE_ADJ_NET.md) | Other professional fees - adjusted net income | amount | 87k | ▲ warn |
+| [`PF_01_EXP_OTH_PROF_FEE_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_PROF_FEE_BOOKS.md) | Other professional fees - revenue and expenses per books | amount | 418k |  |
+| [`PF_01_EXP_OTH_PROF_FEE_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_PROF_FEE_DISBMT.md) | Other professional fees - disbursements for charitable purposes | amount | 401k | ▲ warn |
+| [`PF_01_EXP_OTH_PROF_FEE_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_OTH_PROF_FEE_NET.md) | Other professional fees - net investment income | amount | 331k |  |
+| [`PF_01_EXP_PENSION_EMPL_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PENSION_EMPL_ADJ_NET.md) | Pension plans, employee benefits - adjusted net income | amount | 200k | ▲ warn |
+| [`PF_01_EXP_PENSION_EMPL_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PENSION_EMPL_BOOKS.md) | Pension plans, employee benefits - revenue and expenses per books | amount | 72k | ▲ warn |
+| [`PF_01_EXP_PENSION_EMPL_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PENSION_EMPL_DISBMT.md) | Pension plans, employee benefits - disbursements for charitable purposes | amount | 67k |  |
+| [`PF_01_EXP_PENSION_EMPL_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PENSION_EMPL_NET.md) | Pension plans, employee benefits - net investment income | amount | 218k | ▲ warn |
+| [`PF_01_EXP_PRINT_PUBLICA_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PRINT_PUBLICA_ADJ_NET.md) | Printing and publications - adjusted net income | amount | 198k | ▲ warn |
+| [`PF_01_EXP_PRINT_PUBLICA_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PRINT_PUBLICA_BOOKS.md) | Printing and publications - revenue and expenses per books | amount | 72k | ▲ warn |
+| [`PF_01_EXP_PRINT_PUBLICA_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PRINT_PUBLICA_DISBMT.md) | Printing and publications - disbursements for charitable purposes | amount | 57k |  |
+| [`PF_01_EXP_PRINT_PUBLICA_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_PRINT_PUBLICA_NET.md) | Printing and publications - net investment income | amount | 207k |  |
+| [`PF_01_EXP_TAXES_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TAXES_ADJ_NET.md) | Taxes - adjusted net income | amount | 123k | ▲ warn |
+| [`PF_01_EXP_TAXES_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TAXES_BOOKS.md) | Taxes - revenue and expenses per books | amount | 785k |  |
+| [`PF_01_EXP_TAXES_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TAXES_DISBMT.md) | Taxes - disbursements for charitable purposes | amount | 534k | ▲ warn |
+| [`PF_01_EXP_TAXES_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TAXES_NET.md) | Taxes - net investment income | amount | 598k |  |
+| [`PF_01_EXP_TOT_EXP_DISBMT_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_EXP_DISBMT_ADJ_NET.md) | Total expenses and disbursements - adjusted net income | amount | 405k | ⚠ fail |
+| [`PF_01_EXP_TOT_EXP_DISBMT_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_EXP_DISBMT_BOOKS.md) | Total expenses and disbursements - revenue and expenses per books | amount | 1.2M |  |
+| [`PF_01_EXP_TOT_EXP_DISBMT_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_EXP_DISBMT_DISBMT.md) | Total expenses and disbursements - disbursements for charitable purposes | amount | 1.2M |  |
+| [`PF_01_EXP_TOT_EXP_DISBMT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_EXP_DISBMT_NET.md) | Total expenses and disbursements - net investment income | amount | 1.2M |  |
+| [`PF_01_EXP_TOT_OPERATING_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_OPERATING_ADJ_NET.md) | Total operating and administrative expenses - adjusted net income | amount | 405k | ⚠ fail |
+| [`PF_01_EXP_TOT_OPERATING_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_OPERATING_BOOKS.md) | Total operating and administrative expenses - revenue and expenses per books | amount | 1.2M |  |
+| [`PF_01_EXP_TOT_OPERATING_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_OPERATING_DISBMT.md) | Total operating and administrative expenses - disbursements for charitable purposes | amount | 1.2M | ▲ warn |
+| [`PF_01_EXP_TOT_OPERATING_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TOT_OPERATING_NET.md) | Total operating and administrative expenses - net investment income | amount | 1.2M |  |
+| [`PF_01_EXP_TRAVEL_CONF_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TRAVEL_CONF_ADJ_NET.md) | Travel, conferences, and meetings - adjusted net income | amount | 212k | ▲ warn |
+| [`PF_01_EXP_TRAVEL_CONF_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TRAVEL_CONF_BOOKS.md) | Travel, conferences, and meetings - revenue and expenses per books | amount | 140k |  |
+| [`PF_01_EXP_TRAVEL_CONF_DISBMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TRAVEL_CONF_DISBMT.md) | Travel, conferences, and meetings - disbursements for charitable purposes | amount | 113k |  |
+| [`PF_01_EXP_TRAVEL_CONF_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_EXP_TRAVEL_CONF_NET.md) | Travel, conferences, and meetings - net investment income | amount | 247k | ▲ warn |
+| [`PF_01_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_INCOME_NET_ADJ.md) | Adjusted net income (line 27c) | amount | 524k | ▲ warn |
+| [`PF_01_INVEST_INCOME_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_INVEST_INCOME_NET.md) | Net investment income (line 27b) | amount | 1.2M |  |
+| [`PF_01_REV_CAP_GAIN_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_CAP_GAIN_ADJ_NET.md) | Net short-term capital gain - adjusted net income | amount | 235k | ▲ warn |
+| [`PF_01_REV_CAP_GAIN_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_CAP_GAIN_NET.md) | Capital gain net income - net investment income | amount | 896k | ▲ warn |
 | [`PF_01_REV_CONTR_REC_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_CONTR_REC_BOOKS.md) | Contributions received - revenue and expenses per books | amount | 530k |  |
-| [`PF_01_REV_DIVIDEND_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_DIVIDEND_ADJ_NET.md) | Adjusted Net Income | amount | 176k |  |
-| [`PF_01_REV_DIVIDEND_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_DIVIDEND_BOOKS.md) | Revenue and Expenses per Books | amount | 796k |  |
-| [`PF_01_REV_DIVIDEND_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_DIVIDEND_NET.md) | Net Investment Income | amount | 787k |  |
-| [`PF_01_REV_GRO_PROFIT_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_GRO_PROFIT_ADJ_NET.md) | Adjusted Net Income | amount | 33k |  |
-| [`PF_01_REV_GRO_PROFIT_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_GRO_PROFIT_BOOKS.md) | Revenue and Expenses per Books | amount | 83k | ▲ warn 1 open flag |
+| [`PF_01_REV_DIVIDEND_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_DIVIDEND_ADJ_NET.md) | Dividends and interest from securities - adjusted net income | amount | 176k |  |
+| [`PF_01_REV_DIVIDEND_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_DIVIDEND_BOOKS.md) | Dividends and interest from securities - revenue and expenses per books | amount | 796k |  |
+| [`PF_01_REV_DIVIDEND_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_DIVIDEND_NET.md) | Dividends and interest from securities - net investment income | amount | 787k |  |
+| [`PF_01_REV_GRO_PROFIT_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_GRO_PROFIT_ADJ_NET.md) | Gross profit - adjusted net income | amount | 33k |  |
+| [`PF_01_REV_GRO_PROFIT_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_GRO_PROFIT_BOOKS.md) | Gross profit - revenue and expenses per books | amount | 83k | ▲ warn 1 open flag |
 | [`PF_01_REV_GRO_SALE_LESS_RETURN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_GRO_SALE_LESS_RETURN.md) | Gross Sales Less Returns and Allowances | amount | 40k |  |
-| [`PF_01_REV_INCOME_MOD_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_INCOME_MOD_ADJ_NET.md) | Adjusted Net Income | amount | 26k | 1 open flag |
-| [`PF_01_REV_INT_SAVING_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_INT_SAVING_ADJ_NET.md) | Adjusted Net Income | amount | 150k | ▲ warn |
-| [`PF_01_REV_INT_SAVING_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_INT_SAVING_BOOKS.md) | Revenue and Expenses per Books | amount | 482k | ▲ warn |
-| [`PF_01_REV_INT_SAVING_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_INT_SAVING_NET.md) | Net Investment Income | amount | 467k | ▲ warn |
+| [`PF_01_REV_INCOME_MOD_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_INCOME_MOD_ADJ_NET.md) | Income modifications - adjusted net income | amount | 26k | 1 open flag |
+| [`PF_01_REV_INT_SAVING_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_INT_SAVING_ADJ_NET.md) | Interest on savings and temporary cash investments - adjusted net income | amount | 150k | ▲ warn |
+| [`PF_01_REV_INT_SAVING_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_INT_SAVING_BOOKS.md) | Interest on savings and temporary cash investments - revenue and expenses per books | amount | 482k | ▲ warn |
+| [`PF_01_REV_INT_SAVING_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_INT_SAVING_NET.md) | Interest on savings and temporary cash investments - net investment income | amount | 467k | ▲ warn |
 | [`PF_01_REV_LESS_COST_GOODS_SOLD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_LESS_COST_GOODS_SOLD.md) | Cost of Goods Sold | amount | 37k |  |
-| [`PF_01_REV_OTH_INCOME_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_OTH_INCOME_ADJ_NET.md) | Adjusted Net Income | amount | 101k |  |
-| [`PF_01_REV_OTH_INCOME_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_OTH_INCOME_BOOKS.md) | Revenue and Expenses per Books | amount | 357k |  |
-| [`PF_01_REV_OTH_INCOME_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_OTH_INCOME_NET.md) | Net Investment Income | amount | 228k | ▲ warn |
+| [`PF_01_REV_OTH_INCOME_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_OTH_INCOME_ADJ_NET.md) | Other income - adjusted net income | amount | 101k |  |
+| [`PF_01_REV_OTH_INCOME_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_OTH_INCOME_BOOKS.md) | Other income - revenue and expenses per books | amount | 357k |  |
+| [`PF_01_REV_OTH_INCOME_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_OTH_INCOME_NET.md) | Other income - net investment income | amount | 228k | ▲ warn |
 | [`PF_01_REV_RENTAL_NET_INCOME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_RENTAL_NET_INCOME.md) | Net Rental Income or Los | amount | 48k |  |
-| [`PF_01_REV_RENT_GRO_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_RENT_GRO_ADJ_NET.md) | Adjusted Net Income | amount | 27k |  |
-| [`PF_01_REV_RENT_GRO_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_RENT_GRO_BOOKS.md) | Revenue and Expenses per Books | amount | 48k |  |
-| [`PF_01_REV_RENT_GRO_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_RENT_GRO_NET.md) | Net Investment Income | amount | 43k |  |
-| [`PF_01_REV_SALE_ASSET_NET_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_SALE_ASSET_NET_BOOKS.md) | Revenue and Expenses per Books | amount | 737k | ▲ warn |
+| [`PF_01_REV_RENT_GRO_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_RENT_GRO_ADJ_NET.md) | Gross rents - adjusted net income | amount | 27k |  |
+| [`PF_01_REV_RENT_GRO_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_RENT_GRO_BOOKS.md) | Gross rents - revenue and expenses per books | amount | 48k |  |
+| [`PF_01_REV_RENT_GRO_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_RENT_GRO_NET.md) | Gross rents - net investment income | amount | 43k |  |
+| [`PF_01_REV_SALE_ASSET_NET_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_SALE_ASSET_NET_BOOKS.md) | Net gain from sale of assets - revenue and expenses per books | amount | 737k | ▲ warn |
 | [`PF_01_REV_SALE_GRO_PRICE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_SALE_GRO_PRICE.md) | Gross Sales Price | amount | 720k |  |
 | [`PF_01_REV_SCHED_B_NOT_REQ_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_SCHED_B_NOT_REQ_X.md) | Not required to attach Schedule B | checkbox | 809k |  |
-| [`PF_01_REV_TOT_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_TOT_ADJ_NET.md) | Adjusted Net Income | amount | 335k |  |
-| [`PF_01_REV_TOT_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_TOT_BOOKS.md) | Revenue and Expenses per Books | amount | 1.2M |  |
-| [`PF_01_REV_TOT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_TOT_NET.md) | Net Investment Income | amount | 1.2M |  |
+| [`PF_01_REV_TOT_ADJ_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_TOT_ADJ_NET.md) | Total revenue - adjusted net income | amount | 335k |  |
+| [`PF_01_REV_TOT_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_TOT_BOOKS.md) | Total revenue - revenue and expenses per books | amount | 1.2M |  |
+| [`PF_01_REV_TOT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_01_REV_TOT_NET.md) | Total revenue - net investment income | amount | 1.2M |  |
 
 ## `PF-P02-T00-BALANCE-SHEET`
 
@@ -133,108 +133,108 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 |----|----|----|----|----|
 | [`PF_02_ASSET_ACC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_ACC.md) | Accounts Receivable | amount | 65k |  |
 | [`PF_02_ASSET_ACC_ALLOW`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_ACC_ALLOW.md) | Allowance for Doubtful Accounts (for Accounts Receivable) | amount | 18k |  |
-| [`PF_02_ASSET_ACC_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_ACC_BOY_BV.md) | Book Value | amount | 70k | ▲ warn |
-| [`PF_02_ASSET_ACC_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_ACC_EOY_BV.md) | Book Value | amount | 230k | ▲ warn |
-| [`PF_02_ASSET_ACC_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_ACC_EOY_FMV.md) | Fair Market Value | amount | 221k | ▲ warn |
-| [`PF_02_ASSET_CASH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_CASH_BOY_BV.md) | Book Value | amount | 637k |  |
-| [`PF_02_ASSET_CASH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_CASH_EOY_BV.md) | Book Value | amount | 642k |  |
-| [`PF_02_ASSET_CASH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_CASH_EOY_FMV.md) | Fair Market Value | amount | 578k |  |
-| [`PF_02_ASSET_EXP_PREPAID_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_EXP_PREPAID_BOY_BV.md) | Book Value | amount | 72k | ▲ warn |
-| [`PF_02_ASSET_EXP_PREPAID_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_EXP_PREPAID_EOY_BV.md) | Book Value | amount | 69k |  |
-| [`PF_02_ASSET_EXP_PREPAID_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_EXP_PREPAID_EOY_FMV.md) | Fair Market Value | amount | 61k |  |
-| [`PF_02_ASSET_GRANT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_GRANT_BOY_BV.md) | Book Value | amount | 23k |  |
-| [`PF_02_ASSET_GRANT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_GRANT_EOY_BV.md) | Book Value | amount | 20k |  |
-| [`PF_02_ASSET_GRANT_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_GRANT_EOY_FMV.md) | Fair Market Value | amount | 16k |  |
-| [`PF_02_ASSET_INVEST_BOND_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_BOND_BOY_BV.md) | Book Value | amount | 218k |  |
-| [`PF_02_ASSET_INVEST_BOND_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_BOND_EOY_BV.md) | Book Value | amount | 243k |  |
-| [`PF_02_ASSET_INVEST_BOND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_BOND_EOY_FMV.md) | Fair Market Value | amount | 215k |  |
-| [`PF_02_ASSET_INVEST_GOV_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_GOV_BOY_BV.md) | Book Value | amount | 103k |  |
-| [`PF_02_ASSET_INVEST_GOV_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_GOV_EOY_BV.md) | Book Value | amount | 131k |  |
-| [`PF_02_ASSET_INVEST_GOV_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_GOV_EOY_FMV.md) | Fair Market Value | amount | 101k |  |
+| [`PF_02_ASSET_ACC_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_ACC_BOY_BV.md) | Accounts receivable - book value, beginning of year | amount | 70k | ▲ warn |
+| [`PF_02_ASSET_ACC_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_ACC_EOY_BV.md) | Accounts receivable - book value, end of year | amount | 230k | ▲ warn |
+| [`PF_02_ASSET_ACC_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_ACC_EOY_FMV.md) | Accounts receivable - fair market value, end of year | amount | 221k | ▲ warn |
+| [`PF_02_ASSET_CASH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_CASH_BOY_BV.md) | Cash - book value, beginning of year | amount | 637k |  |
+| [`PF_02_ASSET_CASH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_CASH_EOY_BV.md) | Cash - book value, end of year | amount | 642k |  |
+| [`PF_02_ASSET_CASH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_CASH_EOY_FMV.md) | Cash - fair market value, end of year | amount | 578k |  |
+| [`PF_02_ASSET_EXP_PREPAID_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_EXP_PREPAID_BOY_BV.md) | Prepaid expenses - book value, beginning of year | amount | 72k | ▲ warn |
+| [`PF_02_ASSET_EXP_PREPAID_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_EXP_PREPAID_EOY_BV.md) | Prepaid expenses - book value, end of year | amount | 69k |  |
+| [`PF_02_ASSET_EXP_PREPAID_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_EXP_PREPAID_EOY_FMV.md) | Prepaid expenses - fair market value, end of year | amount | 61k |  |
+| [`PF_02_ASSET_GRANT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_GRANT_BOY_BV.md) | Grants receivable - book value, beginning of year | amount | 23k |  |
+| [`PF_02_ASSET_GRANT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_GRANT_EOY_BV.md) | Grants receivable - book value, end of year | amount | 20k |  |
+| [`PF_02_ASSET_GRANT_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_GRANT_EOY_FMV.md) | Grants receivable - fair market value, end of year | amount | 16k |  |
+| [`PF_02_ASSET_INVEST_BOND_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_BOND_BOY_BV.md) | Investments, corporate bonds - book value, beginning of year | amount | 218k |  |
+| [`PF_02_ASSET_INVEST_BOND_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_BOND_EOY_BV.md) | Investments, corporate bonds - book value, end of year | amount | 243k |  |
+| [`PF_02_ASSET_INVEST_BOND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_BOND_EOY_FMV.md) | Investments, corporate bonds - fair market value, end of year | amount | 215k |  |
+| [`PF_02_ASSET_INVEST_GOV_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_GOV_BOY_BV.md) | Investments, government obligations - book value, beginning of year | amount | 103k |  |
+| [`PF_02_ASSET_INVEST_GOV_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_GOV_EOY_BV.md) | Investments, government obligations - book value, end of year | amount | 131k |  |
+| [`PF_02_ASSET_INVEST_GOV_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_GOV_EOY_FMV.md) | Investments, government obligations - fair market value, end of year | amount | 101k |  |
 | [`PF_02_ASSET_INVEST_LAND`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_LAND.md) | Investments; Land; Etc. Basis | amount | 38k | ▲ warn |
-| [`PF_02_ASSET_INVEST_LAND_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_LAND_BOY_BV.md) | Book Value | amount | 31k |  |
+| [`PF_02_ASSET_INVEST_LAND_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_LAND_BOY_BV.md) | Investments, land, etc. - book value, beginning of year | amount | 31k |  |
 | [`PF_02_ASSET_INVEST_LAND_DEPREC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_LAND_DEPREC.md) | Accumulated Depreciation (for Investments; Land; Etc.) | amount | 26k |  |
-| [`PF_02_ASSET_INVEST_LAND_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_LAND_EOY_BV.md) | Book Value | amount | 92k | ▲ warn |
-| [`PF_02_ASSET_INVEST_LAND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_LAND_EOY_FMV.md) | Fair Market Value | amount | 30k |  |
-| [`PF_02_ASSET_INVEST_MTG_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_MTG_BOY_BV.md) | Book Value | amount | 27k |  |
-| [`PF_02_ASSET_INVEST_MTG_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_MTG_EOY_BV.md) | Book Value | amount | 24k |  |
-| [`PF_02_ASSET_INVEST_MTG_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_MTG_EOY_FMV.md) | Fair Market Value | amount | 20k |  |
-| [`PF_02_ASSET_INVEST_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_OTH_BOY_BV.md) | Book Value | amount | 397k |  |
-| [`PF_02_ASSET_INVEST_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_OTH_EOY_BV.md) | Book Value | amount | 454k |  |
-| [`PF_02_ASSET_INVEST_OTH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_OTH_EOY_FMV.md) | Fair Market Value | amount | 458k |  |
-| [`PF_02_ASSET_INVEST_STCK_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_STCK_BOY_BV.md) | Book Value | amount | 551k |  |
-| [`PF_02_ASSET_INVEST_STCK_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_STCK_EOY_BV.md) | Book Value | amount | 570k |  |
-| [`PF_02_ASSET_INVEST_STCK_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_STCK_EOY_FMV.md) | Fair Market Value | amount | 539k |  |
-| [`PF_02_ASSET_INV_SALE_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INV_SALE_BOY_BV.md) | Book Value | amount | 30k |  |
-| [`PF_02_ASSET_INV_SALE_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INV_SALE_EOY_BV.md) | Book Value | amount | 28k |  |
-| [`PF_02_ASSET_INV_SALE_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INV_SALE_EOY_FMV.md) | Fair Market Value | amount | 22k |  |
+| [`PF_02_ASSET_INVEST_LAND_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_LAND_EOY_BV.md) | Investments, land, etc. - book value, end of year | amount | 92k | ▲ warn |
+| [`PF_02_ASSET_INVEST_LAND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_LAND_EOY_FMV.md) | Investments, land, etc. - fair market value, end of year | amount | 30k |  |
+| [`PF_02_ASSET_INVEST_MTG_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_MTG_BOY_BV.md) | Investments, mortgage loans - book value, beginning of year | amount | 27k |  |
+| [`PF_02_ASSET_INVEST_MTG_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_MTG_EOY_BV.md) | Investments, mortgage loans - book value, end of year | amount | 24k |  |
+| [`PF_02_ASSET_INVEST_MTG_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_MTG_EOY_FMV.md) | Investments, mortgage loans - fair market value, end of year | amount | 20k |  |
+| [`PF_02_ASSET_INVEST_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_OTH_BOY_BV.md) | Investments, other - book value, beginning of year | amount | 397k |  |
+| [`PF_02_ASSET_INVEST_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_OTH_EOY_BV.md) | Investments, other - book value, end of year | amount | 454k |  |
+| [`PF_02_ASSET_INVEST_OTH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_OTH_EOY_FMV.md) | Investments, other - fair market value, end of year | amount | 458k |  |
+| [`PF_02_ASSET_INVEST_STCK_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_STCK_BOY_BV.md) | Investments, corporate stock - book value, beginning of year | amount | 551k |  |
+| [`PF_02_ASSET_INVEST_STCK_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_STCK_EOY_BV.md) | Investments, corporate stock - book value, end of year | amount | 570k |  |
+| [`PF_02_ASSET_INVEST_STCK_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INVEST_STCK_EOY_FMV.md) | Investments, corporate stock - fair market value, end of year | amount | 539k |  |
+| [`PF_02_ASSET_INV_SALE_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INV_SALE_BOY_BV.md) | Inventories for sale or use - book value, beginning of year | amount | 30k |  |
+| [`PF_02_ASSET_INV_SALE_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INV_SALE_EOY_BV.md) | Inventories for sale or use - book value, end of year | amount | 28k |  |
+| [`PF_02_ASSET_INV_SALE_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_INV_SALE_EOY_FMV.md) | Inventories for sale or use - fair market value, end of year | amount | 22k |  |
 | [`PF_02_ASSET_LAND`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_LAND.md) | Investments; Land; Etc. Basis | amount | 120k |  |
-| [`PF_02_ASSET_LAND_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_LAND_BOY_BV.md) | Book Value | amount | 93k |  |
+| [`PF_02_ASSET_LAND_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_LAND_BOY_BV.md) | Land, buildings, and equipment - book value, beginning of year | amount | 93k |  |
 | [`PF_02_ASSET_LAND_DEPREC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_LAND_DEPREC.md) | Accumulated Depreciation (for Land; Buildings; and Equipment) | amount | 107k |  |
-| [`PF_02_ASSET_LAND_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_LAND_EOY_BV.md) | Book Value | amount | 154k | ▲ warn |
-| [`PF_02_ASSET_LAND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_LAND_EOY_FMV.md) | Fair Market Value | amount | 82k |  |
-| [`PF_02_ASSET_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_BOY_BV.md) | Book Value | amount | 231k | ▲ warn |
-| [`PF_02_ASSET_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_EOY_BV.md) | Book Value | amount | 232k | ▲ warn |
-| [`PF_02_ASSET_OTH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_EOY_FMV.md) | Fair Market Value | amount | 218k | ▲ warn |
+| [`PF_02_ASSET_LAND_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_LAND_EOY_BV.md) | Land, buildings, and equipment - book value, end of year | amount | 154k | ▲ warn |
+| [`PF_02_ASSET_LAND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_LAND_EOY_FMV.md) | Land, buildings, and equipment - fair market value, end of year | amount | 82k |  |
+| [`PF_02_ASSET_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_BOY_BV.md) | Other assets - book value, beginning of year | amount | 231k | ▲ warn |
+| [`PF_02_ASSET_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_EOY_BV.md) | Other assets - book value, end of year | amount | 232k | ▲ warn |
+| [`PF_02_ASSET_OTH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_EOY_FMV.md) | Other assets - fair market value, end of year | amount | 218k | ▲ warn |
 | [`PF_02_ASSET_OTH_NOTE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_NOTE.md) | Other Notes and Loans Receivable | amount | 33k |  |
 | [`PF_02_ASSET_OTH_NOTE_ALLOW`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_NOTE_ALLOW.md) | Allowance for Doubtful Accounts (for Other Notes and Loans Receivable) | amount | 179k |  |
-| [`PF_02_ASSET_OTH_NOTE_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_NOTE_BOY_BV.md) | Book Value | amount | 57k |  |
-| [`PF_02_ASSET_OTH_NOTE_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_NOTE_EOY_BV.md) | Book Value | amount | 100k | ▲ warn |
-| [`PF_02_ASSET_OTH_NOTE_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_NOTE_EOY_FMV.md) | Fair Market Value | amount | 32k |  |
+| [`PF_02_ASSET_OTH_NOTE_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_NOTE_BOY_BV.md) | Other notes and loans receivable - book value, beginning of year | amount | 57k |  |
+| [`PF_02_ASSET_OTH_NOTE_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_NOTE_EOY_BV.md) | Other notes and loans receivable - book value, end of year | amount | 100k | ▲ warn |
+| [`PF_02_ASSET_OTH_NOTE_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_OTH_NOTE_EOY_FMV.md) | Other notes and loans receivable - fair market value, end of year | amount | 32k |  |
 | [`PF_02_ASSET_PLEDGE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_PLEDGE.md) | Pledges Receivable | amount | 20k | 1 open flag |
 | [`PF_02_ASSET_PLEDGE_ALLOW`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_PLEDGE_ALLOW.md) | Allowance for Doubtful Accounts (for Pledges Receivable) | amount | 17k |  |
-| [`PF_02_ASSET_PLEDGE_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_PLEDGE_BOY_BV.md) | Book Value | amount | 26k | ▲ warn |
-| [`PF_02_ASSET_PLEDGE_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_PLEDGE_EOY_BV.md) | Book Value | amount | 26k |  |
-| [`PF_02_ASSET_PLEDGE_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_PLEDGE_EOY_FMV.md) | Fair Market Value | amount | 20k | ▲ warn |
-| [`PF_02_ASSET_RECVB_OFF_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_RECVB_OFF_BOY_BV.md) | Book Value | amount | 33k |  |
-| [`PF_02_ASSET_RECVB_OFF_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_RECVB_OFF_EOY_BV.md) | Book Value | amount | 76k | 1 open flag |
-| [`PF_02_ASSET_RECVB_OFF_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_RECVB_OFF_EOY_FMV.md) | Fair Market Value | amount | 10k |  |
-| [`PF_02_ASSET_SAVING_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_SAVING_BOY_BV.md) | Book Value | amount | 686k |  |
-| [`PF_02_ASSET_SAVING_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_SAVING_EOY_BV.md) | Book Value | amount | 687k |  |
-| [`PF_02_ASSET_SAVING_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_SAVING_EOY_FMV.md) | Fair Market Value | amount | 662k |  |
-| [`PF_02_ASSET_TOT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_TOT_BOY_BV.md) | Book Value | amount | 1.1M |  |
-| [`PF_02_ASSET_TOT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_TOT_EOY_BV.md) | Book Value | amount | 1.2M |  |
-| [`PF_02_ASSET_TOT_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_TOT_EOY_FMV.md) | Fair Market Value | amount | 1.2M |  |
-| [`PF_02_LIAB_ACC_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_ACC_BOY_BV.md) | Book Value | amount | 116k | ▲ warn |
-| [`PF_02_LIAB_ACC_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_ACC_EOY_BV.md) | Book Value | amount | 117k | ▲ warn |
-| [`PF_02_LIAB_GRANT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_GRANT_BOY_BV.md) | Book Value | amount | 50k |  |
-| [`PF_02_LIAB_GRANT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_GRANT_EOY_BV.md) | Book Value | amount | 50k |  |
-| [`PF_02_LIAB_LOAN_OFF_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_LOAN_OFF_BOY_BV.md) | Book Value | amount | 47k |  |
-| [`PF_02_LIAB_LOAN_OFF_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_LOAN_OFF_EOY_BV.md) | Book Value | amount | 90k | ▲ warn 1 open flag |
-| [`PF_02_LIAB_MTG_NOTE_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_MTG_NOTE_BOY_BV.md) | Book Value | amount | 17k |  |
-| [`PF_02_LIAB_MTG_NOTE_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_MTG_NOTE_EOY_BV.md) | Book Value | amount | 83k | ▲ warn 1 open flag |
-| [`PF_02_LIAB_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_OTH_BOY_BV.md) | Book Value | amount | 161k | ▲ warn |
-| [`PF_02_LIAB_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_OTH_EOY_BV.md) | Book Value | amount | 163k | ▲ warn |
-| [`PF_02_LIAB_REV_DEFERRED_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_REV_DEFERRED_BOY_BV.md) | Book Value | amount | 38k |  |
-| [`PF_02_LIAB_REV_DEFERRED_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_REV_DEFERRED_EOY_BV.md) | Book Value | amount | 38k |  |
-| [`PF_02_LIAB_TOT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_TOT_BOY_BV.md) | Book Value | amount | 640k | ▲ warn |
-| [`PF_02_LIAB_TOT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_TOT_EOY_BV.md) | Book Value | amount | 1.2M |  |
-| [`PF_02_NAFB_CAP_STCK_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_CAP_STCK_BOY_BV.md) | Book Value | amount | 608k |  |
-| [`PF_02_NAFB_CAP_STCK_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_CAP_STCK_EOY_BV.md) | Book Value | amount | 606k |  |
-| [`PF_02_NAFB_CAP_SURPLUS_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_CAP_SURPLUS_BOY_BV.md) | Book Value | amount | 357k |  |
-| [`PF_02_NAFB_CAP_SURPLUS_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_CAP_SURPLUS_EOY_BV.md) | Book Value | amount | 356k |  |
-| [`PF_02_NAFB_EARNING_RETAIN_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_EARNING_RETAIN_BOY_BV.md) | Book Value | amount | 586k |  |
-| [`PF_02_NAFB_EARNING_RETAIN_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_EARNING_RETAIN_EOY_BV.md) | Book Value | amount | 585k |  |
+| [`PF_02_ASSET_PLEDGE_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_PLEDGE_BOY_BV.md) | Pledges receivable - book value, beginning of year | amount | 26k | ▲ warn |
+| [`PF_02_ASSET_PLEDGE_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_PLEDGE_EOY_BV.md) | Pledges receivable - book value, end of year | amount | 26k |  |
+| [`PF_02_ASSET_PLEDGE_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_PLEDGE_EOY_FMV.md) | Pledges receivable - fair market value, end of year | amount | 20k | ▲ warn |
+| [`PF_02_ASSET_RECVB_OFF_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_RECVB_OFF_BOY_BV.md) | Receivables from officers - book value, beginning of year | amount | 33k |  |
+| [`PF_02_ASSET_RECVB_OFF_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_RECVB_OFF_EOY_BV.md) | Receivables from officers - book value, end of year | amount | 76k | 1 open flag |
+| [`PF_02_ASSET_RECVB_OFF_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_RECVB_OFF_EOY_FMV.md) | Receivables from officers - fair market value, end of year | amount | 10k |  |
+| [`PF_02_ASSET_SAVING_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_SAVING_BOY_BV.md) | Savings and temporary cash investments - book value, beginning of year | amount | 686k |  |
+| [`PF_02_ASSET_SAVING_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_SAVING_EOY_BV.md) | Savings and temporary cash investments - book value, end of year | amount | 687k |  |
+| [`PF_02_ASSET_SAVING_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_SAVING_EOY_FMV.md) | Savings and temporary cash investments - fair market value, end of year | amount | 662k |  |
+| [`PF_02_ASSET_TOT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_TOT_BOY_BV.md) | Total assets - book value, beginning of year | amount | 1.1M |  |
+| [`PF_02_ASSET_TOT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_TOT_EOY_BV.md) | Total assets - book value, end of year | amount | 1.2M |  |
+| [`PF_02_ASSET_TOT_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_ASSET_TOT_EOY_FMV.md) | Total assets - fair market value, end of year | amount | 1.2M |  |
+| [`PF_02_LIAB_ACC_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_ACC_BOY_BV.md) | Accounts payable - book value, beginning of year | amount | 116k | ▲ warn |
+| [`PF_02_LIAB_ACC_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_ACC_EOY_BV.md) | Accounts payable - book value, end of year | amount | 117k | ▲ warn |
+| [`PF_02_LIAB_GRANT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_GRANT_BOY_BV.md) | Grants payable - book value, beginning of year | amount | 50k |  |
+| [`PF_02_LIAB_GRANT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_GRANT_EOY_BV.md) | Grants payable - book value, end of year | amount | 50k |  |
+| [`PF_02_LIAB_LOAN_OFF_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_LOAN_OFF_BOY_BV.md) | Loans from officers - book value, beginning of year | amount | 47k |  |
+| [`PF_02_LIAB_LOAN_OFF_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_LOAN_OFF_EOY_BV.md) | Loans from officers - book value, end of year | amount | 90k | ▲ warn 1 open flag |
+| [`PF_02_LIAB_MTG_NOTE_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_MTG_NOTE_BOY_BV.md) | Mortgages and notes payable - book value, beginning of year | amount | 17k |  |
+| [`PF_02_LIAB_MTG_NOTE_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_MTG_NOTE_EOY_BV.md) | Mortgages and notes payable - book value, end of year | amount | 83k | ▲ warn 1 open flag |
+| [`PF_02_LIAB_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_OTH_BOY_BV.md) | Other liabilities - book value, beginning of year | amount | 161k | ▲ warn |
+| [`PF_02_LIAB_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_OTH_EOY_BV.md) | Other liabilities - book value, end of year | amount | 163k | ▲ warn |
+| [`PF_02_LIAB_REV_DEFERRED_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_REV_DEFERRED_BOY_BV.md) | Deferred revenue - book value, beginning of year | amount | 38k |  |
+| [`PF_02_LIAB_REV_DEFERRED_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_REV_DEFERRED_EOY_BV.md) | Deferred revenue - book value, end of year | amount | 38k |  |
+| [`PF_02_LIAB_TOT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_TOT_BOY_BV.md) | Total liabilities - book value, beginning of year | amount | 640k | ▲ warn |
+| [`PF_02_LIAB_TOT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_LIAB_TOT_EOY_BV.md) | Total liabilities - book value, end of year | amount | 1.2M |  |
+| [`PF_02_NAFB_CAP_STCK_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_CAP_STCK_BOY_BV.md) | Capital stock - book value, beginning of year | amount | 608k |  |
+| [`PF_02_NAFB_CAP_STCK_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_CAP_STCK_EOY_BV.md) | Capital stock - book value, end of year | amount | 606k |  |
+| [`PF_02_NAFB_CAP_SURPLUS_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_CAP_SURPLUS_BOY_BV.md) | Paid-in or capital surplus - book value, beginning of year | amount | 357k |  |
+| [`PF_02_NAFB_CAP_SURPLUS_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_CAP_SURPLUS_EOY_BV.md) | Paid-in or capital surplus - book value, end of year | amount | 356k |  |
+| [`PF_02_NAFB_EARNING_RETAIN_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_EARNING_RETAIN_BOY_BV.md) | Retained earnings - book value, beginning of year | amount | 586k |  |
+| [`PF_02_NAFB_EARNING_RETAIN_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_EARNING_RETAIN_EOY_BV.md) | Retained earnings - book value, end of year | amount | 585k |  |
 | [`PF_02_NAFB_FOLLOW_SFAS117_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_FOLLOW_SFAS117_X.md) | Organizations That Follow SFAS 117 | checkbox | 321k |  |
 | [`PF_02_NAFB_NO_FOLLOW_SFAS117_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_NO_FOLLOW_SFAS117_X.md) | Organizations That Do Not Follow SFAS 117 | checkbox | 814k |  |
 | [`PF_02_NAFB_RESTRICT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_BOY_BV.md) | Net assets with donor restrictions - beginning of year - book value | amount | 22k | ▲ warn |
 | [`PF_02_NAFB_RESTRICT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_EOY_BV.md) | Net assets with donor restrictions - end of year - book value | amount | 22k | ▲ warn |
-| [`PF_02_NAFB_RESTRICT_PERM_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_PERM_BOY_BV.md) | Book Value | amount | 5.6k |  |
-| [`PF_02_NAFB_RESTRICT_PERM_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_PERM_EOY_BV.md) | Book Value | amount | 5.6k |  |
-| [`PF_02_NAFB_RESTRICT_TEMP_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_TEMP_BOY_BV.md) | Book Value | amount | 7.3k |  |
-| [`PF_02_NAFB_RESTRICT_TEMP_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_TEMP_EOY_BV.md) | Book Value | amount | 7.4k |  |
-| [`PF_02_NAFB_TOT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_TOT_BOY_BV.md) | Book Value | amount | 1.1M |  |
-| [`PF_02_NAFB_TOT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_TOT_EOY_BV.md) | Book Value | amount | 1.2M |  |
-| [`PF_02_NAFB_TOT_LIAB_NAFB_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_TOT_LIAB_NAFB_BOY_BV.md) | Book Value | amount | 1.2M |  |
-| [`PF_02_NAFB_TOT_LIAB_NAFB_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_TOT_LIAB_NAFB_EOY_BV.md) | Book Value | amount | 1.2M |  |
-| [`PF_02_NAFB_UNRESTRICT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_UNRESTRICT_BOY_BV.md) | Book Value | amount | 289k |  |
-| [`PF_02_NAFB_UNRESTRICT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_UNRESTRICT_EOY_BV.md) | Book Value | amount | 287k |  |
+| [`PF_02_NAFB_RESTRICT_PERM_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_PERM_BOY_BV.md) | Permanently restricted net assets - book value, beginning of year | amount | 5.6k |  |
+| [`PF_02_NAFB_RESTRICT_PERM_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_PERM_EOY_BV.md) | Permanently restricted net assets - book value, end of year | amount | 5.6k |  |
+| [`PF_02_NAFB_RESTRICT_TEMP_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_TEMP_BOY_BV.md) | Temporarily restricted net assets - book value, beginning of year | amount | 7.3k |  |
+| [`PF_02_NAFB_RESTRICT_TEMP_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_RESTRICT_TEMP_EOY_BV.md) | Temporarily restricted net assets - book value, end of year | amount | 7.4k |  |
+| [`PF_02_NAFB_TOT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_TOT_BOY_BV.md) | Total net assets or fund balances - book value, beginning of year | amount | 1.1M |  |
+| [`PF_02_NAFB_TOT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_TOT_EOY_BV.md) | Total net assets or fund balances - book value, end of year | amount | 1.2M |  |
+| [`PF_02_NAFB_TOT_LIAB_NAFB_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_TOT_LIAB_NAFB_BOY_BV.md) | Total liabilities and net assets - book value, beginning of year | amount | 1.2M |  |
+| [`PF_02_NAFB_TOT_LIAB_NAFB_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_TOT_LIAB_NAFB_EOY_BV.md) | Total liabilities and net assets - book value, end of year | amount | 1.2M |  |
+| [`PF_02_NAFB_UNRESTRICT_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_UNRESTRICT_BOY_BV.md) | Unrestricted net assets - book value, beginning of year | amount | 289k |  |
+| [`PF_02_NAFB_UNRESTRICT_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_02_NAFB_UNRESTRICT_EOY_BV.md) | Unrestricted net assets - book value, end of year | amount | 287k |  |
 
 ## `PF-P03-T00-NET-ASSET-FUND-BALANCE-CHANGE`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_03_EXCESS_REV_OVER_EXP_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_03_EXCESS_REV_OVER_EXP_BOOKS.md) | Revenue and Expenses per Books | amount | 1.1M |  |
+| [`PF_03_EXCESS_REV_OVER_EXP_BOOKS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_03_EXCESS_REV_OVER_EXP_BOOKS.md) | Excess of revenue over expenses and disbursements (from Part I line 27a) | amount | 1.1M |  |
 | [`PF_03_NAFB_CHANGE_SUBTOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_03_NAFB_CHANGE_SUBTOT.md) | Subtotal | amount | 1.1M |  |
 | [`PF_03_NAFB_OTH_DECREASE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_03_NAFB_OTH_DECREASE.md) | Other Decreases | amount | 692k | ⚠ fail ▲ warn |
 | [`PF_03_NAFB_OTH_INCREASE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_03_NAFB_OTH_INCREASE.md) | Other Increases | amount | 699k | ⚠ fail ▲ warn |
@@ -272,24 +272,24 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_05_4940E_4942_TAX_LIABLE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_4942_TAX_LIABLE_X.md) | Liable for 4942 Tax? | checkbox | 472k |  |
 | [`PF_05_4940E_ADD_L5_L6`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ADD_L5_L6.md) | Adjusted Noncharitable Assets and 1% of Net Investment Income (add lines 5 and 6) | number | 480k |  |
 | [`PF_05_4940E_ASSET_NOCHARIT_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_ADJ.md) | Adjusted Noncharitable Assets (multiply Line 4 by Line 3) | amount | 447k |  |
-| [`PF_05_4940E_ASSET_NOCHARIT_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M1.md) | Year 1 | amount | 443k |  |
-| [`PF_05_4940E_ASSET_NOCHARIT_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M2.md) | Year 2 | amount | 430k |  |
-| [`PF_05_4940E_ASSET_NOCHARIT_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M3.md) | Year 3 | amount | 415k |  |
-| [`PF_05_4940E_ASSET_NOCHARIT_CY_M4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M4.md) | Year 4 | amount | 399k |  |
-| [`PF_05_4940E_ASSET_NOCHARIT_CY_M5`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M5.md) | Year 5 | amount | 383k |  |
+| [`PF_05_4940E_ASSET_NOCHARIT_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M1.md) | Net value of noncharitable-use assets - base period year 1 | amount | 443k |  |
+| [`PF_05_4940E_ASSET_NOCHARIT_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M2.md) | Net value of noncharitable-use assets - base period year 2 | amount | 430k |  |
+| [`PF_05_4940E_ASSET_NOCHARIT_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M3.md) | Net value of noncharitable-use assets - base period year 3 | amount | 415k |  |
+| [`PF_05_4940E_ASSET_NOCHARIT_CY_M4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M4.md) | Net value of noncharitable-use assets - base period year 4 | amount | 399k |  |
+| [`PF_05_4940E_ASSET_NOCHARIT_CY_M5`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_CY_M5.md) | Net value of noncharitable-use assets - base period year 5 | amount | 383k |  |
 | [`PF_05_4940E_ASSET_NOCHARIT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_ASSET_NOCHARIT_NET.md) | Net Noncharitable Assets | amount | 444k |  |
 | [`PF_05_4940E_DIST_QUAL`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL.md) | Qualifying Distributions | amount | 469k |  |
-| [`PF_05_4940E_DIST_QUAL_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M1.md) | Year 1 | amount | 452k |  |
-| [`PF_05_4940E_DIST_QUAL_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M2.md) | Year 2 | amount | 438k |  |
-| [`PF_05_4940E_DIST_QUAL_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M3.md) | Year 3 | amount | 422k |  |
-| [`PF_05_4940E_DIST_QUAL_CY_M4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M4.md) | Year 4 | amount | 405k |  |
-| [`PF_05_4940E_DIST_QUAL_CY_M5`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M5.md) | Year 5 | amount | 388k |  |
+| [`PF_05_4940E_DIST_QUAL_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M1.md) | Adjusted qualifying distributions - base period year 1 | amount | 452k |  |
+| [`PF_05_4940E_DIST_QUAL_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M2.md) | Adjusted qualifying distributions - base period year 2 | amount | 438k |  |
+| [`PF_05_4940E_DIST_QUAL_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M3.md) | Adjusted qualifying distributions - base period year 3 | amount | 422k |  |
+| [`PF_05_4940E_DIST_QUAL_CY_M4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M4.md) | Adjusted qualifying distributions - base period year 4 | amount | 405k |  |
+| [`PF_05_4940E_DIST_QUAL_CY_M5`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_QUAL_CY_M5.md) | Adjusted qualifying distributions - base period year 5 | amount | 388k |  |
 | [`PF_05_4940E_DIST_RATIO_AVE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_AVE.md) | Average Distribution Ratio | number | 456k |  |
-| [`PF_05_4940E_DIST_RATIO_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M1.md) | Year 1 | number | 444k |  |
-| [`PF_05_4940E_DIST_RATIO_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M2.md) | Year 2 | number | 430k |  |
-| [`PF_05_4940E_DIST_RATIO_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M3.md) | Year 3 | number | 414k |  |
-| [`PF_05_4940E_DIST_RATIO_CY_M4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M4.md) | Year 4 | number | 398k |  |
-| [`PF_05_4940E_DIST_RATIO_CY_M5`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M5.md) | Year 5 | number | 382k |  |
+| [`PF_05_4940E_DIST_RATIO_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M1.md) | Distribution ratio - base period year 1 | number | 444k |  |
+| [`PF_05_4940E_DIST_RATIO_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M2.md) | Distribution ratio - base period year 2 | number | 430k |  |
+| [`PF_05_4940E_DIST_RATIO_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M3.md) | Distribution ratio - base period year 3 | number | 414k |  |
+| [`PF_05_4940E_DIST_RATIO_CY_M4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M4.md) | Distribution ratio - base period year 4 | number | 398k |  |
+| [`PF_05_4940E_DIST_RATIO_CY_M5`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_CY_M5.md) | Distribution ratio - base period year 5 | number | 382k |  |
 | [`PF_05_4940E_DIST_RATIO_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_DIST_RATIO_TOT.md) | Total Distribution Ratio | number | 456k | ⚠ fail |
 | [`PF_05_4940E_INVEST_NET_1PCT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_05_4940E_INVEST_NET_1PCT.md) | 1% of Net Investment Income | amount | 420k |  |
 
@@ -328,24 +328,24 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_07_ACT_NOT_PREVIOUSLY_REP_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_ACT_NOT_PREVIOUSLY_REP_X.md) | Activities Not Previously Reported? | checkbox | 1.1M |  |
 | [`PF_07_ASSET_AT_LEAST_5K_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_ASSET_AT_LEAST_5K_X.md) | At least \$5000 in Assets? | checkbox | 1.1M |  |
 | [`PF_07_BINDING_CONTRACT_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BINDING_CONTRACT_X.md) | Binding written contract covering interest, rents, royalties and annuities (line 11) \[x\] | checkbox | 0 |  |
-| [`PF_07_BOOK_IN_CARE_OF_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_CITY.md) | City | text | 102k |  |
-| [`PF_07_BOOK_IN_CARE_OF_ADDR_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_CNTR.md) | Country | code | 114 |  |
-| [`PF_07_BOOK_IN_CARE_OF_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_L1.md) | AddressLine1 | text | 102k |  |
-| [`PF_07_BOOK_IN_CARE_OF_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_L2.md) | AddressLine2 | text | 2.5k |  |
+| [`PF_07_BOOK_IN_CARE_OF_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_CITY.md) | Books in care of - city | text | 102k |  |
+| [`PF_07_BOOK_IN_CARE_OF_ADDR_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_CNTR.md) | Books in care of - foreign country | code | 114 |  |
+| [`PF_07_BOOK_IN_CARE_OF_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_L1.md) | Books in care of - address line 1 | text | 102k |  |
+| [`PF_07_BOOK_IN_CARE_OF_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_L2.md) | Books in care of - address line 2 | text | 2.5k |  |
 | [`PF_07_BOOK_IN_CARE_OF_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_STATE.md) | State | code | 102k |  |
-| [`PF_07_BOOK_IN_CARE_OF_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_ZIP.md) | Postal code | identifier | 102k |  |
-| [`PF_07_BOOK_IN_CARE_OF_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_NAME_L1.md) | BusinessNameLine1 | text | 45k |  |
-| [`PF_07_BOOK_IN_CARE_OF_NAME_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_NAME_L2.md) | BusinessNameLine2 | text | 626 |  |
+| [`PF_07_BOOK_IN_CARE_OF_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_ADDR_ZIP.md) | Books in care of - ZIP code or foreign postal code | identifier | 102k |  |
+| [`PF_07_BOOK_IN_CARE_OF_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_NAME_L1.md) | Books in care of - business name line 1 | text | 45k |  |
+| [`PF_07_BOOK_IN_CARE_OF_NAME_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_NAME_L2.md) | Books in care of - business name line 2 | text | 626 |  |
 | [`PF_07_BOOK_IN_CARE_OF_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_NAME_PERS.md) | Person Name | text | 613k |  |
 | [`PF_07_BOOK_IN_CARE_OF_PHONE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_IN_CARE_OF_PHONE.md) | Phone Number | identifier | 1.1M |  |
-| [`PF_07_BOOK_LOCATION_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_CITY.md) | City | text | 1.0M |  |
-| [`PF_07_BOOK_LOCATION_ADDR_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_CNTR.md) | Country | code | 1.6k |  |
-| [`PF_07_BOOK_LOCATION_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_L1.md) | AddressLine1 | text | 1.0M |  |
-| [`PF_07_BOOK_LOCATION_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_L2.md) | AddressLine2 | text | 22k |  |
+| [`PF_07_BOOK_LOCATION_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_CITY.md) | Location of books - city | text | 1.0M |  |
+| [`PF_07_BOOK_LOCATION_ADDR_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_CNTR.md) | Location of books - foreign country | code | 1.6k |  |
+| [`PF_07_BOOK_LOCATION_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_L1.md) | Location of books - address line 1 | text | 1.0M |  |
+| [`PF_07_BOOK_LOCATION_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_L2.md) | Location of books - address line 2 | text | 22k |  |
 | [`PF_07_BOOK_LOCATION_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_STATE.md) | Province or state | code | 1.0M |  |
-| [`PF_07_BOOK_LOCATION_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_ZIP.md) | Postal code | identifier | 1.0M | ▲ warn |
-| [`PF_07_BOOK_PERS_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_PERS_NAME_L1.md) | BusinessNameLine1 | text | 487k |  |
-| [`PF_07_BOOK_PERS_NAME_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_PERS_NAME_L2.md) | BusinessNameLine2 | text | 7.1k |  |
+| [`PF_07_BOOK_LOCATION_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_LOCATION_ADDR_ZIP.md) | Location of books - ZIP code or foreign postal code | identifier | 1.0M | ▲ warn |
+| [`PF_07_BOOK_PERS_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_PERS_NAME_L1.md) | Person with books - business name line 1 | text | 487k |  |
+| [`PF_07_BOOK_PERS_NAME_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_BOOK_PERS_NAME_L2.md) | Person with books - business name line 2 | text | 7.1k |  |
 | [`PF_07_CHANGE_ARTICLE_BYLAW_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_CHANGE_ARTICLE_BYLAW_X.md) | Changes to Articles or Bylaws? | checkbox | 1.1M |  |
 | [`PF_07_COMPLY_PUB_INSPECTION_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_COMPLY_PUB_INSPECTION_X.md) | Comply with Public Inspection Requirements? | checkbox | 1.1M |  |
 | [`PF_07_DAF_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_DAF_X.md) | Did Ihe organization acquire a direct or indirect interest in any applicable insurance contract? | checkbox | 1.0M |  |
@@ -385,15 +385,15 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_07_4720_ACT_UNCORRECTED_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_ACT_UNCORRECTED_X.md) | Uncorrected Prior Acts? | checkbox | 970k |  |
 | [`PF_07_4720_BIZ_HOLDING_EXCESS_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_BIZ_HOLDING_EXCESS_X.md) | Excess Business Holdings? | checkbox | 101k | 1 open flag |
 | [`PF_07_4720_BIZ_HOLDING_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_BIZ_HOLDING_X.md) | Business Holdings? | checkbox | 1.1M |  |
-| [`PF_07_4720_INCOME_UNDIST_APP_Y_1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_APP_Y_1.md) | Undistributed Income 4942(a)(2) Applied Year 1 | amount | 1.6k |  |
-| [`PF_07_4720_INCOME_UNDIST_APP_Y_2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_APP_Y_2.md) | Undistributed Income 4942(a)(2) Applied Year 2 | amount | 709 |  |
-| [`PF_07_4720_INCOME_UNDIST_APP_Y_3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_APP_Y_3.md) | Undistributed Income 4942(a)(2) Applied Year 3 | amount | 459 |  |
-| [`PF_07_4720_INCOME_UNDIST_APP_Y_4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_APP_Y_4.md) | Undistributed Income 4942(a)(2) Applied Year 4 | amount | 449 |  |
+| [`PF_07_4720_INCOME_UNDIST_APP_Y_1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_APP_Y_1.md) | Undistributed Income 4942(a)(2) Applied Year 1 | date | 1.6k |  |
+| [`PF_07_4720_INCOME_UNDIST_APP_Y_2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_APP_Y_2.md) | Undistributed Income 4942(a)(2) Applied Year 2 | date | 709 |  |
+| [`PF_07_4720_INCOME_UNDIST_APP_Y_3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_APP_Y_3.md) | Undistributed Income 4942(a)(2) Applied Year 3 | date | 459 |  |
+| [`PF_07_4720_INCOME_UNDIST_APP_Y_4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_APP_Y_4.md) | Undistributed Income 4942(a)(2) Applied Year 4 | date | 449 |  |
 | [`PF_07_4720_INCOME_UNDIST_N_APP_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_N_APP_X.md) | Undistributed Income 4942(a)(2) Not Applied? | checkbox | 190k |  |
-| [`PF_07_4720_INCOME_UNDIST_PY_1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_PY_1.md) | Undistributed Income Prior Year 1 | amount | 27k |  |
-| [`PF_07_4720_INCOME_UNDIST_PY_2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_PY_2.md) | Undistributed Income Prior Year 2 | amount | 10k |  |
-| [`PF_07_4720_INCOME_UNDIST_PY_3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_PY_3.md) | Undistributed Income Prior Year 3 | amount | 5.8k |  |
-| [`PF_07_4720_INCOME_UNDIST_PY_4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_PY_4.md) | Undistributed Income Prior Year 4 | amount | 3.9k |  |
+| [`PF_07_4720_INCOME_UNDIST_PY_1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_PY_1.md) | Undistributed Income Prior Year 1 | date | 27k |  |
+| [`PF_07_4720_INCOME_UNDIST_PY_2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_PY_2.md) | Undistributed Income Prior Year 2 | date | 10k |  |
+| [`PF_07_4720_INCOME_UNDIST_PY_3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_PY_3.md) | Undistributed Income Prior Year 3 | date | 5.8k |  |
+| [`PF_07_4720_INCOME_UNDIST_PY_4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_PY_4.md) | Undistributed Income Prior Year 4 | date | 3.9k |  |
 | [`PF_07_4720_INCOME_UNDIST_PY_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INCOME_UNDIST_PY_X.md) | Undistributed Income Prior Years? | checkbox | 1.1M |  |
 | [`PF_07_4720_INVEST_UNCORRECTED_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_INVEST_UNCORRECTED_X.md) | Uncorrected Jeopardy Investments? | checkbox | 1.1M |  |
 | [`PF_07_4720_JEOPARDY_INVEST_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_07_4720_JEOPARDY_INVEST_X.md) | Jeopardy Investments? | checkbox | 1.1M |  |
@@ -443,8 +443,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_08_COMP_DTK_COMP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_COMP.md) | Compensation | amount | 1.2M |  |
 | [`PF_08_COMP_DTK_EMPL_BEN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_EMPL_BEN.md) | Contributions to employee benefit plans and deferred compensation | amount | 793k |  |
 | [`PF_08_COMP_DTK_EXP_ACC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_EXP_ACC.md) | Expense account and other allowances | amount | 791k |  |
-| [`PF_08_COMP_DTK_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_ORG_L1.md) | BusinessNameLine1 | text | 50k |  |
-| [`PF_08_COMP_DTK_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_ORG_L2.md) | BusinessNameLine2 | text | 2.6k |  |
+| [`PF_08_COMP_DTK_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_ORG_L1.md) | Officer, director, trustee, or key employee - business name line 1 | text | 50k |  |
+| [`PF_08_COMP_DTK_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_ORG_L2.md) | Officer, director, trustee, or key employee - business name line 2 | text | 2.6k |  |
 | [`PF_08_COMP_DTK_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_PERS.md) | Person Name | text | 1.1M |  |
 | [`PF_08_COMP_DTK_TITLE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_TITLE.md) | Title | text | 1.2M |  |
 
@@ -453,17 +453,17 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
 | [`PF_08_COMP_DTK_ADDR_CITY_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_ADDR_CITY_HCE.md) | City | text | 24k |  |
-| [`PF_08_COMP_DTK_ADDR_CNTR_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_ADDR_CNTR_HCE.md) | Country | text | 215 | 1 open flag |
+| [`PF_08_COMP_DTK_ADDR_CNTR_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_ADDR_CNTR_HCE.md) | Country | code | 215 | 1 open flag |
 | [`PF_08_COMP_DTK_ADDR_L1_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_ADDR_L1_HCE.md) | AddressLine1 | text | 24k |  |
 | [`PF_08_COMP_DTK_ADDR_L2_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_ADDR_L2_HCE.md) | AddressLine2 | text | 712 |  |
-| [`PF_08_COMP_DTK_ADDR_STATE_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_ADDR_STATE_HCE.md) | Province or state | text | 24k |  |
+| [`PF_08_COMP_DTK_ADDR_STATE_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_ADDR_STATE_HCE.md) | Province or state | code | 24k |  |
 | [`PF_08_COMP_DTK_ADDR_ZIP_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_ADDR_ZIP_HCE.md) | Postal code | identifier | 24k | ▲ warn |
 | [`PF_08_COMP_DTK_AVE_HOUR_WEEK_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_AVE_HOUR_WEEK_HCE.md) | Average hours per week | number | 24k |  |
 | [`PF_08_COMP_DTK_COMP_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_COMP_HCE.md) | Compensation | amount | 24k |  |
 | [`PF_08_COMP_DTK_EMPL_BEN_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_EMPL_BEN_HCE.md) | Employee benefits | amount | 21k |  |
 | [`PF_08_COMP_DTK_EXP_ACC_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_EXP_ACC_HCE.md) | Expense Account | amount | 18k |  |
-| [`PF_08_COMP_DTK_NAME_ORG_L1_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_ORG_L1_HCE.md) | BusinessNameLine1 | text | 917 |  |
-| [`PF_08_COMP_DTK_NAME_ORG_L2_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_ORG_L2_HCE.md) | BusinessNameLine2 | text | 127 |  |
+| [`PF_08_COMP_DTK_NAME_ORG_L1_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_ORG_L1_HCE.md) | Highest paid employee - business name line 1 | text | 917 |  |
+| [`PF_08_COMP_DTK_NAME_ORG_L2_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_ORG_L2_HCE.md) | Highest paid employee - business name line 2 | text | 127 |  |
 | [`PF_08_COMP_DTK_NAME_PERS_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_NAME_PERS_HCE.md) | Highest paid employee's name | text | 24k |  |
 | [`PF_08_COMP_DTK_TITLE_HCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_DTK_TITLE_HCE.md) | Title | text | 24k |  |
 
@@ -478,8 +478,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_08_COMP_KONTR_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_ADDR_STATE.md) | Province or state | code | 40k | ▲ warn |
 | [`PF_08_COMP_KONTR_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_ADDR_ZIP.md) | Postal code | identifier | 40k | ▲ warn |
 | [`PF_08_COMP_KONTR_COMP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_COMP.md) | Compensation | amount | 40k |  |
-| [`PF_08_COMP_KONTR_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_NAME_ORG_L1.md) | BusinessNameLine1 | text | 35k | 1 open flag |
-| [`PF_08_COMP_KONTR_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_NAME_ORG_L2.md) | BusinessNameLine2 | text | 15 |  |
+| [`PF_08_COMP_KONTR_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_NAME_ORG_L1.md) | Highest paid contractor - business name line 1 | text | 35k | 1 open flag |
+| [`PF_08_COMP_KONTR_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_NAME_ORG_L2.md) | Highest paid contractor - business name line 2 | text | 15 |  |
 | [`PF_08_COMP_KONTR_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_NAME_PERS.md) | Person | text | 5.6k |  |
 | [`PF_08_COMP_KONTR_TYPE_SVC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_08_COMP_KONTR_TYPE_SVC.md) | Type of service | text | 40k |  |
 
@@ -490,7 +490,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_09_PROG_RLTD_INVEST_AMT_1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_09_PROG_RLTD_INVEST_AMT_1.md) | Amount 1 | amount | 66k | ▲ warn |
 | [`PF_09_PROG_RLTD_INVEST_AMT_2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_09_PROG_RLTD_INVEST_AMT_2.md) | Amount 2 | amount | 7.9k |  |
 | [`PF_09_PROG_RLTD_INVEST_AMT_3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_09_PROG_RLTD_INVEST_AMT_3.md) | All Other Program-Related Investments Total | amount | 35k | 1 open flag |
-| [`PF_09_PROG_RLTD_INVEST_AMT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_09_PROG_RLTD_INVEST_AMT_TOT.md) | Total | amount | 456k | ▲ warn |
+| [`PF_09_PROG_RLTD_INVEST_AMT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_09_PROG_RLTD_INVEST_AMT_TOT.md) | Total program-related investments | amount | 456k | ▲ warn |
 | [`PF_09_PROG_RLTD_INVEST_DESC_1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_09_PROG_RLTD_INVEST_DESC_1.md) | Description 1 | text | 267k |  |
 | [`PF_09_PROG_RLTD_INVEST_DESC_2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_09_PROG_RLTD_INVEST_DESC_2.md) | Description 2 | text | 8.9k |  |
 
@@ -564,11 +564,11 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_13_DIST_TREATED_CORPUS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_DIST_TREATED_CORPUS.md) | Treated as Distribution from Corpus to Satisfy Requirements Imposed by Section 170(b)(1)(E) or 4942(g)(3) | amount | 577k | ▲ warn |
 | [`PF_13_EXCESS_DIST_APP_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_APP_CY.md) | Excess Distributions Carryover Applied to Current Year | amount | 646k | ⚠ fail |
 | [`PF_13_EXCESS_DIST_APP_CY_CORPUS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_APP_CY_CORPUS.md) | Corpus | amount | 647k | ⚠ fail |
-| [`PF_13_EXCESS_DIST_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M1.md) | Year 1 | amount | 648k |  |
-| [`PF_13_EXCESS_DIST_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M2.md) | Year 2 | amount | 610k |  |
-| [`PF_13_EXCESS_DIST_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M3.md) | Year 3 | amount | 582k |  |
-| [`PF_13_EXCESS_DIST_CY_M4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M4.md) | Year 4 | amount | 555k |  |
-| [`PF_13_EXCESS_DIST_CY_M5`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M5.md) | Year 5 | amount | 526k | ▲ warn |
+| [`PF_13_EXCESS_DIST_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M1.md) | Excess distributions carryover - year 1 | amount | 648k |  |
+| [`PF_13_EXCESS_DIST_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M2.md) | Excess distributions carryover - year 2 | amount | 610k |  |
+| [`PF_13_EXCESS_DIST_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M3.md) | Excess distributions carryover - year 3 | amount | 582k |  |
+| [`PF_13_EXCESS_DIST_CY_M4`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M4.md) | Excess distributions carryover - year 4 | amount | 555k |  |
+| [`PF_13_EXCESS_DIST_CY_M5`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_CY_M5.md) | Excess distributions carryover - year 5 | amount | 526k | ▲ warn |
 | [`PF_13_EXCESS_DIST_FROM_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_FROM_CY.md) | Excess from Current Year | amount | 678k |  |
 | [`PF_13_EXCESS_DIST_FROM_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_FROM_CY_M1.md) | Excess from Year 1 | amount | 631k |  |
 | [`PF_13_EXCESS_DIST_FROM_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_EXCESS_DIST_FROM_CY_M2.md) | Excess from Year 2 | amount | 600k |  |
@@ -583,9 +583,9 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_13_UNDIST_INCOME_PYZ_REMAIN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_PYZ_REMAIN.md) | Prior years' undistributed income (line 2b minus line 4b) | amount | 663k | ▲ warn |
 | [`PF_13_UNDIST_INCOME_PYZ_TAX`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_PYZ_TAX.md) | Prior Year's Deficiency or Tax | amount | 577k |  |
 | [`PF_13_UNDIST_INCOME_PYZ_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_PYZ_TOT.md) | Total for Prior Years | amount | 618k | ▲ warn |
-| [`PF_13_UNDIST_INCOME_PY_1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_PY_1.md) | Prior Year 1 | amount | 119k |  |
-| [`PF_13_UNDIST_INCOME_PY_2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_PY_2.md) | Prior Year 2 | amount | 86k |  |
-| [`PF_13_UNDIST_INCOME_PY_3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_PY_3.md) | Prior Year 3 | amount | 82k |  |
+| [`PF_13_UNDIST_INCOME_PY_1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_PY_1.md) | Prior Year 1 | date | 119k |  |
+| [`PF_13_UNDIST_INCOME_PY_2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_PY_2.md) | Prior Year 2 | date | 86k |  |
+| [`PF_13_UNDIST_INCOME_PY_3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_PY_3.md) | Prior Year 3 | date | 82k |  |
 | [`PF_13_UNDIST_INCOME_TAX_PY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_TAX_PY.md) | Taxable Amount 2 | amount | 669k |  |
 | [`PF_13_UNDIST_INCOME_TAX_PYZ_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_13_UNDIST_INCOME_TAX_PYZ_TOT.md) | Taxable Amount 1 | amount | 659k | ▲ warn |
 
@@ -595,67 +595,67 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 |----|----|----|----|----|
 | [`PF_14_POF_4942J3_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_4942J3_X.md) | Section 4942(j)(3) | checkbox | 92k |  |
 | [`PF_14_POF_4942J5_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_4942J5_X.md) | Section 4942(j)(5) | checkbox | 3.5k |  |
-| [`PF_14_POF_ASSET_TOT_4942J3_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_CY.md) | Current Year | amount | 31k |  |
-| [`PF_14_POF_ASSET_TOT_4942J3_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_CY_M1.md) | Year 1 | amount | 30k |  |
-| [`PF_14_POF_ASSET_TOT_4942J3_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_CY_M2.md) | Year 2 | amount | 29k |  |
-| [`PF_14_POF_ASSET_TOT_4942J3_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_CY_M3.md) | Year 3 | amount | 29k |  |
-| [`PF_14_POF_ASSET_TOT_4942J3_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_TOT.md) | Total | amount | 68k | ⚠ fail ▲ warn |
-| [`PF_14_POF_ASSET_TOT_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_CY.md) | Current Year | amount | 37k |  |
-| [`PF_14_POF_ASSET_TOT_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_CY_M1.md) | Year 1 | amount | 37k |  |
-| [`PF_14_POF_ASSET_TOT_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_CY_M2.md) | Year 2 | amount | 36k |  |
-| [`PF_14_POF_ASSET_TOT_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_CY_M3.md) | Year 3 | amount | 35k |  |
-| [`PF_14_POF_ASSET_TOT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_TOT.md) | Total | amount | 72k | ▲ warn |
+| [`PF_14_POF_ASSET_TOT_4942J3_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_CY.md) | Assets test: assets qualifying under section 4942(j)(3)(B)(i) - current year | amount | 31k |  |
+| [`PF_14_POF_ASSET_TOT_4942J3_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_CY_M1.md) | Assets test: assets qualifying under section 4942(j)(3)(B)(i) - current year minus 1 | amount | 30k |  |
+| [`PF_14_POF_ASSET_TOT_4942J3_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_CY_M2.md) | Assets test: assets qualifying under section 4942(j)(3)(B)(i) - current year minus 2 | amount | 29k |  |
+| [`PF_14_POF_ASSET_TOT_4942J3_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_CY_M3.md) | Assets test: assets qualifying under section 4942(j)(3)(B)(i) - current year minus 3 | amount | 29k |  |
+| [`PF_14_POF_ASSET_TOT_4942J3_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_4942J3_TOT.md) | Assets test: assets qualifying under section 4942(j)(3)(B)(i) - total | amount | 68k | ⚠ fail ▲ warn |
+| [`PF_14_POF_ASSET_TOT_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_CY.md) | Assets test: value of all assets - current year | amount | 37k |  |
+| [`PF_14_POF_ASSET_TOT_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_CY_M1.md) | Assets test: value of all assets - current year minus 1 | amount | 37k |  |
+| [`PF_14_POF_ASSET_TOT_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_CY_M2.md) | Assets test: value of all assets - current year minus 2 | amount | 36k |  |
+| [`PF_14_POF_ASSET_TOT_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_CY_M3.md) | Assets test: value of all assets - current year minus 3 | amount | 35k |  |
+| [`PF_14_POF_ASSET_TOT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ASSET_TOT_TOT.md) | Assets test: value of all assets - total | amount | 72k | ▲ warn |
 | [`PF_14_POF_DATE_RULING`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DATE_RULING.md) | Date of Ruling | date | 54k |  |
-| [`PF_14_POF_DIST_QUAL_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_CY.md) | Current Year | amount | 88k |  |
-| [`PF_14_POF_DIST_QUAL_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_CY_M1.md) | Year 1 | amount | 81k |  |
-| [`PF_14_POF_DIST_QUAL_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_CY_M2.md) | Year 2 | amount | 78k |  |
-| [`PF_14_POF_DIST_QUAL_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_CY_M3.md) | Year 3 | amount | 76k |  |
-| [`PF_14_POF_DIST_QUAL_MADE_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_CY.md) | Current Year | amount | 90k |  |
-| [`PF_14_POF_DIST_QUAL_MADE_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_CY_M1.md) | Year 1 | amount | 82k |  |
-| [`PF_14_POF_DIST_QUAL_MADE_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_CY_M2.md) | Year 2 | amount | 79k |  |
-| [`PF_14_POF_DIST_QUAL_MADE_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_CY_M3.md) | Year 3 | amount | 77k |  |
-| [`PF_14_POF_DIST_QUAL_MADE_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_TOT.md) | Total | amount | 93k |  |
-| [`PF_14_POF_DIST_QUAL_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_TOT.md) | Total | amount | 112k |  |
-| [`PF_14_POF_DIST_QUAL_UNUSED_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_CY.md) | Current Year | amount | 42k | ▲ warn |
-| [`PF_14_POF_DIST_QUAL_UNUSED_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_CY_M1.md) | Year 1 | amount | 39k | ▲ warn |
-| [`PF_14_POF_DIST_QUAL_UNUSED_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_CY_M2.md) | Year 2 | amount | 39k | ▲ warn |
-| [`PF_14_POF_DIST_QUAL_UNUSED_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_CY_M3.md) | Year 3 | amount | 39k | ▲ warn |
-| [`PF_14_POF_DIST_QUAL_UNUSED_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_TOT.md) | Total | amount | 45k | ▲ warn |
-| [`PF_14_POF_ENDOW_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_CY.md) | Current Year | amount | 50k |  |
-| [`PF_14_POF_ENDOW_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_CY_M1.md) | Year 1 | amount | 45k |  |
-| [`PF_14_POF_ENDOW_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_CY_M2.md) | Year 2 | amount | 44k |  |
-| [`PF_14_POF_ENDOW_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_CY_M3.md) | Year 3 | amount | 43k |  |
-| [`PF_14_POF_ENDOW_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_TOT.md) | Total | amount | 98k | ▲ warn |
-| [`PF_14_POF_LESSOR_85PCT_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_CY.md) | Current Year | amount | 64k | ▲ warn |
-| [`PF_14_POF_LESSOR_85PCT_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_CY_M1.md) | Year 1 | amount | 60k | ▲ warn |
-| [`PF_14_POF_LESSOR_85PCT_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_CY_M2.md) | Year 2 | amount | 59k | ▲ warn |
-| [`PF_14_POF_LESSOR_85PCT_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_CY_M3.md) | Year 3 | amount | 58k | ▲ warn |
-| [`PF_14_POF_LESSOR_85PCT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_TOT.md) | Total | amount | 69k |  |
-| [`PF_14_POF_LESSOR_ADJ_NET_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_CY.md) | Current Year | amount | 110k | ▲ warn |
-| [`PF_14_POF_LESSOR_ADJ_NET_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_CY_M1.md) | Year 1 | amount | 61k | ▲ warn |
-| [`PF_14_POF_LESSOR_ADJ_NET_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_CY_M2.md) | Year 2 | amount | 59k | ▲ warn |
-| [`PF_14_POF_LESSOR_ADJ_NET_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_CY_M3.md) | Year 3 | amount | 58k | ▲ warn |
-| [`PF_14_POF_LESSOR_ADJ_NET_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_TOT.md) | Total | amount | 111k | ▲ warn |
-| [`PF_14_POF_SUPPORT_INVEST_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_CY.md) | Current Year | amount | 9.9k |  |
-| [`PF_14_POF_SUPPORT_INVEST_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_CY_M1.md) | Year 1 | amount | 9.4k |  |
-| [`PF_14_POF_SUPPORT_INVEST_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_CY_M2.md) | Year 2 | amount | 9.4k |  |
-| [`PF_14_POF_SUPPORT_INVEST_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_CY_M3.md) | Year 3 | amount | 9.3k | ▲ warn |
-| [`PF_14_POF_SUPPORT_INVEST_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_TOT.md) | Total | amount | 54k |  |
-| [`PF_14_POF_SUPPORT_LARGEST_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_CY.md) | Current Year | amount | 7.8k |  |
-| [`PF_14_POF_SUPPORT_LARGEST_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_CY_M1.md) | Year 1 | amount | 7.0k |  |
-| [`PF_14_POF_SUPPORT_LARGEST_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_CY_M2.md) | Year 2 | amount | 6.9k |  |
-| [`PF_14_POF_SUPPORT_LARGEST_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_CY_M3.md) | Year 3 | amount | 6.9k |  |
-| [`PF_14_POF_SUPPORT_LARGEST_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_TOT.md) | Total | amount | 53k |  |
-| [`PF_14_POF_SUPPORT_PUB_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_CY.md) | Current Year | amount | 10k |  |
-| [`PF_14_POF_SUPPORT_PUB_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_CY_M1.md) | Year 1 | amount | 9.5k |  |
-| [`PF_14_POF_SUPPORT_PUB_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_CY_M2.md) | Year 2 | amount | 9.3k |  |
-| [`PF_14_POF_SUPPORT_PUB_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_CY_M3.md) | Year 3 | amount | 9.2k |  |
-| [`PF_14_POF_SUPPORT_PUB_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_TOT.md) | Total | amount | 55k | ▲ warn |
-| [`PF_14_POF_SUPPORT_TOT_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_CY.md) | Current Year | amount | 11k |  |
-| [`PF_14_POF_SUPPORT_TOT_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_CY_M1.md) | Year 1 | amount | 11k |  |
-| [`PF_14_POF_SUPPORT_TOT_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_CY_M2.md) | Year 2 | amount | 11k |  |
-| [`PF_14_POF_SUPPORT_TOT_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_CY_M3.md) | Year 3 | amount | 10k |  |
-| [`PF_14_POF_SUPPORT_TOT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_TOT.md) | Total | amount | 55k |  |
+| [`PF_14_POF_DIST_QUAL_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_CY.md) | Qualifying distributions - current year | amount | 88k |  |
+| [`PF_14_POF_DIST_QUAL_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_CY_M1.md) | Qualifying distributions - current year minus 1 | amount | 81k |  |
+| [`PF_14_POF_DIST_QUAL_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_CY_M2.md) | Qualifying distributions - current year minus 2 | amount | 78k |  |
+| [`PF_14_POF_DIST_QUAL_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_CY_M3.md) | Qualifying distributions - current year minus 3 | amount | 76k |  |
+| [`PF_14_POF_DIST_QUAL_MADE_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_CY.md) | Qualifying distributions made directly for exempt activities - current year | amount | 90k |  |
+| [`PF_14_POF_DIST_QUAL_MADE_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_CY_M1.md) | Qualifying distributions made directly for exempt activities - current year minus 1 | amount | 82k |  |
+| [`PF_14_POF_DIST_QUAL_MADE_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_CY_M2.md) | Qualifying distributions made directly for exempt activities - current year minus 2 | amount | 79k |  |
+| [`PF_14_POF_DIST_QUAL_MADE_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_CY_M3.md) | Qualifying distributions made directly for exempt activities - current year minus 3 | amount | 77k |  |
+| [`PF_14_POF_DIST_QUAL_MADE_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_MADE_TOT.md) | Qualifying distributions made directly for exempt activities - total | amount | 93k |  |
+| [`PF_14_POF_DIST_QUAL_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_TOT.md) | Qualifying distributions - total | amount | 112k |  |
+| [`PF_14_POF_DIST_QUAL_UNUSED_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_CY.md) | Qualifying distributions not used directly for exempt activities - current year | amount | 42k | ▲ warn |
+| [`PF_14_POF_DIST_QUAL_UNUSED_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_CY_M1.md) | Qualifying distributions not used directly for exempt activities - current year minus 1 | amount | 39k | ▲ warn |
+| [`PF_14_POF_DIST_QUAL_UNUSED_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_CY_M2.md) | Qualifying distributions not used directly for exempt activities - current year minus 2 | amount | 39k | ▲ warn |
+| [`PF_14_POF_DIST_QUAL_UNUSED_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_CY_M3.md) | Qualifying distributions not used directly for exempt activities - current year minus 3 | amount | 39k | ▲ warn |
+| [`PF_14_POF_DIST_QUAL_UNUSED_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_DIST_QUAL_UNUSED_TOT.md) | Qualifying distributions not used directly for exempt activities - total | amount | 45k | ▲ warn |
+| [`PF_14_POF_ENDOW_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_CY.md) | Endowment test: 2/3 of minimum investment return - current year | amount | 50k |  |
+| [`PF_14_POF_ENDOW_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_CY_M1.md) | Endowment test: 2/3 of minimum investment return - current year minus 1 | amount | 45k |  |
+| [`PF_14_POF_ENDOW_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_CY_M2.md) | Endowment test: 2/3 of minimum investment return - current year minus 2 | amount | 44k |  |
+| [`PF_14_POF_ENDOW_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_CY_M3.md) | Endowment test: 2/3 of minimum investment return - current year minus 3 | amount | 43k |  |
+| [`PF_14_POF_ENDOW_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_ENDOW_TOT.md) | Endowment test: 2/3 of minimum investment return - total | amount | 98k | ▲ warn |
+| [`PF_14_POF_LESSOR_85PCT_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_CY.md) | 85% of lesser of adjusted net income or minimum investment return - current year | amount | 64k | ▲ warn |
+| [`PF_14_POF_LESSOR_85PCT_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_CY_M1.md) | 85% of lesser of adjusted net income or minimum investment return - current year minus 1 | amount | 60k | ▲ warn |
+| [`PF_14_POF_LESSOR_85PCT_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_CY_M2.md) | 85% of lesser of adjusted net income or minimum investment return - current year minus 2 | amount | 59k | ▲ warn |
+| [`PF_14_POF_LESSOR_85PCT_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_CY_M3.md) | 85% of lesser of adjusted net income or minimum investment return - current year minus 3 | amount | 58k | ▲ warn |
+| [`PF_14_POF_LESSOR_85PCT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_85PCT_TOT.md) | 85% of lesser of adjusted net income or minimum investment return - total | amount | 69k |  |
+| [`PF_14_POF_LESSOR_ADJ_NET_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_CY.md) | Lesser of adjusted net income or minimum investment return - current year | amount | 110k | ▲ warn |
+| [`PF_14_POF_LESSOR_ADJ_NET_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_CY_M1.md) | Lesser of adjusted net income or minimum investment return - current year minus 1 | amount | 61k | ▲ warn |
+| [`PF_14_POF_LESSOR_ADJ_NET_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_CY_M2.md) | Lesser of adjusted net income or minimum investment return - current year minus 2 | amount | 59k | ▲ warn |
+| [`PF_14_POF_LESSOR_ADJ_NET_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_CY_M3.md) | Lesser of adjusted net income or minimum investment return - current year minus 3 | amount | 58k | ▲ warn |
+| [`PF_14_POF_LESSOR_ADJ_NET_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_LESSOR_ADJ_NET_TOT.md) | Lesser of adjusted net income or minimum investment return - total | amount | 111k | ▲ warn |
+| [`PF_14_POF_SUPPORT_INVEST_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_CY.md) | Support test: gross investment income - current year | amount | 9.9k |  |
+| [`PF_14_POF_SUPPORT_INVEST_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_CY_M1.md) | Support test: gross investment income - current year minus 1 | amount | 9.4k |  |
+| [`PF_14_POF_SUPPORT_INVEST_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_CY_M2.md) | Support test: gross investment income - current year minus 2 | amount | 9.4k |  |
+| [`PF_14_POF_SUPPORT_INVEST_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_CY_M3.md) | Support test: gross investment income - current year minus 3 | amount | 9.3k | ▲ warn |
+| [`PF_14_POF_SUPPORT_INVEST_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_INVEST_TOT.md) | Support test: gross investment income - total | amount | 54k |  |
+| [`PF_14_POF_SUPPORT_LARGEST_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_CY.md) | Support test: largest support from an exempt organization - current year | amount | 7.8k |  |
+| [`PF_14_POF_SUPPORT_LARGEST_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_CY_M1.md) | Support test: largest support from an exempt organization - current year minus 1 | amount | 7.0k |  |
+| [`PF_14_POF_SUPPORT_LARGEST_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_CY_M2.md) | Support test: largest support from an exempt organization - current year minus 2 | amount | 6.9k |  |
+| [`PF_14_POF_SUPPORT_LARGEST_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_CY_M3.md) | Support test: largest support from an exempt organization - current year minus 3 | amount | 6.9k |  |
+| [`PF_14_POF_SUPPORT_LARGEST_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_LARGEST_TOT.md) | Support test: largest support from an exempt organization - total | amount | 53k |  |
+| [`PF_14_POF_SUPPORT_PUB_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_CY.md) | Support test: public support - current year | amount | 10k |  |
+| [`PF_14_POF_SUPPORT_PUB_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_CY_M1.md) | Support test: public support - current year minus 1 | amount | 9.5k |  |
+| [`PF_14_POF_SUPPORT_PUB_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_CY_M2.md) | Support test: public support - current year minus 2 | amount | 9.3k |  |
+| [`PF_14_POF_SUPPORT_PUB_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_CY_M3.md) | Support test: public support - current year minus 3 | amount | 9.2k |  |
+| [`PF_14_POF_SUPPORT_PUB_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_PUB_TOT.md) | Support test: public support - total | amount | 55k | ▲ warn |
+| [`PF_14_POF_SUPPORT_TOT_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_CY.md) | Support test: total support other than gross investment income - current year | amount | 11k |  |
+| [`PF_14_POF_SUPPORT_TOT_CY_M1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_CY_M1.md) | Support test: total support other than gross investment income - current year minus 1 | amount | 11k |  |
+| [`PF_14_POF_SUPPORT_TOT_CY_M2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_CY_M2.md) | Support test: total support other than gross investment income - current year minus 2 | amount | 11k |  |
+| [`PF_14_POF_SUPPORT_TOT_CY_M3`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_CY_M3.md) | Support test: total support other than gross investment income - current year minus 3 | amount | 10k |  |
+| [`PF_14_POF_SUPPORT_TOT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_14_POF_SUPPORT_TOT_TOT.md) | Support test: total support other than gross investment income - total | amount | 55k |  |
 
 ## `PF-P15-T00-SUPPLEMENTARY-INFO`
 
@@ -698,7 +698,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_15_G_PAID_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_AMT.md) | Amount | amount | 914k |  |
+| [`PF_15_G_PAID_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_AMT.md) | Grant or contribution paid during the year - amount | amount | 914k |  |
 | [`PF_15_G_PAID_PURPOSE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_PURPOSE.md) | Purpose of Grant or Contribution | text | 914k |  |
 | [`PF_15_G_PAID_RECIP_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_ADDR_CITY.md) | City | text | 943k |  |
 | [`PF_15_G_PAID_RECIP_ADDR_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_ADDR_CNTR.md) | Country | code | 41k | ▲ warn |
@@ -706,8 +706,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_15_G_PAID_RECIP_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_ADDR_L2.md) | AddressLine2 | text | 105k |  |
 | [`PF_15_G_PAID_RECIP_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_ADDR_STATE.md) | Province or state | code | 932k | ▲ warn |
 | [`PF_15_G_PAID_RECIP_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_ADDR_ZIP.md) | Postal code | identifier | 931k | ▲ warn |
-| [`PF_15_G_PAID_RECIP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_NAME_ORG_L1.md) | BusinessNameLine1 | text | 741k |  |
-| [`PF_15_G_PAID_RECIP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_NAME_ORG_L2.md) | BusinessNameLine2 | text | 90k |  |
+| [`PF_15_G_PAID_RECIP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_NAME_ORG_L1.md) | Recipient of grant paid during the year - business name line 1 | text | 741k |  |
+| [`PF_15_G_PAID_RECIP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_NAME_ORG_L2.md) | Recipient of grant paid during the year - business name line 2 | text | 90k |  |
 | [`PF_15_G_PAID_RECIP_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_NAME_PERS.md) | Recipient Person Name | text | 205k |  |
 | [`PF_15_G_PAID_RECIP_STAT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RECIP_STAT.md) | Recipient's Foundation Status | text | 791k |  |
 | [`PF_15_G_PAID_RELATIONSHIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_PAID_RELATIONSHIP.md) | Recipient Relationship to Foundation Manager or Substantial Contributor | text | 664k |  |
@@ -716,7 +716,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_15_G_FUTURE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_AMT.md) | Amount | amount | 26k |  |
+| [`PF_15_G_FUTURE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_AMT.md) | Grant or contribution approved for future payment - amount | amount | 26k |  |
 | [`PF_15_G_FUTURE_PURPOSE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_PURPOSE.md) | Purpose of Grant or Contribution | text | 26k |  |
 | [`PF_15_G_FUTURE_RECIP_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_ADDR_CITY.md) | City | text | 27k |  |
 | [`PF_15_G_FUTURE_RECIP_ADDR_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_ADDR_CNTR.md) | Country | code | 1.9k | ▲ warn |
@@ -724,8 +724,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_15_G_FUTURE_RECIP_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_ADDR_L2.md) | AddressLine2 | text | 4.3k |  |
 | [`PF_15_G_FUTURE_RECIP_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_ADDR_STATE.md) | Province or state | code | 27k | ▲ warn |
 | [`PF_15_G_FUTURE_RECIP_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_ADDR_ZIP.md) | Postal code | identifier | 27k | ▲ warn |
-| [`PF_15_G_FUTURE_RECIP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_NAME_ORG_L1.md) | BusinessNameLine1 | text | 21k |  |
-| [`PF_15_G_FUTURE_RECIP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_NAME_ORG_L2.md) | BusinessNameLine2 | text | 343 |  |
+| [`PF_15_G_FUTURE_RECIP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_NAME_ORG_L1.md) | Recipient of grant approved for future payment - business name line 1 | text | 21k |  |
+| [`PF_15_G_FUTURE_RECIP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_NAME_ORG_L2.md) | Recipient of grant approved for future payment - business name line 2 | text | 343 |  |
 | [`PF_15_G_FUTURE_RECIP_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_NAME_PERS.md) | Recipient Person Name | text | 6.0k |  |
 | [`PF_15_G_FUTURE_RECIP_STAT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RECIP_STAT.md) | Recipient's Foundation Status | text | 23k |  |
 | [`PF_15_G_FUTURE_RELATIONSHIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_15_G_FUTURE_RELATIONSHIP.md) | Recipient Relationship to Foundation Manager or Substantial Contributor | text | 16k |  |
@@ -734,87 +734,87 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_16_REV_DIVIDEND_SEC_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 694k |  |
-| [`PF_16_REV_DIVIDEND_SEC_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 683k |  |
-| [`PF_16_REV_DIVIDEND_SEC_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_RLTD.md) | Related or exempt function income | amount | 108k |  |
-| [`PF_16_REV_DIVIDEND_SEC_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_UBIZ_AMT.md) | Amount | amount | 40k |  |
-| [`PF_16_REV_DIVIDEND_SEC_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_UBIZ_CODE.md) | Business code | amount | 15k |  |
-| [`PF_16_REV_EVNT_NET_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 28k | 1 open flag |
-| [`PF_16_REV_EVNT_NET_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 6.4k |  |
-| [`PF_16_REV_EVNT_NET_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_RLTD.md) | Related or exempt function income | amount | 28k | 1 open flag |
-| [`PF_16_REV_EVNT_NET_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_UBIZ_AMT.md) | Amount | amount | 24k | 1 open flag |
-| [`PF_16_REV_EVNT_NET_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_UBIZ_CODE.md) | Business code | amount | 1.1k |  |
-| [`PF_16_REV_INT_SAVING_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 389k | ▲ warn |
-| [`PF_16_REV_INT_SAVING_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 386k |  |
-| [`PF_16_REV_INT_SAVING_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_RLTD.md) | Related or exempt function income | amount | 99k | ▲ warn |
-| [`PF_16_REV_INT_SAVING_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_UBIZ_AMT.md) | Amount | amount | 38k |  |
-| [`PF_16_REV_INT_SAVING_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_UBIZ_CODE.md) | Business code | amount | 11k |  |
-| [`PF_16_REV_INV_GRO_SALE_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 26k | 1 open flag |
-| [`PF_16_REV_INV_GRO_SALE_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 4.4k |  |
-| [`PF_16_REV_INV_GRO_SALE_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_RLTD.md) | Related or exempt function income | amount | 29k | 1 open flag |
-| [`PF_16_REV_INV_GRO_SALE_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_UBIZ_AMT.md) | Amount | amount | 25k | 1 open flag |
-| [`PF_16_REV_INV_GRO_SALE_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_UBIZ_CODE.md) | Business code | amount | 2.6k |  |
-| [`PF_16_REV_MEMBSHIP_DUE_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 24k | 1 open flag |
-| [`PF_16_REV_MEMBSHIP_DUE_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 1.5k |  |
-| [`PF_16_REV_MEMBSHIP_DUE_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_RLTD.md) | Related or exempt function income | amount | 28k | 1 open flag |
-| [`PF_16_REV_MEMBSHIP_DUE_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_UBIZ_AMT.md) | Amount | amount | 24k | 1 open flag |
-| [`PF_16_REV_MEMBSHIP_DUE_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_UBIZ_CODE.md) | Business code | amount | 994 |  |
-| [`PF_16_REV_OTH_INVEST_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 103k | ▲ warn |
-| [`PF_16_REV_OTH_INVEST_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 87k |  |
-| [`PF_16_REV_OTH_INVEST_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_RLTD.md) | Related or exempt function income | amount | 39k | ▲ warn |
-| [`PF_16_REV_OTH_INVEST_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_UBIZ_AMT.md) | Amount | amount | 30k | ▲ warn |
-| [`PF_16_REV_OTH_INVEST_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_UBIZ_CODE.md) | Business code | amount | 8.4k |  |
-| [`PF_16_REV_PROG_FEES_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 264 |  |
-| [`PF_16_REV_PROG_FEES_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 134 |  |
-| [`PF_16_REV_PROG_FEES_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_RLTD.md) | Related or exempt function income | amount | 498 |  |
-| [`PF_16_REV_PROG_FEES_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_UBIZ_AMT.md) | Amount | amount | 286 |  |
-| [`PF_16_REV_PROG_FEES_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_UBIZ_CODE.md) | Business code | amount | 181 |  |
-| [`PF_16_REV_RENT_DEBT_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 25k | 1 open flag |
-| [`PF_16_REV_RENT_DEBT_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 3.2k |  |
-| [`PF_16_REV_RENT_DEBT_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_RLTD.md) | Related or exempt function income | amount | 24k | 1 open flag |
-| [`PF_16_REV_RENT_DEBT_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_UBIZ_AMT.md) | Amount | amount | 25k | 1 open flag |
-| [`PF_16_REV_RENT_DEBT_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_UBIZ_CODE.md) | Business code | amount | 2.3k |  |
-| [`PF_16_REV_RENT_NODEBT_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 43k |  |
-| [`PF_16_REV_RENT_NODEBT_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 21k |  |
-| [`PF_16_REV_RENT_NODEBT_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_RLTD.md) | Related or exempt function income | amount | 26k | 1 open flag |
-| [`PF_16_REV_RENT_NODEBT_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_UBIZ_AMT.md) | Amount | amount | 25k | ▲ warn 1 open flag |
-| [`PF_16_REV_RENT_NODEBT_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_UBIZ_CODE.md) | Business code | amount | 3.0k |  |
-| [`PF_16_REV_RENT_PROP_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 24k | 1 open flag |
-| [`PF_16_REV_RENT_PROP_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 1.3k |  |
-| [`PF_16_REV_RENT_PROP_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_RLTD.md) | Related or exempt function income | amount | 23k | 1 open flag |
-| [`PF_16_REV_RENT_PROP_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_UBIZ_AMT.md) | Amount | amount | 23k | 1 open flag |
-| [`PF_16_REV_RENT_PROP_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_UBIZ_CODE.md) | Business code | amount | 503 |  |
-| [`PF_16_REV_SALE_ASSET_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 595k | ▲ warn |
-| [`PF_16_REV_SALE_ASSET_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 579k |  |
-| [`PF_16_REV_SALE_ASSET_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_RLTD.md) | Related or exempt function income | amount | 158k | ▲ warn |
-| [`PF_16_REV_SALE_ASSET_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_UBIZ_AMT.md) | Amount | amount | 37k | ▲ warn |
-| [`PF_16_REV_SALE_ASSET_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_UBIZ_CODE.md) | Business code | amount | 13k |  |
-| [`PF_16_REV_SUBTOT_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SUBTOT_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 902k |  |
-| [`PF_16_REV_SUBTOT_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SUBTOT_RLTD.md) | Related or exempt function income | amount | 633k | ▲ warn |
-| [`PF_16_REV_SUBTOT_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SUBTOT_UBIZ_AMT.md) | Amount | amount | 496k | ▲ warn |
+| [`PF_16_REV_DIVIDEND_SEC_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_EXCL_AMT.md) | Dividends and interest from securities - excluded amount | amount | 694k |  |
+| [`PF_16_REV_DIVIDEND_SEC_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_EXCL_CODE.md) | Dividends and interest from securities - exclusion code | amount | 683k |  |
+| [`PF_16_REV_DIVIDEND_SEC_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_RLTD.md) | Dividends and interest from securities - related or exempt function income | amount | 108k |  |
+| [`PF_16_REV_DIVIDEND_SEC_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_UBIZ_AMT.md) | Dividends and interest from securities - unrelated business income | amount | 40k |  |
+| [`PF_16_REV_DIVIDEND_SEC_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_DIVIDEND_SEC_UBIZ_CODE.md) | Dividends and interest from securities - business code | amount | 15k |  |
+| [`PF_16_REV_EVNT_NET_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_EXCL_AMT.md) | Net income from special events - excluded amount | amount | 28k | 1 open flag |
+| [`PF_16_REV_EVNT_NET_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_EXCL_CODE.md) | Net income from special events - exclusion code | amount | 6.4k |  |
+| [`PF_16_REV_EVNT_NET_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_RLTD.md) | Net income from special events - related or exempt function income | amount | 28k | 1 open flag |
+| [`PF_16_REV_EVNT_NET_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_UBIZ_AMT.md) | Net income from special events - unrelated business income | amount | 24k | 1 open flag |
+| [`PF_16_REV_EVNT_NET_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_EVNT_NET_UBIZ_CODE.md) | Net income from special events - business code | amount | 1.1k |  |
+| [`PF_16_REV_INT_SAVING_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_EXCL_AMT.md) | Interest on savings and temporary cash investments - excluded amount | amount | 389k | ▲ warn |
+| [`PF_16_REV_INT_SAVING_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_EXCL_CODE.md) | Interest on savings and temporary cash investments - exclusion code | amount | 386k |  |
+| [`PF_16_REV_INT_SAVING_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_RLTD.md) | Interest on savings and temporary cash investments - related or exempt function income | amount | 99k | ▲ warn |
+| [`PF_16_REV_INT_SAVING_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_UBIZ_AMT.md) | Interest on savings and temporary cash investments - unrelated business income | amount | 38k |  |
+| [`PF_16_REV_INT_SAVING_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INT_SAVING_UBIZ_CODE.md) | Interest on savings and temporary cash investments - business code | amount | 11k |  |
+| [`PF_16_REV_INV_GRO_SALE_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_EXCL_AMT.md) | Gross profit from sales of inventory - excluded amount | amount | 26k | 1 open flag |
+| [`PF_16_REV_INV_GRO_SALE_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_EXCL_CODE.md) | Gross profit from sales of inventory - exclusion code | amount | 4.4k |  |
+| [`PF_16_REV_INV_GRO_SALE_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_RLTD.md) | Gross profit from sales of inventory - related or exempt function income | amount | 29k | 1 open flag |
+| [`PF_16_REV_INV_GRO_SALE_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_UBIZ_AMT.md) | Gross profit from sales of inventory - unrelated business income | amount | 25k | 1 open flag |
+| [`PF_16_REV_INV_GRO_SALE_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_INV_GRO_SALE_UBIZ_CODE.md) | Gross profit from sales of inventory - business code | amount | 2.6k |  |
+| [`PF_16_REV_MEMBSHIP_DUE_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_EXCL_AMT.md) | Membership dues and assessments - excluded amount | amount | 24k | 1 open flag |
+| [`PF_16_REV_MEMBSHIP_DUE_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_EXCL_CODE.md) | Membership dues and assessments - exclusion code | amount | 1.5k |  |
+| [`PF_16_REV_MEMBSHIP_DUE_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_RLTD.md) | Membership dues and assessments - related or exempt function income | amount | 28k | 1 open flag |
+| [`PF_16_REV_MEMBSHIP_DUE_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_UBIZ_AMT.md) | Membership dues and assessments - unrelated business income | amount | 24k | 1 open flag |
+| [`PF_16_REV_MEMBSHIP_DUE_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_MEMBSHIP_DUE_UBIZ_CODE.md) | Membership dues and assessments - business code | amount | 994 |  |
+| [`PF_16_REV_OTH_INVEST_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_EXCL_AMT.md) | Other investment income - excluded amount | amount | 103k | ▲ warn |
+| [`PF_16_REV_OTH_INVEST_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_EXCL_CODE.md) | Other investment income - exclusion code | amount | 87k |  |
+| [`PF_16_REV_OTH_INVEST_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_RLTD.md) | Other investment income - related or exempt function income | amount | 39k | ▲ warn |
+| [`PF_16_REV_OTH_INVEST_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_UBIZ_AMT.md) | Other investment income - unrelated business income | amount | 30k | ▲ warn |
+| [`PF_16_REV_OTH_INVEST_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_INVEST_UBIZ_CODE.md) | Other investment income - business code | amount | 8.4k |  |
+| [`PF_16_REV_PROG_FEES_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_EXCL_AMT.md) | Fees and contracts from government agencies - excluded amount | amount | 264 |  |
+| [`PF_16_REV_PROG_FEES_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_EXCL_CODE.md) | Fees and contracts from government agencies - exclusion code | amount | 134 |  |
+| [`PF_16_REV_PROG_FEES_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_RLTD.md) | Fees and contracts from government agencies - related or exempt function income | amount | 498 |  |
+| [`PF_16_REV_PROG_FEES_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_UBIZ_AMT.md) | Fees and contracts from government agencies - unrelated business income | amount | 286 |  |
+| [`PF_16_REV_PROG_FEES_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_FEES_UBIZ_CODE.md) | Fees and contracts from government agencies - business code | amount | 181 |  |
+| [`PF_16_REV_RENT_DEBT_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_EXCL_AMT.md) | Net rental income from debt-financed property - excluded amount | amount | 25k | 1 open flag |
+| [`PF_16_REV_RENT_DEBT_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_EXCL_CODE.md) | Net rental income from debt-financed property - exclusion code | amount | 3.2k |  |
+| [`PF_16_REV_RENT_DEBT_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_RLTD.md) | Net rental income from debt-financed property - related or exempt function income | amount | 24k | 1 open flag |
+| [`PF_16_REV_RENT_DEBT_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_UBIZ_AMT.md) | Net rental income from debt-financed property - unrelated business income | amount | 25k | 1 open flag |
+| [`PF_16_REV_RENT_DEBT_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_DEBT_UBIZ_CODE.md) | Net rental income from debt-financed property - business code | amount | 2.3k |  |
+| [`PF_16_REV_RENT_NODEBT_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_EXCL_AMT.md) | Net rental income from non-debt-financed property - excluded amount | amount | 43k |  |
+| [`PF_16_REV_RENT_NODEBT_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_EXCL_CODE.md) | Net rental income from non-debt-financed property - exclusion code | amount | 21k |  |
+| [`PF_16_REV_RENT_NODEBT_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_RLTD.md) | Net rental income from non-debt-financed property - related or exempt function income | amount | 26k | 1 open flag |
+| [`PF_16_REV_RENT_NODEBT_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_UBIZ_AMT.md) | Net rental income from non-debt-financed property - unrelated business income | amount | 25k | ▲ warn 1 open flag |
+| [`PF_16_REV_RENT_NODEBT_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_NODEBT_UBIZ_CODE.md) | Net rental income from non-debt-financed property - business code | amount | 3.0k |  |
+| [`PF_16_REV_RENT_PROP_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_EXCL_AMT.md) | Net rental income from personal property - excluded amount | amount | 24k | 1 open flag |
+| [`PF_16_REV_RENT_PROP_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_EXCL_CODE.md) | Net rental income from personal property - exclusion code | amount | 1.3k |  |
+| [`PF_16_REV_RENT_PROP_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_RLTD.md) | Net rental income from personal property - related or exempt function income | amount | 23k | 1 open flag |
+| [`PF_16_REV_RENT_PROP_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_UBIZ_AMT.md) | Net rental income from personal property - unrelated business income | amount | 23k | 1 open flag |
+| [`PF_16_REV_RENT_PROP_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_RENT_PROP_UBIZ_CODE.md) | Net rental income from personal property - business code | amount | 503 |  |
+| [`PF_16_REV_SALE_ASSET_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_EXCL_AMT.md) | Gain from sales of assets other than inventory - excluded amount | amount | 595k | ▲ warn |
+| [`PF_16_REV_SALE_ASSET_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_EXCL_CODE.md) | Gain from sales of assets other than inventory - exclusion code | amount | 579k |  |
+| [`PF_16_REV_SALE_ASSET_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_RLTD.md) | Gain from sales of assets other than inventory - related or exempt function income | amount | 158k | ▲ warn |
+| [`PF_16_REV_SALE_ASSET_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_UBIZ_AMT.md) | Gain from sales of assets other than inventory - unrelated business income | amount | 37k | ▲ warn |
+| [`PF_16_REV_SALE_ASSET_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SALE_ASSET_UBIZ_CODE.md) | Gain from sales of assets other than inventory - business code | amount | 13k |  |
+| [`PF_16_REV_SUBTOT_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SUBTOT_EXCL_AMT.md) | Subtotal - excluded amount | amount | 902k |  |
+| [`PF_16_REV_SUBTOT_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SUBTOT_RLTD.md) | Subtotal - related or exempt function income | amount | 633k | ▲ warn |
+| [`PF_16_REV_SUBTOT_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_SUBTOT_UBIZ_AMT.md) | Subtotal - unrelated business income | amount | 496k | ▲ warn |
 | [`PF_16_REV_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_TOT.md) | Total (add line 104; columns (B); (D); and (E)) | amount | 1.0M |  |
 
 ## `PF-P16-T01-INCOME-PRODUCING-ACTS`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_16_REV_PROG_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_DESC.md) | Description | text | 43k |  |
-| [`PF_16_REV_PROG_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 27k | 1 open flag |
-| [`PF_16_REV_PROG_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 6.6k |  |
-| [`PF_16_REV_PROG_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_RLTD.md) | Related or exempt function income | amount | 49k |  |
-| [`PF_16_REV_PROG_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_UBIZ_AMT.md) | Amount | amount | 26k | 1 open flag |
-| [`PF_16_REV_PROG_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_UBIZ_CODE.md) | Business code | amount | 5.2k |  |
+| [`PF_16_REV_PROG_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_DESC.md) | Program service revenue - description | text | 43k |  |
+| [`PF_16_REV_PROG_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_EXCL_AMT.md) | Program service revenue - excluded amount | amount | 27k | 1 open flag |
+| [`PF_16_REV_PROG_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_EXCL_CODE.md) | Program service revenue - exclusion code | amount | 6.6k |  |
+| [`PF_16_REV_PROG_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_RLTD.md) | Program service revenue - related or exempt function income | amount | 49k |  |
+| [`PF_16_REV_PROG_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_UBIZ_AMT.md) | Program service revenue - unrelated business income | amount | 26k | 1 open flag |
+| [`PF_16_REV_PROG_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_PROG_UBIZ_CODE.md) | Program service revenue - business code | amount | 5.2k |  |
 
 ## `PF-P16-T02-INCOME-PRODUCING-ACTS`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_16_REV_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_DESC.md) | Description | text | 175k |  |
-| [`PF_16_REV_OTH_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_EXCL_AMT.md) | Excluded by section 512; 513; or 514: Amount | amount | 143k |  |
-| [`PF_16_REV_OTH_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_EXCL_CODE.md) | Exclusion code (01 through 41) | amount | 124k | ▲ warn |
-| [`PF_16_REV_OTH_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_RLTD.md) | Related or exempt function income | amount | 59k |  |
-| [`PF_16_REV_OTH_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_UBIZ_AMT.md) | Amount | amount | 46k |  |
-| [`PF_16_REV_OTH_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_UBIZ_CODE.md) | Business code | amount | 23k |  |
+| [`PF_16_REV_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_DESC.md) | Other revenue - description | text | 175k |  |
+| [`PF_16_REV_OTH_EXCL_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_EXCL_AMT.md) | Other revenue - excluded amount | amount | 143k |  |
+| [`PF_16_REV_OTH_EXCL_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_EXCL_CODE.md) | Other revenue - exclusion code | amount | 124k | ▲ warn |
+| [`PF_16_REV_OTH_RLTD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_RLTD.md) | Other revenue - related or exempt function income | amount | 59k |  |
+| [`PF_16_REV_OTH_UBIZ_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_UBIZ_AMT.md) | Other revenue - unrelated business income | amount | 46k |  |
+| [`PF_16_REV_OTH_UBIZ_CODE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_16_REV_OTH_UBIZ_CODE.md) | Other revenue - business code | amount | 23k |  |
 
 ## `PF-P16-T03-ACTS-RELATIONSHIP-EXEMPT-PURPOSE`
 
@@ -850,36 +850,36 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_17_TRANSFER_AMT_INVOLVED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSFER_AMT_INVOLVED.md) | Amount involved | amount | 6.7k |  |
 | [`PF_17_TRANSFER_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSFER_DESC.md) | Description of transfers; transactions; and sharing arrangements | text | 6.8k |  |
 | [`PF_17_TRANSFER_LINE_NUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSFER_LINE_NUM.md) | Line number | text | 6.7k |  |
-| [`PF_17_TRANSFER_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSFER_NAME_ORG_L1.md) | BusinessNameLine1 | text | 7.3k |  |
-| [`PF_17_TRANSFER_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSFER_NAME_ORG_L2.md) | BusinessNameLine2 | text | 81 |  |
+| [`PF_17_TRANSFER_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSFER_NAME_ORG_L1.md) | Noncharitable exempt organization (transfer schedule) - business name line 1 | text | 7.3k |  |
+| [`PF_17_TRANSFER_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_TRANSFER_NAME_ORG_L2.md) | Noncharitable exempt organization (transfer schedule) - business name line 2 | text | 81 |  |
 
 ## `PF-P17-T02-RELATIONSHIPS`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
 | [`PF_17_RELATIONSHIP_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_RELATIONSHIP_DESC.md) | Description of relationship | text | 12k |  |
-| [`PF_17_RELATIONSHIP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_RELATIONSHIP_NAME_ORG_L1.md) | BusinessNameLine1 | text | 12k |  |
-| [`PF_17_RELATIONSHIP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_RELATIONSHIP_NAME_ORG_L2.md) | BusinessNameLine2 | text | 216 |  |
+| [`PF_17_RELATIONSHIP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_RELATIONSHIP_NAME_ORG_L1.md) | Related organization (relationship schedule) - business name line 1 | text | 12k |  |
+| [`PF_17_RELATIONSHIP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_RELATIONSHIP_NAME_ORG_L2.md) | Related organization (relationship schedule) - business name line 2 | text | 216 |  |
 | [`PF_17_RELATIONSHIP_TYPE_ORG`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_17_RELATIONSHIP_TYPE_ORG.md) | Type of organization | text | 12k |  |
 
 ## `PF-P99-T00-AUXILLIARY`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX02_ACT_NEW_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX02_ACT_NEW_EXPLANATION.md) | Explanation | text | 822 |  |
+| [`PF_AX02_ACT_NEW_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX02_ACT_NEW_EXPLANATION.md) | Activities not previously reported - explanation | text | 822 |  |
 | [`PF_AX05_ELECTION_PY_APPLIED_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX05_ELECTION_PY_APPLIED_DESC.md) | Election | text | 15k |  |
-| [`PF_AX07_CASH_DEEMED_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX07_CASH_DEEMED_EXPLANATION.md) | Explanation | text | 8.1k |  |
-| [`PF_AX08_CASH_DIST_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX08_CASH_DIST_EXPLANATION.md) | Explanation | text | 2.3k |  |
+| [`PF_AX07_CASH_DEEMED_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX07_CASH_DEEMED_EXPLANATION.md) | Cash deemed charitable - explanation | text | 8.1k |  |
+| [`PF_AX08_CASH_DIST_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX08_CASH_DIST_EXPLANATION.md) | Cash distributions - explanation | text | 2.3k |  |
 | [`PF_AX13_DIST_CORPUS_ELECT_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX13_DIST_CORPUS_ELECT_DESC.md) | Election | text | 6.9k |  |
 | [`PF_AX15_EXCESS_BEN_TRANSAC_STMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX15_EXCESS_BEN_TRANSAC_STMT.md) | Statement | text | 0 |  |
-| [`PF_AX17_POLI_ACT_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX17_POLI_ACT_EXPLANATION.md) | Explanation | text | 700 |  |
+| [`PF_AX17_POLI_ACT_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX17_POLI_ACT_EXPLANATION.md) | Legislative and political activities explanation | text | 700 |  |
 | [`PF_AX18_NON_FILING_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX18_NON_FILING_EXPLANATION.md) | ExplanationTxt | text | 40k |  |
 | [`PF_AX30_LIQUIDATION_STMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX30_LIQUIDATION_STMT.md) | ExplanationTxt | text | 19k |  |
 | [`PF_AX32_NOTE_MTG_AMT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_MTG_AMT_TOT.md) | Total mortgage amount | amount | 2.9k |  |
 | [`PF_AX43_OFF_OTH_TRAVEL_ADVANCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX43_OFF_OTH_TRAVEL_ADVANCE.md) | Travel advances to officers | amount | 312 |  |
-| [`PF_AX44_CAUSE_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX44_CAUSE_EXPLANATION.md) | Explanation | text | 107k | 1 open flag |
-| [`PF_AX45_REDUCT_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX45_REDUCT_EXPLANATION.md) | Explanation | text | 1.6k |  |
-| [`PF_AX47_4942A2_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX47_4942A2_EXPLANATION.md) | Explanation | text | 0 |  |
+| [`PF_AX44_CAUSE_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX44_CAUSE_EXPLANATION.md) | Reasonable cause explanation | text | 107k | 1 open flag |
+| [`PF_AX45_REDUCT_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX45_REDUCT_EXPLANATION.md) | Reduction explanation | text | 1.6k |  |
+| [`PF_AX47_4942A2_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX47_4942A2_EXPLANATION.md) | Section 4942(a)(2) statement - explanation | text | 0 |  |
 | [`PF_AX50_TAX_511_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX50_TAX_511_EXPLANATION.md) | ExplanationTxt | text | 328 |  |
 | [`PF_AX51_TRANSF_FR_CE_AMT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX51_TRANSF_FR_CE_AMT_TOT.md) | Total transfer from amount | amount | 1.3k |  |
 | [`PF_AX52_TRANSF_TO_CE_AMT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX52_TRANSF_TO_CE_AMT_TOT.md) | Total transfer to amount | amount | 1.6k |  |
@@ -888,18 +888,18 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX01_ACC_FEE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_AMT.md) | Amount | amount | 695k |  |
-| [`PF_AX01_ACC_FEE_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_CATEGORY.md) | Category | text | 673k |  |
-| [`PF_AX01_ACC_FEE_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_DISBMT_CHARIT.md) | Disbursements for Charitable Purposes | amount | 587k |  |
-| [`PF_AX01_ACC_FEE_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_INCOME_NET_ADJ.md) | Adjusted Net Income | amount | 208k |  |
-| [`PF_AX01_ACC_FEE_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_INVEST_NET.md) | Net Investment Income | amount | 537k |  |
+| [`PF_AX01_ACC_FEE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_AMT.md) | Accounting fees schedule - amount | amount | 695k |  |
+| [`PF_AX01_ACC_FEE_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_CATEGORY.md) | Accounting fees schedule - category | text | 673k |  |
+| [`PF_AX01_ACC_FEE_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_DISBMT_CHARIT.md) | Accounting fees schedule - disbursements for charitable purposes | amount | 587k |  |
+| [`PF_AX01_ACC_FEE_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_INCOME_NET_ADJ.md) | Accounting fees schedule - adjusted net income | amount | 208k |  |
+| [`PF_AX01_ACC_FEE_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX01_ACC_FEE_INVEST_NET.md) | Accounting fees schedule - net investment income | amount | 537k |  |
 
 ## `PF-P99-T03-PROG-INVEST-OTH`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX03_PROG_INVEST_OTH_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX03_PROG_INVEST_OTH_AMT.md) | Amount | amount | 24k | ▲ warn 1 open flag |
-| [`PF_AX03_PROG_INVEST_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX03_PROG_INVEST_OTH_DESC.md) | Description | text | 36k |  |
+| [`PF_AX03_PROG_INVEST_OTH_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX03_PROG_INVEST_OTH_AMT.md) | Other program-related investments schedule - amount | amount | 24k | ▲ warn 1 open flag |
+| [`PF_AX03_PROG_INVEST_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX03_PROG_INVEST_OTH_DESC.md) | Other program-related investments schedule - description | text | 36k |  |
 
 ## `PF-P99-T04-AMORTIZATION`
 
@@ -911,8 +911,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX04_AMORT_DATE_ACQUIRED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_DATE_ACQUIRED.md) | Date Acquired; Completed; or Expended | date | 6.4k |  |
 | [`PF_AX04_AMORT_DEDUCT_PYZ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_DEDUCT_PYZ.md) | Deduction for Prior Years | amount | 6.0k |  |
 | [`PF_AX04_AMORT_EXP_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_EXP_DESC.md) | Description of Amortized Expenses | text | 6.9k |  |
-| [`PF_AX04_AMORT_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_INCOME_NET_ADJ.md) | Adjusted Net Income | amount | 2.0k |  |
-| [`PF_AX04_AMORT_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_INVEST_NET.md) | Net Investment Income | amount | 3.6k |  |
+| [`PF_AX04_AMORT_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_INCOME_NET_ADJ.md) | Amortization schedule - adjusted net income | amount | 2.0k |  |
+| [`PF_AX04_AMORT_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_INVEST_NET.md) | Amortization schedule - net investment income | amount | 3.6k |  |
 | [`PF_AX04_AMORT_METHOD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_METHOD.md) | Amortization Method | number | 6.2k |  |
 
 ## `PF-P99-T06-FUND-BORROWED`
@@ -927,8 +927,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX06_FUND_BORROW_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX06_FUND_BORROW_ADDR_ZIP.md) | Postal code | identifier | 90 |  |
 | [`PF_AX06_FUND_BORROW_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX06_FUND_BORROW_AMT.md) | Amount Borrowed | amount | 91 |  |
 | [`PF_AX06_FUND_BORROW_ELECTION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX06_FUND_BORROW_ELECTION.md) | Election Statement | text | 46 |  |
-| [`PF_AX06_FUND_BORROW_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX06_FUND_BORROW_NAME_ORG_L1.md) | BusinessNameLine1 | text | 64 |  |
-| [`PF_AX06_FUND_BORROW_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX06_FUND_BORROW_NAME_ORG_L2.md) | BusinessNameLine2 | text | 0 |  |
+| [`PF_AX06_FUND_BORROW_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX06_FUND_BORROW_NAME_ORG_L1.md) | Borrowed funds - business name line 1 | text | 64 |  |
+| [`PF_AX06_FUND_BORROW_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX06_FUND_BORROW_NAME_ORG_L2.md) | Borrowed funds - business name line 2 | text | 0 |  |
 | [`PF_AX06_FUND_BORROW_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX06_FUND_BORROW_NAME_PERS.md) | Lender's Person Name | text | 74 |  |
 | [`PF_AX06_FUND_BORROW_USE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX06_FUND_BORROW_USE.md) | Use of Borrowed Funds | text | 66 |  |
 
@@ -936,18 +936,18 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX09_COMP_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX09_COMP_EXPLANATION.md) | Explanation | text | 45k |  |
-| [`PF_AX09_COMP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX09_COMP_NAME_ORG_L1.md) | BusinessNameLine1 | text | 4.1k | 1 open flag |
-| [`PF_AX09_COMP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX09_COMP_NAME_ORG_L2.md) | BusinessNameLine2 | text | 1.1k | 1 open flag |
+| [`PF_AX09_COMP_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX09_COMP_EXPLANATION.md) | Compensation explanation | text | 45k |  |
+| [`PF_AX09_COMP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX09_COMP_NAME_ORG_L1.md) | Compensation explanation - business name line 1 | text | 4.1k | 1 open flag |
+| [`PF_AX09_COMP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX09_COMP_NAME_ORG_L2.md) | Compensation explanation - business name line 2 | text | 1.1k | 1 open flag |
 | [`PF_AX09_COMP_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX09_COMP_NAME_PERS.md) | Name | text | 166k | 1 open flag |
 
 ## `PF-P99-T10-COMP-KONTR`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX10_COMP_KONTR_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX10_COMP_KONTR_EXPLANATION.md) | Explanation | text | 2.7k |  |
-| [`PF_AX10_COMP_KONTR_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX10_COMP_KONTR_NAME_ORG_L1.md) | BusinessNameLine1 | text | 1.6k |  |
-| [`PF_AX10_COMP_KONTR_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX10_COMP_KONTR_NAME_ORG_L2.md) | BusinessNameLine2 | text | 59 |  |
+| [`PF_AX10_COMP_KONTR_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX10_COMP_KONTR_EXPLANATION.md) | Contractor compensation explanation | text | 2.7k |  |
+| [`PF_AX10_COMP_KONTR_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX10_COMP_KONTR_NAME_ORG_L1.md) | Contractor - business name line 1 | text | 1.6k |  |
+| [`PF_AX10_COMP_KONTR_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX10_COMP_KONTR_NAME_ORG_L2.md) | Contractor - business name line 2 | text | 59 |  |
 | [`PF_AX10_COMP_KONTR_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX10_COMP_KONTR_NAME_PERS.md) | Person | text | 1.7k |  |
 
 ## `PF-P99-T11-DEPREC`
@@ -961,8 +961,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX11_DEPREC_DATE_ACQUIRED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX11_DEPREC_DATE_ACQUIRED.md) | Date Acquired | date | 72k |  |
 | [`PF_AX11_DEPREC_DESC_PROP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX11_DEPREC_DESC_PROP.md) | Description of Property | text | 76k |  |
 | [`PF_AX11_DEPREC_EXP_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX11_DEPREC_EXP_CY.md) | Prior Years' Depreciation | amount | 70k |  |
-| [`PF_AX11_DEPREC_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX11_DEPREC_INCOME_NET_ADJ.md) | Adjusted Net Income | amount | 24k | ▲ warn |
-| [`PF_AX11_DEPREC_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX11_DEPREC_INVEST_NET.md) | Net Investment Income | amount | 38k | ▲ warn |
+| [`PF_AX11_DEPREC_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX11_DEPREC_INCOME_NET_ADJ.md) | Depreciation schedule - adjusted net income | amount | 24k | ▲ warn |
+| [`PF_AX11_DEPREC_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX11_DEPREC_INVEST_NET.md) | Depreciation schedule - net investment income | amount | 38k | ▲ warn |
 | [`PF_AX11_DEPREC_LIFE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX11_DEPREC_LIFE.md) | Life (# of years) | number | 62k |  |
 | [`PF_AX11_DEPREC_RATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX11_DEPREC_RATE.md) | Rate | number | 13k | ⚠ fail |
 
@@ -977,9 +977,9 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX12_DISSOLUTION_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_ADDR_STATE.md) | Province or state | code | 9.4k |  |
 | [`PF_AX12_DISSOLUTION_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_ADDR_ZIP.md) | Postal code | identifier | 9.4k | ▲ warn |
 | [`PF_AX12_DISSOLUTION_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_AMT.md) | Dissolution Amount | amount | 10.0k |  |
-| [`PF_AX12_DISSOLUTION_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_EXPLANATION.md) | Explanation | text | 10.0k |  |
-| [`PF_AX12_DISSOLUTION_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_NAME_ORG_L1.md) | BusinessNameLine1 | text | 8.4k |  |
-| [`PF_AX12_DISSOLUTION_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_NAME_ORG_L2.md) | BusinessNameLine2 | text | 119 | 1 open flag |
+| [`PF_AX12_DISSOLUTION_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_EXPLANATION.md) | Dissolution - explanation | text | 10.0k |  |
+| [`PF_AX12_DISSOLUTION_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_NAME_ORG_L1.md) | Dissolution - business name line 1 | text | 8.4k |  |
+| [`PF_AX12_DISSOLUTION_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_NAME_ORG_L2.md) | Dissolution - business name line 2 | text | 119 | 1 open flag |
 | [`PF_AX12_DISSOLUTION_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX12_DISSOLUTION_NAME_PERS.md) | Dissolution person name | text | 1.5k |  |
 
 ## `PF-P99-T16-EXP-RESPONSIBILITY`
@@ -999,8 +999,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX16_EXP_RESP_GRANT_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX16_EXP_RESP_GRANT_AMT.md) | Grant Amount | amount | 14k |  |
 | [`PF_AX16_EXP_RESP_GRANT_DATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX16_EXP_RESP_GRANT_DATE.md) | Grant Date | date | 14k |  |
 | [`PF_AX16_EXP_RESP_GRANT_PURPOSE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX16_EXP_RESP_GRANT_PURPOSE.md) | Grant Purpose | text | 15k |  |
-| [`PF_AX16_EXP_RESP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX16_EXP_RESP_NAME_ORG_L1.md) | BusinessNameLine1 | text | 14k |  |
-| [`PF_AX16_EXP_RESP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX16_EXP_RESP_NAME_ORG_L2.md) | BusinessNameLine2 | text | 352 |  |
+| [`PF_AX16_EXP_RESP_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX16_EXP_RESP_NAME_ORG_L1.md) | Expenditure responsibility grantee - business name line 1 | text | 14k |  |
+| [`PF_AX16_EXP_RESP_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX16_EXP_RESP_NAME_ORG_L2.md) | Expenditure responsibility grantee - business name line 2 | text | 352 |  |
 | [`PF_AX16_EXP_RESP_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX16_EXP_RESP_NAME_PERS.md) | Grantee's Person Name | text | 814 |  |
 | [`PF_AX16_EXP_RESP_RESULT_VERIFICA`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX16_EXP_RESP_RESULT_VERIFICA.md) | Results of Verification | text | 9.4k |  |
 
@@ -1014,9 +1014,9 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX19_SALE_SEC_GRO_SALE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_GRO_SALE.md) | Gross sales price | amount | 0 |  |
 | [`PF_AX19_SALE_SEC_HOW_ACQUIRED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_HOW_ACQUIRED.md) | How acquired | text | 0 |  |
 | [`PF_AX19_SALE_SEC_NAME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_NAME.md) | Name | text | 0 |  |
-| [`PF_AX19_SALE_SEC_P_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_P_NAME_ORG_L1.md) | BusinessNameLine1 | text | 0 |  |
-| [`PF_AX19_SALE_SEC_P_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_P_NAME_ORG_L2.md) | BusinessNameLine2 | text | 0 |  |
-| [`PF_AX19_SALE_SEC_P_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_P_NAME_PERS.md) | Individual | text | 0 |  |
+| [`PF_AX19_SALE_SEC_P_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_P_NAME_ORG_L1.md) | Purchaser of nonpublic securities - business name line 1 | text | 0 |  |
+| [`PF_AX19_SALE_SEC_P_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_P_NAME_ORG_L2.md) | Purchaser of nonpublic securities - business name line 2 | text | 0 |  |
+| [`PF_AX19_SALE_SEC_P_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_P_NAME_PERS.md) | Purchaser of nonpublic securities - individual name | text | 0 |  |
 | [`PF_AX19_SALE_SEC_SALE_EXP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_SALE_EXP.md) | Sales expenses | amount | 0 |  |
 | [`PF_AX19_SALE_SEC_TOT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX19_SALE_SEC_TOT_NET.md) | gross sales price minus basis minus sales expense | amount | 0 |  |
 
@@ -1032,9 +1032,9 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX20_SALE_ASSET_GRO_SALE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_GRO_SALE.md) | Gross sales price | amount | 75k |  |
 | [`PF_AX20_SALE_ASSET_HOW_ACQUIRED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_HOW_ACQUIRED.md) | How acquired | text | 63k |  |
 | [`PF_AX20_SALE_ASSET_NAME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_NAME.md) | Name | text | 77k |  |
-| [`PF_AX20_SALE_ASSET_P_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_P_NAME_ORG_L1.md) | BusinessNameLine1 | text | 11k | 1 open flag |
-| [`PF_AX20_SALE_ASSET_P_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_P_NAME_ORG_L2.md) | BusinessNameLine2 | text | 0 |  |
-| [`PF_AX20_SALE_ASSET_P_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_P_NAME_PERS.md) | Individual | text | 3.6k |  |
+| [`PF_AX20_SALE_ASSET_P_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_P_NAME_ORG_L1.md) | Purchaser of other assets - business name line 1 | text | 11k | 1 open flag |
+| [`PF_AX20_SALE_ASSET_P_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_P_NAME_ORG_L2.md) | Purchaser of other assets - business name line 2 | text | 0 |  |
+| [`PF_AX20_SALE_ASSET_P_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_P_NAME_PERS.md) | Purchaser of other assets - individual name | text | 3.6k |  |
 | [`PF_AX20_SALE_ASSET_SALE_EXP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_SALE_EXP.md) | Sales expense | amount | 11k |  |
 | [`PF_AX20_SALE_ASSET_TOT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX20_SALE_ASSET_TOT_NET.md) | gross sales price minus basis minus sales expense | amount | 75k | ▲ warn |
 
@@ -1051,8 +1051,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX22_EXPLANATION_TEXT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX22_EXPLANATION_TEXT.md) | Explanation | text | 67k |  |
-| [`PF_AX22_FORM_LINE_REFERENCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX22_FORM_LINE_REFERENCE.md) | Return reference | text | 65k |  |
+| [`PF_AX22_EXPLANATION_TEXT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX22_EXPLANATION_TEXT.md) | General explanation | text | 67k |  |
+| [`PF_AX22_FORM_LINE_REFERENCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX22_FORM_LINE_REFERENCE.md) | Form and line reference | text | 65k |  |
 | [`PF_AX22_IDENTIFIER`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX22_IDENTIFIER.md) | Identifier | text | 51k | 1 open flag |
 | [`PF_AX22_RETURN_REFERENCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX22_RETURN_REFERENCE.md) | Return reference | text | 990 |  |
 
@@ -1060,26 +1060,26 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX23_INVEST_CORP_BOND_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX23_INVEST_CORP_BOND_EOY_BV.md) | End of Year Book Value | amount | 190k |  |
-| [`PF_AX23_INVEST_CORP_BOND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX23_INVEST_CORP_BOND_EOY_FMV.md) | End of Year Fair Market Value | amount | 188k |  |
+| [`PF_AX23_INVEST_CORP_BOND_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX23_INVEST_CORP_BOND_EOY_BV.md) | Corporate bonds schedule - book value, end of year | amount | 190k |  |
+| [`PF_AX23_INVEST_CORP_BOND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX23_INVEST_CORP_BOND_EOY_FMV.md) | Corporate bonds schedule - fair market value, end of year | amount | 188k |  |
 | [`PF_AX23_INVEST_CORP_BOND_NAME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX23_INVEST_CORP_BOND_NAME.md) | Name of Bond | text | 193k |  |
 
 ## `PF-P99-T24-INVEST-CORP-STOCK`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX24_INVEST_CORP_STCK_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX24_INVEST_CORP_STCK_EOY_BV.md) | End of Year Book Value | amount | 490k |  |
-| [`PF_AX24_INVEST_CORP_STCK_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX24_INVEST_CORP_STCK_EOY_FMV.md) | End of Year Fair Market Value | amount | 486k |  |
+| [`PF_AX24_INVEST_CORP_STCK_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX24_INVEST_CORP_STCK_EOY_BV.md) | Corporate stock schedule - book value, end of year | amount | 490k |  |
+| [`PF_AX24_INVEST_CORP_STCK_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX24_INVEST_CORP_STCK_EOY_FMV.md) | Corporate stock schedule - fair market value, end of year | amount | 486k |  |
 | [`PF_AX24_INVEST_CORP_STCK_NAME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX24_INVEST_CORP_STCK_NAME.md) | Name of Stock | text | 490k |  |
 
 ## `PF-P99-T25-INVEST-GOVT-SEC`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX25_INVEST_GOVT_SEC_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX25_INVEST_GOVT_SEC_EOY_BV.md) | End of Year Book Value | amount | 76k | 2 open flags |
-| [`PF_AX25_INVEST_GOVT_SEC_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX25_INVEST_GOVT_SEC_EOY_FMV.md) | End of Year Fair Market Value | amount | 76k | 2 open flags |
-| [`PF_AX25_INVEST_STATE_SEC_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX25_INVEST_STATE_SEC_EOY_BV.md) | End of Year Book Value | amount | 56k | ▲ warn 2 open flags |
-| [`PF_AX25_INVEST_STATE_SEC_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX25_INVEST_STATE_SEC_EOY_FMV.md) | End of Year Fair Market Value | amount | 55k | ▲ warn 2 open flags |
+| [`PF_AX25_INVEST_GOVT_SEC_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX25_INVEST_GOVT_SEC_EOY_BV.md) | US government obligations - book value, end of year | amount | 76k | 2 open flags |
+| [`PF_AX25_INVEST_GOVT_SEC_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX25_INVEST_GOVT_SEC_EOY_FMV.md) | US government obligations - fair market value, end of year | amount | 76k | 2 open flags |
+| [`PF_AX25_INVEST_STATE_SEC_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX25_INVEST_STATE_SEC_EOY_BV.md) | State and local government obligations - book value, end of year | amount | 56k | ▲ warn 2 open flags |
+| [`PF_AX25_INVEST_STATE_SEC_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX25_INVEST_STATE_SEC_EOY_FMV.md) | State and local government obligations - fair market value, end of year | amount | 55k | ▲ warn 2 open flags |
 
 ## `PF-P99-T26-INVEST-LAND`
 
@@ -1089,7 +1089,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX26_INVEST_LAND_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX26_INVEST_LAND_CATEGORY.md) | Category/ Item | text | 18k |  |
 | [`PF_AX26_INVEST_LAND_COST_BASIS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX26_INVEST_LAND_COST_BASIS.md) | Cost/other basis | amount | 18k |  |
 | [`PF_AX26_INVEST_LAND_DEPREC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX26_INVEST_LAND_DEPREC.md) | Accumulated depreciation | amount | 13k |  |
-| [`PF_AX26_INVEST_LAND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX26_INVEST_LAND_EOY_FMV.md) | End of Year Fair Market Value | amount | 12k |  |
+| [`PF_AX26_INVEST_LAND_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX26_INVEST_LAND_EOY_FMV.md) | Land investments schedule - fair market value, end of year | amount | 12k |  |
 
 ## `PF-P99-T27-INVEST-OTH`
 
@@ -1098,7 +1098,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX27_INVEST_OTH_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX27_INVEST_OTH_BV.md) | Book value | amount | 360k |  |
 | [`PF_AX27_INVEST_OTH_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX27_INVEST_OTH_CATEGORY.md) | Category/ Item | text | 368k |  |
 | [`PF_AX27_INVEST_OTH_COST_BASIS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX27_INVEST_OTH_COST_BASIS.md) | Cost/other basis | amount | 0 |  |
-| [`PF_AX27_INVEST_OTH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX27_INVEST_OTH_EOY_FMV.md) | End of Year Fair Market Value | amount | 357k |  |
+| [`PF_AX27_INVEST_OTH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX27_INVEST_OTH_EOY_FMV.md) | Other investments schedule - fair market value, end of year | amount | 357k |  |
 | [`PF_AX27_INVEST_OTH_LISTED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX27_INVEST_OTH_LISTED.md) | Listed at Cost or FMV | code | 332k | ▲ warn |
 
 ## `PF-P99-T28-LAND-ETC`
@@ -1109,17 +1109,17 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX28_LAND_ETC_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX28_LAND_ETC_CATEGORY.md) | Category/ Item | text | 79k |  |
 | [`PF_AX28_LAND_ETC_COST_BASIS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX28_LAND_ETC_COST_BASIS.md) | Cost/other basis | amount | 85k |  |
 | [`PF_AX28_LAND_ETC_DEPREC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX28_LAND_ETC_DEPREC.md) | Accumulated depreciation | amount | 79k |  |
-| [`PF_AX28_LAND_ETC_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX28_LAND_ETC_EOY_FMV.md) | End of Year Fair Market Value | amount | 43k | ▲ warn |
+| [`PF_AX28_LAND_ETC_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX28_LAND_ETC_EOY_FMV.md) | Land, buildings, and equipment schedule - fair market value, end of year | amount | 43k | ▲ warn |
 
 ## `PF-P99-T29-LEGAL-FEES`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX29_LEGAL_FEE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_AMT.md) | Amount | amount | 176k |  |
-| [`PF_AX29_LEGAL_FEE_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_CATEGORY.md) | Category | text | 171k |  |
-| [`PF_AX29_LEGAL_FEE_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_DISBMT_CHARIT.md) | Disbursements for Charitable Purposes | amount | 153k |  |
-| [`PF_AX29_LEGAL_FEE_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_INCOME_NET_ADJ.md) | Adjusted Net Income | amount | 59k | ▲ warn |
-| [`PF_AX29_LEGAL_FEE_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_INVEST_NET.md) | Net Investment Income | amount | 131k | ⚠ fail ▲ warn |
+| [`PF_AX29_LEGAL_FEE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_AMT.md) | Legal fees schedule - amount | amount | 176k |  |
+| [`PF_AX29_LEGAL_FEE_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_CATEGORY.md) | Legal fees schedule - category | text | 171k |  |
+| [`PF_AX29_LEGAL_FEE_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_DISBMT_CHARIT.md) | Legal fees schedule - disbursements for charitable purposes | amount | 153k |  |
+| [`PF_AX29_LEGAL_FEE_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_INCOME_NET_ADJ.md) | Legal fees schedule - adjusted net income | amount | 59k | ▲ warn |
+| [`PF_AX29_LEGAL_FEE_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX29_LEGAL_FEE_INVEST_NET.md) | Legal fees schedule - net investment income | amount | 131k | ⚠ fail ▲ warn |
 
 ## `PF-P99-T31-LOAN-OFF`
 
@@ -1149,9 +1149,9 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX32_NOTE_DATE_NOTE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_DATE_NOTE.md) | Date of note | date | 3.9k |  |
 | [`PF_AX32_NOTE_DESC_LENDER`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_DESC_LENDER.md) | Description of lender consideration | text | 1.8k |  |
 | [`PF_AX32_NOTE_INT_RATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_INT_RATE.md) | Interest rate | number | 3.7k |  |
-| [`PF_AX32_NOTE_LENDER_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_LENDER_NAME_ORG_L1.md) | BusinessNameLine1 | text | 2.1k |  |
-| [`PF_AX32_NOTE_LENDER_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_LENDER_NAME_ORG_L2.md) | BusinessNameLine2 | text | 0 |  |
-| [`PF_AX32_NOTE_LENDER_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_LENDER_NAME_PERS.md) | Individual | text | 3.8k |  |
+| [`PF_AX32_NOTE_LENDER_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_LENDER_NAME_ORG_L1.md) | Lender (mortgages and notes payable) - business name line 1 | text | 2.1k |  |
+| [`PF_AX32_NOTE_LENDER_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_LENDER_NAME_ORG_L2.md) | Lender (mortgages and notes payable) - business name line 2 | text | 0 |  |
+| [`PF_AX32_NOTE_LENDER_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_LENDER_NAME_PERS.md) | Lender (mortgages and notes payable) - individual name | text | 3.8k |  |
 | [`PF_AX32_NOTE_LENDER_TITLE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_LENDER_TITLE.md) | Lender's Title | text | 882 |  |
 | [`PF_AX32_NOTE_PURPOSE_LOAN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_PURPOSE_LOAN.md) | Purpose of loan | text | 3.9k |  |
 | [`PF_AX32_NOTE_RELATIONSHIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX32_NOTE_RELATIONSHIP.md) | Relationship to insider | text | 2.4k |  |
@@ -1162,58 +1162,58 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX33_ASSET_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX33_ASSET_OTH_BOY_BV.md) | Book Value | amount | 152k |  |
-| [`PF_AX33_ASSET_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX33_ASSET_OTH_DESC.md) | Description | text | 171k |  |
-| [`PF_AX33_ASSET_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX33_ASSET_OTH_EOY_BV.md) | Book Value | amount | 162k |  |
-| [`PF_AX33_ASSET_OTH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX33_ASSET_OTH_EOY_FMV.md) | Fair Market Value | amount | 146k |  |
+| [`PF_AX33_ASSET_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX33_ASSET_OTH_BOY_BV.md) | Other assets schedule - book value, beginning of year | amount | 152k |  |
+| [`PF_AX33_ASSET_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX33_ASSET_OTH_DESC.md) | Other assets schedule - description | text | 171k |  |
+| [`PF_AX33_ASSET_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX33_ASSET_OTH_EOY_BV.md) | Other assets schedule - book value, end of year | amount | 162k |  |
+| [`PF_AX33_ASSET_OTH_EOY_FMV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX33_ASSET_OTH_EOY_FMV.md) | Other assets schedule - fair market value, end of year | amount | 146k |  |
 
 ## `PF-P99-T34-NETASSET-CHANGE`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX34_NETASSET_CHANGE_OTH_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX34_NETASSET_CHANGE_OTH_AMT.md) | Amount | amount | 0 |  |
-| [`PF_AX34_NETASSET_CHANGE_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX34_NETASSET_CHANGE_OTH_DESC.md) | Description | text | 0 |  |
+| [`PF_AX34_NETASSET_CHANGE_OTH_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX34_NETASSET_CHANGE_OTH_AMT.md) | Other changes in net assets schedule - amount | amount | 0 |  |
+| [`PF_AX34_NETASSET_CHANGE_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX34_NETASSET_CHANGE_OTH_DESC.md) | Other changes in net assets schedule - description | text | 0 |  |
 
 ## `PF-P99-T35-DECREASE-OTH`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX35_DECREASE_OTH_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX35_DECREASE_OTH_AMT.md) | Amount | amount | 297k | ▲ warn |
-| [`PF_AX35_DECREASE_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX35_DECREASE_OTH_DESC.md) | Description | text | 297k |  |
+| [`PF_AX35_DECREASE_OTH_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX35_DECREASE_OTH_AMT.md) | Other decreases schedule - amount | amount | 297k | ▲ warn |
+| [`PF_AX35_DECREASE_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX35_DECREASE_OTH_DESC.md) | Other decreases schedule - description | text | 297k |  |
 
 ## `PF-P99-T36-EXP-OTH`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX36_EXP_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_DESC.md) | Description | text | 793k |  |
-| [`PF_AX36_EXP_OTH_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_DISBMT_CHARIT.md) | Disbursements for Charitable Purposes | amount | 603k | ▲ warn |
-| [`PF_AX36_EXP_OTH_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_INCOME_NET_ADJ.md) | Adjusted Net Income | amount | 174k | ▲ warn |
-| [`PF_AX36_EXP_OTH_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_INVEST_NET.md) | Net Investment Income | amount | 598k | ▲ warn |
-| [`PF_AX36_EXP_OTH_REV_EXP_BOOK`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_REV_EXP_BOOK.md) | Revenue and Expenses per Books | amount | 786k |  |
+| [`PF_AX36_EXP_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_DESC.md) | Other expenses schedule - description | text | 793k |  |
+| [`PF_AX36_EXP_OTH_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_DISBMT_CHARIT.md) | Other expenses schedule - disbursements for charitable purposes | amount | 603k | ▲ warn |
+| [`PF_AX36_EXP_OTH_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_INCOME_NET_ADJ.md) | Other expenses schedule - adjusted net income | amount | 174k | ▲ warn |
+| [`PF_AX36_EXP_OTH_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_INVEST_NET.md) | Other expenses schedule - net investment income | amount | 598k | ▲ warn |
+| [`PF_AX36_EXP_OTH_REV_EXP_BOOK`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX36_EXP_OTH_REV_EXP_BOOK.md) | Other expenses schedule - revenue and expenses per books | amount | 786k |  |
 
 ## `PF-P99-T37-INCOME-OTH`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX37_INCOME_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX37_INCOME_OTH_DESC.md) | Description | text | 309k |  |
-| [`PF_AX37_INCOME_OTH_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX37_INCOME_OTH_INVEST_NET.md) | Net Investment Income | amount | 206k |  |
-| [`PF_AX37_INCOME_OTH_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX37_INCOME_OTH_NET_ADJ.md) | Adjusted Net Income | amount | 156k |  |
-| [`PF_AX37_INCOME_OTH_REV_EXP_BOOK`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX37_INCOME_OTH_REV_EXP_BOOK.md) | Revenue and Expenses per Books | amount | 293k |  |
+| [`PF_AX37_INCOME_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX37_INCOME_OTH_DESC.md) | Other income schedule - description | text | 309k |  |
+| [`PF_AX37_INCOME_OTH_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX37_INCOME_OTH_INVEST_NET.md) | Other income schedule - net investment income | amount | 206k |  |
+| [`PF_AX37_INCOME_OTH_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX37_INCOME_OTH_NET_ADJ.md) | Other income schedule - adjusted net income | amount | 156k |  |
+| [`PF_AX37_INCOME_OTH_REV_EXP_BOOK`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX37_INCOME_OTH_REV_EXP_BOOK.md) | Other income schedule - revenue and expenses per books | amount | 293k |  |
 
 ## `PF-P99-T38-INCREASE-OTH`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX38_INCREASE_OTH_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX38_INCREASE_OTH_AMT.md) | Amount | amount | 284k | ▲ warn |
-| [`PF_AX38_INCREASE_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX38_INCREASE_OTH_DESC.md) | Description | text | 284k |  |
+| [`PF_AX38_INCREASE_OTH_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX38_INCREASE_OTH_AMT.md) | Other increases schedule - amount | amount | 284k | ▲ warn |
+| [`PF_AX38_INCREASE_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX38_INCREASE_OTH_DESC.md) | Other increases schedule - description | text | 284k |  |
 
 ## `PF-P99-T39-LIAB-OTH`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX39_LIAB_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX39_LIAB_OTH_BOY_BV.md) | Book Value | amount | 96k |  |
-| [`PF_AX39_LIAB_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX39_LIAB_OTH_DESC.md) | Description | text | 108k |  |
-| [`PF_AX39_LIAB_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX39_LIAB_OTH_EOY_BV.md) | Book Value | amount | 101k |  |
+| [`PF_AX39_LIAB_OTH_BOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX39_LIAB_OTH_BOY_BV.md) | Other liabilities schedule - book value, beginning of year | amount | 96k |  |
+| [`PF_AX39_LIAB_OTH_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX39_LIAB_OTH_DESC.md) | Other liabilities schedule - description | text | 108k |  |
+| [`PF_AX39_LIAB_OTH_EOY_BV`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX39_LIAB_OTH_EOY_BV.md) | Other liabilities schedule - book value, end of year | amount | 101k |  |
 
 ## `PF-P99-T40-NOTE-LOAN-OTH-LONG`
 
@@ -1226,9 +1226,9 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX40_NOTE_OTH_L_DATE_NOTE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_DATE_NOTE.md) | Date of note | date | 4.9k |  |
 | [`PF_AX40_NOTE_OTH_L_DESC_LENDER`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_DESC_LENDER.md) | Description of lender consideration | text | 2.4k |  |
 | [`PF_AX40_NOTE_OTH_L_INT_RATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_INT_RATE.md) | Interest rate | number | 6.4k |  |
-| [`PF_AX40_NOTE_OTH_L_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_NAME_ORG_L1.md) | BusinessNameLine1 | text | 3.2k |  |
-| [`PF_AX40_NOTE_OTH_L_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_NAME_ORG_L2.md) | BusinessNameLine2 | text | 0 |  |
-| [`PF_AX40_NOTE_OTH_L_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_NAME_PERS.md) | Individual | text | 3.4k |  |
+| [`PF_AX40_NOTE_OTH_L_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_NAME_ORG_L1.md) | Borrower (other notes and loans receivable) - business name line 1 | text | 3.2k |  |
+| [`PF_AX40_NOTE_OTH_L_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_NAME_ORG_L2.md) | Borrower (other notes and loans receivable) - business name line 2 | text | 0 |  |
+| [`PF_AX40_NOTE_OTH_L_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_NAME_PERS.md) | Borrower (other notes and loans receivable) - individual name | text | 3.4k |  |
 | [`PF_AX40_NOTE_OTH_L_PURPOSE_LOAN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_PURPOSE_LOAN.md) | Purpose of loan | text | 4.2k |  |
 | [`PF_AX40_NOTE_OTH_L_RELATIONSHIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_RELATIONSHIP.md) | Relationship to insider | text | 3.3k |  |
 | [`PF_AX40_NOTE_OTH_L_REPAY_TERM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX40_NOTE_OTH_L_REPAY_TERM.md) | Repayment terms | text | 4.0k |  |
@@ -1239,18 +1239,18 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
 | [`PF_AX41_NOTE_OTH_S_BALANCE_DUE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX41_NOTE_OTH_S_BALANCE_DUE.md) | Balance Due | amount | 7.5k |  |
-| [`PF_AX41_NOTE_OTH_S_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX41_NOTE_OTH_S_NAME_ORG_L1.md) | BusinessNameLine1 | text | 8.4k |  |
-| [`PF_AX41_NOTE_OTH_S_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX41_NOTE_OTH_S_NAME_ORG_L2.md) | BusinessNameLine2 | text | 0 |  |
+| [`PF_AX41_NOTE_OTH_S_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX41_NOTE_OTH_S_NAME_ORG_L1.md) | Section 501(c)(3) borrower (other notes and loans receivable) - business name line 1 | text | 8.4k |  |
+| [`PF_AX41_NOTE_OTH_S_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX41_NOTE_OTH_S_NAME_ORG_L2.md) | Section 501(c)(3) borrower (other notes and loans receivable) - business name line 2 | text | 0 |  |
 
 ## `PF-P99-T42-PROF-FEES-OTH`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX42_PROF_FEE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_AMT.md) | Amount | amount | 358k |  |
-| [`PF_AX42_PROF_FEE_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_CATEGORY.md) | Category | text | 355k |  |
-| [`PF_AX42_PROF_FEE_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_DISBMT_CHARIT.md) | Disbursements for Charitable Purposes | amount | 264k | ▲ warn |
-| [`PF_AX42_PROF_FEE_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_INCOME_NET_ADJ.md) | Adjusted Net Income | amount | 110k | ▲ warn |
-| [`PF_AX42_PROF_FEE_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_INVEST_NET.md) | Net Investment Income | amount | 321k |  |
+| [`PF_AX42_PROF_FEE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_AMT.md) | Other professional fees schedule - amount | amount | 358k |  |
+| [`PF_AX42_PROF_FEE_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_CATEGORY.md) | Other professional fees schedule - category | text | 355k |  |
+| [`PF_AX42_PROF_FEE_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_DISBMT_CHARIT.md) | Other professional fees schedule - disbursements for charitable purposes | amount | 264k | ▲ warn |
+| [`PF_AX42_PROF_FEE_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_INCOME_NET_ADJ.md) | Other professional fees schedule - adjusted net income | amount | 110k | ▲ warn |
+| [`PF_AX42_PROF_FEE_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX42_PROF_FEE_INVEST_NET.md) | Other professional fees schedule - net investment income | amount | 321k |  |
 
 ## `PF-P99-T43-OFF-OTH`
 
@@ -1274,7 +1274,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
 | [`PF_AX46_SALE_INV_AMT_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX46_SALE_INV_AMT_NET.md) | Net (gross sales minus cost of goods sold) | amount | 8.2k |  |
-| [`PF_AX46_SALE_INV_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX46_SALE_INV_CATEGORY.md) | Category | text | 7.9k |  |
+| [`PF_AX46_SALE_INV_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX46_SALE_INV_CATEGORY.md) | Sales of inventory schedule - category | text | 7.9k |  |
 | [`PF_AX46_SALE_INV_COST_GOODS_SOLD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX46_SALE_INV_COST_GOODS_SOLD.md) | Cost of goods sold | amount | 7.1k |  |
 | [`PF_AX46_SALE_INV_GRO_SALE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX46_SALE_INV_GRO_SALE.md) | Gross sales | amount | 8.2k |  |
 
@@ -1288,19 +1288,19 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX48_CONTRIBUTOR_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX48_CONTRIBUTOR_ADDR_L2.md) | AddressLine2 | text | 3.2k |  |
 | [`PF_AX48_CONTRIBUTOR_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX48_CONTRIBUTOR_ADDR_STATE.md) | Province or state | code | 85k |  |
 | [`PF_AX48_CONTRIBUTOR_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX48_CONTRIBUTOR_ADDR_ZIP.md) | Postal code | identifier | 85k | ▲ warn |
-| [`PF_AX48_CONTRIBUTOR_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX48_CONTRIBUTOR_NAME_ORG_L1.md) | BusinessNameLine1 | text | 17k |  |
-| [`PF_AX48_CONTRIBUTOR_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX48_CONTRIBUTOR_NAME_ORG_L2.md) | BusinessNameLine2 | text | 187 |  |
+| [`PF_AX48_CONTRIBUTOR_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX48_CONTRIBUTOR_NAME_ORG_L1.md) | Substantial contributor - business name line 1 | text | 17k |  |
+| [`PF_AX48_CONTRIBUTOR_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX48_CONTRIBUTOR_NAME_ORG_L2.md) | Substantial contributor - business name line 2 | text | 187 |  |
 | [`PF_AX48_CONTRIBUTOR_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX48_CONTRIBUTOR_NAME_PERS.md) | Contributor's Person Name | text | 74k |  |
 
 ## `PF-P99-T49-TAXES`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX49_TAXES_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_AMT.md) | Amount | amount | 738k |  |
-| [`PF_AX49_TAXES_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_CATEGORY.md) | Category | text | 740k |  |
-| [`PF_AX49_TAXES_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_DISBMT_CHARIT.md) | Disbursements for Charitable Purposes | amount | 518k | ▲ warn |
-| [`PF_AX49_TAXES_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_INCOME_NET_ADJ.md) | Adjusted Net Income | amount | 116k | ▲ warn |
-| [`PF_AX49_TAXES_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_INVEST_NET.md) | Net Investment Income | amount | 601k | ▲ warn |
+| [`PF_AX49_TAXES_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_AMT.md) | Taxes schedule - amount | amount | 738k |  |
+| [`PF_AX49_TAXES_CATEGORY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_CATEGORY.md) | Taxes schedule - category | text | 740k |  |
+| [`PF_AX49_TAXES_DISBMT_CHARIT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_DISBMT_CHARIT.md) | Taxes schedule - disbursements for charitable purposes | amount | 518k | ▲ warn |
+| [`PF_AX49_TAXES_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_INCOME_NET_ADJ.md) | Taxes schedule - adjusted net income | amount | 116k | ▲ warn |
+| [`PF_AX49_TAXES_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX49_TAXES_INVEST_NET.md) | Taxes schedule - net investment income | amount | 601k | ▲ warn |
 
 ## `PF-P99-T51-TRANSFER-FROM-CE`
 
@@ -1315,8 +1315,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX51_TRANSF_FR_CE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX51_TRANSF_FR_CE_AMT.md) | Amount of transfer | amount | 1.5k |  |
 | [`PF_AX51_TRANSF_FR_CE_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX51_TRANSF_FR_CE_DESC.md) | Description of transfer | text | 1.5k |  |
 | [`PF_AX51_TRANSF_FR_CE_EIN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX51_TRANSF_FR_CE_EIN.md) | EIN | identifier | 1.5k | ▲ warn |
-| [`PF_AX51_TRANSF_FR_CE_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX51_TRANSF_FR_CE_NAME_ORG_L1.md) | BusinessNameLine1 | text | 1.5k |  |
-| [`PF_AX51_TRANSF_FR_CE_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX51_TRANSF_FR_CE_NAME_ORG_L2.md) | BusinessNameLine2 | text | 1 |  |
+| [`PF_AX51_TRANSF_FR_CE_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX51_TRANSF_FR_CE_NAME_ORG_L1.md) | Controlled entity (transfers from) - business name line 1 | text | 1.5k |  |
+| [`PF_AX51_TRANSF_FR_CE_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX51_TRANSF_FR_CE_NAME_ORG_L2.md) | Controlled entity (transfers from) - business name line 2 | text | 1 |  |
 
 ## `PF-P99-T52-TRANSFER-TO-CE`
 
@@ -1331,12 +1331,12 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`PF_AX52_TRANSF_TO_CE_AMT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX52_TRANSF_TO_CE_AMT.md) | Amount of transfer | amount | 1.8k | ▲ warn |
 | [`PF_AX52_TRANSF_TO_CE_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX52_TRANSF_TO_CE_DESC.md) | Description of transfer | text | 1.8k |  |
 | [`PF_AX52_TRANSF_TO_CE_EIN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX52_TRANSF_TO_CE_EIN.md) | EIN | identifier | 1.8k | ▲ warn |
-| [`PF_AX52_TRANSF_TO_CE_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX52_TRANSF_TO_CE_NAME_ORG_L1.md) | BusinessNameLine1 | text | 1.8k |  |
-| [`PF_AX52_TRANSF_TO_CE_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX52_TRANSF_TO_CE_NAME_ORG_L2.md) | BusinessNameLine2 | text | 4 | 1 open flag |
+| [`PF_AX52_TRANSF_TO_CE_NAME_ORG_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX52_TRANSF_TO_CE_NAME_ORG_L1.md) | Controlled entity (transfers to) - business name line 1 | text | 1.8k |  |
+| [`PF_AX52_TRANSF_TO_CE_NAME_ORG_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX52_TRANSF_TO_CE_NAME_ORG_L2.md) | Controlled entity (transfers to) - business name line 2 | text | 4 | 1 open flag |
 
 ## `PF-P99-T14-COMP-EMPL`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`PF_AX14_COMP_EMPL_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX14_COMP_EMPL_EXPLANATION.md) | Explanation | text | 422 |  |
+| [`PF_AX14_COMP_EMPL_EXPLANATION`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX14_COMP_EMPL_EXPLANATION.md) | Employee compensation explanation | text | 422 |  |
 | [`PF_AX14_COMP_EMPL_NAME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX14_COMP_EMPL_NAME.md) | Employee name | text | 888 |  |

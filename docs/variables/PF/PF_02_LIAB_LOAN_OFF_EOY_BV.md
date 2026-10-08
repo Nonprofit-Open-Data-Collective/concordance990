@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_LIAB_LOAN_OFF_EOY_BV
 
-Book Value
+Loans from officers - book value, end of year
 
 - Description: Loans from Officers - End of Year - Book Value
 

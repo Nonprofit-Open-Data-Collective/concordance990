@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_17_TRANSFER_NAME_ORG_L1
 
-BusinessNameLine1
+Noncharitable exempt organization (transfer schedule) - business name
+line 1
 
 - Description: Name Of Noncharitable EO - BusinessNameLine1
 

@@ -6,8 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # SA_03_PUB_TOT_L1_5_TOT
 
-Total public support during the current tax year and the four years
-prior
+Total of lines 1 through 5 (Part III line 6) - total, current and four
+prior years
 
 - Description: Total - Total - Total
 

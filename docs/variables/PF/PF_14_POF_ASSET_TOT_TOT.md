@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_ASSET_TOT_TOT
 
-Total
+Assets test: value of all assets - total
 
 - Description: Total Assets - Total
 

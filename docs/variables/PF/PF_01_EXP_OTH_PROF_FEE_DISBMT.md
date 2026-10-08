@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_OTH_PROF_FEE_DISBMT
 
-Disbursements for Charitable Purposes
+Other professional fees - disbursements for charitable purposes
 
 - Description: Other Professional Fees - Disbursements for Charitable
   Purposes

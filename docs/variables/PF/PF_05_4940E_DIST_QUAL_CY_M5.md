@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_05_4940E_DIST_QUAL_CY_M5
 
-Year 5
+Adjusted qualifying distributions - base period year 5
 
 - Description: Qualifying Distributions - Year 5
 

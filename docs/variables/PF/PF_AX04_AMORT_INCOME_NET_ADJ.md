@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX04_AMORT_INCOME_NET_ADJ
 
-Adjusted Net Income
+Amortization schedule - adjusted net income
 
 - Description: Adjusted Net Income
 

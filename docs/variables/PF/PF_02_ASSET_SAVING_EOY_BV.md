@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_SAVING_EOY_BV
 
-Book Value
+Savings and temporary cash investments - book value, end of year
 
 - Description: Savings and Temporary Cash Investments - End of Year -
   Book Value

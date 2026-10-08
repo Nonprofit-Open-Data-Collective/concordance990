@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TAXES_ADJ_NET
 
-Adjusted Net Income
+Taxes - adjusted net income
 
 - Description: Taxes - Adjusted Net Income
 

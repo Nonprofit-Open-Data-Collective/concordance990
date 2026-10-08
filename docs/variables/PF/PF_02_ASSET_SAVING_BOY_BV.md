@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_SAVING_BOY_BV
 
-Book Value
+Savings and temporary cash investments - book value, beginning of year
 
 - Description: Savings and Temporary Cash Investments - Beginning of
   Year - Book Value

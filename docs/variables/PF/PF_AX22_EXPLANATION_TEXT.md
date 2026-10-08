@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX22_EXPLANATION_TEXT
 
-Explanation
+General explanation
 
 - Description: General Explanation - Explanation
 

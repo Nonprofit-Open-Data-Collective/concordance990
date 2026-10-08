@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_NAFB_UNRESTRICT_EOY_BV
 
-Book Value
+Unrestricted net assets - book value, end of year
 
 - Description: Unrestricted - End of Year - Book Value
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_LIAB_ACC_EOY_BV
 
-Book Value
+Accounts payable - book value, end of year
 
 - Description: Accounts Payable - End of Year - Book Value
 

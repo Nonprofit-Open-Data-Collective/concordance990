@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TOT_EXP_DISBMT_BOOKS
 
-Revenue and Expenses per Books
+Total expenses and disbursements - revenue and expenses per books
 
 - Description: Total Expenses and Disbursements - Revenue and Expenses
   per Books

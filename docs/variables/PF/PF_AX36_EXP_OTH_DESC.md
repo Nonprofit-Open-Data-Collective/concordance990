@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX36_EXP_OTH_DESC
 
-Description
+Other expenses schedule - description
 
 - Description: Other Expenses - Description
 

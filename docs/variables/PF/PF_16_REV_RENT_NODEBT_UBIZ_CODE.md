@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_RENT_NODEBT_UBIZ_CODE
 
-Business code
+Net rental income from non-debt-financed property - business code
 
 - Description: Net Rntl Incm Re Not Debt Fincd Prop - Business code
 

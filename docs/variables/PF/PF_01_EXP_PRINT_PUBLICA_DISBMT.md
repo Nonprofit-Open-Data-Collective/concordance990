@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_PRINT_PUBLICA_DISBMT
 
-Disbursements for Charitable Purposes
+Printing and publications - disbursements for charitable purposes
 
 - Description: Printing and Publications - Disbursements for Charitable
   Purposes

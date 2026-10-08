@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_INV_GRO_SALE_EXCL_AMT
 
-Excluded by section 512; 513; or 514: Amount
+Gross profit from sales of inventory - excluded amount
 
 - Description: Excluded by section 512; 513; or 514: Amount
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_DIVIDEND_ADJ_NET
 
-Adjusted Net Income
+Dividends and interest from securities - adjusted net income
 
 - Description: Dividends and Interest from Securities - Adjusted Net
   Income

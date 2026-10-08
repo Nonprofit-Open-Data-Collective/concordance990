@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_NAFB_UNRESTRICT_BOY_BV
 
-Book Value
+Unrestricted net assets - book value, beginning of year
 
 - Description: Unrestricted - Beginning of Year - Book Value
 

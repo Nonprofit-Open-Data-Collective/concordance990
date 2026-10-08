@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_SUPPORT_LARGEST_TOT
 
-Total
+Support test: largest support from an exempt organization - total
 
 - Description: Largest Support From EO - Total
 

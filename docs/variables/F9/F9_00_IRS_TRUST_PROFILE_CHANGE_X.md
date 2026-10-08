@@ -6,6 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # F9_00_IRS_TRUST_PROFILE_CHANGE_X
 
+Profile email address changed
+
 - Description: Verification
 
 - Table:

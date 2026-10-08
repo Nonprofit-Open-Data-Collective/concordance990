@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX27_INVEST_OTH_EOY_FMV
 
-End of Year Fair Market Value
+Other investments schedule - fair market value, end of year
 
 - Description: End of Year Fair Market Value
 

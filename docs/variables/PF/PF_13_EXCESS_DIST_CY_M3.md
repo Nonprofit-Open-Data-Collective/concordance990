@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_13_EXCESS_DIST_CY_M3
 
-Year 3
+Excess distributions carryover - year 3
 
 - Description: Excess Distributions Carryover - Year 3
 

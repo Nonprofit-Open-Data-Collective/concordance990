@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_PRINT_PUBLICA_BOOKS
 
-Revenue and Expenses per Books
+Printing and publications - revenue and expenses per books
 
 - Description: Printing and Publications - Revenue and Expenses per
   Books

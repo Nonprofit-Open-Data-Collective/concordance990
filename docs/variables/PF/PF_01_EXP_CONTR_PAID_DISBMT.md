@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_CONTR_PAID_DISBMT
 
-Disbursements for Charitable Purposes
+Contributions, gifts, grants paid - disbursements for charitable
+purposes
 
 - Description: Contributions; Gifts; Grants Paid - Disbursements for
   Charitable Purposes

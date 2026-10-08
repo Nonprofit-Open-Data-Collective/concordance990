@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_CAP_GAIN_ADJ_NET
 
-Adjusted Net Income
+Net short-term capital gain - adjusted net income
 
 - Description: Net Short-Term Capital Gain - Adjusted Net Income
 

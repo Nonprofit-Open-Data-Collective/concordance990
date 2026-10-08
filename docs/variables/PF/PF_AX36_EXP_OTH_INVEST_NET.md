@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX36_EXP_OTH_INVEST_NET
 
-Net Investment Income
+Other expenses schedule - net investment income
 
 - Description: Net Investment Income
 

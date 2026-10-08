@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_LEGAL_BEN_NET
 
-Net Investment Income
+Legal fees - net investment income
 
 - Description: Legal Fees - Net Investment Income
 

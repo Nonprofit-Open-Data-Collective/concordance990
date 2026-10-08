@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_OTH_BOOKS
 
-Revenue and Expenses per Books
+Other expenses - revenue and expenses per books
 
 - Description: Other Expenses - Revenue and Expenses per Books
 

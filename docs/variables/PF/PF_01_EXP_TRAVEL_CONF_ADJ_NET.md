@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TRAVEL_CONF_ADJ_NET
 
-Adjusted Net Income
+Travel, conferences, and meetings - adjusted net income
 
 - Description: Travel; Conferences; and Meetings - Adjusted Net Income
 

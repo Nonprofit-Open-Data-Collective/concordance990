@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TOT_OPERATING_BOOKS
 
-Revenue and Expenses per Books
+Total operating and administrative expenses - revenue and expenses per
+books
 
 - Description: Total Operating and Administrative Expenses - Revenue and
   Expenses per Books

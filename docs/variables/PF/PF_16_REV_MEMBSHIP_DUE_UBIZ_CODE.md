@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_MEMBSHIP_DUE_UBIZ_CODE
 
-Business code
+Membership dues and assessments - business code
 
 - Description: Membership Dues And Assessments - Business code
 

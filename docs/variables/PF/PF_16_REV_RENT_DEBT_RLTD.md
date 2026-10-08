@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_RENT_DEBT_RLTD
 
-Related or exempt function income
+Net rental income from debt-financed property - related or exempt
+function income
 
 - Description: Related or exempt function income
 

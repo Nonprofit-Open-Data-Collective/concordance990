@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_GRO_PROFIT_BOOKS
 
-Revenue and Expenses per Books
+Gross profit - revenue and expenses per books
 
 - Description: Gross Profit - Revenue and Expenses per Books
 

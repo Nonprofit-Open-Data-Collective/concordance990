@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_PROG_FEES_UBIZ_CODE
 
-Business code
+Fees and contracts from government agencies - business code
 
 - Description: Fees Contracts From Govt Agencies - Business code
 

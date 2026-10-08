@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_DIST_QUAL_MADE_TOT
 
-Total
+Qualifying distributions made directly for exempt activities - total
 
 - Description: Qlfy Distri Made Directly - Total
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX47_4942A2_EXPLANATION
 
-Explanation
+Section 4942(a)(2) statement - explanation
 
 - Description: Sect4942a2 Explanation Statement - Explanation
 

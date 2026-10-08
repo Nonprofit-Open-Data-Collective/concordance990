@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_ASSET_TOT_CY
 
-Current Year
+Assets test: value of all assets - current year
 
 - Description: Total Assets - Current Year
 

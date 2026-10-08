@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX32_NOTE_LENDER_NAME_ORG_L2
 
-BusinessNameLine2
+Lender (mortgages and notes payable) - business name line 2
 
 - Description: Business - BusinessNameLine2
 

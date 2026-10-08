@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # SA_05_DIST_ALLOC_EXCESS_NY_M1
 
-Excess distributions carryover to next year from current year
+Excess distributions carryover to next year - excess from year 1
 
 - Description: Excess from year 1
 

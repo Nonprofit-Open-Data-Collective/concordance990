@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX08_CASH_DIST_EXPLANATION
 
-Explanation
+Cash distributions - explanation
 
 - Description: Cash Distribution Expln Stmt - Explanation
 

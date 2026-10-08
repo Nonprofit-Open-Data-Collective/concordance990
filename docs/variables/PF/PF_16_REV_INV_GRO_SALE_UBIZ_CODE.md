@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_INV_GRO_SALE_UBIZ_CODE
 
-Business code
+Gross profit from sales of inventory - business code
 
 - Description: Gross Profit Loss Sales Of Invntry - Business code
 

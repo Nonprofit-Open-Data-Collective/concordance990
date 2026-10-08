@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_LIAB_REV_DEFERRED_EOY_BV
 
-Book Value
+Deferred revenue - book value, end of year
 
 - Description: Deferred Revenue - End of Year - Book Value
 

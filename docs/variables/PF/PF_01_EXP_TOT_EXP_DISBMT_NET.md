@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TOT_EXP_DISBMT_NET
 
-Net Investment Income
+Total expenses and disbursements - net investment income
 
 - Description: Total Expenses and Disbursements - Net Investment Income
 

@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_SALE_ASSET_UBIZ_AMT
 
-Amount
+Gain from sales of assets other than inventory - unrelated business
+income
 
 - Description: Gain Sales Assets Oth Than Invntry - Amount
 

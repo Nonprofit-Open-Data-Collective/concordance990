@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TRAVEL_CONF_BOOKS
 
-Revenue and Expenses per Books
+Travel, conferences, and meetings - revenue and expenses per books
 
 - Description: Travel; Conferences; and Meetings - Revenue and Expenses
   per Books

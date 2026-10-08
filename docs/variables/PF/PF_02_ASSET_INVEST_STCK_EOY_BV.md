@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_INVEST_STCK_EOY_BV
 
-Book Value
+Investments, corporate stock - book value, end of year
 
 - Description: Investments; Corporate Stock - End of Year - Book Value
 

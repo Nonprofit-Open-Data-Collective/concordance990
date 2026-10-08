@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_OTH_EOY_BV
 
-Book Value
+Other assets - book value, end of year
 
 - Description: Other Assets - End of Year - Book Value
 

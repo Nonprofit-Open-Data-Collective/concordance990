@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_08_COMP_KONTR_NAME_ORG_L2
 
-BusinessNameLine2
+Highest paid contractor - business name line 2
 
 - Description: Business Name - BusinessNameLine2
 

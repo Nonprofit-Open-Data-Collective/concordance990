@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_NAFB_TOT_LIAB_NAFB_BOY_BV
 
-Book Value
+Total liabilities and net assets - book value, beginning of year
 
 - Description: Total Liabilities and Net Assets - Beginning of Year -
   Book Value

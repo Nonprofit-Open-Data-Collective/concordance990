@@ -6,6 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # F9_00_DISASTER_RELIEF
 
+Disaster relief text
+
 - Description: Disaster relief text
 
 - Table:

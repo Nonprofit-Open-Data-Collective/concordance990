@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_15_G_PAID_AMT
 
-Amount
+Grant or contribution paid during the year - amount
 
 - Description: Grant Or Contri Paid During Year - Amount
 

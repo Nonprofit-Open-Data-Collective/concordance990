@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_OCCUPANCY_DISBMT
 
-Disbursements for Charitable Purposes
+Occupancy - disbursements for charitable purposes
 
 - Description: Occupancy - Disbursements for Charitable Purposes
 

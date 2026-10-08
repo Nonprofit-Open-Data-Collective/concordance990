@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_OTH_EMPL_SAL_NET
 
-Net Investment Income
+Other employee salaries and wages - net investment income
 
 - Description: Other Employee Salaries and Wages - Net Investment Income
 

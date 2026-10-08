@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_OTH_UBIZ_AMT
 
-Amount
+Other revenue - unrelated business income
 
 - Description: Other Revenue Described - Amount
 

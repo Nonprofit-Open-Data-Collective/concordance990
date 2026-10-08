@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_INVEST_OTH_EOY_BV
 
-Book Value
+Investments, other - book value, end of year
 
 - Description: Investments; Other - End of Year - Book Value
 

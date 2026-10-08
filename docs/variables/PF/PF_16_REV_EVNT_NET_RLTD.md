@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_EVNT_NET_RLTD
 
-Related or exempt function income
+Net income from special events - related or exempt function income
 
 - Description: Related or exempt function income
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_ENDOW_TOT
 
-Total
+Endowment test: 2/3 of minimum investment return - total
 
 - Description: Two Thirds Min Invst Return - Total
 

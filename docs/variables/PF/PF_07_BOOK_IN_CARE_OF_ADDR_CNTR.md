@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_07_BOOK_IN_CARE_OF_ADDR_CNTR
 
-Country
+Books in care of - foreign country
 
 - Description: Books In Care Of Foreign Address - Country
 

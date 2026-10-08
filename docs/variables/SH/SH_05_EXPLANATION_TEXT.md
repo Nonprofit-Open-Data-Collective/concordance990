@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # SH_05_EXPLANATION_TEXT
 
-Form, part, and line number reference
+Form, part, and line number reference explanation
 
 - Description: Form; part and line number reference explanation
 

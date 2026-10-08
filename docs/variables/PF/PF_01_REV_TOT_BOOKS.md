@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_TOT_BOOKS
 
-Revenue and Expenses per Books
+Total revenue - revenue and expenses per books
 
 - Description: Total - Revenue and Expenses per Books
 

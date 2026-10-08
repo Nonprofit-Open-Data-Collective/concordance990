@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_LIAB_TOT_EOY_BV
 
-Book Value
+Total liabilities - book value, end of year
 
 - Description: Total Liabilities - End of Year - Book Value
 

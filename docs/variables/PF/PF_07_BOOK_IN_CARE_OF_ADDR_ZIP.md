@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_07_BOOK_IN_CARE_OF_ADDR_ZIP
 
-Postal code
+Books in care of - ZIP code or foreign postal code
 
 - Description: Books In Care Of Foreign Address - Postal code
 

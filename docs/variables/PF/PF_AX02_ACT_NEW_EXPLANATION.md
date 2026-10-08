@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX02_ACT_NEW_EXPLANATION
 
-Explanation
+Activities not previously reported - explanation
 
 - Description: Acty Not Previously Rpt Expln - Explanation
 

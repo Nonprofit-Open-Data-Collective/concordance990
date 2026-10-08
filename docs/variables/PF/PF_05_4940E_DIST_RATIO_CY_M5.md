@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_05_4940E_DIST_RATIO_CY_M5
 
-Year 5
+Distribution ratio - base period year 5
 
 - Description: Distribution Ratio - Year 5
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_INVEST_GOV_BOY_BV
 
-Book Value
+Investments, government obligations - book value, beginning of year
 
 - Description: Investments; Government Obligations - Beginning of Year -
   Book Value

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_EXP_PREPAID_BOY_BV
 
-Book Value
+Prepaid expenses - book value, beginning of year
 
 - Description: Prepaid Expenses - Beginning of Year - Book Value
 

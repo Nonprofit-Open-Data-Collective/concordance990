@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TOT_OPERATING_ADJ_NET
 
-Adjusted Net Income
+Total operating and administrative expenses - adjusted net income
 
 - Description: Total Operating and Administrative Expenses - Adjusted
   Net Income

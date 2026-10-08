@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_ENDOW_CY_M2
 
-Year 2
+Endowment test: 2/3 of minimum investment return - current year minus 2
 
 - Description: Two Thirds Min Invst Return - Year 2
 

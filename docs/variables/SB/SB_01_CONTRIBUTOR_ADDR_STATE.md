@@ -6,6 +6,10 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # SB_01_CONTRIBUTOR_ADDR_STATE
 
+Contributor address - state
+
+- Description: Contributor address - state
+
 - Table:
 
   [`SB-P01-T01-CONTRIBUTORS`](https://nonprofit-open-data-collective.github.io/concordance990/articles/data-dictionary-990.html#sb-p01-t01-contributors)

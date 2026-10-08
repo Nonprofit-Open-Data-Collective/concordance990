@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_INVEST_MTG_EOY_FMV
 
-Fair Market Value
+Investments, mortgage loans - fair market value, end of year
 
 - Description: Investments; Mortgage Loans - End of Year - Fair Market
   Value

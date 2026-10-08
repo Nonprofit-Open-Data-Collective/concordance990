@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_15_G_PAID_RECIP_NAME_ORG_L1
 
-BusinessNameLine1
+Recipient of grant paid during the year - business name line 1
 
 - Description: Recipient Business Name - BusinessNameLine1
 

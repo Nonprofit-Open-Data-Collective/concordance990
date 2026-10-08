@@ -250,14 +250,14 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`SH_05_EXPLANATION_TEXT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SH/SH_05_EXPLANATION_TEXT.md) | Form, part, and line number reference | text | 26k |  |
+| [`SH_05_EXPLANATION_TEXT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SH/SH_05_EXPLANATION_TEXT.md) | Form, part, and line number reference explanation | text | 26k |  |
 | [`SH_05_FORM_LINE_REFERENCE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SH/SH_05_FORM_LINE_REFERENCE.md) | Form, part, and line number reference | text | 26k |  |
 
 ## `SH-P06-T99-SUPPLEMENTAL-INFO`
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`SH_06_EXPLANATION_ADDITIONAL`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SH/SH_06_EXPLANATION_ADDITIONAL.md) | Additional explanations | text | 326 |  |
+| [`SH_06_EXPLANATION_ADDITIONAL`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SH/SH_06_EXPLANATION_ADDITIONAL.md) | Additional explanations (2009 form) | text | 326 |  |
 | [`SH_06_EXPLANATION_COM_BLDG_ACT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SH/SH_06_EXPLANATION_COM_BLDG_ACT.md) | Additional explanation for the community building activities | text | 1.1k |  |
 | [`SH_06_EXPLANATION_COM_INFO`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SH/SH_06_EXPLANATION_COM_INFO.md) | Additional explanation for the community information | text | 1.4k |  |
 | [`SH_06_EXPLANATION_FACILITY_TYPE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SH/SH_06_EXPLANATION_FACILITY_TYPE.md) | Additional explanation of facility type | text | 403 |  |

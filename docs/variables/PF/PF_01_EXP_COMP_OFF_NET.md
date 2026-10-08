@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_COMP_OFF_NET
 
-Net Investment Income
+Compensation of officers, directors, trustees, etc. - net investment
+income
 
 - Description: Compensation of Officers; Directors; Trustees; etc. - Net
   Investment Income

@@ -51,10 +51,11 @@ open flags
 
 ### Value checks
 
-| Result | Value check | Detail |
-|----|----|----|
-| ✓ pass | Values are text, not numbers | 0% of values are numeric |
-| ✓ pass | No sign of truncation | longest values do not sit at a common field limit |
+| Result | Value check            | Detail                                      |
+|--------|------------------------|---------------------------------------------|
+| ✓ pass | Small code list        | up to 59 distinct values per xpath and year |
+| ✓ pass | Codes share one format | 100% have the shape AA                      |
+| ✓ pass | Consistent letter case | 0.0% of values are lower case               |
 
 ### Flags
 
@@ -94,12 +95,6 @@ the exact count.
 
 ## Values
 
-| Return | Filings | Average length | Longest |
-|--------|---------|----------------|---------|
-| 990-PF | 24,197  | 2              | 16      |
-
-### Most common values
-
 | Value | Filings | Share |
 |-------|---------|-------|
 | `CA`  | 3,888   | 24.6% |
@@ -117,5 +112,5 @@ the exact count.
 Evidence: e-filed returns TY2009–2024, built 2026-09-23 from the ef2
 DuckDB builds. Checks and flags are recomputed for the current
 concordance; reviewer decisions come from `validation_log.csv`. Variable
-PF_08_COMP_DTK_ADDR_STATE_HCE, report type *text*. Source:
+PF_08_COMP_DTK_ADDR_STATE_HCE, report type *code*. Source:
 [concordance990](https://github.com/Nonprofit-Open-Data-Collective/concordance990).

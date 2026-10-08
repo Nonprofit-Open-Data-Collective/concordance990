@@ -49,12 +49,9 @@ open flags
 
 ### Value checks
 
-| Result | Value check | Detail |
-|----|----|----|
-| ✓ pass | Values parse as numbers | 100.0% of values are numeric |
-| ✓ pass | No sudden change in the median between adjacent years | largest change 1.0x (IRS990PF/UndistributedIncome/PriorYear1, 990PF, TY2011) |
-| ✓ pass | Pooled xpaths are on the same scale (same return type) | largest ratio of medians between xpaths: 1.0x |
-| ⓘ info | Sign convention | 0.0% of values are negative (fine for net amounts) |
+| Result | Value check     | Detail                 |
+|--------|-----------------|------------------------|
+| ✓ pass | One date format | 100.0% use year (YYYY) |
 
 No flags.
 
@@ -85,11 +82,11 @@ the exact count.
 
 ## Values
 
-| Return | Filings | % numeric | % zero | % negative | P25   | Median | P75   | P99   |
-|--------|---------|-----------|--------|------------|-------|--------|-------|-------|
-| 990-PF | 118,918 | 100.0%    | 0.0%   | 0.0%       | 2,015 | 2,015  | 2,015 | 2,015 |
+| Format | Filings | Share  |
+|--------|---------|--------|
+| `9999` | 118,918 | 100.0% |
 
-Percentiles are the median over tax years of each year's percentile.
+Format of the values: `9` a digit, `A` a letter.
 
 ## Example filings
 
@@ -101,5 +98,5 @@ Percentiles are the median over tax years of each year's percentile.
 Evidence: e-filed returns TY2009–2024, built 2026-09-23 from the ef2
 DuckDB builds. Checks and flags are recomputed for the current
 concordance; reviewer decisions come from `validation_log.csv`. Variable
-PF_13_UNDIST_INCOME_PY_1, report type *amount*. Source:
+PF_13_UNDIST_INCOME_PY_1, report type *date*. Source:
 [concordance990](https://github.com/Nonprofit-Open-Data-Collective/concordance990).

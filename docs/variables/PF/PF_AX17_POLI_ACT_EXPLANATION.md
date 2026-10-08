@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX17_POLI_ACT_EXPLANATION
 
-Explanation
+Legislative and political activities explanation
 
 - Description: Explan Of Legis Political Actvts - Explanation
 

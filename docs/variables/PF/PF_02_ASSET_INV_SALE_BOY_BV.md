@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_INV_SALE_BOY_BV
 
-Book Value
+Inventories for sale or use - book value, beginning of year
 
 - Description: Inventories for Sale or Use - Beginning of Year - Book
   Value

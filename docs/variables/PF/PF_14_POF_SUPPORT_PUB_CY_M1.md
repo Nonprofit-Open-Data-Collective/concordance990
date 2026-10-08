@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_SUPPORT_PUB_CY_M1
 
-Year 1
+Support test: public support - current year minus 1
 
 - Description: Public Support - Year 1
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX25_INVEST_GOVT_SEC_EOY_BV
 
-End of Year Book Value
+US government obligations - book value, end of year
 
 - Description: US Government Securities - End of Year Book Value
 

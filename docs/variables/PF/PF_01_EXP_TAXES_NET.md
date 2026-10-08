@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TAXES_NET
 
-Net Investment Income
+Taxes - net investment income
 
 - Description: Taxes - Net Investment Income
 

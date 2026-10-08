@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_08_COMP_DTK_NAME_ORG_L1
 
-BusinessNameLine1
+Officer, director, trustee, or key employee - business name line 1
 
 - Description: Business Name - BusinessNameLine1
 

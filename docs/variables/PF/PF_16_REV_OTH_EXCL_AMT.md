@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_OTH_EXCL_AMT
 
-Excluded by section 512; 513; or 514: Amount
+Other revenue - excluded amount
 
 - Description: Excluded by section 512; 513; or 514: Amount
 

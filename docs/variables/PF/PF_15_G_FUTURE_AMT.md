@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_15_G_FUTURE_AMT
 
-Amount
+Grant or contribution approved for future payment - amount
 
 - Description: Grant Or Contri Approved For Future - Amount
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_RECVB_OFF_EOY_BV
 
-Book Value
+Receivables from officers - book value, end of year
 
 - Description: Receivables from Officers - End of Year - Book Value
 

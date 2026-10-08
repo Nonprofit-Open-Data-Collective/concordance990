@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_INV_GRO_SALE_EXCL_CODE
 
-Exclusion code (01 through 41)
+Gross profit from sales of inventory - exclusion code
 
 - Description: Exclusion code (01 through 41)
 

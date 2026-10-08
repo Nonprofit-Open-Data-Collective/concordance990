@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_OTH_NOTE_EOY_BV
 
-Book Value
+Other notes and loans receivable - book value, end of year
 
 - Description: Other Notes and Loans Receivable - End of Year - Book
   Value

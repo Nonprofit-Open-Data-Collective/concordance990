@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_PROG_DESC
 
-Description
+Program service revenue - description
 
 - Description: Program Service Revenue Part VII - Description
 
