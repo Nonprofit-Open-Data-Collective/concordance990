@@ -14,6 +14,18 @@ filed_with <- c(F990 = "990 and 990-EZ", F990PF = "990-PF",
                 "SCHED-R" = "990")
 card_text <- c(ONE = "one row per filing", MANY = "one row per repeated item")
 
+# A variable name linked to its validation page (docs/variables/<FF>/<name>.html,
+# written by render_variable_pages()). Articles are knitted in
+# vignettes/articles, so the pages are at ../../docs/variables; a variable
+# without a page (not rendered yet) is shown unlinked.
+pages_dir <- file.path("..", "..", "docs", "variables")
+var_link <- function(v) {
+  rel <- file.path(substr(v, 1, 2), paste0(v, ".html"))
+  ok <- file.exists(file.path(pages_dir, rel))
+  ifelse(ok, sprintf("<a class='dict-var' href='../variables/%s' title='Validation page'><code>%s</code></a>", rel, v),
+         sprintf("<code>%s</code>", v))
+}
+
 # Compact percent: one decimal, "0" for none, "<0.1" below the first decimal
 pct_short <- function(p) {
   p <- suppressWarnings(as.numeric(p))
@@ -61,7 +73,7 @@ dictionary_sections <- function(form) {
         desc <- ifelse(dt$description == "" | dt$description == dt$label, esc(dt$label),
                        sprintf("%s<br><span class='dict-desc'>%s</span>", esc(dt$label), esc(dt$description)))
         tbl <- data.table(
-          Variable = sprintf("<code>%s</code>%s", dt$variable_name, ifelse(dt$multi_value == "TRUE", " <span class='badge bg-secondary'>list</span>", "")),
+          Variable = sprintf("%s%s", var_link(dt$variable_name), ifelse(dt$multi_value == "TRUE", " <span class='badge bg-secondary'>list</span>", "")),
           Description = desc,
           Location = sprintf("<span class='dict-loc'>%s</span>", esc(dt$location_code_family)),
           Type = dt$data_type_simple,
@@ -123,6 +135,9 @@ table.dictionary th:nth-child(6), table.dictionary td:nth-child(6) { width: 9%; 
 table.dictionary code { font-size: .8rem; }
 table.dictionary td:nth-child(1) code { font-family: "JetBrains Mono", ui-monospace, Consolas, monospace; font-weight: 700;
                                         font-size: .78rem; background: transparent; color: #1b1f23; padding: 0; }
+a.dict-var { text-decoration: none; }
+a.dict-var code { color: #1c5cab !important; }
+a.dict-var:hover code, a.dict-var:focus code { text-decoration: underline; }
 .dict-desc { display: block; margin-top: .15rem; color: #6d7681; font-size: .8rem; }
 .dict-rate { font-variant-numeric: tabular-nums; font-size: .8rem; }
 .dict-loc { font-size: .75rem; color: #4d565f; hyphens: none; }

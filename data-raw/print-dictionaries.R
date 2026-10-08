@@ -50,6 +50,7 @@ col.c-var { width: 25%; } col.c-lab { width: 37%; } col.c-loc { width: 15%; }
 col.c-type { width: 6.5%; } col.c-scope { width: 8%; } col.c-rate { width: 8.5%; }
 td.var { font-family: "JetBrains Mono", Consolas, "Courier New", monospace; font-weight: 700; font-size: 7pt;
          overflow-wrap: anywhere; }
+td.var a { color: inherit; text-decoration: none; }
 td.loc { font-size: 6.8pt; color: #4d565f; }
 td.rate, th.rate { text-align: right; white-space: nowrap; letter-spacing: 0; font-variant-numeric: tabular-nums; }
 .desc { display: block; color: #6d7681; font-size: 6.9pt; }
@@ -97,7 +98,7 @@ print_dictionary <- function(form, out_dir) {
         lab <- ifelse(dt$description == "" | dt$description == dt$label, esc(dt$label),
                       sprintf("%s<span class='desc'>%s</span>", esc(dt$label), esc(dt$description)))
         rows <- c(rows, sprintf("<tr><td class='var'>%s%s</td><td>%s</td><td class='loc'>%s</td><td>%s</td><td>%s</td><td class='rate'>%s</td></tr>",
-                                dt$variable_name, ifelse(dt$multi_value == "TRUE", "<span class='list'>LIST</span>", ""),
+                                pdf_var_link(dt$variable_name), ifelse(dt$multi_value == "TRUE", "<span class='list'>LIST</span>", ""),
                                 lab, esc(dt$location_code_family), dt$data_type_simple,
                                 unname(scope_names[dt$variable_scope]), esc(dt$rate)))
       }
@@ -112,7 +113,7 @@ print_dictionary <- function(form, out_dir) {
   rate_note <- if (form == "F990") "the percent of filers in the variable's scope whose return reports it in the newest schema year. 990 + 990-EZ variables show 990/990-EZ." else
     "the percent of filers in the variable's scope whose return reports it in the newest schema year."
   legend <- paste0("<div class='legend'>",
-    "<div><b>Variable</b>: the column name in the research database. <span class='list'>LIST</span> marks a field whose repeated values are joined into one cell.</div>",
+    "<div><b>Variable</b>: the column name in the research database. <span class='list'>LIST</span> marks a field whose repeated values are joined into one cell. Each name links to the variable's validation page on the website.</div>",
     "<div><b>Tables</b>: <b style='color:#1f3864'>ONE</b> tables have one row per filing; <b style='color:#9c5a1c'>MANY</b> tables one row per repeated item.</div>",
     "<div><b>Location</b>: form, part and line code. <b>Type</b>: numeric, text, checkbox or date.</div>",
     "<div><b>Scope</b>: the returns that report the variable. <b>% Reporting</b>: ", rate_note,
@@ -131,6 +132,14 @@ print_dictionary <- function(form, out_dir) {
     paste(rows, collapse = "\n"), "</tbody></table></body></html>")
 
   chrome_pdf(html, if (form == "F990") "data-dictionary-990" else "data-dictionary-990pf", out_dir)
+}
+
+# A variable name linked to its validation page on the website (links work
+# in the PDF); unlinked when the page has not been rendered (docs/variables)
+pdf_var_link <- function(v) {
+  rel <- file.path(substr(v, 1, 2), paste0(v, ".html"))
+  ok <- file.exists(file.path("docs", "variables", rel))
+  ifelse(ok, sprintf("<a href='https://nonprofit-open-data-collective.github.io/concordance990/variables/%s'>%s</a>", rel, v), v)
 }
 
 # Print an html page to <out_dir>/<base>.pdf with headless Chrome
