@@ -1,3 +1,15 @@
+# concordance990 (development version)
+
+* Fix 29 types 26 numeric dollar-amount variables that no local IRS schema
+  declares (fix 26 left their 29 xpaths without a `data_type_xsd`) as
+  `USAmountType`, so `data_dictionary()` now marks them as money and reads a
+  blank as zero: the Part VII compensation subtotals, the Part IX
+  professional fundraising fees, the Schedule A support-schedule amounts,
+  lobbying through paid staff, and the 990-PF securities and investment
+  statement amounts (`PF_AX19`, `PF_AX21`, `PF_AX27`). The four
+  `PF_07_4720_UNDIST_N_APP_Y_*` fields are years, not money, and stay
+  untyped.
+
 # concordance990 2.0.2
 
 * `data_dictionary()` also returns `money_field` and `blank_meaning`, so

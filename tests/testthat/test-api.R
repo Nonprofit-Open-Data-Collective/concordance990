@@ -52,3 +52,13 @@ test_that("the data dictionary flags money fields and the meaning of a blank", {
   pf <- data_dictionary("F990PF")
   expect_true(all(pf[grepl("^PF-P0[1-3]-", rdb_table) & data_type_simple == "numeric", money_field]))
 })
+
+test_that("fix 29 types the dollar amounts the schemas do not declare", {
+  f9 <- data_dictionary("F990")
+  pf <- data_dictionary("F990PF")
+  expect_true(all(f9[variable_name %in% c("F9_07_COMP_DTK_COMP_ORG_SUBTOT", "F9_09_EXP_FEE_SVC_FUNDR_PROG",
+                                          "SA_02_TOT_AMT_L4_CY_TOT", "SC_02_LOB_ACT_PAID_STAFF_AMT"), money_field]))
+  expect_true(all(pf[variable_name %in% c("PF_AX19_SALE_SEC_TOT_NET", "PF_AX27_INVEST_OTH_COST_BASIS"), money_field]))
+  # years, not money
+  expect_false(any(pf[grepl("^PF_07_4720_UNDIST_N_APP_Y_", variable_name), money_field]))
+})
