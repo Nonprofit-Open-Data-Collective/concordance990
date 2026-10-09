@@ -1,6 +1,6 @@
 # Changelog
 
-## concordance990 (development version)
+## concordance990 2.0.2
 
 - [`data_dictionary()`](https://nonprofit-open-data-collective.github.io/concordance990/reference/data_dictionary.md)
   also returns `money_field` and `blank_meaning`, so partner packages
