@@ -1,4 +1,4 @@
-# concordance990 (development version)
+# concordance990 2.0.2
 
 * `data_dictionary()` also returns `money_field` and `blank_meaning`, so
   partner packages share one rule for reading blank cells instead of each
