@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_DIST_QUAL_CY_M1
 
-Year 1
+Qualifying distributions - current year minus 1
 
 - Description: Qualifying Distributions Grp - Year 1
 

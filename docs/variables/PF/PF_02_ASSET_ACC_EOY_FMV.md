@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_ACC_EOY_FMV
 
-Fair Market Value
+Accounts receivable - fair market value, end of year
 
 - Description: Accounts Receivable - End of Year - Fair Market Value
 

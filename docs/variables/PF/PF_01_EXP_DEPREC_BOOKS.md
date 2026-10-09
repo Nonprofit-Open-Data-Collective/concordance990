@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_DEPREC_BOOKS
 
-Revenue and Expenses per Books
+Depreciation and depletion - revenue and expenses per books
 
 - Description: Depreciation and Depletion - Revenue and Expenses per
   Books

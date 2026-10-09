@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX49_TAXES_AMT
 
-Amount
+Taxes schedule - amount
 
 - Description: Taxes - Amount
 

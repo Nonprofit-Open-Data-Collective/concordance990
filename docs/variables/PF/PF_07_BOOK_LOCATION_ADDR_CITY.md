@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_07_BOOK_LOCATION_ADDR_CITY
 
-City
+Location of books - city
 
 - Description: Location Of Books Foreign Address - City
 

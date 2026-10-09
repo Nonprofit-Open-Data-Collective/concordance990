@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_LESSOR_ADJ_NET_CY_M1
 
-Year 1
+Lesser of adjusted net income or minimum investment return - current
+year minus 1
 
 - Description: Lessor Adj Net Incm Min Invst Return - Year 1
 

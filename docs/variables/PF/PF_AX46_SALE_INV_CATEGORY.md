@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX46_SALE_INV_CATEGORY
 
-Category
+Sales of inventory schedule - category
 
 - Description: Inventory Sale Grp - Category
 

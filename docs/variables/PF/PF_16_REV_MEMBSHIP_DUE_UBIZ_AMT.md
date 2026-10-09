@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_MEMBSHIP_DUE_UBIZ_AMT
 
-Amount
+Membership dues and assessments - unrelated business income
 
 - Description: Membership Dues And Assessments - Amount
 

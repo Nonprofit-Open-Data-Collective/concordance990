@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_DIST_QUAL_MADE_CY_M3
 
-Year 3
+Qualifying distributions made directly for exempt activities - current
+year minus 3
 
 - Description: Qlfy Distri Made Directly - Year 3
 

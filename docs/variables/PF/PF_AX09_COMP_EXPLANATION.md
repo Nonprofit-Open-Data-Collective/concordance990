@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX09_COMP_EXPLANATION
 
-Explanation
+Compensation explanation
 
 - Description: Compensation - Explanation
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_ACC_FEE_ADJ_NET
 
-Adjusted Net Income
+Accounting fees - adjusted net income
 
 - Description: Accounting Fees - Adjusted Net Income
 

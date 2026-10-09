@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_ASSET_TOT_4942J3_CY_M1
 
-Year 1
+Assets test: assets qualifying under section 4942(j)(3)(B)(i) - current
+year minus 1
 
 - Description: Total Assets Sect4942j3 Bi - Year 1
 

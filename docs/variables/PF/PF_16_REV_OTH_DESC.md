@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_OTH_DESC
 
-Description
+Other revenue - description
 
 - Description: Other Revenue Described - Description
 

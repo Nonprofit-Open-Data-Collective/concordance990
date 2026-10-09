@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_07_BOOK_LOCATION_ADDR_L1
 
-AddressLine1
+Location of books - address line 1
 
 - Description: Location Of Books Foreign Address - AddressLine1
 

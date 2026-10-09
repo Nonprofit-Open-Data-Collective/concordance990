@@ -6,6 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # F9_00_IRS_TRUST_CUSTOMER_X
 
+Trusted customer code
+
 - Description: Verification
 
 - Table:

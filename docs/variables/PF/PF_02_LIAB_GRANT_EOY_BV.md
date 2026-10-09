@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_LIAB_GRANT_EOY_BV
 
-Book Value
+Grants payable - book value, end of year
 
 - Description: Grants Payable - End of Year - Book Value
 

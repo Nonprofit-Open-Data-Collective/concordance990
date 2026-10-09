@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX24_INVEST_CORP_STCK_EOY_BV
 
-End of Year Book Value
+Corporate stock schedule - book value, end of year
 
 - Description: End of Year Book Value
 

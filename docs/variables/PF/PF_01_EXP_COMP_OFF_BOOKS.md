@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_COMP_OFF_BOOKS
 
-Revenue and Expenses per Books
+Compensation of officers, directors, trustees, etc. - revenue and
+expenses per books
 
 - Description: Compensation of Officers; Directors; Trustees; etc. -
   Revenue and Expenses per Books

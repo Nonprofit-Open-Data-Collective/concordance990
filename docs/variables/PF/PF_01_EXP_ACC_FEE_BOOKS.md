@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_ACC_FEE_BOOKS
 
-Revenue and Expenses per Books
+Accounting fees - revenue and expenses per books
 
 - Description: Accounting Fees - Revenue and Expenses per Books
 

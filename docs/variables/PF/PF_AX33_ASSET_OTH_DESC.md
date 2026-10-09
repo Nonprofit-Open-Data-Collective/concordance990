@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX33_ASSET_OTH_DESC
 
-Description
+Other assets schedule - description
 
 - Description: Other Assets - Description
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX40_NOTE_OTH_L_NAME_ORG_L2
 
-BusinessNameLine2
+Borrower (other notes and loans receivable) - business name line 2
 
 - Description: Business - BusinessNameLine2
 

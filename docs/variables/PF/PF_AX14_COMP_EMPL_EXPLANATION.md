@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX14_COMP_EMPL_EXPLANATION
 
-Explanation
+Employee compensation explanation
 
 - Description: Employee Comp Explanation - Explanation
 

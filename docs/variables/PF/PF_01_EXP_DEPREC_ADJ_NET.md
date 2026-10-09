@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_DEPREC_ADJ_NET
 
-Adjusted Net Income
+Depreciation and depletion - adjusted net income
 
 - Description: Depreciation and Depletion - Adjusted Net Income
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TOT_OPERATING_NET
 
-Net Investment Income
+Total operating and administrative expenses - net investment income
 
 - Description: Total Operating and Administrative Expenses - Net
   Investment Income

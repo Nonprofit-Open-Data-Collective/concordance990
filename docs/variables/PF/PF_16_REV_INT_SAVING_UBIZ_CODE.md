@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_INT_SAVING_UBIZ_CODE
 
-Business code
+Interest on savings and temporary cash investments - business code
 
 - Description: Int On Savings And Temp Cash Invst - Business code
 

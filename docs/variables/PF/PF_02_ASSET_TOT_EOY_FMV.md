@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_TOT_EOY_FMV
 
-Fair Market Value
+Total assets - fair market value, end of year
 
 - Description: Total Assets - End of Year - Fair Market Value
 

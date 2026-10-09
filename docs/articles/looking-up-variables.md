@@ -375,6 +375,8 @@ dd("F9_01_REV_TOT_CY", xpaths = TRUE)
 | label                | Total revenue - current year |
 | description          | Total revenue - CY           |
 | data_type_simple     | numeric                      |
+| money_field          | TRUE                         |
+| blank_meaning        | implicit_zero                |
 | variable_scope       | PZ                           |
 | location_code_family | F990-PC-PART-01-LINE-12-CY   |
 | n_xpaths             | 6                            |

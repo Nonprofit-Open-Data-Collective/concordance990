@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX42_PROF_FEE_INVEST_NET
 
-Net Investment Income
+Other professional fees schedule - net investment income
 
 - Description: Net Investment Income
 

@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_INT_SAVING_NET
 
-Net Investment Income
+Interest on savings and temporary cash investments - net investment
+income
 
 - Description: Interest on Savings and Temporary Cash Investments - Net
   Investment Income

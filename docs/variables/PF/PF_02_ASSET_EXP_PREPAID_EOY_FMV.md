@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_EXP_PREPAID_EOY_FMV
 
-Fair Market Value
+Prepaid expenses - fair market value, end of year
 
 - Description: Prepaid Expenses - End of Year - Fair Market Value
 

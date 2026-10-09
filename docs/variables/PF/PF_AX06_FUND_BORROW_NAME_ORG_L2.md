@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX06_FUND_BORROW_NAME_ORG_L2
 
-BusinessNameLine2
+Borrowed funds - business name line 2
 
 - Description: Business Name - BusinessNameLine2
 

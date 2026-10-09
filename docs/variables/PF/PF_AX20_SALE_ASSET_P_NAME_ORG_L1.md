@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX20_SALE_ASSET_P_NAME_ORG_L1
 
-BusinessNameLine1
+Purchaser of other assets - business name line 1
 
 - Description: Business - BusinessNameLine1
 

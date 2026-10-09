@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX41_NOTE_OTH_S_NAME_ORG_L1
 
-BusinessNameLine1
+Section 501(c)(3) borrower (other notes and loans receivable) - business
+name line 1
 
 - Description: Name Of501c3 Organization - BusinessNameLine1
 

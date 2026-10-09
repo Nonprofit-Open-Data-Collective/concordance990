@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_13_EXCESS_DIST_CY_M1
 
-Year 1
+Excess distributions carryover - year 1
 
 - Description: Excess Distributions Carryover - Year 1
 

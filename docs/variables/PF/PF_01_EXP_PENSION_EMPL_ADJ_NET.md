@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_PENSION_EMPL_ADJ_NET
 
-Adjusted Net Income
+Pension plans, employee benefits - adjusted net income
 
 - Description: Pension Plans; Employee Benefits - Adjusted Net Income
 

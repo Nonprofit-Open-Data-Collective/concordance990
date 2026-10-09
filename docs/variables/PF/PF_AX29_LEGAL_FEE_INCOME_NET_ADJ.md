@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX29_LEGAL_FEE_INCOME_NET_ADJ
 
-Adjusted Net Income
+Legal fees schedule - adjusted net income
 
 - Description: Adjusted Net Income
 

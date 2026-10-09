@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_RENT_GRO_NET
 
-Net Investment Income
+Gross rents - net investment income
 
 - Description: Gross Rents - Net Investment Income
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_PROG_FEES_UBIZ_AMT
 
-Amount
+Fees and contracts from government agencies - unrelated business income
 
 - Description: Fees Contracts From Govt Agencies - Amount
 

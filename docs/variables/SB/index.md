@@ -12,14 +12,14 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 | Variable | Label | Type | Filings | Attention |
 |----|----|----|----|----|
-| [`SB_01_CONTRIBUTOR_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_CITY.md) |  | text | 2.6M | 2 open flags |
+| [`SB_01_CONTRIBUTOR_ADDR_CITY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_CITY.md) | Contributor address - city | text | 2.6M | 2 open flags |
 | [`SB_01_CONTRIBUTOR_ADDR_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_CNTR.md) | Contributor address - country | code | 4.9k |  |
-| [`SB_01_CONTRIBUTOR_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_L1.md) |  | text | 2.6M | 2 open flags |
-| [`SB_01_CONTRIBUTOR_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_L2.md) |  | text | 2.3M | 2 open flags |
-| [`SB_01_CONTRIBUTOR_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_STATE.md) |  | code | 2.5M | ▲ warn 2 open flags |
-| [`SB_01_CONTRIBUTOR_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_ZIP.md) |  | identifier | 2.5M | ⚠ fail ▲ warn 2 open flags |
-| [`SB_01_CONTRIBUTOR_AMOUNT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_AMOUNT.md) |  | amount | 2.5M | ⚠ fail 2 open flags |
-| [`SB_01_CONTRIBUTOR_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_NAME_L1.md) |  | text | 2.3M | 2 open flags |
+| [`SB_01_CONTRIBUTOR_ADDR_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_L1.md) | Contributor address - line 1 | text | 2.6M | 2 open flags |
+| [`SB_01_CONTRIBUTOR_ADDR_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_L2.md) | Contributor address - line 2 | text | 2.3M | 2 open flags |
+| [`SB_01_CONTRIBUTOR_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_STATE.md) | Contributor address - state | code | 2.5M | ▲ warn 2 open flags |
+| [`SB_01_CONTRIBUTOR_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_ADDR_ZIP.md) | Contributor address - ZIP code | identifier | 2.5M | ⚠ fail ▲ warn 2 open flags |
+| [`SB_01_CONTRIBUTOR_AMOUNT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_AMOUNT.md) | Contributor total contributions | amount | 2.5M | ⚠ fail 2 open flags |
+| [`SB_01_CONTRIBUTOR_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_NAME_L1.md) | Contributor name - business, line 1 | text | 2.3M | 2 open flags |
 | [`SB_01_CONTRIBUTOR_NAME_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_NAME_L2.md) | Contributor name - business, line 2 | text | 1.2k |  |
 | [`SB_01_CONTRIBUTOR_NAME_PERS`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_NAME_PERS.md) | Contributor name - individual | text | 217k |  |
 | [`SB_01_CONTRIBUTOR_NUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/SB/SB_01_CONTRIBUTOR_NUM.md) | Contributor number | number | 2.5M | ⚠ fail 2 open flags |

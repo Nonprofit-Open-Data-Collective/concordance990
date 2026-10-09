@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TOT_EXP_DISBMT_DISBMT
 
-Disbursements for Charitable Purposes
+Total expenses and disbursements - disbursements for charitable purposes
 
 - Description: Total Expenses and Disbursements - Disbursements for
   Charitable Purposes

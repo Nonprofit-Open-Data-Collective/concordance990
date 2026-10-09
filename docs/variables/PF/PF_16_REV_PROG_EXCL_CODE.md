@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_PROG_EXCL_CODE
 
-Exclusion code (01 through 41)
+Program service revenue - exclusion code
 
 - Description: Exclusion code (01 through 41)
 

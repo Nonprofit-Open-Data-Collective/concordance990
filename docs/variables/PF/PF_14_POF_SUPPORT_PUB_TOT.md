@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_SUPPORT_PUB_TOT
 
-Total
+Support test: public support - total
 
 - Description: Public Support - Total
 

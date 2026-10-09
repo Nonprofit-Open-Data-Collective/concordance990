@@ -6,6 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # F9_00_IRS_SEC_FILING_LIC_TYPE
 
+Filing license type code
+
 - Description: Verification
 
 - Table:

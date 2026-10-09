@@ -14,42 +14,42 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 |----|----|----|----|----|
 | [`F9_00_ALL_AFFIL_INCL_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_ALL_AFFIL_INCL_X.md) | All subordinates included \[x\] | checkbox | 318k | 1 open flag |
 | [`F9_00_BUILD_TIME_STAMP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_BUILD_TIME_STAMP.md) | Build time stamp | date | 7.1M |  |
-| [`F9_00_DISASTER_RELIEF`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_DISASTER_RELIEF.md) |  | text | 6.1k | 2 open flags |
+| [`F9_00_DISASTER_RELIEF`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_DISASTER_RELIEF.md) | Disaster relief text | text | 6.1k | 2 open flags |
 | [`F9_00_EXEMPT_STAT_4947A1_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_EXEMPT_STAT_4947A1_X.md) | 4947(a)(1) organization \[x\] | checkbox | 3.4k | ⚠ fail 1 open flag |
 | [`F9_00_EXEMPT_STAT_501C3_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_EXEMPT_STAT_501C3_X.md) | 501(c)(3) organization \[x\] | checkbox | 4.5M |  |
 | [`F9_00_EXEMPT_STAT_501C_TYPE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_EXEMPT_STAT_501C_TYPE.md) | 501(c) subsection of the organization | text | 0 |  |
 | [`F9_00_EXEMPT_STAT_501C_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_EXEMPT_STAT_501C_X.md) | 501(c) organization \[x\] | checkbox | 1.5M | 2 open flags |
 | [`F9_00_EXEMPT_STAT_527_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_EXEMPT_STAT_527_X.md) | 527 organization \[x\] | checkbox | 0 |  |
-| [`F9_00_FORM_8822B_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_FORM_8822B_X.md) |  | checkbox | 8.7k |  |
+| [`F9_00_FORM_8822B_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_FORM_8822B_X.md) | Form 8822-B (change of address) attached | checkbox | 8.7k |  |
 | [`F9_00_GROUP_EXEMPT_NUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_GROUP_EXEMPT_NUM.md) | Group exemption number | number | 261k |  |
 | [`F9_00_GRO_RCPT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_GRO_RCPT.md) | Gross receipts | amount | 5.9M |  |
 | [`F9_00_GRO_RCPT_LT50K_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_GRO_RCPT_LT50K_X.md) | Gross receipts less than \$25K/\$50K \[x\] | checkbox | 41k |  |
-| [`F9_00_IRS_RESP_PARTY_INFO_CURR_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_RESP_PARTY_INFO_CURR_X.md) |  | checkbox | 1.7M |  |
+| [`F9_00_IRS_RESP_PARTY_INFO_CURR_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_RESP_PARTY_INFO_CURR_X.md) | IRS responsible party information current | checkbox | 1.7M |  |
 | [`F9_00_IRS_SEC_ACTIVE_PREP_TIME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_ACTIVE_PREP_TIME.md) | Total active preparation and submission time | text | 236 | ▲ warn |
 | [`F9_00_IRS_SEC_AUTH_REVIEW_CD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_AUTH_REVIEW_CD.md) | Authentication review code | code | 5 |  |
 | [`F9_00_IRS_SEC_AUTH_REVIEW_TXT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_AUTH_REVIEW_TXT.md) | Authentication review text | text | 61 |  |
 | [`F9_00_IRS_SEC_DEVICE_ID`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_DEVICE_ID.md) | Device id at submission creation | text | 1.4M | 3 open flags |
 | [`F9_00_IRS_SEC_FILING_DEVICE_ID`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_FILING_DEVICE_ID.md) | Device id at submission filing | text | 1.4M | 3 open flags |
-| [`F9_00_IRS_SEC_FILING_LIC_TYPE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_FILING_LIC_TYPE.md) |  | code | 1.3M | 3 open flags |
-| [`F9_00_IRS_SEC_IP_ADDR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_IP_ADDR.md) |  | text | 1.4M | 3 open flags |
-| [`F9_00_IRS_SEC_IP_DATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_IP_DATE.md) |  | date | 1.2M | 3 open flags |
-| [`F9_00_IRS_SEC_IP_TIME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_IP_TIME.md) |  | text | 1.2M | 3 open flags |
-| [`F9_00_IRS_SEC_IP_TIME_ZONE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_IP_TIME_ZONE.md) |  | code | 1.0M | 3 open flags |
+| [`F9_00_IRS_SEC_FILING_LIC_TYPE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_FILING_LIC_TYPE.md) | Filing license type code | code | 1.3M | 3 open flags |
+| [`F9_00_IRS_SEC_IP_ADDR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_IP_ADDR.md) | Filer IP address | text | 1.4M | 3 open flags |
+| [`F9_00_IRS_SEC_IP_DATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_IP_DATE.md) | Filer IP date | date | 1.2M | 3 open flags |
+| [`F9_00_IRS_SEC_IP_TIME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_IP_TIME.md) | Filer IP time | text | 1.2M | 3 open flags |
+| [`F9_00_IRS_SEC_IP_TIME_ZONE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_IP_TIME_ZONE.md) | Filer IP time zone | code | 1.0M | 3 open flags |
 | [`F9_00_IRS_SEC_PREP_SUBMIT_TIME`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_PREP_SUBMIT_TIME.md) | Total preparation and submission time | text | 246 | ▲ warn |
 | [`F9_00_IRS_SEC_SUBMISSION_DATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_SUBMISSION_DATE.md) | Federal original submission date | date | 235k | 3 open flags |
 | [`F9_00_IRS_SEC_SUBMISSION_ID`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_SUBMISSION_ID.md) | Federal original submission id | text | 241k | 3 open flags |
 | [`F9_00_IRS_SEC_VENDOR_CTRL_NUM`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_SEC_VENDOR_CTRL_NUM.md) | Vendor control number | text | 123 | ▲ warn |
-| [`F9_00_IRS_TRUST_AUTENTICATED_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_AUTENTICATED_X.md) |  | text | 1.5M | 1 open flag |
+| [`F9_00_IRS_TRUST_AUTENTICATED_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_AUTENTICATED_X.md) | Authentication assurance level | text | 1.5M | 1 open flag |
 | [`F9_00_IRS_TRUST_CELL_CHANGE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_CELL_CHANGE_X.md) | Profile cell phone number changed | checkbox | 28 |  |
-| [`F9_00_IRS_TRUST_CUSTOMER_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_CUSTOMER_X.md) |  | text | 1.5M | ▲ warn 1 open flag |
-| [`F9_00_IRS_TRUST_FED_ASSURANCE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_FED_ASSURANCE_X.md) |  | text | 448k | 1 open flag |
-| [`F9_00_IRS_TRUST_IDENTITY_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_IDENTITY_X.md) |  | text | 1.3M | 1 open flag |
-| [`F9_00_IRS_TRUST_OOB_VERIFIED_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_OOB_VERIFIED_X.md) |  | text | 314k | ▲ warn |
+| [`F9_00_IRS_TRUST_CUSTOMER_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_CUSTOMER_X.md) | Trusted customer code | text | 1.5M | ▲ warn 1 open flag |
+| [`F9_00_IRS_TRUST_FED_ASSURANCE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_FED_ASSURANCE_X.md) | Federated assurance level | text | 448k | 1 open flag |
+| [`F9_00_IRS_TRUST_IDENTITY_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_IDENTITY_X.md) | Identity assurance level | text | 1.3M | 1 open flag |
+| [`F9_00_IRS_TRUST_OOB_VERIFIED_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_OOB_VERIFIED_X.md) | Out-of-band security verification code | text | 314k | ▲ warn |
 | [`F9_00_IRS_TRUST_PAY_DECLINED_CD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_PAY_DECLINED_CD.md) | Payment declined reason code | code | 74 |  |
-| [`F9_00_IRS_TRUST_PROFILE_CHANGE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_PROFILE_CHANGE_X.md) |  | checkbox | 3.1k |  |
-| [`F9_00_IRS_TRUST_PW_CHANGE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_PW_CHANGE_X.md) |  | checkbox | 21k | 1 open flag |
-| [`F9_00_IRS_TRUST_RQR_OOB_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_RQR_OOB_X.md) |  | text | 126k | ▲ warn |
-| [`F9_00_IRS_TRUST_USRNAME_CHANGE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_USRNAME_CHANGE_X.md) |  | checkbox | 252 |  |
+| [`F9_00_IRS_TRUST_PROFILE_CHANGE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_PROFILE_CHANGE_X.md) | Profile email address changed | checkbox | 3.1k |  |
+| [`F9_00_IRS_TRUST_PW_CHANGE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_PW_CHANGE_X.md) | Profile password changed | checkbox | 21k | 1 open flag |
+| [`F9_00_IRS_TRUST_RQR_OOB_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_RQR_OOB_X.md) | Last submission required out-of-band verification | text | 126k | ▲ warn |
+| [`F9_00_IRS_TRUST_USRNAME_CHANGE_X`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_IRS_TRUST_USRNAME_CHANGE_X.md) | Profile user name changed | checkbox | 252 |  |
 | [`F9_00_LEGAL_DMCL_CNTR`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_LEGAL_DMCL_CNTR.md) | Country of legal domicile | code | 2.9k |  |
 | [`F9_00_LEGAL_DMCL_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_LEGAL_DMCL_STATE.md) | State of legal domicile | code | 3.6M |  |
 | [`F9_00_NAME_ORG_CTRL`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_NAME_ORG_CTRL.md) | Organization name | identifier | 7.1M |  |
@@ -845,6 +845,6 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 | [`F9_00_AFFIL_ADDR_STATE`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_ADDR_STATE.md) | Group return - subordinate state | code | 1.7k |  |
 | [`F9_00_AFFIL_ADDR_ZIP`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_ADDR_ZIP.md) | Group return - subordinate ZIP code | identifier | 1.7k |  |
 | [`F9_00_AFFIL_EIN`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_EIN.md) | Group return - subordinate (affiliate) EIN | identifier | 1.7k |  |
-| [`F9_00_AFFIL_NAME_CTRL`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_NAME_CTRL.md) | Group return - subordinate name control | text | 1.7k |  |
+| [`F9_00_AFFIL_NAME_CTRL`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_NAME_CTRL.md) | Group return - subordinate name control | identifier | 1.7k |  |
 | [`F9_00_AFFIL_NAME_L1`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_NAME_L1.md) | Group return - subordinate name line 1 | text | 1.7k |  |
 | [`F9_00_AFFIL_NAME_L2`](https://nonprofit-open-data-collective.github.io/concordance990/variables/F9/F9_00_AFFIL_NAME_L2.md) | Group return - subordinate name line 2 | text | 232 |  |

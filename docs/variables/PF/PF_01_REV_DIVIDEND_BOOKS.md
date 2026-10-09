@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_DIVIDEND_BOOKS
 
-Revenue and Expenses per Books
+Dividends and interest from securities - revenue and expenses per books
 
 - Description: Dividends and Interest from Securities - Revenue and
   Expenses per Books

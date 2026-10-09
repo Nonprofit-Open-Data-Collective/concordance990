@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_EVNT_NET_UBIZ_AMT
 
-Amount
+Net income from special events - unrelated business income
 
 - Description: Net Income Loss From Special Events - Amount
 

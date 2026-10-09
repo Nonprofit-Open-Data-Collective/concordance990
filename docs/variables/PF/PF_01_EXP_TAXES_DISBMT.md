@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TAXES_DISBMT
 
-Disbursements for Charitable Purposes
+Taxes - disbursements for charitable purposes
 
 - Description: Taxes - Disbursements for Charitable Purposes
 

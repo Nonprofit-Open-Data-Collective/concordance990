@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_05_4940E_ASSET_NOCHARIT_CY_M3
 
-Year 3
+Net value of noncharitable-use assets - base period year 3
 
 - Description: Noncharitable Assets - Year 3
 

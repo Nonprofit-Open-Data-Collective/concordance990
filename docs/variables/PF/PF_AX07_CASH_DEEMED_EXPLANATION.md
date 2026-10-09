@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX07_CASH_DEEMED_EXPLANATION
 
-Explanation
+Cash deemed charitable - explanation
 
 - Description: Cash Deemed Charitable Expln Stmt - Explanation
 

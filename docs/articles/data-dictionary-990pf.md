@@ -392,17 +392,7 @@ item
 
 `PF-P99-T04-AMORTIZATION`MANYone row per repeated item
 
-| Variable | Description | Location | Type | Scope | % Reporting |
-|:---|:---|:---|:---|:---|:---|
-| [`PF_AX04_AMORT_AMT_AMORTIZED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_AMT_AMORTIZED.md "Validation page") | Amount Amortized | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
-| [`PF_AX04_AMORT_AMT_CY`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_AMT_CY.md "Validation page") | Current Year Amortization | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
-| [`PF_AX04_AMORT_AMT_TOT`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_AMT_TOT.md "Validation page") | Total Amount of Amortization | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.5% |
-| [`PF_AX04_AMORT_DATE_ACQUIRED`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_DATE_ACQUIRED.md "Validation page") | Date Acquired; Completed; or Expended | F990-PF-PART-99-AUX-SCHED-04 | date | 990-PF | 0.4% |
-| [`PF_AX04_AMORT_DEDUCT_PYZ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_DEDUCT_PYZ.md "Validation page") | Deduction for Prior Years | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
-| [`PF_AX04_AMORT_EXP_DESC`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_EXP_DESC.md "Validation page") | Description of Amortized Expenses | F990-PF-PART-99-AUX-SCHED-04 | text | 990-PF | 0.5% |
-| [`PF_AX04_AMORT_INCOME_NET_ADJ`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_INCOME_NET_ADJ.md "Validation page") | Adjusted Net Income | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.1% |
-| [`PF_AX04_AMORT_INVEST_NET`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_INVEST_NET.md "Validation page") | Net Investment Income | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.3% |
-| [`PF_AX04_AMORT_METHOD`](https://nonprofit-open-data-collective.github.io/concordance990/variables/PF/PF_AX04_AMORT_METHOD.md "Validation page") | Amortization Method | F990-PF-PART-99-AUX-SCHED-04 | numeric | 990-PF | 0.4% |
+[TABLE]
 
 `PF-P99-T06-FUND-BORROWED`MANYone row per repeated item
 

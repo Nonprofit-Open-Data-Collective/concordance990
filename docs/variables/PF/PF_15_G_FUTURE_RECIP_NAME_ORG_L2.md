@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_15_G_FUTURE_RECIP_NAME_ORG_L2
 
-BusinessNameLine2
+Recipient of grant approved for future payment - business name line 2
 
 - Description: Recipient Business Name - BusinessNameLine2
 

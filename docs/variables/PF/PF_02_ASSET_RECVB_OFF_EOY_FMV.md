@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_RECVB_OFF_EOY_FMV
 
-Fair Market Value
+Receivables from officers - fair market value, end of year
 
 - Description: Receivables from Officers - End of Year - Fair Market
   Value

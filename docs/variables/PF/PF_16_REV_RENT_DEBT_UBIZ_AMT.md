@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_RENT_DEBT_UBIZ_AMT
 
-Amount
+Net rental income from debt-financed property - unrelated business
+income
 
 - Description: Net Rental Incm Re Debt Fincd Prop - Amount
 

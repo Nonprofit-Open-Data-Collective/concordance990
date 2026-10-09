@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_INCOME_MOD_ADJ_NET
 
-Adjusted Net Income
+Income modifications - adjusted net income
 
 - Description: Income Modifications - Adjusted Net Income
 

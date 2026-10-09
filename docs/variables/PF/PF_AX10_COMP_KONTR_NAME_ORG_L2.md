@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX10_COMP_KONTR_NAME_ORG_L2
 
-BusinessNameLine2
+Contractor - business name line 2
 
 - Description: Contractor Name Business - BusinessNameLine2
 

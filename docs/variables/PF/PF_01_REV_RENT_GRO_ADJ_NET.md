@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_RENT_GRO_ADJ_NET
 
-Adjusted Net Income
+Gross rents - adjusted net income
 
 - Description: Gross Rents - Adjusted Net Income
 

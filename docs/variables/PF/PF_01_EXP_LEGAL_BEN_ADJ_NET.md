@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_LEGAL_BEN_ADJ_NET
 
-Adjusted Net Income
+Legal fees - adjusted net income
 
 - Description: Legal Fees - Adjusted Net Income
 

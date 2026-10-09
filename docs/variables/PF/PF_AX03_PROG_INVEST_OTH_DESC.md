@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX03_PROG_INVEST_OTH_DESC
 
-Description
+Other program-related investments schedule - description
 
 - Description: All Other Program Related Invst Grp - Description
 

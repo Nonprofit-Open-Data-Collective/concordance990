@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_INT_SAVING_ADJ_NET
 
-Adjusted Net Income
+Interest on savings and temporary cash investments - adjusted net income
 
 - Description: Interest on Savings and Temporary Cash Investments -
   Adjusted Net Income

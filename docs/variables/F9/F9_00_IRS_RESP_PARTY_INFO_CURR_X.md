@@ -6,6 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # F9_00_IRS_RESP_PARTY_INFO_CURR_X
 
+IRS responsible party information current
+
 - Description: Verification
 
 - Table:

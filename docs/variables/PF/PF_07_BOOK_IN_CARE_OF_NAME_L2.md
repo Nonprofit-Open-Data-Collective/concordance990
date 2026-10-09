@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_07_BOOK_IN_CARE_OF_NAME_L2
 
-BusinessNameLine2
+Books in care of - business name line 2
 
 - Description: Books In Care Of Business Name - BusinessNameLine2
 

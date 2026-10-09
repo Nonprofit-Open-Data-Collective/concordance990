@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_05_4940E_DIST_QUAL_CY_M3
 
-Year 3
+Adjusted qualifying distributions - base period year 3
 
 - Description: Qualifying Distributions - Year 3
 

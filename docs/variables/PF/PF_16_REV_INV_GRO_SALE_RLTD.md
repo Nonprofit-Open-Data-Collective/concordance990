@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_INV_GRO_SALE_RLTD
 
-Related or exempt function income
+Gross profit from sales of inventory - related or exempt function income
 
 - Description: Related or exempt function income
 

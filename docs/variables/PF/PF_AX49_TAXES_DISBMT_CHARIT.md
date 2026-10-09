@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX49_TAXES_DISBMT_CHARIT
 
-Disbursements for Charitable Purposes
+Taxes schedule - disbursements for charitable purposes
 
 - Description: Disbursements for Charitable Purposes
 

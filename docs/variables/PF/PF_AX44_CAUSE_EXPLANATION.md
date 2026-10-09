@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX44_CAUSE_EXPLANATION
 
-Explanation
+Reasonable cause explanation
 
 - Description: Reasonable Cause Explanation - Explanation
 

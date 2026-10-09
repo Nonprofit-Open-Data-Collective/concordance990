@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_DIVIDEND_SEC_EXCL_CODE
 
-Exclusion code (01 through 41)
+Dividends and interest from securities - exclusion code
 
 - Description: Exclusion code (01 through 41)
 

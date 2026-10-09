@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # SA_03_TOT_AMT_L6_CY_M4
 
-Total public support during the current tax year minus four years
+Amounts from line 6 (Part III line 9) - current tax year minus four
+years
 
 - Description: Current tax year minus four years
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX37_INCOME_OTH_DESC
 
-Description
+Other income schedule - description
 
 - Description: Other Income - Description
 

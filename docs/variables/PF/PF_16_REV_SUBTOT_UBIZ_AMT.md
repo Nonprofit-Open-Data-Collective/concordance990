@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_SUBTOT_UBIZ_AMT
 
-Amount
+Subtotal - unrelated business income
 
 - Description: Subtotals Part XVIA - Amount
 

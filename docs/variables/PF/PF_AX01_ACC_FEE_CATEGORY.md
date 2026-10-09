@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX01_ACC_FEE_CATEGORY
 
-Category
+Accounting fees schedule - category
 
 - Description: Accounting Fees - Category
 

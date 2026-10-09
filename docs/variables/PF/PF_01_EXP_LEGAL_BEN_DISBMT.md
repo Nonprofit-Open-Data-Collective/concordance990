@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_LEGAL_BEN_DISBMT
 
-Disbursements for Charitable Purposes
+Legal fees - disbursements for charitable purposes
 
 - Description: Legal Fees - Disbursements for Charitable Purposes
 

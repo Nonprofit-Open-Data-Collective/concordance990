@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_08_COMP_DTK_NAME_ORG_L2_HCE
 
-BusinessNameLine2
+Highest paid employee - business name line 2
 
 - Description: Business Name - BusinessNameLine2
 

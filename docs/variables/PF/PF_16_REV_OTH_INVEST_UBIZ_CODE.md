@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_OTH_INVEST_UBIZ_CODE
 
-Business code
+Other investment income - business code
 
 - Description: Other Investment Income Part VII - Business code
 

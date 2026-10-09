@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_05_4940E_ASSET_NOCHARIT_CY_M2
 
-Year 2
+Net value of noncharitable-use assets - base period year 2
 
 - Description: Noncharitable Assets - Year 2
 

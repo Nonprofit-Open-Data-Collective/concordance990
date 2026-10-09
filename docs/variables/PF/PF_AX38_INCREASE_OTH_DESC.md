@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX38_INCREASE_OTH_DESC
 
-Description
+Other increases schedule - description
 
 - Description: Other Increases - Description
 

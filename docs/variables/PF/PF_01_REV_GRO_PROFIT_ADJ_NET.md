@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_GRO_PROFIT_ADJ_NET
 
-Adjusted Net Income
+Gross profit - adjusted net income
 
 - Description: Gross Profit - Adjusted Net Income
 

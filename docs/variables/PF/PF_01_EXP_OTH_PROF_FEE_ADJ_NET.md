@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_OTH_PROF_FEE_ADJ_NET
 
-Adjusted Net Income
+Other professional fees - adjusted net income
 
 - Description: Other Professional Fees - Adjusted Net Income
 

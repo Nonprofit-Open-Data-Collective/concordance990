@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX10_COMP_KONTR_EXPLANATION
 
-Explanation
+Contractor compensation explanation
 
 - Description: Contractor Comp Explanation - Explanation
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_SUPPORT_TOT_TOT
 
-Total
+Support test: total support other than gross investment income - total
 
 - Description: Total Support - Total
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_PLEDGE_EOY_BV
 
-Book Value
+Pledges receivable - book value, end of year
 
 - Description: Pledges Receivable - End of Year - Book Value
 

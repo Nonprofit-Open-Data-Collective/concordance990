@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX25_INVEST_STATE_SEC_EOY_FMV
 
-End of Year Fair Market Value
+State and local government obligations - fair market value, end of year
 
 - Description: State & Local Government Securities - End of Year Fair
   Market Value

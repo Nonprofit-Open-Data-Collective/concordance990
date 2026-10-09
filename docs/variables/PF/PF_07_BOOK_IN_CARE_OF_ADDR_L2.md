@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_07_BOOK_IN_CARE_OF_ADDR_L2
 
-AddressLine2
+Books in care of - address line 2
 
 - Description: Books In Care Of Foreign Address - AddressLine2
 

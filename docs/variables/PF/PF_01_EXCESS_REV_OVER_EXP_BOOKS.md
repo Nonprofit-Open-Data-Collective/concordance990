@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXCESS_REV_OVER_EXP_BOOKS
 
-Revenue and Expenses per Books
+Excess of revenue over expenses and disbursements (line 27a)
 
 - Description: Excess of Revenue Over Expenses and Disbursements -
   Revenue and Expenses per Books

@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_COMP_OFF_DISBMT
 
-Disbursements for Charitable Purposes
+Compensation of officers, directors, trustees, etc. - disbursements for
+charitable purposes
 
 - Description: Compensation of Officers; Directors; Trustees; etc. -
   Disbursements for Charitable Purposes

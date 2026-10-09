@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_09_PROG_RLTD_INVEST_AMT_TOT
 
-Total
+Total program-related investments
 
 - Description: Sum Of Program Related Investments - Total
 

@@ -6,9 +6,9 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # SA_05_DIST_ALLOC_EXCESS_CY_M3
 
-Excess distributions carryover for two years prior
+Excess distributions carryover - year 3
 
-- Description: Excess distributions carryover - year 2
+- Description: Excess distributions carryover - year 3
 
 - Table:
 

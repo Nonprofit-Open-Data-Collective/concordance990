@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_PRINT_PUBLICA_ADJ_NET
 
-Adjusted Net Income
+Printing and publications - adjusted net income
 
 - Description: Printing and Publications - Adjusted Net Income
 

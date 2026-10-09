@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_DEPREC_NET
 
-Net Investment Income
+Depreciation and depletion - net investment income
 
 - Description: Depreciation and Depletion - Net Investment Income
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX01_ACC_FEE_INVEST_NET
 
-Net Investment Income
+Accounting fees schedule - net investment income
 
 - Description: Net Investment Income
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX48_CONTRIBUTOR_NAME_ORG_L1
 
-BusinessNameLine1
+Substantial contributor - business name line 1
 
 - Description: Business Name - BusinessNameLine1
 

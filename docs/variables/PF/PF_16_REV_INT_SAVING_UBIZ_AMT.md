@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_INT_SAVING_UBIZ_AMT
 
-Amount
+Interest on savings and temporary cash investments - unrelated business
+income
 
 - Description: Int On Savings And Temp Cash Invst - Amount
 

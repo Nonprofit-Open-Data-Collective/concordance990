@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_14_POF_DIST_QUAL_UNUSED_CY
 
-Current Year
+Qualifying distributions not used directly for exempt activities -
+current year
 
 - Description: Qlfy Distri Not Used Directly - Current Year
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX51_TRANSF_FR_CE_NAME_ORG_L1
 
-BusinessNameLine1
+Controlled entity (transfers from) - business name line 1
 
 - Description: Business Name - BusinessNameLine1
 

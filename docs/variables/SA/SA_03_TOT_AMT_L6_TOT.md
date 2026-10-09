@@ -6,8 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # SA_03_TOT_AMT_L6_TOT
 
-Total public support during the current tax year and the four years
-prior
+Amounts from line 6 (Part III line 9) - total, current and four prior
+years
 
 - Description: Amts From Line6 - Total
 

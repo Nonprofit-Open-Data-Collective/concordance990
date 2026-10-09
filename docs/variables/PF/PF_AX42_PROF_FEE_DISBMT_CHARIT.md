@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX42_PROF_FEE_DISBMT_CHARIT
 
-Disbursements for Charitable Purposes
+Other professional fees schedule - disbursements for charitable purposes
 
 - Description: Disbursements for Charitable Purposes
 

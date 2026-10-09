@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX20_SALE_ASSET_P_NAME_PERS
 
-Individual
+Purchaser of other assets - individual name
 
 - Description: Purchaser Name - Individual
 

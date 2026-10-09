@@ -51,8 +51,9 @@ open flags
 
 | Result | Value check | Detail |
 |----|----|----|
-| ✓ pass | Values are text, not numbers | 0% of values are numeric |
-| ✓ pass | No sign of truncation | longest values do not sit at a common field limit |
+| ✓ pass | Values have the Identifier format | 100.0% of values match . |
+| ✓ pass | Stored as text | data type is text |
+| ✓ pass | No placeholder values | no all-zero / all-nine placeholders among the most common values |
 
 No flags.
 
@@ -83,15 +84,16 @@ the exact count.
 
 ## Values
 
-| Return | Filings | Average length | Longest |
-|--------|---------|----------------|---------|
-| 990    | 1,733   | 4              | 4       |
-
-### Most common values
-
-| Value  | Filings | Share |
+| Format | Filings | Share |
 |--------|---------|-------|
-| `SHRI` | 531     | 55.2% |
+| `AAAA` | 1,725   | 99.1% |
+| `A&AA` | 5       | 0.3%  |
+| `AAA-` | 4       | 0.2%  |
+| `9AAA` | 3       | 0.2%  |
+| `999A` | 2       | 0.1%  |
+| `AA9A` | 1       | 0.1%  |
+
+Format of the values: `9` a digit, `A` a letter.
 
 ## Example filings
 
@@ -103,5 +105,5 @@ the exact count.
 Evidence: e-filed returns TY2009–2024, built 2026-09-23 from the ef2
 DuckDB builds. Checks and flags are recomputed for the current
 concordance; reviewer decisions come from `validation_log.csv`. Variable
-F9_00_AFFIL_NAME_CTRL, report type *text*. Source:
+F9_00_AFFIL_NAME_CTRL, report type *identifier*. Source:
 [concordance990](https://github.com/Nonprofit-Open-Data-Collective/concordance990).

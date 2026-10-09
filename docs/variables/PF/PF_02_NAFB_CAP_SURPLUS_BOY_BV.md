@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_NAFB_CAP_SURPLUS_BOY_BV
 
-Book Value
+Paid-in or capital surplus - book value, beginning of year
 
 - Description: Paid-in or Capital Surplus - Beginning of Year - Book
   Value

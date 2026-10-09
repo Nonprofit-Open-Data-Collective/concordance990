@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX35_DECREASE_OTH_AMT
 
-Amount
+Other decreases schedule - amount
 
 - Description: Other Decreases - Amount
 

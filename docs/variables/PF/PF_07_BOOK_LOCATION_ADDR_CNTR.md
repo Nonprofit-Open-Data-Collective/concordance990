@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_07_BOOK_LOCATION_ADDR_CNTR
 
-Country
+Location of books - foreign country
 
 - Description: Location Of Books Foreign Address - Country
 

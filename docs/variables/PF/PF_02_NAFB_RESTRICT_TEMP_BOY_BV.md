@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_NAFB_RESTRICT_TEMP_BOY_BV
 
-Book Value
+Temporarily restricted net assets - book value, beginning of year
 
 - Description: Temporarily Restricted - Beginning of Year - Book Value
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_REV_TOT_ADJ_NET
 
-Adjusted Net Income
+Total revenue - adjusted net income
 
 - Description: Total - Adjusted Net Income
 

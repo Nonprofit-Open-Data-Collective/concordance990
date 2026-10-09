@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_07_BOOK_PERS_NAME_L1
 
-BusinessNameLine1
+Person with books - business name line 1
 
 - Description: Persons With Books Name - BusinessNameLine1
 

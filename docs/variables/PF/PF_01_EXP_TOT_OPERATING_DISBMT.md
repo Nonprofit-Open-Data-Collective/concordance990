@@ -6,7 +6,8 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_TOT_OPERATING_DISBMT
 
-Disbursements for Charitable Purposes
+Total operating and administrative expenses - disbursements for
+charitable purposes
 
 - Description: Total Operating and Administrative Expenses -
   Disbursements for Charitable Purposes

@@ -78,17 +78,17 @@ ch[, .(rows = .N), by = .(level, change_type)][order(-rows)][1:12]
 #>  3:       variable          add  8536
 #>  4:          xpath       retype  2510
 #>  5: xpath_override          add  2331
-#>  6:          table          add   465
-#>  7: xpath_override       remove   220
-#>  8:       variable   move_table   213
-#>  9:       variable       remove   150
-#> 10:           part      relabel   113
-#> 11:           part          add    88
-#> 12:       variable       retype    67
+#>  6:       variable      relabel   538
+#>  7:          table          add   465
+#>  8: xpath_override       remove   220
+#>  9:       variable   move_table   213
+#> 10:       variable       remove   150
+#> 11:           part      relabel   113
+#> 12:           part          add    88
 ch[, .N, by = affects_data]
 #>    affects_data     N
 #>          <char> <int>
-#> 1:        FALSE 26273
+#> 1:        FALSE 26807
 #> 2:         TRUE 38964
 ```
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_INVEST_LAND_BOY_BV
 
-Book Value
+Investments, land, etc. - book value, beginning of year
 
 - Description: Investments; Land; Etc. - Beginning of Year - Book Value
 

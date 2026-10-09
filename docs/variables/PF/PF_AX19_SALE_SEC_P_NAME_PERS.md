@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX19_SALE_SEC_P_NAME_PERS
 
-Individual
+Purchaser of nonpublic securities - individual name
 
 - Description: Purchaser Name - Individual
 

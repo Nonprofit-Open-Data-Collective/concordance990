@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_RENT_PROP_EXCL_CODE
 
-Exclusion code (01 through 41)
+Net rental income from personal property - exclusion code
 
 - Description: Exclusion code (01 through 41)
 

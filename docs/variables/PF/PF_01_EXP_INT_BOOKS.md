@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_INT_BOOKS
 
-Revenue and Expenses per Books
+Interest - revenue and expenses per books
 
 - Description: Interest - Revenue and Expenses per Books
 

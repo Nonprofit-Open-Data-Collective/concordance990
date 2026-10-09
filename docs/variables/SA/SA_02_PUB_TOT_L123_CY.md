@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # SA_02_PUB_TOT_L123_CY
 
-Total public support during the current tax year
+Total of lines 1 through 3 (Part II line 4) - current tax year
 
 - Description: Current tax year
 

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_OTH_EMPL_SAL_ADJ_NET
 
-Adjusted Net Income
+Other employee salaries and wages - adjusted net income
 
 - Description: Other Employee Salaries and Wages - Adjusted Net Income
 

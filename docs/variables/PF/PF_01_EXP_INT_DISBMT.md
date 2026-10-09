@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_01_EXP_INT_DISBMT
 
-Disbursements for Charitable Purposes
+Interest - disbursements for charitable purposes
 
 - Description: Interest - Disbursements for Charitable Purposes
 

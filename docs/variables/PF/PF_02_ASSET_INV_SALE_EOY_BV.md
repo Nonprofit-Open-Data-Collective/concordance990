@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_INV_SALE_EOY_BV
 
-Book Value
+Inventories for sale or use - book value, end of year
 
 - Description: Inventories for Sale or Use - End of Year - Book Value
 

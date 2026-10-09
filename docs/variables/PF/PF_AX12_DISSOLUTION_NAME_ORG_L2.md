@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX12_DISSOLUTION_NAME_ORG_L2
 
-BusinessNameLine2
+Dissolution - business name line 2
 
 - Description: Business Name - BusinessNameLine2
 

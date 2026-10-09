@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX34_NETASSET_CHANGE_OTH_AMT
 
-Amount
+Other changes in net assets schedule - amount
 
 - Description: Other Changes In Net Asset - Amount
 

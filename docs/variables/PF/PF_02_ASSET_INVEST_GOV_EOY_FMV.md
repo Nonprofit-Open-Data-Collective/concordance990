@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_INVEST_GOV_EOY_FMV
 
-Fair Market Value
+Investments, government obligations - fair market value, end of year
 
 - Description: Investments; Government Obligations - End of Year - Fair
   Market Value

@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX19_SALE_SEC_P_NAME_ORG_L1
 
-BusinessNameLine1
+Purchaser of nonpublic securities - business name line 1
 
 - Description: Business - BusinessNameLine1
 

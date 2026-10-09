@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_16_REV_INV_GRO_SALE_UBIZ_AMT
 
-Amount
+Gross profit from sales of inventory - unrelated business income
 
 - Description: Gross Profit Loss Sales Of Invntry - Amount
 

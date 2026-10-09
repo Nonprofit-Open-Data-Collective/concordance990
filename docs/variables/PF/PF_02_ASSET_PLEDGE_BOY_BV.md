@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_02_ASSET_PLEDGE_BOY_BV
 
-Book Value
+Pledges receivable - book value, beginning of year
 
 - Description: Pledges Receivable - Beginning of Year - Book Value
 

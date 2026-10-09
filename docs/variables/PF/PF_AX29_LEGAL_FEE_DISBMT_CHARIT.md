@@ -6,7 +6,7 @@ pages](https://nonprofit-open-data-collective.github.io/concordance990/variables
 
 # PF_AX29_LEGAL_FEE_DISBMT_CHARIT
 
-Disbursements for Charitable Purposes
+Legal fees schedule - disbursements for charitable purposes
 
 - Description: Disbursements for Charitable Purposes
 
