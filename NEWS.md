@@ -1,4 +1,4 @@
-# concordance990 (development version)
+# concordance990 2.0.3
 
 * Fix 29 types 26 numeric dollar-amount variables that no local IRS schema
   declares (fix 26 left their 29 xpaths without a `data_type_xsd`) as
