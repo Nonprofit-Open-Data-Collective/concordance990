@@ -44,11 +44,13 @@ See [Looking up tables and
 variables](https://nonprofit-open-data-collective.github.io/concordance990/articles/looking-up-variables.html).
 
 `concordance("v1")` returns exactly the v1 columns. For non-R users,
-[`concordance.csv`](https://nonprofit-open-data-collective.github.io/concordance990/concordance.csv)
-and `concordance.xlsx` at the repository root are generated copies in
-the v1 layout (all xpaths), and
-[`concordance-990pf.csv`](https://nonprofit-open-data-collective.github.io/concordance990/concordance-990pf.csv)
-is the 990-PF view.
+`concordance.csv` and `concordance.xlsx` at the repository root are
+generated copies in the v1 layout (all xpaths), and
+`concordance-990pf.csv` is the 990-PF view. Search and download them on
+the site:
+[concordance.csv](https://nonprofit-open-data-collective.github.io/concordance990/articles/concordance-csv.html)
+and
+[concordance-990pf.csv](https://nonprofit-open-data-collective.github.io/concordance990/articles/concordance-990pf-csv.html).
 
 ## Where things live
 

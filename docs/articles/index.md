@@ -23,3 +23,10 @@
   990-PF](https://nonprofit-open-data-collective.github.io/concordance990/articles/data-dictionary-990pf.md):
 - [Outline of forms, parts and
   schedules](https://nonprofit-open-data-collective.github.io/concordance990/articles/form-outline.md):
+
+### CSV files
+
+- [concordance.csv: the full
+  concordance](https://nonprofit-open-data-collective.github.io/concordance990/articles/concordance-csv.md):
+- [concordance-990pf.csv: the 990-PF
+  database](https://nonprofit-open-data-collective.github.io/concordance990/articles/concordance-990pf-csv.md):
