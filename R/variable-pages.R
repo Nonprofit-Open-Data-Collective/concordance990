@@ -195,8 +195,15 @@ pg_head <- function(v, label, root = "../") {
   sprintf(paste0("<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\">",
                  "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">",
                  "<title>%s \u00B7 concordance990</title><meta name=\"description\" content=\"%s\">",
-                 "<link rel=\"stylesheet\" href=\"%svariables.css\"></head><body><main>"), pg_esc(v), pg_esc(label), root)
+                 "<link rel=\"stylesheet\" href=\"%svariables.css\">", pg_gtag, "</head><body><main>"),
+          pg_esc(v), pg_esc(label), root)
 }
+
+# Google Analytics (gtag.js), same tag as `template: includes: in_header` in _pkgdown.yml
+pg_gtag <- paste0(
+  "<script async src=\"https://www.googletagmanager.com/gtag/js?id=G-HR2P3XE1TG\"></script>",
+  "<script>window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);}",
+  "gtag('js', new Date());gtag('config', 'G-HR2P3XE1TG');</script>")
 
 pg_dictionary <- function(d, xp) {
   d1 <- d[1]
